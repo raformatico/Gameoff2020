@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://R-Inventario/03_Avatar-400x400_22_10_20.png" type="Texture" id=1]
+[ext_resource path="res://R-Inventario/outline.shader" type="Shader" id=2]
+
+
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 2 )
+shader_param/width = 5.0
+shader_param/outline_color = Color( 1, 1, 1, 0 )
+
+[node name="World" type="Node2D"]
+
+[node name="03_Avatar-400x400_22_10_20" type="Sprite" parent="."]
+material = SubResource( 2 )
+position = Vector2( 438.569, 288.522 )
+texture = ExtResource( 1 )
