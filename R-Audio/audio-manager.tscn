@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://R-Audio/audio-manager.gd" type="Script" id=1]
+[ext_resource path="res://Audio/chorus 1.wav" type="AudioStream" id=2]
+[ext_resource path="res://Audio/drop 1.wav" type="AudioStream" id=3]
+[ext_resource path="res://Audio/big 1.wav" type="AudioStream" id=4]
+
+[node name="audio-manager" type="Node"]
+script = ExtResource( 1 )
+
+[node name="songs" type="Node" parent="."]
+
+[node name="audio1" type="AudioStreamPlayer" parent="songs"]
+stream = ExtResource( 4 )
+bus = "Second"
+
+[node name="audio2" type="AudioStreamPlayer" parent="songs"]
+stream = ExtResource( 2 )
+volume_db = -80.0
+
+[node name="audio3" type="AudioStreamPlayer" parent="songs"]
+stream = ExtResource( 3 )
+volume_db = -80.0
