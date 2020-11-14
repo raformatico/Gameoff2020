@@ -23,6 +23,10 @@ _global_script_class_icons={
 config/name="BBC"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://Global/global.gd"
+
 [display]
 
 window/size/width=1920
