@@ -21,6 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="BBC"
+run/main_scene="res://J-Navegacion_Malla/NavMeshTest.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -45,4 +46,6 @@ next_song={
 
 [rendering]
 
+quality/shadows/filter_mode=2
+quality/depth/hdr=false
 environment/default_environment="res://default_env.tres"

@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/navemesh.obj-da0e229c159728151cf413a65b7d936e.mesh"
+
+[deps]
+
+files=[ "res://.import/navemesh.obj-da0e229c159728151cf413a65b7d936e.mesh" ]
+
+source_file="res://J-Navegacion_Malla/navemesh.obj"
+dest_files=[ "res://.import/navemesh.obj-da0e229c159728151cf413a65b7d936e.mesh", "res://.import/navemesh.obj-da0e229c159728151cf413a65b7d936e.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
