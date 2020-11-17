@@ -5,6 +5,7 @@ extends ImmediateGeometry
 # var a = 2
 # var b = "text"
 
+const Marker = preload("res://J-Navegacion_malla/Marker.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,9 +13,13 @@ func _ready():
 
 func draw(path):
 	begin(Mesh.PRIMITIVE_LINES)
-	
-	for v in range(1,path.size()):
-		set_color(Color.crimson)
-		add_vertex(path[v-1]+Vector3(0,1,0))
+	set_color(Color.crimson)	
+	for v in range(0,path.size()):
 		add_vertex(path[v]+Vector3(0,1,0))
+		
+		var marker = Marker.instance()
+		add_child(marker)
+		marker.global_transform.origin = path[v]
+		marker.scale_object_local(Vector3(0.5,1,0.5))
+		
 	end()

@@ -7,6 +7,8 @@ signal goto(path)
 # var b = "text"
 export var ray_length=1000
 
+
+
 var alex
 var navigator
 
@@ -15,6 +17,7 @@ func _ready():
 	alex=get_node("../Alex") # Should Global tell us who the character is?
 	connect("goto",alex,"_on_goto")
 	navigator=get_node("../museo-simple/Navigation")
+	navigator=get_node("../micro-museum/Navigation")
 			
 func _unhandled_input(event):
 	
@@ -22,14 +25,19 @@ func _unhandled_input(event):
 	
 	if event is InputEventMouseButton and event.is_pressed():
 		var from=camera.project_ray_origin(event.position)
-		var to=camera.project_ray_normal(event.position)*ray_length # +from?
+		var to=from+camera.project_ray_normal(event.position)*ray_length
 		var space_state=camera.get_world().direct_space_state
 		var result=space_state.intersect_ray(from,to,[],1)
-		
-		if result:
-			var path=navigator.get_simple_path(alex.global_transform.origin,result.position)
 			
-			$ImmediateGeometry.draw(path)
+		if Global.debug:		
+			$destination.global_transform.origin=result.position
+			$origine.global_transform.origin=alex.global_transform.origin
+			
+		if result:
+			var path=navigator.get_simple_path(alex.global_transform.origin,result.position, true)
+			
+			if Global.debug:
+				$ImmediateGeometry.draw(path)
 #			var path_ind = 0
 #
 #			var curve = Curve3D.new()	

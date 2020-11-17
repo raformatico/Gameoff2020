@@ -19,7 +19,7 @@ surfaces/0 = {
 "vertex_count": 1315
 }
 
-[sub_resource type="CapsuleShape" id=3]
+[sub_resource type="CapsuleShape" id=2]
 radius = 0.263568
 height = 0.618889
 
@@ -200,10 +200,10 @@ material/0 = null
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "idle"
+anims/Walk = ExtResource( 1 )
 anims/idle = ExtResource( 3 )
-anims/walking = ExtResource( 1 )
 anims/walkingup = ExtResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0.591802, 0 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )

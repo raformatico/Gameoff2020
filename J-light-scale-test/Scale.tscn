@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/characters/Alex2/Alex_andando.glb" type="PackedScene" id=1]
+
+[node name="Spatial" type="Spatial"]
+
+[node name="CSGBox" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.309791, -0.975522, 0 )
+width = 53.03
+depth = 17.9052
+
+[node name="Alex_andando" parent="CSGBox" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.93579, 2.57116, -4.51643 )
+
+[node name="Alex_andando2" parent="CSGBox" instance=ExtResource( 1 )]
+transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 5, 15.1271, 8.40828, 0.0794822 )
+
+[node name="Alex_andando3" parent="CSGBox" instance=ExtResource( 1 )]
+transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 5.06508, 15.6932, 0.0794822 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.785824, 0.61845, 0, -0.61845, 0.785824, 6.28745, 12.1435, 14.0415 )
+
+[node name="SpotLight" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.736121, 0.67685, 0, -0.67685, 0.736121, 5.84957, 14.6086, 15.1192 )
+light_energy = 2.55
+shadow_enabled = true
+shadow_bias = 0.49
+spot_range = 32.3822
+spot_angle = 67.6955
+
+[node name="CSGBox2" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8.1091 )
+width = 52.5647
+height = 28.1706

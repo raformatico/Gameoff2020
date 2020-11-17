@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/characters/ALEX ANIM_02/ALEX_ANIM/ALEX_ANIM.glb" type="PackedScene" id=1]
+
+[sub_resource type="Environment" id=1]
+background_mode = 1
+background_color = Color( 0.207843, 0.2, 0.2, 1 )
+ambient_light_color = Color( 0.552941, 0.545098, 0.545098, 1 )
+ssao_enabled = true
+ssao_radius = 1.33
+glow_enabled = true
+glow_intensity = 2.02
+glow_strength = 0.74
+
+[node name="Spatial" type="Spatial"]
+
+[node name="ALEX_ANIM" parent="." instance=ExtResource( 1 )]
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.838461, 0.544961, 0, -0.544961, 0.838461, 0, 2.5801, 5.87204 )
+environment = SubResource( 1 )
+
+[node name="OmniLight" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.78426, 8.15384, 0.97991 )
+light_energy = 4.99
+shadow_enabled = true
+omni_range = 19.1
