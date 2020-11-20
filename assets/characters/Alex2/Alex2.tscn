@@ -737,3 +737,6 @@ transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, -0.2
 shape = SubResource( 6 )
 
 [node name="Tween" type="Tween" parent="."]
+
+[node name="Base" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.50474, 0 )

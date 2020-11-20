@@ -10,7 +10,7 @@ var camera_setup={}
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	scenary=get_node("../museo-simple")
-	
+	scenary=get_node("../MiniTest")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass

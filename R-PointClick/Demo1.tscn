@@ -51,4 +51,5 @@ transform = Transform( 16.1, 0, 0, 0, 1, 0, 0, 0, 5.7, 0, 0, -9 )
 shape = SubResource( 5 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
+
 [connection signal="input_event" from="StaticBody" to="." method="_on_StaticBody_input_event"]
