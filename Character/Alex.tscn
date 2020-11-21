@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Character/CASCO Y CUERPO.material" type="Material" id=1]
 [ext_resource path="res://Character/CRISTAL CASCO.material" type="Material" id=2]
+[ext_resource path="res://J-Navegacion_Malla/Alex.gd" type="Script" id=3]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "Cube021_Cube025"
@@ -1997,8 +1998,11 @@ tracks/42/enabled = true
 tracks/42/keys = PoolRealArray( 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1.06667, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1 )
 
 [sub_resource type="CapsuleShape" id=9]
+radius = 0.565082
+height = 1.52833
 
 [node name="Alex" type="KinematicBody"]
+script = ExtResource( 3 )
 
 [node name="Alex" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.239582, -0.0337069 )
@@ -2236,8 +2240,12 @@ anims/Use = SubResource( 7 )
 anims/Walk = SubResource( 8 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, -0.0809158, 0 )
 shape = SubResource( 9 )
 
 [node name="Foot" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.49291, 0 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

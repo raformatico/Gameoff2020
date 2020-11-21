@@ -1,6 +1,6 @@
 extends Node
 
 
-var debug: = false
+var debug: = true
 
 

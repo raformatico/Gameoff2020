@@ -9,15 +9,17 @@ var path=null
 var target_point=null
 export var threshold=1
 export var speed=10
+export var cant_walk_threshold=3
+var cant_walk=0
+var foot
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
+	foot=$Foot
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	var direction=-Vector3.UP*speed
+	# var direction=-Vector3.UP*speed
 	
 	
 		
@@ -35,8 +37,8 @@ func _physics_process(delta):
 				target_point=null
 				print("Arrrived!")
 				
-				$AnimationPlayer.play("idle")
-		
+				$AnimationPlayer.play("Stand")
+				start_boring()
 		
 		var grav=Vector3.ZERO
 		if !is_on_floor():
@@ -46,10 +48,27 @@ func _physics_process(delta):
 			$AnimationPlayer.play("Walk")
 			look_at(target_point,Vector3.UP)
 			rotation.x=0
-			move_and_slide(-transform.basis.z*speed+grav,Vector3.UP,false)		
-			rotate(Vector3.UP,PI)
 			
+			var movement
+			var direction=-transform.basis.z*speed+grav
+
+			movement=move_and_slide(direction,Vector3.UP,false)		
+			rotate(Vector3.UP,PI)
+
+			# am I Stuck?
+			if movement.distance_to(direction)> cant_walk_threshold: # try measuring the real distance last walked, instead
+				# print("mov: "+str(movement.distance_to(direction)))
+				print("I'm stuck") 
+
+func start_boring():
+	$Timer.start(5)
+
 func set_path(path_):
 	path=path_
 	target_point=path[0]
 	look_at(target_point,Vector3.UP)
+
+
+func _on_Timer_timeout():
+	$AnimationPlayer.play("Idle")
+	$AnimationPlayer.queue("Stand")

@@ -30,7 +30,7 @@ func _unhandled_input(event):
 				$destination.global_transform.origin=result.position
 				$origine.global_transform.origin=alex.global_transform.origin
 #
-			var path=navigator.get_simple_path(alex.global_transform.origin,result.position,true)
+			var path=navigator.get_simple_path(alex.foot.global_transform.origin,result.position,true)
 			path.remove(0)
 			alex.set_path(path)
 			
