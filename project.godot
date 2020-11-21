@@ -20,13 +20,25 @@ _global_script_classes=[ {
 "path": "res://addons/dialogs/dialog_resource.gd"
 }, {
 "base": "Resource",
+"class": "Inventory",
+"language": "GDScript",
+"path": "res://R-Inventario/Items/Inventory.gd"
+}, {
+"base": "CenterContainer",
+"class": "InventorySlot",
+"language": "GDScript",
+"path": "res://R-Inventario/item_slot.gd"
+}, {
+"base": "Resource",
 "class": "ItemResource",
 "language": "GDScript",
-"path": "res://R-Inventario/Item.gd"
+"path": "res://R-Inventario/Items/Item.gd"
 } ]
 _global_script_class_icons={
 "DialogCharacterResource": "",
 "DialogResource": "",
+"Inventory": "",
+"InventorySlot": "",
 "ItemResource": ""
 }
 
