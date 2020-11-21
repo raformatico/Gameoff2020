@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://R-Inventario/Items/Item.gd" type="Script" id=1]
+[ext_resource path="res://R-Inventario/Items/armor.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+name = "armor"
+type = 0
+texture = ExtResource( 2 )

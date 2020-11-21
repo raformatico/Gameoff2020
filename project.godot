@@ -9,24 +9,24 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Resource",
-"class": "DialogCharacterResource",
+"base": "Reference",
+"class": "Inventory",
 "language": "GDScript",
-"path": "res://addons/dialogs/dialog_character_resource.gd"
+"path": "res://R-demos/R-Inventario/Items/Inventory.gd"
 }, {
-"base": "Resource",
-"class": "DialogResource",
+"base": "Reference",
+"class": "InventorySlot",
 "language": "GDScript",
-"path": "res://addons/dialogs/dialog_resource.gd"
+"path": "res://UI/item_slot.gd"
 }, {
-"base": "Resource",
+"base": "Reference",
 "class": "ItemResource",
 "language": "GDScript",
-"path": "res://R-Inventario/Item.gd"
+"path": "res://R-demos/R-Inventario/Items/Item.gd"
 } ]
 _global_script_class_icons={
-"DialogCharacterResource": "",
-"DialogResource": "",
+"Inventory": "",
+"InventorySlot": "",
 "ItemResource": ""
 }
 
