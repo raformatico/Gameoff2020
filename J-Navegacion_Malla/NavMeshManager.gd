@@ -18,6 +18,7 @@ func _ready():
 	connect("goto",alex,"_on_goto")
 	navigator=get_node("../museo-simple/Navigation")
 	navigator=get_node("../micro-museum/Navigation")
+	navigator=get_node("../MiniTest/Navigation")
 			
 func _unhandled_input(event):
 	
@@ -34,8 +35,8 @@ func _unhandled_input(event):
 			$origine.global_transform.origin=alex.global_transform.origin
 			
 		if result:
-			var path=navigator.get_simple_path(alex.global_transform.origin,result.position, true)
-			
+			var path=navigator.get_simple_path(alex.base.global_transform.origin,result.position)
+			print(str(alex.base.global_transform.origin)+" -> "+str(result.position))
 			if Global.debug:
 				$ImmediateGeometry.draw(path)
 #			var path_ind = 0

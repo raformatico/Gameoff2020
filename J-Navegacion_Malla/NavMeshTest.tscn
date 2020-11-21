@@ -1,11 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://J-Navegacion_Malla/NavMeshManager.gd" type="Script" id=1]
-[ext_resource path="res://J-Navegacion_Malla/museo-simple.tscn" type="PackedScene" id=2]
+[ext_resource path="res://J-Navegacion_Malla/NavigationTest.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/characters/Alex2/Alex2.tscn" type="PackedScene" id=3]
 [ext_resource path="res://J-Navegacion_Malla/ImmediateGeometry.gd" type="Script" id=4]
 [ext_resource path="res://J-Navegacion_Malla/CameraManager.gd" type="Script" id=5]
-[ext_resource path="res://J-Navegacion_Malla/MiniEscenario.tscn" type="PackedScene" id=6]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 7.44442, 11.5846, 14.9387 )
@@ -52,14 +51,11 @@ script = ExtResource( 1 )
 script = ExtResource( 4 )
 
 [node name="destination" type="CSGSphere" parent="NavMeshManager"]
-transform = Transform( 0.1, 0, 0, 0, 1, 0, 0, 0, 0.1, 34.6616, 29.0211, 0 )
+transform = Transform( 2, 0, 0, 0, 5, 0, 0, 0, 2, 34.6616, 29.0211, 0 )
 
 [node name="origine" type="CSGSphere" parent="NavMeshManager"]
-transform = Transform( 0.1, 0, 0, 0, 1, 0, 0, 0, 0.1, 34.6616, 29.0211, 0 )
+transform = Transform( 2, 0, 0, 0, 5, 0, 0, 0, 2, 34.6616, 29.0211, 0 )
 material = SubResource( 4 )
-
-[node name="museo-simple" parent="." instance=ExtResource( 2 )]
-transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 0.742001, 0.188194, -0.643442, 0.657546, -0.391342, 0.643805, -0.130646, -0.900797, -0.414122, -17.9791, 12.7715, 0 )
@@ -76,11 +72,12 @@ directional_shadow_split_3 = 0.565
 directional_shadow_blend_splits = true
 directional_shadow_depth_range = 1
 
-[node name="micro-museum" parent="." instance=ExtResource( 6 )]
-visible = false
-
 [node name="Alex" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.36491, 2.065, -8.09507 )
+transform = Transform( 6, 0, 0, 0, 6, 0, 0, 0, 6, 30.276, 40.756, -8.09507 )
+speed = 500
+
+[node name="MiniTest" parent="." instance=ExtResource( 2 )]
+transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 5, 17.8021, 19.8263, 20.7091 )
 [connection signal="area_entered" from="CameraManager/area_1" to="CameraManager" method="_on_area_1_area_entered"]
 [connection signal="body_entered" from="CameraManager/area_1" to="CameraManager" method="_on_area_1_body_entered"]
 [connection signal="area_entered" from="CameraManager/area_2a" to="CameraManager" method="_on_area_2a_area_entered"]

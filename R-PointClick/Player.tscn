@@ -2,7 +2,6 @@
 
 [ext_resource path="res://R-PointClick/Player.gd" type="Script" id=1]
 
-
 [sub_resource type="CapsuleMesh" id=1]
 mid_height = 3.0
 
