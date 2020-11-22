@@ -1,7 +1,7 @@
 extends Control
 
-var tardis_portrait = "res://R-Dialogos/Tardi-dia.png"
-var alex_portrait = "res://R-Dialogos/Player-dia.png"
+var tardis_portrait = "res://Dialog/assets/Tardi-dia.png"
+var alex_portrait = "res://Dialog/assets/Player-dia.png"
 
 enum SIDE {LEFT, RIGHT}
 var character_talking : int = SIDE.LEFT
