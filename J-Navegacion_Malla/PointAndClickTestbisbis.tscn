@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Character/Alex.tscn" type="PackedScene" id=1]
+[ext_resource path="res://J-Navegacion_Malla/PointAndClickManager.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/hall/hall.tscn" type="PackedScene" id=4]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0, 0.313726, 0.984314, 1 )
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.996078, 0.00392157, 0.00392157, 1 )
+
+[node name="Spatial" type="Spatial"]
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( -0.662994, -0.678883, 0.315528, -0.146333, 0.530868, 0.834725, -0.734184, 0.507246, -0.451304, 6.53973, 14.3114, -3.21796 )
+
+[node name="PointAndClickManager" type="Node" parent="."]
+script = ExtResource( 3 )
+
+[node name="origine" type="CSGSphere" parent="PointAndClickManager"]
+transform = Transform( 0.2, 0, 0, 0, 1, 0, 0, 0, 0.2, 0, 29.4355, 0 )
+material = SubResource( 1 )
+
+[node name="destination" type="CSGSphere" parent="PointAndClickManager"]
+transform = Transform( 0.2, 0, 0, 0, 1, 0, 0, 0, 0.2, 0, 30.3968, 0 )
+material = SubResource( 2 )
+
+[node name="PathSearcherManager" type="Node" parent="."]
+
+[node name="Alex" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.18013, 0.2261, -3.85396 )
+speed = 3
+
+[node name="hall" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.73677, 0 )

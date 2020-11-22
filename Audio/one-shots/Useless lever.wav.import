@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Useless lever.wav-1abc096e0e7711faabb73c82c3d236ac.sample"
+
+[deps]
+
+source_file="res://Audio/one-shots/Useless lever.wav"
+dest_files=[ "res://.import/Useless lever.wav-1abc096e0e7711faabb73c82c3d236ac.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Switches Small.wav-36dd07fd4d428d9248cae709247eda63.sample"
+
+[deps]
+
+source_file="res://Audio/one-shots/Switches Small.wav"
+dest_files=[ "res://.import/Switches Small.wav-36dd07fd4d428d9248cae709247eda63.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

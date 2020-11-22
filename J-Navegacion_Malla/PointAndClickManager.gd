@@ -13,7 +13,7 @@ const Marker = preload("res://J-Navegacion_malla/Marker.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	alex=get_node("../Alex")
-	navigator=get_node("../Navigation")
+	navigator=get_node("../hall/Navigation")
 
 func _unhandled_input(event):
 	

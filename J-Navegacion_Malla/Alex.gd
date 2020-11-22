@@ -7,9 +7,9 @@ extends KinematicBody
 
 var path=null
 var target_point=null
-export var threshold=1
+export var threshold=1.0
 export var speed=10
-export var cant_walk_threshold=3
+export var cant_walk_threshold=3.0
 var cant_walk=0
 var foot
 
@@ -64,9 +64,11 @@ func start_boring():
 	$Timer.start(5)
 
 func set_path(path_):
-	path=path_
-	target_point=path[0]
-	look_at(target_point,Vector3.UP)
+	
+	if path_!=null and !path_.empty():
+		path=path_
+		target_point=path[0]
+		look_at(target_point,Vector3.UP)
 
 
 func _on_Timer_timeout():

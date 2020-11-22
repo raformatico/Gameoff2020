@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/hall.obj-70d5ad5fe9bde369459c7bee999d7126.mesh"
+
+[deps]
+
+files=[ "res://.import/hall.obj-70d5ad5fe9bde369459c7bee999d7126.mesh" ]
+
+source_file="res://Scenes/hall/hall.obj"
+dest_files=[ "res://.import/hall.obj-70d5ad5fe9bde369459c7bee999d7126.mesh", "res://.import/hall.obj-70d5ad5fe9bde369459c7bee999d7126.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

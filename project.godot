@@ -9,17 +9,17 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Reference",
+"base": "Resource",
 "class": "Inventory",
 "language": "GDScript",
 "path": "res://R-demos/R-Inventario/Items/Inventory.gd"
 }, {
-"base": "Reference",
+"base": "CenterContainer",
 "class": "InventorySlot",
 "language": "GDScript",
 "path": "res://UI/item_slot.gd"
 }, {
-"base": "Reference",
+"base": "Resource",
 "class": "ItemResource",
 "language": "GDScript",
 "path": "res://R-demos/R-Inventario/Items/Item.gd"
@@ -33,7 +33,7 @@ _global_script_class_icons={
 [application]
 
 config/name="BBC"
-run/main_scene="res://J-Navegacion_Malla/NavMeshTest.tscn"
+run/main_scene="res://J-Navegacion_Malla/PointAndClickTestbisbisbis.tscn"
 config/icon="res://icon.png"
 
 [autoload]
