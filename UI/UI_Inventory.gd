@@ -1,8 +1,8 @@
 extends Control
 
-var inventory_res : Inventory = preload("res://R-Inventario/Items/inventory.tres")
+var inventory_res : Inventory = preload("res://Inventory/inventory.tres")
 var inventory
-var inventory_slot_scn := load("res://R-Inventario/item_slot.tscn")
+var inventory_slot_scn := load("res://UI/item_slot.tscn")
 var slot_selected : InventorySlot
 
 onready var background : TextureRect = $background

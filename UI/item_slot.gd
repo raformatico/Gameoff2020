@@ -4,7 +4,7 @@ extends CenterContainer
 var slot_name
 onready var itemTexture := $TextureRect
 #TODO is that well done? Or may I connect all the slots with the UI with a signal 
-var inventory_res : Inventory = preload("res://R-Inventario/Items/inventory.tres")
+var inventory_res : Inventory = preload("res://Inventory/inventory.tres")
 
 func display_item(item : ItemResource) -> void:
 	itemTexture.texture = item.texture

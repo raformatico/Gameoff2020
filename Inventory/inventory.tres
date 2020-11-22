@@ -1,8 +1,8 @@
 [gd_resource type="Resource" load_steps=4 format=2]
 
-[ext_resource path="res://R-Inventario/Items/Inventory.gd" type="Script" id=1]
-[ext_resource path="res://R-Inventario/Items/potion.tres" type="Resource" id=2]
-[ext_resource path="res://R-Inventario/Items/armor.tres" type="Resource" id=3]
+[ext_resource path="res://Inventory/Inventory.gd" type="Script" id=1]
+[ext_resource path="res://Inventory/items/potion.tres" type="Resource" id=2]
+[ext_resource path="res://Inventory/items/armor.tres" type="Resource" id=3]
 
 [resource]
 script = ExtResource( 1 )
