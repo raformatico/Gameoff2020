@@ -6,6 +6,7 @@
 [node name="UI_Inventory" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -25,6 +26,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = 0.00012207
 margin_bottom = -780.0
+mouse_filter = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -45,6 +47,7 @@ visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 300.0
+mouse_filter = 1
 color = Color( 1, 1, 1, 0 )
 [connection signal="pressed" from="inventory_but" to="." method="_on_inventory_but_pressed"]
 [connection signal="gui_input" from="out_inventory" to="." method="_on_out_inventory_gui_input"]

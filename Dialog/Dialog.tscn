@@ -7,6 +7,7 @@
 [ext_resource path="res://Dialog/Dialog.gd" type="Script" id=5]
 
 [node name="Dialog" type="Control"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 5 )
