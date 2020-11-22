@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://J-Navegacion_Malla/MiniDialog.gd" type="Script" id=1]
+
+[node name="MiniDialog" type="Control"]
+anchor_right = 0.654
+anchor_bottom = 0.107
+margin_left = -2.0
+margin_top = 2.0
+margin_right = 0.319946
+margin_bottom = 0.439995
+mouse_filter = 1
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Text" type="RichTextLabel" parent="."]
+anchor_top = 9.377
+anchor_bottom = 9.377
+margin_left = 734.0
+margin_top = -152.978
+margin_right = 970.0
+margin_bottom = -121.978
+rect_scale = Vector2( 5, 5 )
+size_flags_horizontal = 15
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
