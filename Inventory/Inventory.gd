@@ -8,9 +8,10 @@ signal item_clicked(item_name)
 export (Array, Resource) var inventory
 
 var ItemDatabase = {
-	"armor" : load("res://R-Inventario/Items/armor.tres"),
-	"potion" : load("res://R-Inventario/Items/potion.tres")
+	"armor" : load("res://Inventory/items/armor.tres"),
+	"potion" : load("res://Inventory/items/potion.tres")
 }
+
 
 func list_items() -> void:
 	for i in inventory:

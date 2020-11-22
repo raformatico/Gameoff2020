@@ -9,6 +9,7 @@ onready var background : TextureRect = $background
 onready var out_inventory : TextureRect = $out_inventory
 onready var inventory_grid : GridContainer = $inventory_display
 onready var inventory_but : TextureButton = $inventory_but
+onready var dialog = get_node("../Dialog")
 
 func _ready() -> void:
 	inventory_res.connect("item_clicked", self, "_on_item_clicked")
@@ -69,3 +70,11 @@ func _on_inventory_but_pressed() -> void:
 func _on_out_inventory_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		hide_inventory()
+
+
+#TODO Connect this!!!
+func _on_Dialog_visibility_changed() -> void:
+	if dialog.visible:
+		visible = false
+	else:
+		visible = true

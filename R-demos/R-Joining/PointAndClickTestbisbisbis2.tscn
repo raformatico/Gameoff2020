@@ -28,6 +28,9 @@ material = SubResource( 2 )
 
 [node name="hall" parent="." instance=ExtResource( 2 )]
 
+[node name="Camera002_Orientation" parent="hall/Camera002" index="0"]
+current = true
+
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( -0.662994, -0.678883, 0.315528, -0.146333, 0.530868, 0.834725, -0.734184, 0.507246, -0.451304, 15.0246, 40.1707, -3.21796 )
 current = true
@@ -44,4 +47,6 @@ script = ExtResource( 4 )
 [node name="UI_Inventory" parent="." instance=ExtResource( 6 )]
 
 [node name="Dialog" parent="." instance=ExtResource( 5 )]
-[connection signal="arrived" from="Alex" to="SceneGameLogic" method="_on_Alex_arrived"]
+[connection signal="visibility_changed" from="Dialog" to="UI_Inventory" method="_on_Dialog_visibility_changed"]
+
+[editable path="hall"]

@@ -20,6 +20,7 @@ var foot
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	foot=$Foot
+	connect("arrived", Global,"_on_Alex_arrived")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
