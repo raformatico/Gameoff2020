@@ -1,0 +1,97 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scenes/museum-hall/ESCENARIO MUSEO_ESCALA.dae" type="PackedScene" id=1]
+[ext_resource path="res://GameEngine/CameraBox.gd" type="Script" id=2]
+
+[sub_resource type="NavigationMesh" id=1]
+vertices = PoolVector3Array( -0.303979, 0, -0.369839, 0.86749, 0, -0.965268, -0.536585, 0, -0.965268, -0.0108333, 0, 0.0746729, 0.86749, 0, -0.133732, -0.45522, 0, -0.133557, -0.628029, 0, -0.369964, -0.628029, 0, -0.965268, -0.45522, 0, 0.0746729, -0.902361, 0, -0.133732, -0.652439, 3.45136, 0.10364, -0.628029, 0, -0.133732, -0.904712, 3.45136, 0.10364, -0.652439, 3.45136, 0.206829, -0.652439, 3.45136, 0.10364, -0.536585, 3.45136, 0.185436, 1.16047, 3.45136, 0.131325, -0.536585, 3.45136, 0.131325, 0.86749, 0, 1, -0.45522, 0, 0.60177, -0.45522, 0, 1, 0.86749, 0, 0.60177, 0.151537, 0, 0.555587, -2.21856, 3.45136, 0.0749487, -2.41228, 3.45136, 0.178137, -2.21856, 3.45136, 0.178137, -1.11159, 3.45136, 0.0145457, -2.21856, 3.45136, 0.0145457, -2.60024, 3.45136, 0.0749487, -3.67926, 3.45136, 0.0145457, -3.67926, 3.45136, 0.10364, -2.60024, 3.45136, 0.526461, -3.67926, 3.45136, 0.206829, -3.67926, 3.45136, 0.526461, -2.60024, 3.45136, 0.178137, 3.49099, 3.45136, 0.129894, 4.44068, 3.45136, 0.206829, 4.44068, 3.45136, 0.129312, 1.16047, 3.45136, 0.365614, 2.23547, 3.45136, 0.516142, 2.23547, 3.45136, 0.364542, -0.536585, 3.45136, 0.45988, -0.589671, 3.45136, 0.526461, -0.536585, 3.45136, 0.526461, -0.902361, 0, -0.965268, -0.902361, 0, -0.369964, -1.02179, 3.45136, 0.464057, -0.652439, 3.45136, 0.464057, -1.11159, 3.45136, 0.10364, -1.11159, 3.45136, 0.206829, -1.42253, 3.45136, 0.46216, -2.41228, 3.45136, 0.0749487, 0.86749, 0, 0.509405, -0.45522, 0, 0.509405, -1.57598, 3.45136, 0.526461, -2.20518, 3.45136, 0.458455, -2.20194, 3.45136, 0.526461, -0.0798863, 0, 0.226253, 0.537394, 0, 0.0746729, -0.45522, 0, 0.226253, 0.86749, 0, 0.109661, -0.45522, 0, 0.109661, 0.86749, 0, 0.0746729, 0.614361, 0, 0.226253, 0.86749, 0, 0.226253, 2.86323, 3.45136, 0.399706, 2.86323, 3.45136, 0.516142, 1.16047, 3.45136, 0.185436, 2.23547, 3.45136, 0.130665, 3.49099, 3.45136, 0.377225, 4.44068, 3.45136, 0.516142, 4.44068, 3.45136, 0.375351, 2.86323, 3.45136, 0.260335, 2.86323, 3.45136, 0.13028, 3.49099, 3.45136, 0.288772, 2.23547, 3.45136, 0.289541, 3.49099, 3.45136, 0.516142, -0.628029, 0, -0.189626, -0.902361, 0, -0.189626, 0.645539, 0, -0.189595, -0.286334, 0, -0.189463, -0.902361, 0, -0.133732, -0.628029, 0, -0.133732, -0.628029, 0, -0.159955, -0.455413, 0, -0.159955, 0.86749, 0, -0.189626, 0.645552, 0, -0.36994, 0.86749, 0, -0.369964, -0.904712, 3.45136, 0.10364, 0.490882, 0, 0.555587, -2.60024, 3.45136, 0.0145457, 1.16047, 3.45136, 0.516142, -0.536585, 3.45136, 0.45988, -0.589671, 3.45136, 0.526461 )
+polygons = [ PoolIntArray( 0, 2, 1 ), PoolIntArray( 3, 5, 4 ), PoolIntArray( 6, 7, 2 ), PoolIntArray( 8, 5, 3 ), PoolIntArray( 9, 11, 10 ), PoolIntArray( 12, 14, 13 ), PoolIntArray( 15, 17, 16 ), PoolIntArray( 18, 20, 19 ), PoolIntArray( 21, 19, 22 ), PoolIntArray( 23, 25, 24 ), PoolIntArray( 23, 27, 26 ), PoolIntArray( 28, 30, 29 ), PoolIntArray( 31, 33, 32 ), PoolIntArray( 34, 32, 30 ), PoolIntArray( 35, 37, 36 ), PoolIntArray( 38, 40, 39 ), PoolIntArray( 41, 43, 42 ), PoolIntArray( 17, 15, 13 ), PoolIntArray( 6, 45, 44 ), PoolIntArray( 13, 47, 46 ), PoolIntArray( 48, 49, 25 ), PoolIntArray( 46, 50, 49 ), PoolIntArray( 51, 24, 34 ), PoolIntArray( 13, 15, 41 ), PoolIntArray( 22, 53, 52 ), PoolIntArray( 54, 56, 55 ), PoolIntArray( 50, 55, 25 ), PoolIntArray( 57, 3, 58 ), PoolIntArray( 53, 59, 57 ), PoolIntArray( 60, 61, 61 ), PoolIntArray( 4, 62, 58 ), PoolIntArray( 57, 63, 52 ), PoolIntArray( 63, 64, 52 ), PoolIntArray( 65, 66, 39 ), PoolIntArray( 67, 16, 68 ), PoolIntArray( 69, 71, 70 ), PoolIntArray( 72, 73, 35 ), PoolIntArray( 74, 36, 71 ), PoolIntArray( 75, 40, 38 ), PoolIntArray( 68, 73, 72 ), PoolIntArray( 65, 69, 76 ), PoolIntArray( 77, 78, 45 ), PoolIntArray( 77, 6, 0 ), PoolIntArray( 5, 80, 79 ), PoolIntArray( 81, 83, 82 ), PoolIntArray( 84, 83, 77 ), PoolIntArray( 79, 85, 4 ), PoolIntArray( 1, 87, 86 ), PoolIntArray( 86, 87, 85 ), PoolIntArray( 83, 81, 78 ), PoolIntArray( 80, 5, 84 ), PoolIntArray( 0, 1, 86 ), PoolIntArray( 3, 4, 58 ), PoolIntArray( 6, 2, 0 ), PoolIntArray( 9, 10, 88 ), PoolIntArray( 12, 13, 49 ), PoolIntArray( 15, 16, 67 ), PoolIntArray( 18, 19, 21 ), PoolIntArray( 21, 22, 89 ), PoolIntArray( 23, 24, 51 ), PoolIntArray( 23, 26, 48 ), PoolIntArray( 28, 29, 90 ), PoolIntArray( 31, 32, 34 ), PoolIntArray( 34, 30, 28 ), PoolIntArray( 35, 36, 74 ), PoolIntArray( 38, 39, 91 ), PoolIntArray( 92, 93, 47 ), PoolIntArray( 17, 13, 14 ), PoolIntArray( 6, 44, 7 ), PoolIntArray( 13, 46, 49 ), PoolIntArray( 48, 25, 23 ), PoolIntArray( 51, 34, 28 ), PoolIntArray( 13, 41, 47 ), PoolIntArray( 22, 52, 89 ), PoolIntArray( 54, 55, 50 ), PoolIntArray( 50, 25, 49 ), PoolIntArray( 57, 58, 63 ), PoolIntArray( 60, 61, 60 ), PoolIntArray( 57, 52, 53 ), PoolIntArray( 65, 39, 40 ), PoolIntArray( 67, 68, 75 ), PoolIntArray( 69, 70, 76 ), PoolIntArray( 72, 35, 74 ), PoolIntArray( 74, 71, 69 ), PoolIntArray( 75, 38, 67 ), PoolIntArray( 68, 72, 75 ), PoolIntArray( 65, 76, 66 ), PoolIntArray( 77, 45, 6 ), PoolIntArray( 77, 0, 80 ), PoolIntArray( 5, 79, 4 ), PoolIntArray( 84, 77, 80 ), PoolIntArray( 86, 85, 79 ), PoolIntArray( 83, 78, 77 ) ]
+
+[sub_resource type="ConcavePolygonShape" id=2]
+data = PoolVector3Array( 1, 0, -0.1337, -0.5366, 0, -0.1337, -0.5366, 0, -1, 1, 0, 1, -0.5366, 0, 1, -0.5366, 0, 0.1097, -0.5366, 0, -0.1337, -1, 0, -0.1337, -1, 0, -1, 1, 0, 0.1097, -0.5366, 0, 0.1097, -0.5366, 0, -0.1337, -1, 0, -0.1337, -0.5366, 0, -0.1337, -0.5366, 3.4514, 0.1036, -1, 3.4514, 0.1036, -0.5366, 3.4514, 0.1036, -0.5366, 3.4514, 0.2068, -0.5366, 3.4514, 0.2068, -0.5366, 3.4514, 0.1036, 1.021, 3.4514, 0.1036, -1, 3.4514, 0.2068, -0.5366, 3.4514, 0.2068, -0.5366, 3.4514, 0.5491, -1, 3.4514, 0.2068, -1, 3.4514, 0.5491, -2.4123, 3.4514, 0.5491, -1, 3.4514, 0.1036, -1, 3.4514, 0.2068, -2.4123, 3.4514, 0.2068, -1, 3.4514, 0.1036, -2.4123, 3.4514, 0.1036, -2.4123, 3.4514, -0.0096, -2.4123, 3.4514, -0.0096, -2.4123, 3.4514, 0.1036, -3.8187, 3.4514, 0.1036, -2.4123, 3.4514, 0.2068, -2.4123, 3.4514, 0.5491, -3.8187, 3.4514, 0.5491, -2.4123, 3.4514, 0.1036, -2.4123, 3.4514, 0.2068, -3.8187, 3.4514, 0.2068, 1.021, 3.4514, 0.2068, 1.021, 3.4514, 0.1036, 4.6011, 3.4514, 0.1036, 1.021, 3.4514, 0.2068, 4.6011, 3.4514, 0.2068, 4.6011, 3.4514, 0.5479, 1, 0, -0.1337, -0.5366, 0, -1, 1, 0, -1, 1, 0, 1, -0.5366, 0, 0.1097, 1, 0, 0.1097, -0.5366, 0, -0.1337, -1, 0, -1, -0.5366, 0, -1, 1, 0, 0.1097, -0.5366, 0, -0.1337, 1, 0, -0.1337, -1, 0, -0.1337, -0.5366, 3.4514, 0.1036, -1, 3.4514, 0.1036, -1, 3.4514, 0.1036, -0.5366, 3.4514, 0.2068, -1, 3.4514, 0.2068, -0.5366, 3.4514, 0.2068, 1.021, 3.4514, 0.1036, 1.021, 3.4514, 0.2068, -1, 3.4514, 0.2068, -0.5366, 3.4514, 0.5491, -1, 3.4514, 0.5491, -1, 3.4514, 0.2068, -2.4123, 3.4514, 0.5491, -2.4123, 3.4514, 0.2068, -1, 3.4514, 0.1036, -2.4123, 3.4514, 0.2068, -2.4123, 3.4514, 0.1036, -1, 3.4514, 0.1036, -2.4123, 3.4514, -0.0096, -1, 3.4514, -0.0096, -2.4123, 3.4514, -0.0096, -3.8187, 3.4514, 0.1036, -3.8187, 3.4514, -0.0096, -2.4123, 3.4514, 0.2068, -3.8187, 3.4514, 0.5491, -3.8187, 3.4514, 0.2068, -2.4123, 3.4514, 0.1036, -3.8187, 3.4514, 0.2068, -3.8187, 3.4514, 0.1036, 1.021, 3.4514, 0.2068, 4.6011, 3.4514, 0.1036, 4.6011, 3.4514, 0.2068, 1.021, 3.4514, 0.2068, 4.6011, 3.4514, 0.5479, 1.021, 3.4514, 0.5479 )
+
+[sub_resource type="BoxShape" id=5]
+extents = Vector3( 4.57116, 3.8933, 8.02254 )
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 7.86797, 2.03958, 3.60188 )
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 3.66881, 1.86178, 5.51233 )
+
+[node name="ESCENARIO MUSEO_ESCALA" instance=ExtResource( 1 )]
+
+[node name="Sun" parent="." index="18"]
+transform = Transform( 1, 0, 0, 0, -0.127065, 0.991894, 0, -0.991894, -0.127065, 2.64483, 13.9396, 22.897 )
+shadow_enabled = true
+omni_range = 22.1087
+
+[node name="Point002" parent="." index="37"]
+shadow_enabled = true
+omni_range = 6.75351
+
+[node name="_p1002" parent="." index="43"]
+visible = false
+
+[node name="_p1001" parent="." index="44"]
+transform = Transform( -0.645805, 0, 0.763502, 0, 1, 0, -0.763502, 0, -0.645805, 0.241369, 2.93771, 7.73876 )
+visible = false
+
+[node name="Spot" parent="." index="51"]
+shadow_enabled = true
+omni_range = 16.8463
+
+[node name="NavigationManager" type="Node" parent="." index="53"]
+
+[node name="Navigation" type="Navigation" parent="NavigationManager" index="0"]
+
+[node name="Floor" type="NavigationMeshInstance" parent="NavigationManager/Navigation" index="0"]
+transform = Transform( 3.38231, 0, 0, 0, 1, 0, 0, 0, 15.621, -0.203809, 2.11409, 19.4841 )
+navmesh = SubResource( 1 )
+
+[node name="Floor2" type="StaticBody" parent="NavigationManager" index="1"]
+transform = Transform( 3.38231, 0, 0, 0, 1, 0, 0, 0, 15.621, -0.203809, 2.11409, 19.4841 )
+
+[node name="shape0" type="CollisionShape" parent="NavigationManager/Floor2" index="0"]
+shape = SubResource( 2 )
+
+[node name="CameraManager" type="Node" parent="." index="54"]
+
+[node name="Area2" type="Area" parent="CameraManager" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.25321, 11.0312 )
+script = ExtResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="CameraManager/Area2" index="0"]
+shape = SubResource( 5 )
+
+[node name="camera" type="Camera" parent="CameraManager/Area2" index="1"]
+transform = Transform( -0.638166, -0.713893, 0.288273, 0.101056, 0.293519, 0.950597, -0.763238, 0.63577, -0.11517, 1.34619, 8.67702, 2.18997 )
+fov = 44.2006
+near = 0.1
+
+[node name="Area4" type="Area" parent="CameraManager" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.89757, 11.4103, 24.6768 )
+script = ExtResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="CameraManager/Area4" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.13943, -3.73329, 0 )
+shape = SubResource( 4 )
+
+[node name="camera" type="Camera" parent="CameraManager/Area4" index="1"]
+transform = Transform( -0.95424, -0.274943, 0.117609, 0, 0.393289, 0.919415, -0.299041, 0.877343, -0.375292, 1.19349, 2.1698, -2.03219 )
+fov = 54.4123
+near = 0.1
+
+[node name="Area3" type="Area" parent="CameraManager" index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.83423, -4.766, 23.6934 )
+script = ExtResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="CameraManager/Area3" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.43371, 10.2711, 0 )
+shape = SubResource( 3 )
+
+[node name="camera" type="Camera" parent="CameraManager/Area3" index="1"]
+transform = Transform( -0.728969, -0.578243, 0.366388, 0, 0.535227, 0.844708, -0.684547, 0.615766, -0.390164, 9.18842, 22.2918, -5.14095 )
+current = true
+fov = 31.3844
+near = 0.1

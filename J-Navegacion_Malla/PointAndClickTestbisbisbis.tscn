@@ -26,10 +26,6 @@ material = SubResource( 2 )
 
 [node name="hall" parent="." instance=ExtResource( 2 )]
 
-[node name="Camera" type="Camera" parent="."]
-transform = Transform( -0.662994, -0.678883, 0.315528, -0.146333, 0.530868, 0.834725, -0.734184, 0.507246, -0.451304, 15.0246, 40.1707, -3.21796 )
-current = true
-
 [node name="PathSearcherManager" type="Node" parent="."]
 
 [node name="Alex" parent="." instance=ExtResource( 1 )]

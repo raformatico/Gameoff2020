@@ -1,21 +1,22 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scenes/hall/hall4.dae" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/hall/Statue.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/hall/suelo.material" type="Material" id=3]
 [ext_resource path="res://Scenes/hall/CameraManager.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/hall/CameraBox.gd" type="Script" id=5]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.102627, 0.994316, 0.180445 )
 
 [sub_resource type="BoxShape" id=2]
-extents = Vector3( 5.91111, 15.5347, 10.9332 )
+extents = Vector3( 8.81451, 6.78157, 21.1206 )
 
 [sub_resource type="BoxShape" id=3]
-extents = Vector3( 10.4701, 8.52857, 12.4992 )
+extents = Vector3( 10.7875, 7.38756, 9.82162 )
 
 [sub_resource type="BoxShape" id=4]
-extents = Vector3( 8.12443, 11.635, 7.75905 )
+extents = Vector3( 12.2972, 4.56172, 7.62216 )
 
 [sub_resource type="NavigationMesh" id=5]
 vertices = PoolVector3Array( 0.736913, 0, -0.197669, 0.477645, 0, -0.900134, 0.495864, 0, -0.185405, -0.336343, 0, 0.119444, -0.15001, 0, 1, -0.1355, 0, 0.119444, -0.842148, 0, 0.119444, -0.561979, 0.914737, 0.439038, -0.567053, 0, 0.119444, -0.842148, 0, -0.197669, -0.567053, 0, -0.900134, -0.842148, 0, -0.900134, -0.914024, 0.914737, 0.455105, -0.567053, 0.914737, 0.506147, -0.561979, 0.914737, 0.439038, 0.979074, 0.914737, 0.506147, 3.80019, 0.914737, 0.449556, 0.979074, 0.914737, 0.449556, -0.961972, 0.914737, 0.531113, -1.97634, 0.914737, 0.455105, -1.97634, 0.914737, 0.531113, -1.10417, 0.914737, 0.329524, -1.97634, 0.914737, 0.241503, -1.97634, 0.914737, 0.329524, -1.62884, 0.914737, 0.787319, -0.961972, 0.914737, 0.936587, -0.782233, 0.914737, 0.787319, -0.567053, 0.914737, 0.936587, -0.567053, 0.914737, 0.778128, -0.344182, 0.914737, 0.506147, -0.342853, 0.914737, 0.440534, 3.80019, 0.914737, 0.531113, 0.979074, 0.914737, 0.938899, 3.80019, 0.914737, 0.938899, -1.97634, 0.914737, 0.416431, -1.08068, 0.914737, 0.429273, -0.782233, 0.914737, 0.611317, -0.567053, 0.914737, 0.591289, -1.62531, 0.914737, 0.611317, -0.475422, 0, 0.0334477, -0.842148, 0, 0.0334477, 0.736913, 0, 0.0334477, 0.495864, 0, 0.0334477, -1.97634, 0.914737, 0.611317, -1.97634, 0.914737, 0.787319, -1.97634, 0.914737, 0.936587, -0.234455, 0, 0.0334477, -0.567053, 0, 0.119444, -0.842148, 0, 0.119444, -0.234455, 0, -0.185405, -0.475422, 0, -0.197669, 0.523517, 0, 0.119444, 0.736913, 0, 1, 0.736913, 0, 0.119444, -0.323036, 0, -0.900134, 0.519968, 0, 1, 0.736913, 0, -0.900134, -0.354193, 0, 1, -0.842148, 0, 0.119444, -0.914024, 0.914737, 0.455105, -0.561979, 0.914737, 0.439038, -1.09055, 0.914737, 0.241503 )
@@ -58,49 +59,43 @@ shape = SubResource( 1 )
 [node name="stand-position" type="Spatial" parent="Cube027/Cube027" index="1"]
 transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0.994506, 2.52155, 6.27183 )
 
-[node name="Cameras" type="Spatial" parent="." index="55"]
-transform = Transform( -0.984267, 0.494704, 0.780754, 1.23289e-08, 1.14054, -0.722673, -0.924289, -0.526806, -0.831419, 11.0546, 35.1918, 13.0457 )
+[node name="CameraManager" type="Node" parent="." index="55"]
+script = ExtResource( 4 )
 
-[node name="Area3" type="Area" parent="Cameras" index="0"]
-transform = Transform( 0.987675, -0.131303, -0.0851906, 0.149334, 0.953532, 0.261678, 0.0468728, -0.271175, 0.961388, 8.73432, -4.33458, 7.82574 )
+[node name="Area2" type="Area" parent="CameraManager" index="0"]
+script = ExtResource( 5 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Cameras/Area3" index="0" groups=[
-"camera_manager",
-]]
-transform = Transform( 0.0954978, -0.749064, -0.655578, 0.953658, -0.119934, 0.275956, -0.285335, -0.651551, 0.702898, 6.38619, -19.5725, 4.05608 )
+[node name="CollisionShape" type="CollisionShape" parent="CameraManager/Area2" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.71476 )
 shape = SubResource( 2 )
 
-[node name="Camera002_Orientation" type="Camera" parent="Cameras/Area3" index="1"]
-transform = Transform( 0.740621, -1.19209e-07, -1.71363e-07, 1.56462e-07, -1.04308e-07, 0.74062, -5.96046e-08, -0.74062, -1.11759e-07, 2.3194, 7.84002, 2.0082 )
+[node name="camera" type="Camera" parent="CameraManager/Area2" index="1"]
+transform = Transform( -0.638166, -0.713893, 0.288273, 0.101056, 0.293519, 0.950597, -0.763238, 0.63577, -0.115171, 9.41211, 34.1759, -4.58361 )
 current = true
 fov = 54.5
 near = 0.1
 
-[node name="Area" type="Area" parent="Cameras" index="1" groups=[
-"camera_manager",
-]]
-transform = Transform( 0.738167, 0.0574691, -0.0180275, 0.0114758, 0.0834167, 0.735819, 0.0591269, -0.733661, 0.0822498, -0.273821, 14.9657, -1.28603 )
+[node name="Area3" type="Area" parent="CameraManager" index="1"]
+script = ExtResource( 5 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Cameras/Area" index="0"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20.1598, -2.85544, -43.651 )
+[node name="CollisionShape" type="CollisionShape" parent="CameraManager/Area3" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.79641, 12.9756, 26.7367 )
 shape = SubResource( 3 )
 
-[node name="Camera003_Orientation" type="Camera" parent="Cameras/Area" index="1"]
-transform = Transform( 1, 0, 0, -2.98023e-08, 1, 2.98023e-08, 2.98023e-08, -2.98023e-08, 1, 0, 0, 0 )
+[node name="camera" type="Camera" parent="CameraManager/Area3" index="1"]
+transform = Transform( -0.674713, -0.588107, 0.445973, -0.0296408, 0.625337, 0.779792, -0.737485, 0.512917, -0.439355, 19.9053, 52.6602, 6.484 )
 fov = 27.0786
 near = 0.1
 
-[node name="Area2" type="Area" parent="Cameras" index="2"]
-transform = Transform( 0.900319, 0.171172, 0.400158, -0.232947, 0.966154, 0.110828, -0.367643, -0.192997, 0.90972, -14.4189, -3.57846, 6.94519 )
+[node name="Area4" type="Area" parent="CameraManager" index="2"]
+script = ExtResource( 5 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Cameras/Area2" index="0" groups=[
-"camera_manager",
-]]
-transform = Transform( 0.954592, 0.00978369, 0.297756, -0.126051, 0.918853, 0.373923, -0.269936, -0.394476, 0.878364, 4.59986, -4.48357, -3.40195 )
+[node name="CollisionShape" type="CollisionShape" parent="CameraManager/Area4" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5598, 10.681, 26.5052 )
 shape = SubResource( 4 )
 
-[node name="Camera004_Orientation" type="Camera" parent="Cameras/Area2" index="1"]
-transform = Transform( 0.740621, 1.49012e-07, -5.21541e-08, 1.49012e-08, -4.47035e-08, 0.74062, 0, -0.740621, 4.47035e-08, -9.53674e-06, 16.711, 0 )
+[node name="camera" type="Camera" parent="CameraManager/Area4" index="1"]
+transform = Transform( -0.95424, -0.274943, 0.11761, 0.051044, 0.237762, 0.969981, -0.294653, 0.931598, -0.212848, 30.321, 39.0193, 23.2417 )
 fov = 48.9461
 near = 0.1
 
@@ -129,10 +124,4 @@ shape = SubResource( 7 )
 
 [node name="stand-position" type="Spatial" parent="Clickables/Statue/Statue" index="1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.65235, -0.875001, -0.837291 )
-
-[node name="CameraManager" type="Node" parent="." index="63"]
-script = ExtResource( 4 )
-[connection signal="body_entered" from="Cameras/Area3" to="CameraManager" method="_on_Area_body_entered_camera2"]
-[connection signal="body_entered" from="Cameras/Area" to="CameraManager" method="_on_Area_body_entered_camera3"]
-[connection signal="body_entered" from="Cameras/Area2" to="CameraManager" method="_on_Area_body_entered_camera4"]
 [connection signal="input_event" from="Clickables/Statue/Statue" to="Clickables/Statue" method="_on_Area_input_event"]

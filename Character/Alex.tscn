@@ -2001,7 +2001,9 @@ tracks/42/keys = PoolRealArray( 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1.06667, 1, 
 radius = 0.565082
 height = 1.52833
 
-[node name="Alex" type="KinematicBody"]
+[node name="Alex" type="KinematicBody" groups=[
+"Character",
+]]
 script = ExtResource( 3 )
 
 [node name="Alex" type="Spatial" parent="."]

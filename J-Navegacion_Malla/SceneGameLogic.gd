@@ -12,8 +12,8 @@ func _ready():
 #	var clickables=get_nodes_in_group("clickables")
 #
 #	for clickable in clickables:
-		dialog=get_node("../MiniDialog/")
-
+		# dialog=get_node("../MiniDialog/")
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
