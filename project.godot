@@ -33,7 +33,7 @@ _global_script_class_icons={
 [application]
 
 config/name="BBC"
-run/main_scene="res://Scenes/museum-hall/Room.tscn"
+run/main_scene="res://Scenes/museum-prefinal/Room.tscn"
 config/icon="res://icon.png"
 
 [autoload]

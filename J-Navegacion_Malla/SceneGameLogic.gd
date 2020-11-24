@@ -21,4 +21,4 @@ func _ready():
 
 
 func _on_Alex_arrived(object):
-	dialog.set_text("Oh! This is a "+str(object.name))
+	print("SceneLogic: Oh! This is a "+str(object.name))

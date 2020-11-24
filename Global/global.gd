@@ -15,4 +15,5 @@ var status = {
 }
 
 func _on_Alex_arrived(object) -> void:
-	emit_signal("start_dialog",object.name, status[object.name])
+	if object.name in status:
+		emit_signal("start_dialog",object.name, status[object.name])

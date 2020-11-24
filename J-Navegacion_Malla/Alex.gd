@@ -13,6 +13,7 @@ var target_object=null
 
 export var threshold=1.0
 export var speed=10
+export var animation_speed=1.0
 export var cant_walk_threshold=3.0
 var cant_walk=0
 var foot
@@ -21,7 +22,8 @@ var foot
 func _ready():
 	foot=$Foot
 	connect("arrived", Global,"_on_Alex_arrived")
-
+	$AnimationPlayer.playback_speed = animation_speed
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	# var direction=-Vector3.UP*speed
@@ -57,7 +59,10 @@ func _physics_process(delta):
 			grav.y=-10
 		
 		if target_point!=null:
-			$AnimationPlayer.play("Walk")
+			
+			if $AnimationPlayer.current_animation!="Walk":
+				$AnimationPlayer.play("Walk")
+				
 			look_at(target_point,Vector3.UP)
 			rotation.x=0
 			

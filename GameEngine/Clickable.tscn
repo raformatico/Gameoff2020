@@ -1,0 +1,10 @@
+[gd_scene format=2]
+
+[node name="clickable" type="StaticBody" groups=[
+"clickable",
+]]
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+
+[node name="stand-position" type="Spatial" parent="."]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0.886782 )
