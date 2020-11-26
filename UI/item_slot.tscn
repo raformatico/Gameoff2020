@@ -19,4 +19,17 @@ margin_right = 1035.0
 margin_bottom = 615.0
 rect_min_size = Vector2( 150, 150 )
 stretch_mode = 4
+
+[node name="Label" type="Label" parent="TextureRect"]
+visible = false
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -40.0
+margin_top = -14.0
+text = "0/5"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="gui_input" from="TextureRect" to="." method="_on_TextureRect_gui_input"]

@@ -4,6 +4,7 @@ var inventory_res : Inventory = preload("res://Inventory/inventory.tres")
 var inventory
 var inventory_slot_scn := load("res://UI/item_slot.tscn")
 var slot_selected : InventorySlot
+var i : int = 0
 
 onready var background : TextureRect = $background
 onready var out_inventory : TextureRect = $out_inventory
@@ -23,12 +24,27 @@ func _ready() -> void:
 		inventory_grid.add_child(slot)
 		slot.display_item(inventory[i])
 
+
+func _unhandled_input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("next_dialog"):
+		if i == 0:
+			inventory_res.add_item("potion")
+		if i == 1:
+			inventory_res.add_item("armor")
+		if i > 1:
+			inventory_res.add_item("potion")
+		i += 1
+
 func _on_item_added(item : ItemResource) -> void:
-	inventory_grid.columns += 1
-	var slot : InventorySlot = inventory_slot_scn.instance()
-	inventory_grid.add_child(slot)
-	
-	slot.display_item(item)
+	if item.quantity == 1:	
+		inventory_grid.columns += 1
+		var slot : InventorySlot = inventory_slot_scn.instance()
+		inventory_grid.add_child(slot)
+		slot.display_item(item)
+	else:
+		for slot in inventory_grid.get_children():
+			if slot.slot_name == item.name:
+				slot.display_item(item)
 
 
 func _on_item_deleted(item : ItemResource, index : int) -> void:

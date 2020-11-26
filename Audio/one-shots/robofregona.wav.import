@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/robofregona.wav-58630f4d93aa267c27c58668a5c75d38.sample"
+
+[deps]
+
+source_file="res://Audio/one-shots/robofregona.wav"
+dest_files=[ "res://.import/robofregona.wav-58630f4d93aa267c27c58668a5c75d38.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

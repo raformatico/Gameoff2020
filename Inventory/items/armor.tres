@@ -8,3 +8,5 @@ script = ExtResource( 1 )
 name = "armor"
 type = 0
 texture = ExtResource( 2 )
+max_stack = 0
+quantity = 1
