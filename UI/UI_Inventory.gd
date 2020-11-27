@@ -25,16 +25,6 @@ func _ready() -> void:
 		slot.display_item(inventory[i])
 
 
-func _unhandled_input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("next_dialog"):
-		if i == 0:
-			inventory_res.add_item("potion")
-		if i == 1:
-			inventory_res.add_item("armor")
-		if i > 1:
-			inventory_res.add_item("potion")
-		i += 1
-
 func _on_item_added(item : ItemResource) -> void:
 	if item.quantity == 1:	
 		inventory_grid.columns += 1
@@ -94,3 +84,11 @@ func _on_Dialog_visibility_changed() -> void:
 		visible = false
 	else:
 		visible = true
+
+
+func _on_Dialog_show_dialog() -> void:
+	hide()
+
+
+func _on_Dialog_hide_dialog() -> void:
+	show()

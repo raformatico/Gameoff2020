@@ -1,16 +1,11 @@
 extends Node
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
 export var ray_length=1000
 var alex
 var navigator
 const Marker = preload("res://J-Navegacion_malla/Marker.tscn")
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	alex=get_node("../Alex")
 	navigator=get_node("../room/NavigationManager/Navigation")

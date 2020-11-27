@@ -15,28 +15,67 @@ var current_character := "Alex"
 var current_dialog : Array
 var text_count := 0
 
-var potion = "potion"
-var armor = "armor"
+var wax = "potion"
+var cup = "armor"
 
 
 
 var dialog_dictionary = {
-	"door_scene1" : {
-		"without_keys" : [["Alex","No tengo las llaves"],["Tardis","Pues a por ellas campeón"],["Alex", "Ok"],[OBJECT, potion]],
-		"with_keys" : [["Tardis", "Si no hubiera sido por mi no las habrías encontrado"],["Alex", "Gracias amiguito"]],
-	},
 	"Statue" : {
-		"without_armor" : [["Alex","Este se parece a mi hermano"],["Tardis","Pues es el Gran hermano! Ponte una armadura para enfrentarte a él"],[NEXT_STATE,"Cube027","with_statue"]],
-		"with_armor" : [["Tardis", "A por él!!!!!"],["Alex", "Lavin me lo he cargao!"],["Tardis", "Pues coge la poción y vete de aquí"],[OBJECT, potion, "Statue", "win_battle"]],
-		"win_battle" : [["Tardis", "Pobrecito vaya paliza le diste"],["Alex", "La verdad es que sí, pobre"]]
+		"start" : [["Alex","Este se parece a mi hermano"],["Tardis","Pues es el Gran hermano! Llegó a esta estación en 1984, bonito número, eh?"],["Alex","No te entiendo muy bien..."],[NEXT_STATE,"Statue","read1"]],
+		"read1" : [["Alex", "Cuándo decías que llegó el Gran Hermano aquí?"],["Tardis", "En 1984..."],[NEXT_STATE,"Statue","read2"]],
+		"read2" : [["Tardis", "Ya hemos hablado de esto... Llegó en 1984"],["Alex", "Que sí, que sí!"],[NEXT_STATE,"Statue","read1"]]
 	},
-	"Cube027" : {
-		"without_statue" : [["Tardis", "Aquí hay algo para protegerte"],["Alex","No me interesa..."]],
-		"with_statue" : [["Alex","No me vendría mal la protección ahora..."],["Tardis", "Pues coge eso y póntelo de armadura"],[OBJECT, armor,"Statue","with_armor","Cube027","with_armor"]],
-		"with_armor" : [["Alex","Qué solo está esto sin armadura..."]]
+	"Wax1" : {
+		#"start" : [["Tardis", "Wax1"],["Alex", "Cogida!"],[OBJECT, wax,"Statue","with_armor","Cube027","with_armor"]]
+		"start" : [["Tardis", "Wax1"],["Alex", "Cogida!"],[OBJECT, wax]]
+	},
+	"Wax2" : {
+		"start" : [["Tardis", "Wax2"],["Alex", "Cogida!"]]
+	},
+	"Wax3" : {
+		"start" : [["Tardis", "Wax3"],["Alex", "Cogida!"]]
+	},
+	"Wax4" : {
+		"start" : [["Tardis", "Wax4"],["Alex", "Cogida!"]]
+	},
+	"Wax5" : {
+		"start" : [["Tardis", "Wax5"],["Alex", "Cogida!"]]
+	},
+	"Cup" : {
+		"start" : [["Alex", "Anda una taza!"],["Tardis", "Cógela que nunca se sabe cuando vendrá bien un buen Whisky!"],[OBJECT, cup]]
+	},
+	"McMoon" : {
+		"start" : [["Tardis", "Un McMoon"],["Alex", "Que sí pesado!"]]
+	},
+	"Vitrina1" : {
+		"start" : [["Tardis", "Hermano mayor pegando 1"],["Alex", "Que sí pesado!"]]
+	},
+	"Vitrina2" : {
+		"start" : [["Tardis", "Hermano mayor pegando 2"],["Alex", "Que sí pesado!"]]
+	},
+	"Vitrina3" : {
+		"start" : [["Tardis", "Hermano mayor pegando 3"],["Alex", "Que sí pesado!"]]
+	},
+	"Cuadro1" : {
+		"start" : [["Tardis", "Hermano mayor pegando 1"],["Alex", "Que sí pesado!"]]
+	},
+	"Cuadro2" : {
+		"start" : [["Tardis", "Hermano mayor pegando 2"],["Alex", "Que sí pesado!"]]
+	},
+	"Cuadro3" : {
+		"start" : [["Tardis", "Hermano mayor pegando 3"],["Alex", "Que sí pesado!"]]
+	},
+	"Window" : {
+		"start" : [["Tardis", "Window"],["Alex", "Que sí pesado!"]]
+	},
+	"DownFloor" : {
+		"start" : [["Tardis", "DownFloor"],["Alex", "Que sí pesado!"]]
+	},
+	"InterruptorBox" : {
+		"start" : [["Alex", "Esto seguro que se puede arreglar"],["Tardis", "Si lo consigues podrías abrir esa puerta!"], ["Alex", "Me falta un cable, un engranaje y un chip"]]
 	}
 }
-
 
 onready var left_portrait: = $text_box/left_portrait
 onready var right_portrait: = $text_box/right_portrait
@@ -47,14 +86,13 @@ func _ready() -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("next_song"):
-		start_dialog("door_scene1","without_keys")
 	if Input.is_action_just_pressed("next_dialog"):
-		if visible == true:
-			next_dialog()
+		next_dialog()
+
 
 
 func start_dialog(node_label : String, status) -> void:
+	print("Start_dialog " + node_label)
 	#var status = get_status(node_label)
 	current_dialog = dialog_dictionary[node_label][status]
 	show_dialog()

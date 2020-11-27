@@ -4,14 +4,43 @@ signal start_dialog(object_name, status)
 var debug: = false
 
 var status_database = {
-	"Statue" : ["without_armor","with_armor","win_battle"],
-	"Cube027" : ["without_statue","with_statue", "with_armor"]
+	"Statue" : ["start","read1","read2"],
+	"Wax1" : ["start"],
+	"Wax2" : ["start"],
+	"Wax3" : ["start"],
+	"Wax4" : ["start"],
+	"Wax5" : ["start"],
+	"Cup" : ["start"],
+	"McMoon" : ["start"],
+	"Vitrina1" : ["start"],
+	"Vitrina2" : ["start"],
+	"Vitrina3" : ["start"],
+	"Cuadro1" : ["start"],
+	"Cuadro2" : ["start"],
+	"Cuadro3" : ["start"],
+	"Window" : ["start"],
+	"DownFloor" : ["start"],
+	"InterruptorBox" : ["start", "with_wire", "with_gear", "with_chip", "with_everythin"],
 }
 
 var status = {
-	"door_scene1" : "without_keys",
-	"Statue" : "without_armor",
-	"Cube027" : "without_statue"
+	"Statue" : "start",
+	"Wax1" : "start",
+	"Wax2" : "start",
+	"Wax3" : "start",
+	"Wax4" : "start",
+	"Wax5" : "start",
+	"Cup" : "start",
+	"McMoon" : "start",
+	"Vitrina1" : "start",
+	"Vitrina2" : "start",
+	"Vitrina3" : "start",
+	"Cuadro1" : "start",
+	"Cuadro2" : "start",
+	"Cuadro3" : "start",
+	"Window" : "start",
+	"DownFloor" : "start",
+	"InterruptorBox" : "start"
 }
 
 func _on_Alex_arrived(object) -> void:
