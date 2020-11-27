@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/robofregona apaga.wav-e5ae5e9d2e732e3318584544972427f6.sample"
+
+[deps]
+
+source_file="res://Audio/one-shots/robofregona apaga.wav"
+dest_files=[ "res://.import/robofregona apaga.wav-e5ae5e9d2e732e3318584544972427f6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
