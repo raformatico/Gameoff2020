@@ -6,8 +6,8 @@ var inventory_slot_scn := load("res://UI/item_slot.tscn")
 var slot_selected : InventorySlot
 var i : int = 0
 
-onready var background : TextureRect = $background
-onready var out_inventory : TextureRect = $out_inventory
+onready var background : ColorRect = $background
+onready var out_inventory : ColorRect = $out_inventory
 onready var inventory_grid : GridContainer = $inventory_display
 onready var inventory_but : TextureButton = $inventory_but
 onready var dialog = get_node("../Dialog")
