@@ -33,7 +33,7 @@ _global_script_class_icons={
 [application]
 
 config/name="BBC"
-run/main_scene="res://J-dj/DJTest.tscn"
+run/main_scene="res://Scenes/museum-prefinal/Room.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -65,5 +65,6 @@ next_dialog={
 [rendering]
 
 quality/shadows/filter_mode=2
+environment/default_clear_color=Color( 0.0901961, 0.0901961, 0.0901961, 1 )
 quality/depth/hdr=false
 environment/default_environment="res://default_env.tres"

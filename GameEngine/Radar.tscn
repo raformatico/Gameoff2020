@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://GameEngine/Radar.gd" type="Script" id=1]
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_transparent = true
+flags_unshaded = true
+albedo_color = Color( 1, 1, 1, 0.184314 )
+
+[sub_resource type="SpatialMaterial" id=2]
+flags_transparent = true
+flags_unshaded = true
+albedo_color = Color( 1, 1, 1, 0.184314 )
+
+[sub_resource type="SphereShape" id=3]
+radius = 0.786175
+
+[node name="Radar" type="Area"]
+script = ExtResource( 1 )
+max_scale = 30
+
+[node name="CSGSphere" type="CSGSphere" parent="."]
+operation = 1
+radial_segments = 14
+rings = 8
+material = SubResource( 1 )
+
+[node name="CSGBox" type="CSGBox" parent="CSGSphere"]
+visible = false
+operation = 1
+height = 0.443954
+material = SubResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 3 )
+
+[node name="Tween" type="Tween" parent="."]
+[connection signal="body_entered" from="." to="." method="_on_Radar_body_entered"]
+[connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]

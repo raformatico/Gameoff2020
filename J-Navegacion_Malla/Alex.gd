@@ -96,3 +96,7 @@ func set_path(path_, _rotation=null, _object=null):
 func _on_Timer_timeout():
 	$AnimationPlayer.play("Idle")
 	$AnimationPlayer.queue("Stand")
+
+func scan():
+	$Radar.lauch()
+		

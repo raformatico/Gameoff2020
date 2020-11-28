@@ -11,3 +11,5 @@ script = ExtResource( 1 )
 
 [node name="stand-position" type="Spatial" parent="."]
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0.886782 )
+
+[node name="Tween" type="Tween" parent="."]
