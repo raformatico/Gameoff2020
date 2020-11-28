@@ -169,24 +169,22 @@ transform = Transform( 0.99955, 0, -0.0300146, 0, 1, 0, 0.0300146, 0, 0.99955, 0
 [node name="estatuabox" parent="." index="27"]
 material/0 = ExtResource( 5 )
 
-[node name="Statue" type="StaticBody" parent="estatuabox" index="0" groups=[
-"clickable",
-]]
+[node name="Statue" parent="estatuabox" index="0" instance=ExtResource( 3 )]
 
-[node name="CollisionShape" type="CollisionShape" parent="estatuabox/Statue" index="0"]
+[node name="stand-position" parent="estatuabox/Statue" index="1"]
+transform = Transform( 0.994469, 0, 0.105032, 0, 1, 0, -0.105032, 0, 0.994469, -0.0405831, -2.43944, -4.18999 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="estatuabox/Statue" index="3"]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0.490174, 1.08776, -0.00202179 )
 shape = SubResource( 11 )
 
-[node name="CollisionShape2" type="CollisionShape" parent="estatuabox/Statue" index="1"]
+[node name="CollisionShape3" type="CollisionShape" parent="estatuabox/Statue" index="4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.76579, 0 )
 shape = SubResource( 12 )
 
-[node name="CollisionShape3" type="CollisionShape" parent="estatuabox/Statue" index="2"]
+[node name="CollisionShape4" type="CollisionShape" parent="estatuabox/Statue" index="5"]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, -1.18232, -0.230049, 0 )
 shape = SubResource( 13 )
-
-[node name="stand-position" type="Spatial" parent="estatuabox/Statue" index="3"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.206707, -2.43944, -3.77065 )
 
 [node name="InterruptorBox" parent="interruptorbox" index="0" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, -3.55271e-15, 0, 1, 0, 0, 0 )
@@ -352,6 +350,8 @@ omni_range = 12.2617
 [editable path="TazaOBJETO/Cup"]
 
 [editable path="Mac/McMoon"]
+
+[editable path="estatuabox/Statue"]
 
 [editable path="interruptorbox/InterruptorBox"]
 
