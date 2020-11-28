@@ -15,10 +15,6 @@ func _ready():
 		# dialog=get_node("../MiniDialog/")
 	pass
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
 
 func _on_Alex_arrived(object):
 	print("SceneLogic: Oh! This is a "+str(object.name))
