@@ -31,4 +31,5 @@ func _on_Radar_body_entered(body):
 
 
 func _on_Tween_tween_completed(object, key):
-	$CSGSphere.visible=false	
+	$CSGSphere.visible=false
+	global_scale(Vector3.ZERO)	

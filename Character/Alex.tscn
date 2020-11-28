@@ -2252,12 +2252,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.49291, 0 )
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
 
+[node name="Tween" type="Tween" parent="."]
+
 [node name="Radar" parent="." instance=ExtResource( 4 )]
 transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.77409, 0.0395077 )
 max_scale = 20
-
-[node name="CSGBox" parent="Radar/CSGSphere" index="0"]
-visible = false
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]
 
 [editable path="Radar"]

@@ -42,6 +42,11 @@ func _unhandled_input(event):
 #
 				var path=navigator.get_simple_path(alex.foot.global_transform.origin,destination,true)
 				path.remove(0)
+				
+				##################
+				path=smooth_path(path)
+				#################
+				
 				alex.set_path(path,rotation_,target_object)
 			
 				if Global.debug:
@@ -52,3 +57,13 @@ func mark(posi):
 	var marker = Marker.instance()
 	add_child(marker)
 	marker.global_transform.origin = posi
+
+func smooth_path(path_):
+	var curva=Curve3D.new()
+	curva.bake_interval=0.1
+	
+	for pos in path_:
+		curva.add_point(pos)
+	# n=curva.get_baked_length()
+	var pathh=curva.get_baked_points()
+	return pathh
