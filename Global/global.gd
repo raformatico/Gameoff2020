@@ -45,4 +45,8 @@ var status = {
 
 func _on_Alex_arrived(object) -> void:
 	if object.name in status:
-		emit_signal("start_dialog",object.name, status[object.name])
+		emit_signal("start_dialog",object, status[object.name])
+
+func _on_start_action(object, action : String) -> void:
+	if action == "hide":
+		object.get_parent().hide()
