@@ -320,11 +320,12 @@ fov = 44.2006
 near = 0.1
 
 [node name="Sun" parent="." index="56"]
-transform = Transform( 1, 0, 0, 0, -0.127065, 0.991894, 0, -0.991894, -0.127065, 1.85754, 24.9662, 22.897 )
-light_specular = 0.0
+transform = Transform( 1, 0, 0, 0, -0.127065, 0.991894, 0, -0.991894, -0.127065, -6.53901, 17.44, 22.897 )
+light_energy = 3.13
+light_specular = 0.32
 shadow_enabled = true
 shadow_reverse_cull_face = true
-omni_range = 26.9311
+omni_range = 15.0
 
 [node name="Point002" parent="." index="57"]
 light_specular = 0.0

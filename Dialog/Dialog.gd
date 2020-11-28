@@ -2,7 +2,9 @@ extends Control
 
 signal show_dialog
 signal hide_dialog
+signal start_action
 
+const ACTION = "ACTION"
 const OBJECT = "OBJECT"
 const NEXT_STATE = "NEXT_STATE"
 enum SIDE {LEFT, RIGHT}
@@ -13,6 +15,7 @@ var inventory = load("res://Inventory/inventory.tres")
 var character_talking : int = SIDE.LEFT
 var current_character := "Alex"
 var current_dialog : Array
+var current_object
 var text_count := 0
 
 var wax = "potion"
@@ -28,22 +31,23 @@ var dialog_dictionary = {
 	},
 	"Wax1" : {
 		#"start" : [["Tardis", "Wax1"],["Alex", "Cogida!"],[OBJECT, wax,"Statue","with_armor","Cube027","with_armor"]]
-		"start" : [["Tardis", "Wax1"],["Alex", "Cogida!"],[OBJECT, wax]]
+		#"start" : [["Tardis", "Wax1"],["Alex", "Cogida!"],[OBJECT, wax],[NEXT_STATE,"Statue","with_armor"],[NEXT_STATE,"Cube027","with_armor"]]
+		"start" : [["Tardis", "Wax1"],["Alex", "Cogida!"], [OBJECT, wax], [ACTION, "current", "hide"]]
 	},
 	"Wax2" : {
-		"start" : [["Tardis", "Wax2"],["Alex", "Cogida!"]]
+		"start" : [["Tardis", "Wax2"],["Alex", "Cogida!"], [OBJECT, wax], [ACTION, "current", "hide"]]
 	},
 	"Wax3" : {
-		"start" : [["Tardis", "Wax3"],["Alex", "Cogida!"]]
+		"start" : [["Tardis", "Wax3"],["Alex", "Cogida!"], [OBJECT, wax], [ACTION, "current", "hide"]]
 	},
 	"Wax4" : {
-		"start" : [["Tardis", "Wax4"],["Alex", "Cogida!"]]
+		"start" : [["Tardis", "Wax4"],["Alex", "Cogida!"], [OBJECT, wax], [ACTION, "current", "hide"]]
 	},
 	"Wax5" : {
-		"start" : [["Tardis", "Wax5"],["Alex", "Cogida!"]]
+		"start" : [["Tardis", "Wax5"],["Alex", "Cogida!"], [OBJECT, wax], [ACTION, "current", "hide"]]
 	},
 	"Cup" : {
-		"start" : [["Alex", "Anda una taza!"],["Tardis", "Cógela que nunca se sabe cuando vendrá bien un buen Whisky!"],[OBJECT, cup]]
+		"start" : [["Alex", "Anda una taza!"],["Tardis", "Cógela que nunca se sabe cuando vendrá bien un buen Whisky!"],[OBJECT, cup], [ACTION, "current", "hide"]]
 	},
 	"McMoon" : {
 		"start" : [["Tardis", "Un McMoon"],["Alex", "Que sí pesado!"]]
@@ -83,6 +87,7 @@ onready var rich_text := $text_box/text
 
 func _ready() -> void:
 	Global.connect("start_dialog",self,"start_dialog")
+	connect("start_action",Global,"_on_start_action")
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -91,10 +96,13 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 
-func start_dialog(node_label : String, status) -> void:
+func start_dialog(object, status) -> void:
+	var node_label = object.name
 	print("Start_dialog " + node_label)
 	#var status = get_status(node_label)
 	current_dialog = dialog_dictionary[node_label][status]
+	current_object = object
+	print(current_object)
 	show_dialog()
 	next_dialog()
 
@@ -111,27 +119,30 @@ func next_dialog() -> void:
 	var i
 	if current_text_to_show[0] == OBJECT:
 		inventory.add_item(current_text_to_show[1])
-		if current_text_to_show.size() > 2:
-			set_status(current_text_to_show,2)
 		text_count += 1
-	if current_text_to_show[0] == NEXT_STATE:
-		set_status(current_text_to_show,1)
+	elif current_text_to_show[0] == ACTION:
+		if current_text_to_show[1] == "current":
+			emit_signal("start_action",current_object, current_text_to_show[2])
 		text_count += 1
+	elif current_text_to_show[0] == NEXT_STATE:
+		set_status(current_text_to_show[1],current_text_to_show[2])
+		text_count += 1
+	else:
+		var previous_character = current_character
+		current_character = current_text_to_show[0]
+		if current_character != previous_character:
+			change_character()
+		change_text(current_text_to_show[1])
+		text_count += 1
+		return
+	
 	if text_count == current_dialog.size():
 		hide_dialog()
-		return
-	var previous_character = current_character
-	current_character = current_text_to_show[0]
-	if current_character != previous_character:
-		change_character()
-	change_text(current_text_to_show[1])
-	text_count += 1
-	
+	else:
+		next_dialog()
 
-func set_status(modifiers : Array, i) -> void:
-	while i < modifiers.size():
-		Global.status[modifiers[i]] = modifiers[i+1]
-		i += 2
+func set_status(object : String, new_status : String) -> void:
+	Global.status[object] = new_status
 
 
 func change_character() -> void:

@@ -8,14 +8,14 @@ flags_transparent = true
 flags_unshaded = true
 albedo_color = Color( 1, 1, 1, 0.184314 )
 
-[sub_resource type="SpatialMaterial" id=5]
+[sub_resource type="SpatialMaterial" id=2]
 flags_transparent = true
 flags_unshaded = true
 albedo_color = Color( 1, 1, 1, 0.184314 )
 
-[sub_resource type="SphereShape" id=2]
+[sub_resource type="SphereShape" id=3]
 
-[sub_resource type="SpatialMaterial" id=3]
+[sub_resource type="SpatialMaterial" id=4]
 albedo_color = Color( 0, 0.2, 0.678431, 1 )
 emission_enabled = true
 emission = Color( 0, 0, 0, 1 )
@@ -23,7 +23,7 @@ emission_energy = 1.0
 emission_operator = 0
 emission_on_uv2 = false
 
-[sub_resource type="CapsuleShape" id=4]
+[sub_resource type="CapsuleShape" id=5]
 
 [node name="Spatial" type="Spatial"]
 
@@ -45,10 +45,10 @@ material = SubResource( 1 )
 [node name="CSGBox" type="CSGBox" parent="Radar/CSGSphere"]
 operation = 1
 height = 0.443954
-material = SubResource( 5 )
+material = SubResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Radar"]
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="Tween" type="Tween" parent="Radar"]
 repeat = true
@@ -56,14 +56,14 @@ playback/repeat = true
 
 [node name="CSGCylinder" type="CSGCylinder" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.99764, 0.577497, -1.21875 )
-material = SubResource( 3 )
+material = SubResource( 4 )
 
 [node name="StaticBody" type="StaticBody" parent="CSGCylinder"]
 script = ExtResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="CSGCylinder/StaticBody"]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="Tween" type="Tween" parent="CSGCylinder/StaticBody"]
 
