@@ -21,29 +21,49 @@ func _unhandled_input(event):
 		var result=space_state.intersect_ray(from,to,[],1)
 			
 		if !result.empty():	
-			var destination=result.position
-			var rotation_=null
-			var target_object=null
 			
-			if result.collider.is_in_group("clickable"):
-				var stand_location=get_node(str(result.collider.get_path())+"/stand-position")
-				destination=stand_location.global_transform.origin
-				rotation_=stand_location.global_transform.basis.get_euler()
-				target_object=result.collider
+			if result.collider.is_in_group("Character"): # Is it the main character?
+				alex.scan()
+			else:
+				var destination=result.position
+				var rotation_=null
+				var target_object=null
 			
-			if Global.debug:
-				$destination.global_transform.origin=destination
-				$origine.global_transform.origin=alex.global_transform.origin
+				if result.collider.is_in_group("clickable"):
+					var stand_location=get_node(str(result.collider.get_path())+"/stand-position")
+					destination=stand_location.global_transform.origin
+					rotation_=stand_location.global_transform.basis.get_euler()
+					target_object=result.collider
+			
+			
+				if Global.debug:
+					$destination.global_transform.origin=destination
+					$origine.global_transform.origin=alex.global_transform.origin
 #
-			var path=navigator.get_simple_path(alex.foot.global_transform.origin,destination,true)
-			path.remove(0)
-			alex.set_path(path,rotation_,target_object)
+				var path=navigator.get_simple_path(alex.foot.global_transform.origin,destination,true)
+				path.remove(0)
+				
+				##################
+				path=smooth_path(path)
+				#################
+				
+				alex.set_path(path,rotation_,target_object)
 			
-			if Global.debug:
-				for node in path:
-					mark(node)
+				if Global.debug:
+					for node in path:
+						mark(node)
 					
 func mark(posi):
 	var marker = Marker.instance()
 	add_child(marker)
 	marker.global_transform.origin = posi
+
+func smooth_path(path_):
+	var curva=Curve3D.new()
+	curva.bake_interval=0.1
+	
+	for pos in path_:
+		curva.add_point(pos)
+	# n=curva.get_baked_length()
+	var pathh=curva.get_baked_points()
+	return pathh

@@ -1,0 +1,83 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://J-dj/Disc.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Dialog/Fonts/montserrat_regular_40.tres" type="DynamicFont" id=2]
+[ext_resource path="res://J-dj/DJTest.gd" type="Script" id=3]
+[ext_resource path="res://Audio/loops/Funky Roomba Funky Drums.wav" type="AudioStream" id=4]
+[ext_resource path="res://Audio/loops/Funky Roomba Funky Groove.wav" type="AudioStream" id=5]
+
+[sub_resource type="SpatialMaterial" id=1]
+resource_local_to_scene = true
+albedo_color = Color( 0.0941176, 0.282353, 0.121569, 1 )
+
+[sub_resource type="SpatialMaterial" id=2]
+resource_local_to_scene = true
+albedo_color = Color( 0.0941176, 0.282353, 0.121569, 1 )
+
+[sub_resource type="SpatialMaterial" id=3]
+resource_local_to_scene = true
+albedo_color = Color( 0.0941176, 0.282353, 0.121569, 1 )
+
+[node name="Spatial" type="Spatial"]
+script = ExtResource( 3 )
+
+[node name="CSGBox" type="CSGBox" parent="."]
+width = 8.10143
+height = 0.304766
+depth = 4.27501
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 2.87943, 0 )
+
+[node name="SpotLight" type="SpotLight" parent="."]
+transform = Transform( 0.76138, 0.529949, -0.373436, 0, 0.576019, 0.817437, 0.648306, -0.62238, 0.438569, 0, 5.64185, 1.90561 )
+light_color = Color( 0.482353, 0.133333, 0.133333, 1 )
+light_energy = 16.0
+light_indirect_energy = 9.26
+light_specular = 0.34
+shadow_enabled = true
+spot_range = 10.2834
+
+[node name="Label" type="Label" parent="."]
+margin_right = 319.0
+margin_bottom = 153.0
+custom_fonts/font = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Plato" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0125208, 0, 0 )
+
+[node name="Plato" parent="Plato" index="0"]
+transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.000743389, 0.202979, 0 )
+
+[node name="AudioStreamPlayer2D" parent="Plato/Plato" index="2"]
+stream = ExtResource( 5 )
+
+[node name="Led" parent="Plato" index="1"]
+material = SubResource( 1 )
+
+[node name="Plato2" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.36914, 0, 0 )
+
+[node name="Plato" parent="Plato2" index="0"]
+main_rythm = true
+
+[node name="AudioStreamPlayer2D" parent="Plato2/Plato" index="2"]
+stream = ExtResource( 4 )
+
+[node name="Led" parent="Plato2" index="1"]
+material = SubResource( 2 )
+
+[node name="Plato3" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.35151, 0, 0 )
+
+[node name="Led" parent="Plato3" index="1"]
+material = SubResource( 3 )
+
+[editable path="Plato"]
+
+[editable path="Plato2"]
+
+[editable path="Plato3"]

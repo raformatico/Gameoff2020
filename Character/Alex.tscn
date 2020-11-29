@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Character/CASCO Y CUERPO.material" type="Material" id=1]
 [ext_resource path="res://Character/CRISTAL CASCO.material" type="Material" id=2]
 [ext_resource path="res://J-Navegacion_Malla/Alex.gd" type="Script" id=3]
+[ext_resource path="res://GameEngine/Radar.tscn" type="PackedScene" id=4]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "Cube021_Cube025"
@@ -2250,4 +2251,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.49291, 0 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Radar" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.77409, 0.0395077 )
+max_scale = 20
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]
+
+[editable path="Radar"]

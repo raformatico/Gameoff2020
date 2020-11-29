@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Funky Roomba Funky Groove.wav-677b63bcb5f0cb986823c4c574c68708.sample"
+
+[deps]
+
+source_file="res://Audio/loops/Funky Roomba Funky Groove.wav"
+dest_files=[ "res://.import/Funky Roomba Funky Groove.wav-677b63bcb5f0cb986823c4c574c68708.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

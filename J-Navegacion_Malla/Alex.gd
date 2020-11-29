@@ -18,6 +18,10 @@ export var cant_walk_threshold=3.0
 var cant_walk=0
 var foot
 
+var rotation_tmp_orig=0
+var rotation_tmp_dest=0
+var rotating=false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	foot=$Foot
@@ -34,14 +38,40 @@ func _physics_process(delta):
 			
 		if Global.debug:		
 			print($Foot.global_transform.origin.distance_to(target_point))
+
 		if $Foot.global_transform.origin.distance_to(target_point)<threshold:
 			if path!=null and !path.empty():
 				target_point=path[0]
 				path.remove(0)
 					
+#				##############
+#				rotation_tmp_orig=rotation
+#				look_at(target_point,Vector3.UP)
+#				rotation.x=0
+#				rotation_tmp_dest=rotation
+#				rotation=rotation_tmp_orig
+#
+#				var tween = get_node("Tween")
+#				tween.interpolate_property(self, "rotation",
+#				rotation_tmp_orig, rotation_tmp_dest, 0.3, 
+#				Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+#				tween.start()	
+#				rotating=true
+#				#################
+				
 			else: # arived!
 				if target_rotation!=null:
-					rotation=target_rotation
+					##############
+					rotation_tmp_orig=rotation
+					
+					var tween = get_node("Tween")
+					tween.interpolate_property(self, "rotation",
+					rotation_tmp_orig, target_rotation, 1, 
+					Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+					tween.start()	
+					#rotating=true
+					#################
+					# rotation=target_rotation
 					
 				if target_object!=null:
 					emit_signal("arrived",target_object)
@@ -62,9 +92,10 @@ func _physics_process(delta):
 			
 			if $AnimationPlayer.current_animation!="Walk":
 				$AnimationPlayer.play("Walk")
-				
-			look_at(target_point,Vector3.UP)
-			rotation.x=0
+			
+			if !rotating:	
+				look_at(target_point,Vector3.UP)
+				rotation.x=0
 			
 			var movement
 			var direction=-transform.basis.z*speed+grav
@@ -87,7 +118,7 @@ func set_path(path_, _rotation=null, _object=null):
 		path=path_
 		target_point=path[0]
 		target_rotation=_rotation
-		look_at(target_point,Vector3.UP)
+		##look_at(target_point,Vector3.UP)
 		
 		if _object!=null:
 			target_object=_object
@@ -96,3 +127,11 @@ func set_path(path_, _rotation=null, _object=null):
 func _on_Timer_timeout():
 	$AnimationPlayer.play("Idle")
 	$AnimationPlayer.queue("Stand")
+
+func scan():
+	$Radar.lauch()
+		
+
+
+func _on_Tween_tween_completed(object, key):
+	rotating=false

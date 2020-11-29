@@ -1,0 +1,63 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://UI/Menu/menu.tres" type="Theme" id=1]
+[ext_resource path="res://UI/pause.gd" type="Script" id=2]
+[ext_resource path="res://UI/pause.png" type="Texture" id=3]
+
+[node name="pause" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -64.0
+margin_bottom = 64.0
+texture_normal = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pause_menu" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="MarginContainer" type="MarginContainer" parent="pause_menu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 700.0
+margin_top = 300.0
+margin_right = -700.0
+margin_bottom = -300.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="pause_menu/MarginContainer"]
+margin_top = 141.0
+margin_right = 520.0
+margin_bottom = 339.0
+size_flags_vertical = 4
+custom_constants/separation = 50
+
+[node name="continue" type="Button" parent="pause_menu/MarginContainer/VBoxContainer"]
+margin_right = 520.0
+margin_bottom = 74.0
+text = "CONTINUE"
+
+[node name="exit" type="Button" parent="pause_menu/MarginContainer/VBoxContainer"]
+margin_top = 124.0
+margin_right = 520.0
+margin_bottom = 198.0
+text = "EXIT"
+[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="pause_menu/MarginContainer/VBoxContainer/continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="pause_menu/MarginContainer/VBoxContainer/exit" to="." method="_on_exit_pressed"]
