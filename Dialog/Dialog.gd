@@ -25,50 +25,58 @@ var cup = "armor"
 
 var dialog_dictionary = {
 	"Statue" : {
-		"start" : [["Alex","Este se parece a mi hermano"],["Tardis","Pues es el Gran hermano! Llegó a esta estación en 1984, bonito número, eh?"],["Alex","No te entiendo muy bien..."],[NEXT_STATE,"Statue","read1"]],
-		"read1" : [["Alex", "Cuándo decías que llegó el Gran Hermano aquí?"],["Tardis", "En 1984..."],[NEXT_STATE,"Statue","read2"]],
-		"read2" : [["Tardis", "Ya hemos hablado de esto... Llegó en 1984"],["Alex", "Que sí, que sí!"],[NEXT_STATE,"Statue","read1"]]
+		"start" : [["Alex","Me recuerda a la foto de la navidad pasada que nos hicieron a mi hermano y a mi en el centro comercial."],["Tardis","Debe de rememorar algo muy importante para que esté en el centro de esta sala."],[NEXT_STATE,"Statue","read1"]],
+		"read1" : [["Tardis", "Seguro que se nos pasa algo por alto."],["Alex", "Aquí hay algo escrito... Primer hermano en la luna... 1969..."],["Tardis","Eso parece una fecha"],[NEXT_STATE,"Statue","read2"]],
+		"read2" : [["Alex", "¿Cuál era la fecha que ponía aquí?"],["Tardis", "1984..."]]
 	},
 	"Wax1" : {
-		#"start" : [["Tardis", "Wax1"],["Alex", "Cogida!"],[OBJECT, wax,"Statue","with_armor","Cube027","with_armor"]]
-		#"start" : [["Tardis", "Wax1"],["Alex", "Cogida!"],[OBJECT, wax],[NEXT_STATE,"Statue","with_armor"],[NEXT_STATE,"Cube027","with_armor"]]
-		"start" : [["Tardis", "Wax1"],["Alex", "Cogida!"], [OBJECT, wax], [ACTION, "current", "hide"]]
+		"start" : [["Alex","Tenía unas ceras iguales en casa. ¡Me las quedo!"], ["Tardis", "Ten cuidado que son bastante blandas y se te pueden derretir en el bolsillo."], ["Alex","Ok boomer"], [OBJECT, wax], [ACTION, "current", "hide"], [NEXT_STATE, "Wax1", "picked"], [NEXT_STATE, "Wax2", "picked"], [NEXT_STATE, "Wax3", "picked"], [NEXT_STATE, "Wax4", "picked"], [NEXT_STATE, "Wax5", "picked"]],
+		"picked" : [["Alex","¡Otra cera! ¡A la colección!"], [OBJECT, wax], [ACTION, "current", "hide"], [NEXT_STATE, "Wax1", "picked2"], [NEXT_STATE, "Wax2", "picked2"], [NEXT_STATE, "Wax3", "picked2"], [NEXT_STATE, "Wax4", "picked2"], [NEXT_STATE, "Wax5", "picked2"]],
+		"picked2" : [["Tardis","Vas a dejar el suelo mucho más limpio."], ["Alex","Tengo alma de coleccionista"],[OBJECT, wax], [ACTION, "current", "hide"], [NEXT_STATE, "Wax1", "picked"], [NEXT_STATE, "Wax2", "picked"], [NEXT_STATE, "Wax3", "picked"], [NEXT_STATE, "Wax4", "picked"], [NEXT_STATE, "Wax5", "picked"]]
 	},
 	"Wax2" : {
-		"start" : [["Tardis", "Wax2"],["Alex", "Cogida!"], [OBJECT, wax], [ACTION, "current", "hide"]]
+		"start" : [["Alex","Tenía unas ceras iguales en casa. ¡Me las quedo!"], ["Tardis", "Ten cuidado que son bastante blandas y se te pueden derretir en el bolsillo."], ["Alex","Ok boomer"], [OBJECT, wax], [ACTION, "current", "hide"], [NEXT_STATE, "Wax1", "picked"], [NEXT_STATE, "Wax2", "picked"], [NEXT_STATE, "Wax3", "picked"], [NEXT_STATE, "Wax4", "picked"], [NEXT_STATE, "Wax5", "picked"]],
+		"picked" : [["Alex","¡Otra cera! ¡A la colección!"], [OBJECT, wax], [ACTION, "current", "hide"], [NEXT_STATE, "Wax1", "picked2"], [NEXT_STATE, "Wax2", "picked2"], [NEXT_STATE, "Wax3", "picked2"], [NEXT_STATE, "Wax4", "picked2"], [NEXT_STATE, "Wax5", "picked2"]],
+		"picked2" : [["Tardis","Vas a dejar el suelo mucho más limpio."], ["Alex","Tengo alma de coleccionista"],[OBJECT, wax], [ACTION, "current", "hide"], [NEXT_STATE, "Wax1", "picked"], [NEXT_STATE, "Wax2", "picked"], [NEXT_STATE, "Wax3", "picked"], [NEXT_STATE, "Wax4", "picked"], [NEXT_STATE, "Wax5", "picked"]]
 	},
 	"Wax3" : {
-		"start" : [["Tardis", "Wax3"],["Alex", "Cogida!"], [OBJECT, wax], [ACTION, "current", "hide"]]
+		"start" : [["Alex","Tenía unas ceras iguales en casa. ¡Me las quedo!"], ["Tardis", "Ten cuidado que son bastante blandas y se te pueden derretir en el bolsillo."], ["Alex","Ok boomer"], [OBJECT, wax], [ACTION, "current", "hide"], [NEXT_STATE, "Wax1", "picked"], [NEXT_STATE, "Wax2", "picked"], [NEXT_STATE, "Wax3", "picked"], [NEXT_STATE, "Wax4", "picked"], [NEXT_STATE, "Wax5", "picked"]],
+		"picked" : [["Alex","¡Otra cera! ¡A la colección!"], [OBJECT, wax], [ACTION, "current", "hide"], [NEXT_STATE, "Wax1", "picked2"], [NEXT_STATE, "Wax2", "picked2"], [NEXT_STATE, "Wax3", "picked2"], [NEXT_STATE, "Wax4", "picked2"], [NEXT_STATE, "Wax5", "picked2"]],
+		"picked2" : [["Tardis","Vas a dejar el suelo mucho más limpio."], ["Alex","Tengo alma de coleccionista"],[OBJECT, wax], [ACTION, "current", "hide"], [NEXT_STATE, "Wax1", "picked"], [NEXT_STATE, "Wax2", "picked"], [NEXT_STATE, "Wax3", "picked"], [NEXT_STATE, "Wax4", "picked"], [NEXT_STATE, "Wax5", "picked"]]
 	},
 	"Wax4" : {
-		"start" : [["Tardis", "Wax4"],["Alex", "Cogida!"], [OBJECT, wax], [ACTION, "current", "hide"]]
+		"start" : [["Alex","Tenía unas ceras iguales en casa. ¡Me las quedo!"], ["Tardis", "Ten cuidado que son bastante blandas y se te pueden derretir en el bolsillo."], ["Alex","Ok boomer"], [OBJECT, wax], [ACTION, "current", "hide"], [NEXT_STATE, "Wax1", "picked"], [NEXT_STATE, "Wax2", "picked"], [NEXT_STATE, "Wax3", "picked"], [NEXT_STATE, "Wax4", "picked"], [NEXT_STATE, "Wax5", "picked"]],
+		"picked" : [["Alex","¡Otra cera! ¡A la colección!"], [OBJECT, wax], [ACTION, "current", "hide"], [NEXT_STATE, "Wax1", "picked2"], [NEXT_STATE, "Wax2", "picked2"], [NEXT_STATE, "Wax3", "picked2"], [NEXT_STATE, "Wax4", "picked2"], [NEXT_STATE, "Wax5", "picked2"]],
+		"picked2" : [["Tardis","Vas a dejar el suelo mucho más limpio."], ["Alex","Tengo alma de coleccionista"],[OBJECT, wax], [ACTION, "current", "hide"], [NEXT_STATE, "Wax1", "picked"], [NEXT_STATE, "Wax2", "picked"], [NEXT_STATE, "Wax3", "picked"], [NEXT_STATE, "Wax4", "picked"], [NEXT_STATE, "Wax5", "picked"]]
 	},
 	"Wax5" : {
-		"start" : [["Tardis", "Wax5"],["Alex", "Cogida!"], [OBJECT, wax], [ACTION, "current", "hide"]]
+		"start" : [["Alex","Tenía unas ceras iguales en casa. ¡Me las quedo!"], ["Tardis", "Ten cuidado que son bastante blandas y se te pueden derretir en el bolsillo."], ["Alex","Ok boomer"], [OBJECT, wax], [ACTION, "current", "hide"], [NEXT_STATE, "Wax1", "picked"], [NEXT_STATE, "Wax2", "picked"], [NEXT_STATE, "Wax3", "picked"], [NEXT_STATE, "Wax4", "picked"], [NEXT_STATE, "Wax5", "picked"]],
+		"picked" : [["Alex","¡Otra cera! ¡A la colección!"], [OBJECT, wax], [ACTION, "current", "hide"], [NEXT_STATE, "Wax1", "picked2"], [NEXT_STATE, "Wax2", "picked2"], [NEXT_STATE, "Wax3", "picked2"], [NEXT_STATE, "Wax4", "picked2"], [NEXT_STATE, "Wax5", "picked2"]],
+		"picked2" : [["Tardis","Vas a dejar el suelo mucho más limpio."], ["Alex","Tengo alma de coleccionista"],[OBJECT, wax], [ACTION, "current", "hide"], [NEXT_STATE, "Wax1", "picked"], [NEXT_STATE, "Wax2", "picked"], [NEXT_STATE, "Wax3", "picked"], [NEXT_STATE, "Wax4", "picked"], [NEXT_STATE, "Wax5", "picked"]]
 	},
 	"Cup" : {
-		"start" : [["Alex", "Anda una taza!"],["Tardis", "Cógela que nunca se sabe cuando vendrá bien un buen Whisky!"],[OBJECT, cup], [ACTION, "current", "hide"]]
+		"start" : [["Alex", "Mira, una taza. Esta me la quedo..."],["Tardis", "No puedo contener la emoción."],["Alex","*&@$#/°s"],[OBJECT, cup], [ACTION, "current", "hide"]]
 	},
 	"McMoon" : {
-		"start" : [["Tardis", "Un McMoon"],["Alex", "Que sí pesado!"]]
+		"start" : [["Alex", "Mi padre se pasaba el día sentado frente a uno de estos."],["Tardis", "Espero que el suyo funcionase..."]]
 	},
 	"Vitrina1" : {
-		"start" : [["Tardis", "Hermano mayor pegando 1"],["Alex", "Que sí pesado!"]]
+		"start" : [["Alex", "No sé muy bien qué será esto."]]
 	},
 	"Vitrina2" : {
-		"start" : [["Tardis", "Hermano mayor pegando 2"],["Alex", "Que sí pesado!"]]
+		"start" : [["Alex", "No sé muy bien qué será esto."]]
 	},
 	"Vitrina3" : {
-		"start" : [["Tardis", "Hermano mayor pegando 3"],["Alex", "Que sí pesado!"]]
+		"start" : [["Alex", "No sé muy bien qué será esto."]]
 	},
 	"Cuadro1" : {
-		"start" : [["Tardis", "Hermano mayor pegando 1"],["Alex", "Que sí pesado!"]]
+		"start" : [["Tardis", "Vaya cuadros más frikis. Qué mal gusto."]]
 	},
 	"Cuadro2" : {
-		"start" : [["Tardis", "Hermano mayor pegando 2"],["Alex", "Que sí pesado!"]]
+		"start" : [["Tardis", "Vaya cuadros más frikis. Qué mal gusto."]]
 	},
 	"Cuadro3" : {
-		"start" : [["Tardis", "Hermano mayor pegando 3"],["Alex", "Que sí pesado!"]]
+		"start" : [["Tardis", "Vaya cuadros más frikis. Qué mal gusto."]]
 	},
 	"Window" : {
 		"start" : [["Tardis", "Window"],["Alex", "Que sí pesado!"]]
@@ -77,8 +85,26 @@ var dialog_dictionary = {
 		"start" : [["Tardis", "DownFloor"],["Alex", "Que sí pesado!"]]
 	},
 	"InterruptorBox" : {
-		"start" : [["Alex", "Esto seguro que se puede arreglar"],["Tardis", "Si lo consigues podrías abrir esa puerta!"], ["Alex", "Me falta un cable, un engranaje y un chip"]]
+		"start" : [["Alex", "Este panel no funciona, da un mensaje de error..."],["Tardis", "Creo que faltan algunos componentes, si los encontramos seguro que podemos abrir esta puerta."]],
+		"withoutwire" : [["Alex","Aquí encajaría un cable."],["Tardis","Chico listo."]],
+		"withoutgear" : [["Alex","Qué forma más extraña, parece que falta un engranaje o alguna pieza circular"],["Tardis","Pues a seguir buscando..."]],
+		"withoutchip" : [["Alex","No sé de donde vamos a sacar un chip de última generación, que claramente es lo que falta en este panel."],["Tardis","Parece que lo sabes todo."]],
+		"connectwire" : [["Alex","Este cable conecta perfecto. Una cosa menos."]],
+		"connectgear" : [["Alex","Esto es muy raro"],["Tardis","Funciona, así que no te preguntes por qué"]],
+		"connectchip" : [["Alex","¡Encaja!"],["Tardis","Es que es un chip de última generación."]],
+		"opendoor" : [["Alex", "¡Lo hemos conseguido, la puerta está abierta!"],["Tardis","Yo no estaría muy contento sabiendo lo que te espera en esa habitación."],[ACTION,"door", "open"]]
+		
+	},
+	"Lever" : {
+		"start" : [["Tardis", "Y se hizo la luz..."],["Alex", "Qué mal rollo de sitio."],[ACTION, "current", "lighton"],[NEXT_STATE,"Lever", "poweron"]],
+		"poweron" : [["Tardis", "Luces fuera"],["Alex", "Bonitas vistas. Echo de menos la tierra"],[ACTION, "current", "lightoff"],[NEXT_STATE,"Lever", "poweroff"]],
+		"poweroff" : [["Alex", "Dejemos las luces encendidas."],["Tardis", "Sí, más vale que veamos por dónde vamos."],[ACTION, "current", "lighton"],[NEXT_STATE,"Lever", "poweron"]]
+	},
+	"Updoor" : {
+		"start" : [["Alex","Parece que necesitamos un código de 4 dígitos "],["Tardis","Creo que he visto unos números en algún lado..."]],
+		"opendoor" : [["Alex","¡Puerta abierta!"],["Tardis","Espero que sigas a salvo al cruzarla..."]]
 	}
+	
 }
 
 onready var left_portrait: = $text_box/left_portrait
@@ -90,7 +116,7 @@ func _ready() -> void:
 	connect("start_action",Global,"_on_start_action")
 
 
-func _unhandled_input(event: InputEvent) -> void:
+func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("next_dialog"):
 		next_dialog()
 
@@ -183,10 +209,15 @@ func show_dialog() -> void:
 	emit_signal("show_dialog")
 		
 		
-		
+func _on_Dialog_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		next_dialog()
 		
 		
 		
 		
 		
 	
+
+
+
