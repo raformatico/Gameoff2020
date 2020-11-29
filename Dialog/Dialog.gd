@@ -11,6 +11,7 @@ enum SIDE {LEFT, RIGHT}
 
 var tardis_portrait = "res://Dialog/assets/Tardi-dia.png"
 var alex_portrait = "res://Dialog/assets/Player-dia.png"
+var item_used = null
 var inventory = load("res://Inventory/inventory.tres")
 var character_talking : int = SIDE.LEFT
 var current_character := "Alex"
@@ -27,6 +28,7 @@ var dialog_dictionary = {
 	"Statue" : {
 		"start" : [["Alex","Me recuerda a la foto de la navidad pasada que nos hicieron a mi hermano y a mi en el centro comercial."],["Tardis","Debe de rememorar algo muy importante para que esté en el centro de esta sala."],[NEXT_STATE,"Statue","read1"]],
 		"read1" : [["Tardis", "Seguro que se nos pasa algo por alto."],["Alex", "Aquí hay algo escrito... Primer hermano en la luna... 1969..."],["Tardis","Eso parece una fecha"],[NEXT_STATE,"Statue","read2"]],
+		"potion" : [["Alex", "He usado la poción con la estatua!"],[NEXT_STATE,"Statue","read2"], [ACTION,"potion","use"]],
 		"read2" : [["Alex", "¿Cuál era la fecha que ponía aquí?"],["Tardis", "1984..."]]
 	},
 	"Wax1" : {
@@ -103,6 +105,10 @@ var dialog_dictionary = {
 	"Updoor" : {
 		"start" : [["Alex","Parece que necesitamos un código de 4 dígitos "],["Tardis","Creo que he visto unos números en algún lado..."]],
 		"opendoor" : [["Alex","¡Puerta abierta!"],["Tardis","Espero que sigas a salvo al cruzarla..."]]
+	},
+	"Error" : {
+		"start" : [["Alex","No creo que pueda usar eso aquí"],["Tardis","Era tu idea, no la mía..."], [NEXT_STATE, "Error","start2"]],
+		"start2" : [["Tardis","Esto es probar por probar, ¿verdad?"],[NEXT_STATE, "Error", "start"]]
 	}
 	
 }
@@ -113,6 +119,7 @@ onready var rich_text := $text_box/text
 
 func _ready() -> void:
 	Global.connect("start_dialog",self,"start_dialog")
+	Global.connect("start_dialog_item",self,"start_dialog_item")
 	connect("start_action",Global,"_on_start_action")
 
 
@@ -120,15 +127,24 @@ func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("next_dialog"):
 		next_dialog()
 
-
+func start_dialog_item(object, status, item_selected, interact_with) -> void:
+	item_used = item_selected
+	#Show generic misselection of item
+	if object.name != interact_with:
+		current_dialog = dialog_dictionary["Error"][Global.status["Error"]]
+		show_dialog()
+		next_dialog()
+	#Else show correct dialog
+	else:
+		Global.status[object.name] = item_selected
+		start_dialog(object, item_selected)
+	#Deselect item
+	inventory.emit_signal("deselect_all")
+	
 
 func start_dialog(object, status) -> void:
-	var node_label = object.name
-	print("Start_dialog " + node_label)
-	#var status = get_status(node_label)
-	current_dialog = dialog_dictionary[node_label][status]
+	current_dialog = dialog_dictionary[object.name][status]
 	current_object = object
-	print(current_object)
 	show_dialog()
 	next_dialog()
 
@@ -148,7 +164,9 @@ func next_dialog() -> void:
 		text_count += 1
 	elif current_text_to_show[0] == ACTION:
 		if current_text_to_show[1] == "current":
-			emit_signal("start_action",current_object, current_text_to_show[2])
+			emit_signal("start_action", current_object, current_text_to_show[2])
+		else:
+			emit_signal("start_action", current_text_to_show[1], current_text_to_show[2])
 		text_count += 1
 	elif current_text_to_show[0] == NEXT_STATE:
 		set_status(current_text_to_show[1],current_text_to_show[2])

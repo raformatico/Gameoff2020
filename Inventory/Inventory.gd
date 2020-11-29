@@ -4,6 +4,7 @@ extends Resource
 signal item_deleted(item, index)
 signal item_added(item)
 signal item_clicked(item_name)
+signal deselect_all()
 
 export (Array, Resource) var inventory
 
@@ -41,6 +42,6 @@ func del_item(item_name) -> void:
 		print("Item not in Database")
 		return
 	var item : ItemResource = ItemDatabase[item_name]
-	if not item in inventory:
-		inventory.append(item)
-		emit_signal("item_deleted", item, index)
+	index = inventory.find(item)
+	inventory.remove(index)
+	emit_signal("item_deleted", item, index)

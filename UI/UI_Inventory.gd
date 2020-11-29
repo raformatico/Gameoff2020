@@ -14,6 +14,7 @@ onready var dialog = get_node("../Dialog")
 
 func _ready() -> void:
 	inventory_res.connect("item_clicked", self, "_on_item_clicked")
+	inventory_res.connect("deselect_all", self, "_on_deselect_all")
 	inventory_res.connect("item_added", self, "_on_item_added")
 	inventory_res.connect("item_deleted", self, "_on_item_deleted")
 	inventory = inventory_res.inventory
@@ -48,13 +49,25 @@ func _on_item_deleted(item : ItemResource, index : int) -> void:
 
 func _on_item_clicked (slot : InventorySlot) -> void:
 	if slot == slot_selected:
-		slot.deselect_item()
-		slot_selected = null
+		deselect_slot(slot)
 	else:
 		if slot_selected:
 			slot_selected.deselect_item()
 		slot.select_item()
+		Global.set_item_selected(slot.slot_name)
 		slot_selected = slot
+
+func _on_deselect_all() -> void:
+	for s in inventory_grid.get_children():
+		if s == slot_selected:
+			deselect_slot(s)
+
+
+func deselect_slot(slot) -> void:
+	slot.deselect_item()
+	slot_selected = null
+	Global.set_item_selected(null)
+
 
 func show_inventory() -> void:
 	inventory_but.hide()

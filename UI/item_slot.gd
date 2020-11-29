@@ -24,7 +24,6 @@ func deselect_item() -> void:
 	print("\t"+slot_name)
 
 
-
 func _on_TextureRect_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		inventory_res.emit_signal("item_clicked",self)
