@@ -1,9 +1,8 @@
 class_name InventorySlot
 extends CenterContainer
 
-var slot_name
+var slot_name = null
 onready var itemTexture := $TextureRect
-#TODO is that well done? Or may I connect all the slots with the UI with a signal 
 var inventory_res : Inventory = preload("res://Inventory/inventory.tres")
 
 func display_item(item : ItemResource) -> void:
@@ -13,15 +12,18 @@ func display_item(item : ItemResource) -> void:
 		$TextureRect/Label.text = str(item.quantity) + "/" + str(item.max_stack)
 		$TextureRect/Label.show()
 
+func hide_item() -> void:
+	slot_name = null
+	itemTexture.texture = null
+	$TextureRect/Label.hide()
 
 func select_item() -> void:
-	print("Item selected :)")
-	print(slot_name)
+	if slot_name != null:
+		$selected_texture.visible = true
 
 
 func deselect_item() -> void:
-	print("\tDeselected :(")
-	print("\t"+slot_name)
+	$selected_texture.visible = false
 
 
 func _on_TextureRect_gui_input(event: InputEvent) -> void:

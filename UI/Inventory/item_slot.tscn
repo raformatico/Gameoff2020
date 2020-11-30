@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://UI/Inventory/item_slot.gd" type="Script" id=1]
+[ext_resource path="res://UI/Inventory/ItemCount.tres" type="Theme" id=2]
+[ext_resource path="res://UI/Inventory/RECUADRO INVENTARIO.png" type="Texture" id=3]
+[ext_resource path="res://UI/Inventory/CAJA OBJETO SELECCIONADO.png" type="Texture" id=4]
+
+[node name="item_slot" type="CenterContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -4.75671
+margin_right = -4.75671
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+margin_left = 912.0
+margin_top = 493.0
+margin_right = 1007.0
+margin_bottom = 587.0
+texture = ExtResource( 3 )
+
+[node name="selected_texture" type="TextureRect" parent="."]
+visible = false
+margin_left = 913.0
+margin_top = 492.0
+margin_right = 1007.0
+margin_bottom = 587.0
+texture = ExtResource( 4 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 885.0
+margin_top = 465.0
+margin_right = 1035.0
+margin_bottom = 615.0
+rect_min_size = Vector2( 150, 150 )
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="TextureRect"]
+visible = false
+anchor_left = 0.67
+anchor_top = 0.677
+anchor_right = 0.937
+anchor_bottom = 0.863
+margin_left = -0.0136719
+margin_top = -0.0370636
+margin_right = -0.0636749
+margin_bottom = 0.0629272
+theme = ExtResource( 2 )
+text = "0/5"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="gui_input" from="TextureRect" to="." method="_on_TextureRect_gui_input"]
