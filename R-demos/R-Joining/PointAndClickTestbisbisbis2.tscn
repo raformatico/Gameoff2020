@@ -5,7 +5,8 @@
 [ext_resource path="res://J-Navegacion_Malla/PointAndClickManager.gd" type="Script" id=3]
 [ext_resource path="res://J-Navegacion_Malla/SceneGameLogic.gd" type="Script" id=4]
 [ext_resource path="res://Dialog/Dialog.tscn" type="PackedScene" id=5]
-[ext_resource path="res://UI/UI_Inventory.tscn" type="PackedScene" id=6]
+[ext_resource path="res://UI/Inventory/UI_Inventory.tscn" type="PackedScene" id=6]
+
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0, 0.313726, 0.984314, 1 )

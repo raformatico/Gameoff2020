@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://UI/Menu/menu.tres" type="Theme" id=1]
+[ext_resource path="res://UI/ui_text.tres" type="Theme" id=1]
 [ext_resource path="res://UI/Menu/back.png" type="Texture" id=2]
 [ext_resource path="res://UI/Menu/Menu.gd" type="Script" id=3]
 
@@ -39,25 +39,25 @@ __meta__ = {
 
 [node name="start" type="Button" parent="VBoxContainer"]
 margin_right = 692.0
-margin_bottom = 74.0
+margin_bottom = 61.0
 text = "START"
 
 [node name="controls" type="Button" parent="VBoxContainer"]
-margin_top = 124.0
+margin_top = 111.0
 margin_right = 692.0
-margin_bottom = 198.0
+margin_bottom = 172.0
 text = "CONTROLS"
 
 [node name="credits" type="Button" parent="VBoxContainer"]
-margin_top = 248.0
+margin_top = 222.0
 margin_right = 692.0
-margin_bottom = 322.0
+margin_bottom = 283.0
 text = "CREDITS"
 
 [node name="exit" type="Button" parent="VBoxContainer"]
-margin_top = 372.0
+margin_top = 333.0
 margin_right = 692.0
-margin_bottom = 446.0
+margin_bottom = 394.0
 text = "EXIT"
 [connection signal="pressed" from="VBoxContainer/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/controls" to="." method="_on_controls_pressed"]

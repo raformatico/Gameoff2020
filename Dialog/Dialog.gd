@@ -115,6 +115,8 @@ var dialog_dictionary = {
 
 onready var left_portrait: = $text_box/left_portrait
 onready var right_portrait: = $text_box/right_portrait
+onready var right_background := $background_right
+onready var left_background := $background_left
 onready var rich_text := $text_box/text
 
 func _ready() -> void:
@@ -192,11 +194,15 @@ func set_status(object : String, new_status : String) -> void:
 func change_character() -> void:
 	if character_talking == SIDE.LEFT:
 		left_portrait.visible = false
+		left_background.visible = false
 		right_portrait.visible = true
+		right_background.visible = true
 		character_talking = SIDE.RIGHT
 	else:
 		left_portrait.visible = true
+		left_background.visible = true
 		right_portrait.visible = false
+		right_background.visible = false
 		character_talking = SIDE.LEFT
 
 

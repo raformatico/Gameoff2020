@@ -17,7 +17,7 @@ _global_script_classes=[ {
 "base": "CenterContainer",
 "class": "InventorySlot",
 "language": "GDScript",
-"path": "res://UI/item_slot.gd"
+"path": "res://UI/Inventory/item_slot.gd"
 }, {
 "base": "Resource",
 "class": "ItemResource",
@@ -44,6 +44,7 @@ Global="*res://Global/global.gd"
 
 window/size/width=1920
 window/size/height=1080
+window/size/resizable=false
 window/size/test_width=960
 window/size/test_height=540
 window/stretch/mode="viewport"

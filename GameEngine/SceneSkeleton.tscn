@@ -4,8 +4,8 @@
 [ext_resource path="res://Character/Alex.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Dialog/Dialog.tscn" type="PackedScene" id=3]
 [ext_resource path="res://J-Navegacion_Malla/SceneGameLogic.gd" type="Script" id=4]
-[ext_resource path="res://UI/UI_Inventory.tscn" type="PackedScene" id=5]
-[ext_resource path="res://UI/pause.tscn" type="PackedScene" id=6]
+[ext_resource path="res://UI/Inventory/UI_Inventory.tscn" type="PackedScene" id=5]
+[ext_resource path="res://UI/Pause/pause.tscn" type="PackedScene" id=6]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0, 0.313726, 0.984314, 1 )
@@ -37,9 +37,9 @@ speed = 3
 
 [node name="Dialog" parent="." instance=ExtResource( 3 )]
 
-[node name="pause" parent="." instance=ExtResource( 6 )]
-
 [node name="UI_Inventory" parent="." instance=ExtResource( 5 )]
+
+[node name="pause" parent="." instance=ExtResource( 6 )]
 [connection signal="arrived" from="Alex" to="SceneGameLogic" method="_on_Alex_arrived"]
 [connection signal="hide_dialog" from="Dialog" to="UI_Inventory" method="_on_Dialog_hide_dialog"]
 [connection signal="show_dialog" from="Dialog" to="UI_Inventory" method="_on_Dialog_show_dialog"]

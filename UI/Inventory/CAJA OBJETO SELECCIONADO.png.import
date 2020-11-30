@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pause.png-2588384f69d078ed3af39e5e39672e7d.stex"
+path="res://.import/CAJA OBJETO SELECCIONADO.png-9e13a6be4d9bec89bbdea503c7e5f01e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/pause.png"
-dest_files=[ "res://.import/pause.png-2588384f69d078ed3af39e5e39672e7d.stex" ]
+source_file="res://UI/Inventory/CAJA OBJETO SELECCIONADO.png"
+dest_files=[ "res://.import/CAJA OBJETO SELECCIONADO.png-9e13a6be4d9bec89bbdea503c7e5f01e.stex" ]
 
 [params]
 
