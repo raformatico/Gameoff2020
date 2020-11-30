@@ -70,3 +70,13 @@ func _on_start_action(object, action : String) -> void:
 		object.get_parent().hide()
 	if action == "use":
 		inventory_res.del_item(object)
+
+var gateways={
+	"hall2cafeteria" : "res://Scenes/cafeteria/room.tscn"
+}
+
+func gateway_entered(gateway_name):
+	var scene=gateways[gateway_name]
+	if scene==null:
+		scene="res://Scenes/museum-prefinal/Room.tscn"
+		get_tree().change_scene (scene)
