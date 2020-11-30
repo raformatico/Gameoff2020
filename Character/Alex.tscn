@@ -2006,6 +2006,8 @@ height = 1.52833
 "Character",
 ]]
 script = ExtResource( 3 )
+threshold = 0.1
+speed = 2
 
 [node name="Alex" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.239582, -0.0337069 )
