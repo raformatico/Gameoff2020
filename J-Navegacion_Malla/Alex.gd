@@ -62,16 +62,15 @@ func _physics_process(delta):
 			else: # arived!
 				if target_rotation!=null:
 					##############
-					rotation_tmp_orig=rotation
-					
-					var tween = get_node("Tween")
-					tween.interpolate_property(self, "rotation",
-					rotation_tmp_orig, target_rotation, 1, 
-					Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-					tween.start()	
-					#rotating=true
+#					rotation_tmp_orig=rotation
+#
+#					var tween = get_node("Tween")
+#					tween.interpolate_property(self, "rotation",
+#					rotation_tmp_orig, target_rotation, 1, 
+#					Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+#					tween.start()	
 					#################
-					# rotation=target_rotation
+					rotation=target_rotation
 					
 				if target_object!=null:
 					emit_signal("arrived",target_object)

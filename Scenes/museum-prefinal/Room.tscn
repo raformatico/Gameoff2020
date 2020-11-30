@@ -13,7 +13,6 @@ visible = true
 
 [node name="Alex" parent="." index="2"]
 transform = Transform( 0.55, 0, 0, 0, 0.55, 0, 0, 0, 0.55, -0.949267, 2.8819, 11.6667 )
-threshold = 0.1
 speed = 2
 
 [node name="room" parent="." index="3" instance=ExtResource( 2 )]
