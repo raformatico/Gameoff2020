@@ -1,0 +1,6 @@
+[gd_resource type="Environment" format=2]
+
+[resource]
+ambient_light_color = Color( 0.352941, 0.423529, 0.47451, 1 )
+glow_enabled = true
+glow_bloom = 0.2

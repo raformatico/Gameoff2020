@@ -3,6 +3,8 @@ extends Node
 signal start_dialog(object_name, status)
 signal start_dialog_item(object_name, status, item_selected, interactions)
 
+signal coffee_served()
+
 var entrance_gateway="Main"
 
 var debug: = false
@@ -129,14 +131,18 @@ func _on_start_action(object, action : String) -> void:
 		object.take()
 	elif action == "use":
 		inventory_res.del_item(object)
+		
+		match object:
+			"cupcoffee":
+				emit_signal("coffee_served")
 
 func is_visible(object_name) -> bool:
 	var is_visible = true
 	if object_name == "Door" and status["Door"] == "opened":
-		print("ESCONDETE PUTA")
+		print("ESCONDETE")
 		is_visible = false
 	elif object_name == "AspiradoraHall" and status["AspiradoraHall"] == "opened":
-		print("ESCONDETE PUTA")
+		print("ESCONDETE")
 		is_visible = false
 	elif object_name in status:
 		if status[object_name] == "picked":
