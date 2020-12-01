@@ -47,12 +47,30 @@ var status = {
 	"Window" : "start",
 	"DownFloor" : "start",
 	"InterruptorBox" : "start",
+	"Lever" : "start",
+	"Door" : "start",#CHANGE TO opened to enter
+	"Pump" : "start",
+	"Audrey" : "start",
+	"Key" : "start",
+	"Key2" : "start",
+	"Plant" : "start",
+	"Lamp" : "start",
+	"Wire" : "start",
+	"Gofrera" : "start",
+	"Aspiradora" : "start",
+	"AspiradoraHall" : "start",#CHANGE TO opened to enter
+	"Cafetera" : "start",
+	"Radio" : "start",
 	"Error" : "start"
 }
 
 var interactions := {
-	"potion" : "Statue",
-	"armor" : "Vitrina1"
+	"cup" : "Cafetera",
+	"wax" : "Gofrera",
+	"cupcoffee" : "Pump",
+	"gear" : "InterruptorBox",
+	"wire" : "InterruptorBox",
+	"chip" : "InterruptorBox"
 }
 
 func set_item_selected(item_name) -> void:
@@ -68,14 +86,35 @@ func _on_Alex_arrived(object) -> void:
 	
 
 func _on_start_action(object, action : String) -> void:
-	if action == "hide":
+	if action == "minigame":
+		#TODO lanzar juego
+		pass
+	elif action == "code":
+		#TODO lanzar escena introducir código y 
+		#que al final si se hace bien ejecute lo de abajo
+		get_tree().change_scene("res://Scenes/DoorCode/doorcode.tscn")
+		if status["Door"] == "opened":
+			for child in object.get_parent().get_parent().get_children():
+				if child.name == "2CpuertaR" or child.name == "2CpuertaL":
+					child.queue_free()
+		
+			object.queue_free()
+			status["Door"] = "opened"
+		pass
+	elif action == "hide":
 		object.take()
-	if action == "use":
+	elif action == "use":
 		inventory_res.del_item(object)
 
 func is_visible(object_name) -> bool:
 	var is_visible = true
-	if object_name in status:
+	if object_name == "Door" and status["Door"] == "opened":
+		print("ESCONDETE PUTA")
+		is_visible = false
+	elif object_name == "AspiradoraHall" and status["AspiradoraHall"] == "opened":
+		print("ESCONDETE PUTA")
+		is_visible = false
+	elif object_name in status:
 		if status[object_name] == "picked":
 			print(object_name)
 			is_visible = false

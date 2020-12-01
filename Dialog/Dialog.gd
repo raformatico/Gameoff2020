@@ -107,12 +107,8 @@ var dialog_dictionary = {
 		"poweron" : [["Tardis", "Luces fuera"],["Alex", "Bonitas vistas. Echo de menos la tierra"],[ACTION, "current", "lightoff"],[NEXT_STATE,"Lever", "poweroff"]],
 		"poweroff" : [["Alex", "Dejemos las luces encendidas."],["Tardis", "Sí, más vale que veamos por dónde vamos."],[ACTION, "current", "lighton"],[NEXT_STATE,"Lever", "poweron"]]
 	},
-	"Updoor" : {
-		"start" : [["Alex","Parece que necesitamos un código de 4 dígitos "],["Tardis","Creo que he visto unos números en algún lado..."]],
-		"opendoor" : [["Alex","¡Puerta abierta!"],["Tardis","Espero que sigas a salvo al cruzarla..."]]
-	},
-	"DigitCode" : {
-		"start" : [["Alex","Parece que necesitamos un código de 4 dígitos"],["Tardis", "Creo que he visto unos números en algún lado..."]],
+	"Door" : {
+		"start" : [["Alex","Parece que necesitamos un código de 4 dígitos"],["Tardis", "Creo que he visto unos números en algún lado..."],[ACTION, "current", "code"]],
 		"opened" : [["Alex","¡Puerta abierta!"],["Tardis", "Espero que sigas a salvo al cruzarla..."]]
 	},
 	"Pump" : {
@@ -127,7 +123,7 @@ var dialog_dictionary = {
 		"coffe" : [["Tardis", "Eso es, un poco de café por la mañana ayuda a cualquiera a levantarse."]]
 	},
 	"Key2" : {
-		"start" : [["Alex","Esta llave ya no gira más."],["Tardis", "Creo que la has roto... De hecho suena agua en la cafetería."],["Alex","Ups"],[NEXT_STATE,"Key2","opened"]],
+		"start" : [["Alex","Gira fácil! Uy yo creo que ya no gira más."],["Tardis", "La has roto... De hecho suena agua en la cafetería."],["Alex","Ups"],[NEXT_STATE,"Key2","opened"],[NEXT_STATE,"Aspiradora","cafeteria"],[NEXT_STATE,"AspiradoraHall","opened"],[ACTION,"Aspiradora","opened"]],
 		"opened" : [["Tardis", "No lo intentes que esta llave ya no vuelve a su sitio..."]]
 	},
 	"Plant" : {
@@ -144,20 +140,26 @@ var dialog_dictionary = {
 	},
 	"Gofrera" : {
 		"start" : [["Alex","Esto está caliente, podría cocinar algo."],["Tardis", "Espero que sepas lo que estás haciendo...esa máquina lleva tiempo sin usarse."]],
-		"addwax" : [["Tardis", "¿Qué guarrería estás haciendo?"],["Alex","Calla, creo que puede funcionar."],["Tardis", "Espero que no pienses en comerte esa cosa circular."]]
+		"wax_incomplete" : [["Alex","Con este número de ceras no hay suficiente para este molde..."],["Tardis","Pues a buscar más! Por lo menos vas a necesitar 4 en total."], [NEXT_STATE,"Gofrera","start"]],
+		"wax" : [["Tardis", "¿Qué guarrería estás haciendo?"],["Alex","Calla, creo que puede funcionar."],["Tardis", "Espero que no pienses en comerte esa cosa circular."], [ACTION,"wax","use"], [OBJECT,inventory.gear]]
+	},
+	"AspiradoraHall" : {
+		"start" : [["Alex","Mira qué robot limpiador más bonito. Cuchi, cuchi..."],["Tardis", "¡Retrocede! Se vuelven muy territoriales cuando no tienen trabajo, esa zona está vedada."]],
+		"opened" : []
 	},
 	"Aspiradora" : {
-		"start" : [["Alex","Mira qué robot limpiador más bonito. Cuchi, cuchi..."],["Tardis", "¡Retrocede! Se vuelven muy territoriales cuando no tienen trabajo, esa zona está vedada."],["Alex",""],["Tardis", ""]],
+		"start" : [["Alex","Mira qué robot limpiador más bonito. Cuchi, cuchi..."],["Tardis", "¡Retrocede! Se vuelven muy territoriales cuando no tienen trabajo, esa zona está vedada."]],
 		"cafeteria" : [["Tardis","Ahora parece que no se preocupa mucho de ti"],["Alex", "Sí, pero da buenos empujones y no hay manera de revisar si tiene algo que nos venga bien..."], ["Tardis","Perdona, estás hablando de un ser vivo."]],
-		"end" : [["Alex","Anda mira! Tiene un chip que seguro que nos viene bien."],["Tardis","Saquea muertos! Eres horrible... Bueno qué se le va a hacer. Descanse en paz"]]
+		"end" : [["Alex","Anda mira! Tiene un chip que seguro que nos viene bien."],["Tardis","Saquea muertos! Eres horrible... Bueno qué se le va a hacer. Descanse en paz"], [OBJECT,inventory.chip]]
 	},
 	"Cafetera" : {
 		"start" : [["Alex","Esto aún funciona"],["Tardis", "Te vas a quemar"],["Alex","Tienes razón"], [NEXT_STATE,"Cafetera","start2"]],
 		"start2" : [["Alex","Quizá si encontrásemos algo donde servir el café."]],
-		"addcup" : [["Tardis", "No me bebería eso ni aunque me pagaran."],["Alex","Seguro que puede sernos de utilidad."],["Tardis", "Sin duda eso es energía concentrada!"]]
+		"cup" : [["Tardis", "No me bebería eso ni aunque me pagaran."],["Alex","Seguro que puede sernos de utilidad."],["Tardis", "Sin duda eso es energía concentrada!"],[ACTION,"cup","use"], [OBJECT,inventory.cupcoffee],[NEXT_STATE,"Cafetera","end"]],
+		"end" : [["Tardis","Yo creo que con la cafetera has terminado"]]
 	},
 	"Radio" : {
-		"start" : [["Alex","Esta radio no funciona del todo bien pero creo que puedo arreglarla"],["Tardis", "Inténtalo que me encanta la música"]],
+		"start" : [["Alex","Esta radio no funciona del todo bien pero creo que puedo arreglarla"],["Tardis", "Inténtalo que me encanta la música"],[ACTION,"current","minigame"]],
 		"middle" : [["Alex","Mira, le gusta esta melodía"],["Tardis", "Juraría que está intentando bailar... ¡con un ritmo pésimo, por cierto! "]],
 		"end" : [["Tardis", "Creo que se está volviendo loca."],["Alex", "Cuidado ¡va a estallar!"]]
 	},
@@ -193,8 +195,20 @@ func start_dialog_item(object, status, item_selected, interact_with) -> void:
 		next_dialog()
 	#Else show correct dialog
 	else:
-		Global.status[object.name] = item_selected
-		start_dialog(object, item_selected)
+		if item_selected == "wax":
+			var quantity = 0
+			var max_stack = 0
+			for item in inventory.inventory:
+				if item.name == "wax":
+					quantity = item.quantity
+					max_stack = item.max_stack
+			if quantity < max_stack:
+				Global.status[object.name] = "wax_incomplete"
+			else:
+				Global.status[object.name] = item_selected
+		else:
+			Global.status[object.name] = item_selected
+		start_dialog(object, Global.status[object.name])
 	#Deselect item
 	inventory.emit_signal("deselect_all")
 	

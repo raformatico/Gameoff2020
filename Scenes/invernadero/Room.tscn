@@ -19,3 +19,5 @@ speed = 10
 
 [node name="Dialog" parent="." index="4"]
 visible = false
+
+[editable path="room"]

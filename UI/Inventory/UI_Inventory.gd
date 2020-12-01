@@ -18,9 +18,7 @@ func _ready() -> void:
 	inventory_res.connect("item_added", self, "_on_item_added")
 	inventory_res.connect("item_deleted", self, "_on_item_deleted")
 	inventory = inventory_res.inventory
-	var slot_array = inventory_grid.get_children()
-	for i in range(inventory.size()):
-		slot_array[i].display_item(inventory[i])
+	display_all()
 		
 	"""inventory_grid.columns = inventory.size()
 	var slot : InventorySlot
@@ -71,7 +69,7 @@ func _on_item_deleted(item : ItemResource, index : int) -> void:
 		if i == index:
 			slot.hide_item()
 		i += 1
-
+	display_all()
 
 func _on_item_clicked (slot : InventorySlot) -> void:
 	if slot == slot_selected:
@@ -82,6 +80,7 @@ func _on_item_clicked (slot : InventorySlot) -> void:
 		slot.select_item()
 		Global.set_item_selected(slot.slot_name)
 		slot_selected = slot
+
 
 func _on_deselect_all() -> void:
 	for s in inventory_grid.get_children():
@@ -94,6 +93,12 @@ func deselect_slot(slot) -> void:
 	slot_selected = null
 	Global.set_item_selected(null)
 
+
+func display_all() -> void:
+	var slot_array = inventory_grid.get_children()
+	for i in range(inventory.size()):
+		slot_array[i].display_item(inventory[i])
+	
 
 func show_inventory() -> void:
 	background.show()

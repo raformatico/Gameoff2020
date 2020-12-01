@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://UI/Pause/pause.gd" type="Script" id=1]
 [ext_resource path="res://UI/Pause/ICONO INVENTARIO.png" type="Texture" id=2]
 [ext_resource path="res://UI/Pause/ICONO INVENTARIO PULSADO.png" type="Texture" id=3]
 [ext_resource path="res://UI/ui_text.tres" type="Theme" id=4]
+[ext_resource path="res://UI/Pause/CONTINUE1.png" type="Texture" id=5]
+[ext_resource path="res://UI/Pause/Continue.png" type="Texture" id=6]
+[ext_resource path="res://UI/Menu/EXIT.png" type="Texture" id=7]
+[ext_resource path="res://UI/Menu/EXIT1.png" type="Texture" id=8]
 
 [node name="pause" type="Control"]
 pause_mode = 2
@@ -38,6 +42,7 @@ __meta__ = {
 }
 
 [node name="pause_menu" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 1.7818
@@ -60,22 +65,24 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="pause_menu/MarginContainer"]
-margin_top = 153.0
-margin_right = 519.0
-margin_bottom = 325.0
+margin_top = 93.0
+margin_right = 525.0
+margin_bottom = 385.0
 size_flags_vertical = 4
 custom_constants/separation = 50
 
-[node name="continue" type="Button" parent="pause_menu/MarginContainer/VBoxContainer"]
-margin_right = 519.0
-margin_bottom = 61.0
-text = "CONTINUE"
+[node name="continue" type="TextureButton" parent="pause_menu/MarginContainer/VBoxContainer"]
+margin_right = 525.0
+margin_bottom = 121.0
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 5 )
 
-[node name="exit" type="Button" parent="pause_menu/MarginContainer/VBoxContainer"]
-margin_top = 111.0
-margin_right = 519.0
-margin_bottom = 172.0
-text = "EXIT"
+[node name="exit" type="TextureButton" parent="pause_menu/MarginContainer/VBoxContainer"]
+margin_top = 171.0
+margin_right = 525.0
+margin_bottom = 292.0
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 8 )
 [connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="pause_menu/MarginContainer/VBoxContainer/continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="pause_menu/MarginContainer/VBoxContainer/exit" to="." method="_on_exit_pressed"]
