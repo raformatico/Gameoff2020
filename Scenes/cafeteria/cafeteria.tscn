@@ -4,31 +4,31 @@
 [ext_resource path="res://GameEngine/Clickable.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/cafeteria/gltf/aspiradora.material" type="Material" id=3]
 [ext_resource path="res://Scenes/cafeteria/aspiradora.gd" type="Script" id=4]
-[ext_resource path="res://GameEngine/Clickable.gd" type="Script" id=5]
+[ext_resource path="res://GameEngine/Gateway.tscn" type="PackedScene" id=5]
 
-[sub_resource type="BoxShape" id=4]
+[sub_resource type="BoxShape" id=1]
 extents = Vector3( 1, 1.06216, 0.751459 )
 
-[sub_resource type="BoxShape" id=5]
+[sub_resource type="BoxShape" id=2]
 extents = Vector3( 0.413942, 0.306389, 0.382849 )
 
-[sub_resource type="BoxShape" id=6]
+[sub_resource type="BoxShape" id=3]
 extents = Vector3( 0.497464, 0.611725, 0.43813 )
 
-[sub_resource type="NavigationMesh" id=1]
+[sub_resource type="NavigationMesh" id=4]
 vertices = PoolVector3Array( 0.823759, 1.9896, -0.623978, -0.334531, 1.9896, 0.556353, 0.780988, 1.9896, 0.5423, 4.5026, 1.9896, 1.06221, 2.4632, 1.9896, 5.08423, 5.2322, 1.9896, 1.06221, 4.5026, 1.9896, -2.77682, -9.46579, 1.9896, 5.08423, -12.1521, 1.9896, -0.497529, -12.1521, 1.9896, 5.08423, -12.1521, 1.9896, 6.29507, -9.46579, 1.9896, -5.02713, -10.9498, 1.9896, -5.72332, -10.9498, 1.9896, -4.27976, -9.46579, 1.9896, -0.49753, -12.1521, 1.9896, -3.45162, 0.878471, 1.9896, -3.30079, 4.5026, 1.9896, -4.71891, 0.878471, 1.9896, -4.71891, 5.2322, 1.9896, -2.77682, -9.46579, 1.9896, -3.45162, -1.27049, 1.9896, 5.08423, -6.95706, 1.9896, 0.639784, -6.24217, 1.9896, -4.71891, -6.24217, 1.9896, -3.30079, -9.46579, 1.9896, 6.29507, -8.70009, 1.9896, -0.853592, -17.4109, 1.9896, -3.45162, -14.8385, 1.9896, -4.27976, -17.4109, 1.9896, -5.02713, -14.8385, 1.9896, -0.497529, -17.4109, 1.9896, -0.497529, -14.8385, 1.9896, -5.72332, -17.4109, 1.9896, -5.72332, -14.8385, 1.9896, 6.29507, -17.4109, 1.9896, 5.08423, -17.4109, 1.9896, 6.29507, -14.8385, 1.9896, 5.08423, -14.8385, 1.9896, -3.45162, -7.91772, 1.9896, -0.498909, 4.21015, 1.9896, 5.08423, -9.46579, 1.9896, -5.72332, 5.2322, 1.9896, -4.71892, -1.27048, 1.9896, 6.29507, -19.1581, 1.9896, 3.61033, -19.1581, 1.9896, 0.976377 )
 polygons = [ PoolIntArray( 0, 2, 1 ), PoolIntArray( 3, 2, 0 ), PoolIntArray( 4, 2, 3 ), PoolIntArray( 5, 3, 6 ), PoolIntArray( 7, 9, 8 ), PoolIntArray( 10, 9, 7 ), PoolIntArray( 11, 13, 12 ), PoolIntArray( 14, 8, 15 ), PoolIntArray( 16, 18, 17 ), PoolIntArray( 19, 6, 17 ), PoolIntArray( 20, 15, 13 ), PoolIntArray( 21, 22, 1 ), PoolIntArray( 16, 24, 23 ), PoolIntArray( 0, 16, 6 ), PoolIntArray( 21, 1, 2 ), PoolIntArray( 7, 14, 22 ), PoolIntArray( 25, 7, 21 ), PoolIntArray( 14, 20, 26 ), PoolIntArray( 27, 29, 28 ), PoolIntArray( 30, 31, 27 ), PoolIntArray( 29, 33, 32 ), PoolIntArray( 34, 36, 35 ), PoolIntArray( 37, 35, 31 ), PoolIntArray( 15, 38, 28 ), PoolIntArray( 8, 30, 38 ), PoolIntArray( 14, 26, 39 ), PoolIntArray( 10, 34, 37 ), PoolIntArray( 9, 37, 30 ), PoolIntArray( 3, 0, 6 ), PoolIntArray( 4, 3, 40 ), PoolIntArray( 5, 6, 19 ), PoolIntArray( 7, 8, 14 ), PoolIntArray( 10, 7, 25 ), PoolIntArray( 11, 12, 41 ), PoolIntArray( 14, 15, 20 ), PoolIntArray( 16, 17, 6 ), PoolIntArray( 19, 17, 42 ), PoolIntArray( 20, 13, 11 ), PoolIntArray( 16, 23, 18 ), PoolIntArray( 21, 2, 4 ), PoolIntArray( 7, 22, 21 ), PoolIntArray( 25, 21, 43 ), PoolIntArray( 27, 28, 38 ), PoolIntArray( 30, 27, 38 ), PoolIntArray( 29, 32, 28 ), PoolIntArray( 34, 35, 37 ), PoolIntArray( 37, 31, 30 ), PoolIntArray( 15, 28, 13 ), PoolIntArray( 8, 38, 15 ), PoolIntArray( 14, 39, 22 ), PoolIntArray( 10, 37, 9 ), PoolIntArray( 9, 30, 8 ), PoolIntArray( 31, 35, 44 ), PoolIntArray( 31, 44, 45 ) ]
 
-[sub_resource type="ConcavePolygonShape" id=2]
+[sub_resource type="ConcavePolygonShape" id=5]
 data = PoolVector3Array( 6.207, 1.9896, 6.9775, -18.7133, 1.9896, 6.9775, -18.7133, 1.9896, -6.4057, 6.207, 1.9896, 6.9775, -18.7133, 1.9896, -6.4057, 6.207, 1.9896, -6.4057 )
 
-[sub_resource type="Curve3D" id=9]
+[sub_resource type="Curve3D" id=6]
 _data = {
 "points": PoolVector3Array( 0, 0, 0, 0, 0, 0, 0.218376, -4.52995e-06, 2.22875, 0, 0, 0, 0, 0, 0, 0.155496, -4.52995e-06, 3.8951, 0, 0, 0, 0, 0, 0, 1.6332, -4.52995e-06, 3.98942, 0, 0, 0, 0, 0, 0, 3.83403, -4.52995e-06, 4.02086, 0, 0, 0, 0, 0, 0, 3.99123, -4.52995e-06, 5.78152, 0, 0, 0, 0, 0, 0, 3.99123, -4.52995e-06, 7.76227, 0, 0, 0, 0, 0, 0, -0.630514, -4.52995e-06, 7.79371, 0, 0, 0, 0, 0, 0, -0.850598, -4.52995e-06, 6.12737, 0, 0, 0, 0, 0, 0, -0.882038, -4.52995e-06, 4.33526, 0, 0, 0, 0, 0, 0, 1.53887, -4.52995e-06, 3.45493, 0, 0, 0, 0, 0, 0, 3.83403, -4.52995e-06, 2.85756, 0, 0, 0, 0, 0, 0, 3.99123, -4.52995e-06, 1.37986, 0, 0, 0, 0, 0, 0, 2.29344, -4.52995e-06, 1.34842, 0, 0, 0, 0, 0, 0, 2.13624, -4.52995e-06, -1.5441, 0, 0, 0, 0, 0, 0, 2.262, -4.52995e-06, -4.12221, 0, 0, 0, 0, 0, 0, 0.784303, -4.52995e-06, -4.21654, 0, 0, 0, 0, 0, 0, -1.91957, -4.52995e-06, -4.21653, 0, 0, 0, 0, 0, 0, -1.98245, -4.52995e-06, -2.83315, 0, 0, 0, 0, 0, 0, -2.23398, -4.52995e-06, -0.538004, 0, 0, 0, 0, 0, 0, -0.756278, -4.52995e-06, -0.349361, 0, 0, 0, 0, 0, 0, -0.567635, -4.52995e-06, -2.42443, 0, 0, 0, 0, 0, 0, 0.815744, -4.52995e-06, -2.26723, 0, 0, 0, 0, 0, 0, 0.752863, -4.52995e-06, -0.380802, 0, 0, 0, 0, 0, 0, 0.344138, -4.52995e-06, 0.813935, 0, 0, 0, 0, 0, 0, 0.218376, -4.52995e-06, 2.22875 ),
 "tilts": PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
 }
 
-[sub_resource type="ArrayMesh" id=8]
+[sub_resource type="ArrayMesh" id=7]
 resource_name = "aspiradora"
 surfaces/0 = {
 "aabb": AABB( -0.654388, -0.908409, -0.468499, 0.948862, 1.01396, 0.952386 ),
@@ -43,108 +43,101 @@ surfaces/0 = {
 "vertex_count": 1324
 }
 
-[sub_resource type="SphereShape" id=3]
+[sub_resource type="SphereShape" id=8]
 radius = 0.702983
 
 [node name="cafeteria17" instance=ExtResource( 1 )]
 
-[node name="taburete4" parent="." index="0"]
+[node name="taburete4" parent="." index="1"]
 transform = Transform( 1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, -1.43414, 1.99822, 0.0828425 )
 
-[node name="taburete3" parent="." index="1"]
+[node name="taburete3" parent="." index="2"]
 transform = Transform( 1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, -3.11808, 1.99822, 0.0828425 )
 
-[node name="taburete2" parent="." index="2"]
+[node name="taburete2" parent="." index="3"]
 transform = Transform( 1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, -4.8957, 1.99822, 0.0828425 )
 
-[node name="paredright" parent="." index="3"]
+[node name="paredright" parent="." index="4"]
 transform = Transform( 1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, -3.71704, 0.532201, -0.692695 )
 
-[node name="pareddown" parent="." index="4"]
+[node name="pareddown" parent="." index="5"]
 transform = Transform( 1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, -3.71704, 0.532201, -0.692695 )
 
-[node name="suelo" parent="." index="5"]
+[node name="suelo" parent="." index="6"]
 transform = Transform( 1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, -3.71704, 0.532201, -0.692695 )
 
-[node name="jukebox" parent="." index="6"]
+[node name="jukebox" parent="." index="7"]
 transform = Transform( 1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, -12.8597, 3.73686, -5.08575 )
 
 [node name="Radio" parent="jukebox" index="0" instance=ExtResource( 2 )]
 
 [node name="CollisionShape" parent="jukebox/Radio" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.150968 )
-shape = SubResource( 4 )
+shape = SubResource( 1 )
 
 [node name="stand-position" parent="jukebox/Radio" index="1"]
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, -1.0278, 1.11323 )
 
-[node name="gofrera" parent="." index="7"]
+[node name="gofrera" parent="." index="8"]
 transform = Transform( 1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, -2.66931, 3.95155, -5.44292 )
 
 [node name="Gofrera" parent="gofrera" index="0" instance=ExtResource( 2 )]
 
 [node name="CollisionShape" parent="gofrera/Gofrera" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.172365, -0.17613 )
-shape = SubResource( 5 )
+shape = SubResource( 2 )
 
 [node name="stand-position" parent="gofrera/Gofrera" index="1"]
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, -1.15409, 0.886782 )
 
-[node name="sofa" parent="." index="8"]
+[node name="sofa" parent="." index="9"]
 transform = Transform( 1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 4.45936, 2.55256, 6.67567 )
 
-[node name="taburete1" parent="." index="9"]
+[node name="taburete1" parent="." index="10"]
 transform = Transform( 1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, -6.6553, 1.99822, 0.0828425 )
 
-[node name="cafetera" parent="." index="10"]
+[node name="cafetera" parent="." index="11"]
 transform = Transform( 1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 0.153689, 3.58915, -5.70445 )
 
 [node name="Cafetera" parent="cafetera" index="0" instance=ExtResource( 2 )]
 
 [node name="CollisionShape" parent="cafetera/Cafetera" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0924722, 0, 0 )
-shape = SubResource( 6 )
+shape = SubResource( 3 )
 
 [node name="stand-position" parent="cafetera/Cafetera" index="1"]
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, -0.940913, 0.886782 )
 
-[node name="barra" parent="." index="11"]
+[node name="barra" parent="." index="12"]
 transform = Transform( 1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, -7.67712, 4.26195, -5.54789 )
 
-[node name="fregadero" parent="." index="12"]
+[node name="fregadero" parent="." index="13"]
 transform = Transform( 1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, -0.0407307, 3.04437, -5.79195 )
 
-[node name="paredup" parent="." index="13"]
+[node name="paredup" parent="." index="14"]
 transform = Transform( 1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, -3.71704, 0.532201, -0.692695 )
 
-[node name="Camara002" parent="." index="14"]
+[node name="Camara002" parent="." index="15"]
 transform = Transform( 0.938715, -0.146257, -0.296459, 0, 0.892515, -0.44032, 0.330574, 0.41532, 0.841841, -7.12324, 17.7925, 4.90088 )
 
 [node name="Camara002_Orientation" parent="Camara002" index="0"]
 fov = 49.0
-
-[node name="Sun" parent="." index="15"]
-transform = Transform( 0.995221, 0, 0, 0, 0.987154, 0.126457, 0, -0.126457, 0.987154, -3.60918, 29.7424, 7.56871 )
-
-[node name="Sun_Orientation" parent="Sun" index="0"]
-shadow_enabled = true
-shadow_bias = 0.49
 
 [node name="NavigationManager" type="Node" parent="." index="16"]
 
 [node name="Navigation" type="Navigation" parent="NavigationManager" index="0"]
 
 [node name="floor" type="NavigationMeshInstance" parent="NavigationManager/Navigation" index="0"]
-navmesh = SubResource( 1 )
+navmesh = SubResource( 4 )
 
 [node name="floor2" type="StaticBody" parent="NavigationManager/Navigation" index="1"]
 
 [node name="shape0" type="CollisionShape" parent="NavigationManager/Navigation/floor2" index="0"]
-shape = SubResource( 2 )
+shape = SubResource( 5 )
 
 [node name="Path" type="Path" parent="." index="17"]
 transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -3.77991e-07, 2.51589, 2.32009 )
-curve = SubResource( 9 )
+curve = SubResource( 6 )
 
 [node name="PathFollow" type="PathFollow" parent="Path" index="0"]
 transform = Transform( 0.999998, 0, 0, 0, 1, 0, 0, 0, 0.999998, 0.218376, -4.52995e-06, 2.22875 )
@@ -152,19 +145,16 @@ rotation_mode = 1
 
 [node name="aspiradora" type="MeshInstance" parent="Path/PathFollow" index="0"]
 transform = Transform( -2.76965e-07, 0, 1.7, 0, 1.7, 0, -1.7, 0, -2.76965e-07, 0, 1.23858, 0 )
-mesh = SubResource( 8 )
+mesh = SubResource( 7 )
 material/0 = null
 script = ExtResource( 4 )
 
-[node name="Aspiradora" type="StaticBody" parent="Path/PathFollow/aspiradora" index="0" groups=[
-"clickable",
-] instance=ExtResource( 2 )]
+[node name="Aspiradora" parent="Path/PathFollow/aspiradora" index="0" instance=ExtResource( 2 )]
 transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0, 0, 0 )
-script = ExtResource( 5 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Path/PathFollow/aspiradora/Aspiradora" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000548244, -0.444757, 0.240139 )
-shape = SubResource( 3 )
+shape = SubResource( 8 )
 
 [node name="stand-position" type="Spatial" parent="Path/PathFollow/aspiradora/Aspiradora" index="1"]
 transform = Transform( -1, 0, -3.25963e-07, 0, 1, 0, 3.25963e-07, 0, -1, 2.38419e-07, -0.993867, 1.4786 )
@@ -172,6 +162,17 @@ transform = Transform( -1, 0, -3.25963e-07, 0, 1, 0, 3.25963e-07, 0, -1, 2.38419
 [node name="Tween" type="Tween" parent="Path/PathFollow/aspiradora" index="1"]
 repeat = true
 playback/repeat = true
+
+[node name="Sun" parent="." index="18"]
+transform = Transform( 0.995221, 0, 0, 0, 0.987154, 0.126457, 0, -0.126457, 0.987154, -3.60918, 29.7424, 7.56871 )
+
+[node name="Sun_Orientation" parent="Sun" index="0"]
+shadow_enabled = true
+shadow_bias = 0.49
+
+[node name="Gateway" parent="." index="19" instance=ExtResource( 5 )]
+transform = Transform( -1, 0, -1.38884e-06, 0, 1, 0, 3.89414e-07, 0, -3.56648, -16.805, 3.99575, 2.16368 )
+gateway_name = "cafeteria2hall"
 
 [editable path="jukebox/Radio"]
 

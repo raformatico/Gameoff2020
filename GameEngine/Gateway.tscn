@@ -5,7 +5,9 @@
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 1.51788, 1.72093, 1.51005 )
 
-[node name="Gateway" type="Area"]
+[node name="Gateway" type="Area" groups=[
+"Gateway",
+]]
 script = ExtResource( 1 )
 gateway_name = "hall2cafeteria"
 

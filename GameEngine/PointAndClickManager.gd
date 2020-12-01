@@ -67,3 +67,13 @@ func smooth_path(path_):
 	# n=curva.get_baked_length()
 	var pathh=curva.get_baked_points()
 	return pathh
+
+func set_alex_path(destination,rotation_):
+	var path=navigator.get_simple_path(alex.foot.global_transform.origin,destination,true)
+	path.remove(0)
+				
+				##################
+	path=smooth_path(path)
+				#################
+				
+	alex.set_path(path,rotation_,null)

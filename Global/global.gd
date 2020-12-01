@@ -3,6 +3,8 @@ extends Node
 signal start_dialog(object_name, status)
 signal start_dialog_item(object_name, status, item_selected)
 
+var entrance_gateway="Main"
+
 var debug: = false
 var item_selected = null setget set_item_selected
 var inventory_res : Inventory = preload("res://Inventory/inventory.tres")
@@ -72,13 +74,18 @@ func _on_start_action(object, action : String) -> void:
 		inventory_res.del_item(object)
 
 var gateways={
-	"hall2cafeteria" : {"scene": "res://Scenes/cafeteria/room.tscn", "gateway":""},
-	"greenhouse2hall" : {"scene" : "res://Scenes/museum-prefinal/Room.tscn", "gateway":""},
-	"cafeteria2hall" : {"scene" : "res://Scenes/museum-prefinal/Room.tscn", "gateway":""},
-	"hall2greenhouse" : {"scene" : "res://Scenes/invernadero/Room.tscn", "gateway":""}
+	"hall2cafeteria" : {"scene": "res://Scenes/cafeteria/room.tscn", "gateway":"cafeteria2hall"},
+	"greenhouse2hall" : {"scene" : "res://Scenes/museum-prefinal/Room.tscn", "gateway":"hall2greenhouse"},
+	"cafeteria2hall" : {"scene" : "res://Scenes/museum-prefinal/Room.tscn", "gateway":"hall2cafeteria"},
+	"hall2greenhouse" : {"scene" : "res://Scenes/invernadero/Room.tscn", "gateway":"greenhouse2hall"}
 }
 
 func gateway_entered(gateway_name):
 	var scene=gateways[gateway_name].scene
 	if scene!=null and scene!="":
+		entrance_gateway=gateways[gateway_name].gateway
 		get_tree().change_scene (scene)
+		
+
+func get_gateway():
+	return entrance_gateway

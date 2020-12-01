@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://GameEngine/PointAndClickManager.gd" type="Script" id=1]
 [ext_resource path="res://Character/Alex.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://J-Navegacion_Malla/SceneGameLogic.gd" type="Script" id=4]
 [ext_resource path="res://UI/Inventory/UI_Inventory.tscn" type="PackedScene" id=5]
 [ext_resource path="res://UI/Pause/pause.tscn" type="PackedScene" id=6]
+[ext_resource path="res://GameEngine/SceneSkeleton.gd" type="Script" id=7]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0, 0.313726, 0.984314, 1 )
@@ -14,6 +15,7 @@ albedo_color = Color( 0, 0.313726, 0.984314, 1 )
 albedo_color = Color( 0.996078, 0.00392157, 0.00392157, 1 )
 
 [node name="Spatial" type="Spatial"]
+script = ExtResource( 7 )
 
 [node name="SceneGameLogic" type="Node" parent="."]
 script = ExtResource( 4 )
