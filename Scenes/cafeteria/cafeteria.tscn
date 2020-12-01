@@ -182,9 +182,6 @@ transform = Transform( -1, 0, -1.38884e-06, 0, 1, 0, 3.89414e-07, 0, -3.56648, -
 gateway_name = "cafeteria2hall"
 
 [editable path="jukebox/Radio"]
-
 [editable path="gofrera/Gofrera"]
-
 [editable path="cafetera/Cafetera"]
-
 [editable path="Path/PathFollow/aspiradora/Aspiradora"]

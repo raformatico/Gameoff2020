@@ -3,7 +3,7 @@ extends Node
 export var ray_length=1000
 var alex
 var navigator
-const Marker = preload("res://J-Navegacion_malla/Marker.tscn")
+#const Marker = preload("res://J-Navegacion_malla/Marker.tscn")
 
 
 func _ready():
@@ -54,9 +54,10 @@ func _unhandled_input(event):
 						mark(node)
 					
 func mark(posi):
-	var marker = Marker.instance()
-	add_child(marker)
-	marker.global_transform.origin = posi
+	#var marker = Marker.instance()
+	#add_child(marker)
+	#marker.global_transform.origin = posi
+	pass
 
 func smooth_path(path_):
 	var curva=Curve3D.new()
