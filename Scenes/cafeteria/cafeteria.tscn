@@ -123,6 +123,7 @@ transform = Transform( 1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, -3.71704, 0.532201, -0.6
 transform = Transform( 0.938715, -0.146257, -0.296459, 0, 0.892515, -0.44032, 0.330574, 0.41532, 0.841841, -7.12324, 17.7925, 4.90088 )
 
 [node name="Camara002_Orientation" parent="Camara002" index="0"]
+transform = Transform( 1.0048, 2.68221e-07, -3.57628e-07, -1.49012e-08, 2.98023e-08, 1.0048, 0, -1.0048, -3.8743e-07, 0, 0, 0 )
 fov = 49.0
 
 [node name="NavigationManager" type="Node" parent="." index="16"]
@@ -169,8 +170,12 @@ playback/repeat = true
 transform = Transform( 0.995221, 0, 0, 0, 0.987154, 0.126457, 0, -0.126457, 0.987154, -3.60918, 29.7424, 7.56871 )
 
 [node name="Sun_Orientation" parent="Sun" index="0"]
+transform = Transform( 1.0048, 0, 0, 0, -1.3411e-07, 1.0048, 0, -1.0048, -1.49012e-07, -0.772663, -11.4475, -7.38935 )
+light_energy = 5.7
 shadow_enabled = true
 shadow_bias = 0.49
+omni_range = 20.0
+omni_attenuation = 0.928529
 
 [node name="Gateway" parent="." index="19" instance=ExtResource( 5 )]
 transform = Transform( -1, 0, -1.38884e-06, 0, 1, 0, 3.89414e-07, 0, -3.56648, -16.805, 3.99575, 2.16368 )
