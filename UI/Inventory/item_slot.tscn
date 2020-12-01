@@ -33,12 +33,12 @@ margin_bottom = 587.0
 texture = ExtResource( 4 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_left = 885.0
-margin_top = 465.0
-margin_right = 1035.0
-margin_bottom = 615.0
-rect_min_size = Vector2( 150, 150 )
-stretch_mode = 4
+margin_left = 910.0
+margin_top = 490.0
+margin_right = 1010.0
+margin_bottom = 590.0
+rect_min_size = Vector2( 100, 100 )
+expand = true
 
 [node name="Label" type="Label" parent="TextureRect"]
 visible = false

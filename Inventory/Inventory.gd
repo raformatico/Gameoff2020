@@ -8,9 +8,20 @@ signal deselect_all()
 
 export (Array, Resource) var inventory
 
+var wax = "wax"
+var cup = "cup"
+var gear = "gear"
+var chip = "chip"
+var cupcoffee = "cupcoffee"
+var wire = "wire"
+
 var ItemDatabase = {
-	"armor" : load("res://Inventory/items/armor.tres"),
-	"potion" : load("res://Inventory/items/potion.tres")
+	"wax" : load("res://Inventory/items/wax-item.tres"),
+	"gear" : load("res://Inventory/items/gear-item.tres"),
+	"chip" : load("res://Inventory/items/chip-item.tres"),
+	"cupcoffee" : load("res://Inventory/items/cupcoffee.tres"),
+	"cup" : load("res://Inventory/items/cup.tres"),
+	"wire" : load("res://Inventory/items/wire-item.tres")
 }
 
 

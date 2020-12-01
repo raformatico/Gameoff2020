@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/armor.png-8723583f7448efe4ecede6c4206a5a8b.stex"
+path="res://.import/cupcoffee.png-30c05c05443de8b8ee7f5389cfd73a7f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Inventory/items/armor.png"
-dest_files=[ "res://.import/armor.png-8723583f7448efe4ecede6c4206a5a8b.stex" ]
+source_file="res://Inventory/items/cupcoffee.png"
+dest_files=[ "res://.import/cupcoffee.png-30c05c05443de8b8ee7f5389cfd73a7f.stex" ]
 
 [params]
 

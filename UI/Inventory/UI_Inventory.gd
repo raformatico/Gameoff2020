@@ -18,6 +18,10 @@ func _ready() -> void:
 	inventory_res.connect("item_added", self, "_on_item_added")
 	inventory_res.connect("item_deleted", self, "_on_item_deleted")
 	inventory = inventory_res.inventory
+	var slot_array = inventory_grid.get_children()
+	for i in range(inventory.size()):
+		slot_array[i].display_item(inventory[i])
+		
 	"""inventory_grid.columns = inventory.size()
 	var slot : InventorySlot
 	for i in range(inventory.size()):

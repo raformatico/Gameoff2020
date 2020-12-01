@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/shirt.png-e6aaa9a499664f689792fd42cb024d96.stex"
+path="res://.import/wax.png-c50abfe494a5980b8827b5bfa9e90469.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Inventory/items/shirt.png"
-dest_files=[ "res://.import/shirt.png-e6aaa9a499664f689792fd42cb024d96.stex" ]
+source_file="res://Inventory/items/wax.png"
+dest_files=[ "res://.import/wax.png-c50abfe494a5980b8827b5bfa9e90469.stex" ]
 
 [params]
 

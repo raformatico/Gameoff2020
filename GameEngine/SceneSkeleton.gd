@@ -20,7 +20,7 @@ func start_entrance():
 			$Alex.global_transform.origin=get_node(str(g.get_path())+"/indoor").global_transform.origin
 			#$Alex.global_transform.rotation=get_node(str(g.get_path())+"/indoor").global_transform.basis.get_euler()
 			
-			$PointAndClickManager.set_alex_path(get_node(str(g.get_path())+"/outdoor").global_transform.origin,get_node(str(g.get_path())+"/outdoor").global_transform.basis.get_euler())
+			#$PointAndClickManager.set_alex_path(get_node(str(g.get_path())+"/outdoor").global_transform.origin,get_node(str(g.get_path())+"/outdoor").global_transform.basis.get_euler())
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

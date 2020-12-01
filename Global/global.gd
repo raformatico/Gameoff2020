@@ -69,9 +69,18 @@ func _on_Alex_arrived(object) -> void:
 
 func _on_start_action(object, action : String) -> void:
 	if action == "hide":
-		object.get_parent().hide()
+		object.take()
 	if action == "use":
 		inventory_res.del_item(object)
+
+func is_visible(object_name) -> bool:
+	var is_visible = true
+	if object_name in status:
+		if status[object_name] == "picked":
+			print(object_name)
+			is_visible = false
+	return is_visible
+
 
 var gateways={
 	"hall2cafeteria" : {"scene": "res://Scenes/cafeteria/room.tscn", "gateway":"cafeteria2hall"},

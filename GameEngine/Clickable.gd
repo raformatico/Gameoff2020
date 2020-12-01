@@ -12,6 +12,9 @@ var material=null
 func _ready():
 	parent=get_parent()
 	material=parent.get_surface_material(0)
+	if not Global.is_visible(self.name):
+		print("HIDE" + self.name)
+		take()
 	# material=parent.material # for CSG?
 	
 func highlight():

@@ -12,6 +12,7 @@ func display_item(item : ItemResource) -> void:
 		$TextureRect/Label.text = str(item.quantity) + "/" + str(item.max_stack)
 		$TextureRect/Label.show()
 
+
 func hide_item() -> void:
 	slot_name = null
 	itemTexture.texture = null
