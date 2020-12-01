@@ -125,7 +125,7 @@ var gateways={
 	"hall2cafeteria" : {"scene": "res://Scenes/cafeteria/room.tscn", "gateway":"cafeteria2hall"},
 	"greenhouse2hall" : {"scene" : "res://Scenes/museum-final/Room.tscn", "gateway":"hall2greenhouse"},
 	"cafeteria2hall" : {"scene" : "res://Scenes/museum-final/Room.tscn", "gateway":"hall2cafeteria"},
-	"hall2greenhouse" : {"scene" : "res://Scenes/invernadero/Room.tscn", "gateway":"greenhouse2hall"}
+	"hall2greenhouse" : {"scene" : "res://Scenes/greenhouse-final/Room.tscn", "gateway":"greenhouse2hall"}
 }
 
 func gateway_entered(gateway_name):
@@ -133,7 +133,6 @@ func gateway_entered(gateway_name):
 	if scene!=null and scene!="":
 		entrance_gateway=gateways[gateway_name].gateway
 		get_tree().change_scene (scene)
-		
-
+	
 func get_gateway():
 	return entrance_gateway
