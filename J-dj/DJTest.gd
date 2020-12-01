@@ -19,6 +19,7 @@ var main_plato=null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	audio_player.pause_music()
 	channel.append($StaticBody/AudioStreamPlayer2D)
 	channel.append($StaticBody2/AudioStreamPlayer2D)
 	channel.append($StaticBody3/AudioStreamPlayer2D)
@@ -77,3 +78,8 @@ func check_sync():
 			else:			
 				disc.set_sync(0)
 				print("Main")
+
+
+func _on_TextureButton_pressed() -> void:
+	audio_player.continue_music()
+	get_tree().change_scene("res://Scenes/cafeteria/room.tscn")

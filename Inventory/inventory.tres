@@ -1,12 +1,8 @@
-[gd_resource type="Resource" load_steps=7 format=2]
+[gd_resource type="Resource" load_steps=3 format=2]
 
 [ext_resource path="res://Inventory/Inventory.gd" type="Script" id=1]
-[ext_resource path="res://Inventory/items/chip-item.tres" type="Resource" id=2]
-[ext_resource path="res://Inventory/items/gear-item.tres" type="Resource" id=3]
-[ext_resource path="res://Inventory/items/wire-item.tres" type="Resource" id=4]
 [ext_resource path="res://Inventory/items/cupcoffee.tres" type="Resource" id=5]
-[ext_resource path="res://Inventory/items/wax-item.tres" type="Resource" id=6]
 
 [resource]
 script = ExtResource( 1 )
-inventory = [ ExtResource( 4 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 2 ) ]
+inventory = [ ExtResource( 5 ) ]

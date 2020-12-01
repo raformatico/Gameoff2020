@@ -73,7 +73,7 @@ var dialog_dictionary = {
 	"Vitrina2" : {
 		"start" : [["Alex", "No sé muy bien qué será esto."]]
 	},
-	"Vitrina3" : {
+	"Cube027" : {
 		"start" : [["Alex", "No sé muy bien qué será esto."]]
 	},
 	"Cuadro1" : {
@@ -107,17 +107,17 @@ var dialog_dictionary = {
 	},
 	"Pump" : {
 		"start" : [["Alex","Me está entrando algo de sed."],["Tardis", "Creo que sólo puedes verter algún líquido, no extraerlo..."]],
-		"coffe" : [["Alex","Voy a probar a diluir  un poco de café en el depósito."],["Tardis", "Mientras no te lo bebas tú..."]]
+		"cupcoffee" : [["Alex","Voy a probar a diluir  un poco de café en el depósito."],["Tardis", "Mientras no te lo bebas tú..."],[NEXT_STATE,"Key","coffe"],[ACTION,"cupcoffee","use"]]
 	},
 	"Audrey" : {
 		"start" : [["Alex",""],["Tardis", ""],["Alex",""],["Tardis", ""]]
 	},
 	"Key" : {
 		"start" : [["Alex","Uff me ha costado abrir esta llave."],["Tardis", "Quizá deberías hacer más pesas."],["Alex","¡Mira! hemos abierto el caudal de regadío. Aunque a la planta no parece importarle demasiado"],["Tardis", "Solamente con agua no vas a conseguir reanimar a esa grandullona."]],
-		"coffe" : [["Tardis", "Eso es, un poco de café por la mañana ayuda a cualquiera a levantarse."]]
+		"coffe" : [["Tardis", "Eso es, un poco de café por la mañana ayuda a cualquiera a levantarse."],[ACTION,"plant","goingup"]]
 	},
 	"Key2" : {
-		"start" : [["Alex","Gira fácil! Uy yo creo que ya no gira más."],["Tardis", "La has roto... De hecho suena agua en la cafetería."],["Alex","Ups"],[NEXT_STATE,"Key2","opened"],[NEXT_STATE,"Aspiradora","cafeteria"],[NEXT_STATE,"AspiradoraHall","opened"],[ACTION,"Aspiradora","opened"]],
+		"start" : [["Alex","Gira fácil! Uy yo creo que ya no gira más."],[ACTION,"Aspiradora","opened"],["Tardis", "La has roto... De hecho suena agua en la cafetería."],["Alex","Ups"],[NEXT_STATE,"Key2","opened"],[NEXT_STATE,"Aspiradora","cafeteria"],[NEXT_STATE,"AspiradoraHall","opened"]],
 		"opened" : [["Tardis", "No lo intentes que esta llave ya no vuelve a su sitio..."]]
 	},
 	"Plant" : {
@@ -126,7 +126,8 @@ var dialog_dictionary = {
 	},
 	"Lamp" : {
 		"start" : [["Alex","Tengo que intentar llegar allí arriba."],["Tardis", "Quizá te salgan alas..."]],
-		"plant" : [["Tardis", "Eso es, tira un poco más, ya falta poco."],["Alex","Me caig..."],["Tardis", "¿Estás bien?"], ["Alex","Sí, gracias por tu ayuda."],["Tardis","¡Oye… genero luz y oxígeno, pero no me pidas que sostenga 40 kilos de imberbe terrestre!"]]
+		"plant" : [["Tardis", "Eso es, tira un poco más, ya falta poco."],["Alex","Me caig..."],["Tardis", "¿Estás bien?"], ["Alex","Sí, gracias por tu ayuda."],["Tardis","¡Oye… genero luz y oxígeno, pero no me pidas que sostenga 40 kilos de imberbe terrestre!"]],
+		"down" : [["Alex","Seguro que aquí hay algo que nos puede ayudar"],["Tardis", "Te gusta mucho rebuscar en la basura o soy yo?"],["Alex","Mereció la pena! He encontrado un cable!"],["Tardis","Pues si querías un cable podrías haberlo pedido..."],[OBJECT,inventory.wire]]
 	},
 	"Wire" : {
 		"start" : [["Alex","Creo que esto me va a servir."],["Tardis", "Ten cuidado, no vaya a tener que salvarte de nuevo."]],
@@ -230,6 +231,8 @@ func start_dialog(object, status) -> void:
 	if object is String:
 		current_dialog = dialog_dictionary[object][status]
 	else:
+		print(object)
+		print(object.name)
 		current_dialog = dialog_dictionary[object.name][status]
 	current_object = object
 	show_dialog()

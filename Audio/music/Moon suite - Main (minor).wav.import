@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Moon suite - Main (minor).wav-dc25379376c6df1147e0c2067dd04684.sample"
+
+[deps]
+
+source_file="res://Audio/music/Moon suite - Main (minor).wav"
+dest_files=[ "res://.import/Moon suite - Main (minor).wav-dc25379376c6df1147e0c2067dd04684.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -7,6 +7,7 @@ onready var label : Label = $Label
 onready var timer : Timer = $Timer
 onready var correct : AudioStreamPlayer = $correct
 onready var wrong : AudioStreamPlayer = $wrong
+onready var tap : AudioStreamPlayer = $tap
 
 
 
@@ -16,6 +17,7 @@ func _ready() -> void:
 
 
 func add_number(number : int) -> void:
+	tap.play()
 	code += str(number)
 	label.text += str(number) + " "
 	counter += 1

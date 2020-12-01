@@ -96,8 +96,12 @@ func deselect_slot(slot) -> void:
 
 func display_all() -> void:
 	var slot_array = inventory_grid.get_children()
-	for i in range(inventory.size()):
-		slot_array[i].display_item(inventory[i])
+	for i in range(slot_array.size()):
+	#for i in range(inventory.size()):
+		if i >= inventory.size():
+			slot_array[i].hide_item()
+		else:
+			slot_array[i].display_item(inventory[i])
 	
 
 func show_inventory() -> void:

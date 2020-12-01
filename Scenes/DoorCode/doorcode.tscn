@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/DoorCode/Teclado.jpg" type="Texture" id=1]
 [ext_resource path="res://Scenes/DoorCode/doorcode.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Scenes/DoorCode/VOLVER1.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/DoorCode/VOLVER.png" type="Texture" id=7]
 [ext_resource path="res://UI/Pause/pause.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Audio/one-shots/Keyboard tap.wav" type="AudioStream" id=9]
 
 [node name="doorcode" type="Control"]
 anchor_right = 1.0
@@ -113,6 +114,9 @@ one_shot = true
 
 [node name="correct" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
+
+[node name="tap" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
 
 [node name="wrong" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )

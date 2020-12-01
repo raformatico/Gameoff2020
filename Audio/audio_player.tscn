@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Audio/audio_player.gd" type="Script" id=1]
+[ext_resource path="res://Audio/one-shots/Water running (one-shot).wav" type="AudioStream" id=2]
+[ext_resource path="res://Audio/music/Moon suite - Main (minor).wav" type="AudioStream" id=3]
+
+[node name="audio_player" type="Node"]
+script = ExtResource( 1 )
+
+[node name="water" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )

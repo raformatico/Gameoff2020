@@ -40,7 +40,7 @@ var status = {
 	"McMoon" : "start",
 	"Vitrina1" : "start",
 	"Vitrina2" : "start",
-	"Vitrina3" : "start",
+	"Cube027" : "start",
 	"Cuadro1" : "start",
 	"Cuadro2" : "start",
 	"Cuadro3" : "start",
@@ -48,7 +48,7 @@ var status = {
 	"DownFloor" : "start",
 	"InterruptorBox" : "start",
 	"Lever" : "start",
-	"Door" : "start",#CHANGE TO opened to enter
+	"Door" : "opened",#CHANGE TO opened to enter
 	"Pump" : "start",
 	"Audrey" : "start",
 	"Key" : "start",
@@ -58,7 +58,7 @@ var status = {
 	"Wire" : "start",
 	"Gofrera" : "start",
 	"Aspiradora" : "start",
-	"AspiradoraHall" : "start",#CHANGE TO opened to enter
+	"AspiradoraHall" : "opened",#CHANGE TO opened to enter
 	"Cafetera" : "start",
 	"Radio" : "start",
 	"chip" : "start",
@@ -76,6 +76,7 @@ var interactions := {
 	"chip" : "chip"
 }
 
+
 func set_item_selected(item_name) -> void:
 	item_selected = item_name
 	print(item_name)
@@ -91,7 +92,11 @@ func _on_Alex_arrived(object) -> void:
 func _on_start_action(object, action : String) -> void:
 	if action == "minigame":
 		#TODO lanzar juego
-		pass
+		print("LANZAR MINIJUEGO")
+		get_tree().change_scene("res://J-dj/DJTest2.tscn")
+	elif action == "goingup":
+		#TODO animación de la planta y caída del cable
+		print("ANIMACION PLANTA")
 	elif action == "panel":
 		get_tree().change_scene("res://Scenes/maindoorpanel/maindoorpanel.tscn")
 	elif action == "is_everything_connected":
@@ -104,8 +109,8 @@ func _on_start_action(object, action : String) -> void:
 			connected = false
 		if connected:
 			get_tree().change_scene("res://Scenes/museum-prefinal/Room.tscn")
-			status["InterruptorBox"] = "opendoor"
-			emit_signal("start_dialog","InterruptorBox", status["InterruptorBox"])
+			#status["InterruptorBox"] = "opendoor"
+			#emit_signal("start_dialog","InterruptorBox", status["InterruptorBox"])
 	elif action == "code":
 		#TODO lanzar escena introducir código y 
 		#que al final si se hace bien ejecute lo de abajo
@@ -118,6 +123,8 @@ func _on_start_action(object, action : String) -> void:
 			object.queue_free()
 			status["Door"] = "opened"
 		pass
+	elif action == "opened":
+		audio_player.play_water()
 	elif action == "hide":
 		object.take()
 	elif action == "use":

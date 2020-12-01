@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Water running (one-shot).wav-0ba8ac68446e4d7ed4114adf37072819.sample"
+
+[deps]
+
+source_file="res://Audio/one-shots/Water running (one-shot).wav"
+dest_files=[ "res://.import/Water running (one-shot).wav-0ba8ac68446e4d7ed4114adf37072819.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

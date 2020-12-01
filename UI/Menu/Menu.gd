@@ -6,6 +6,7 @@ var credits := "res://Scenes/museum-final/Room.tscn"
 
 
 func _on_start_pressed() -> void:
+	audio_player.play_music()
 	get_tree().change_scene(start)
 
 
