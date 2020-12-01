@@ -19,5 +19,5 @@ shape = SubResource( 1 )
 transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0.320568, -1.75972, 5.22272e-08 )
 
 [node name="outdoor" type="Spatial" parent="."]
-transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -1.37984, -1.76486, -7.94761e-08 )
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -1.37984, -1.26733, -7.94761e-08 )
 [connection signal="body_entered" from="." to="." method="_on_Gateway_body_entered"]

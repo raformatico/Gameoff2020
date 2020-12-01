@@ -7,7 +7,6 @@
 
 [node name="Alex" parent="." index="2"]
 transform = Transform( 0.0253744, 0, 0.999678, 0, 1, 0, -0.999678, 0, 0.0253744, -14.4526, 3.5376, 0.251652 )
-speed = 10
 
 [node name="Dialog" parent="." index="3"]
 visible = false
