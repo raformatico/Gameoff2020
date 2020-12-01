@@ -2,6 +2,7 @@ extends Node
 
 signal start_dialog(object_name, status)
 signal start_dialog_item(object_name, status, item_selected, interactions)
+signal breakMoonba
 
 var entrance_gateway="Main"
 
@@ -57,7 +58,7 @@ var status = {
 	"Lamp" : "start",
 	"Wire" : "start",
 	"Gofrera" : "start",
-	"Aspiradora" : "start",
+	"Aspiradora" : "cafeteria",
 	"AspiradoraHall" : "opened",#CHANGE TO opened to enter
 	"Cafetera" : "start",
 	"Radio" : "start",
@@ -111,6 +112,8 @@ func _on_start_action(object, action : String) -> void:
 			get_tree().change_scene("res://Scenes/museum-prefinal/Room.tscn")
 			#status["InterruptorBox"] = "opendoor"
 			#emit_signal("start_dialog","InterruptorBox", status["InterruptorBox"])
+	elif action == "breakMoonba":
+		emit_signal("breakMoonba")
 	elif action == "code":
 		#TODO lanzar escena introducir código y 
 		#que al final si se hace bien ejecute lo de abajo

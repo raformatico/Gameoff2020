@@ -1,8 +1,9 @@
 extends Control
 
-var start := "res://Scenes/museum-final/Room.tscn"
-var controls := "res://Scenes/museum-final/Room.tscn"
-var credits := "res://Scenes/museum-final/Room.tscn"
+var start := "res://Scenes/Intro/intro.tscn"
+#var start := "res://Scenes/museum-final/Room.tscn"
+var credits := "res://UI/Menu/controls.tscn"
+var controls := "res://UI/Menu/credits.tscn"
 
 
 func _on_start_pressed() -> void:

@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://UI/ui_text.tres" type="Theme" id=1]
-[ext_resource path="res://UI/Menu/back.png" type="Texture" id=2]
+[ext_resource path="res://UI/Menu/menu_back.jpg" type="Texture" id=2]
 [ext_resource path="res://UI/Menu/Menu.gd" type="Script" id=3]
 [ext_resource path="res://UI/Menu/START.png" type="Texture" id=4]
 [ext_resource path="res://UI/Menu/CONTROL1.png" type="Texture" id=5]
@@ -24,11 +24,9 @@ __meta__ = {
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -83.993
-margin_top = -7.55951
-margin_right = 550.007
-margin_bottom = 273.44
 texture = ExtResource( 2 )
+expand = true
+stretch_mode = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }

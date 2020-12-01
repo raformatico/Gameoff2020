@@ -17,6 +17,9 @@ var n_discs_playing=0
 
 var main_plato=null
 
+onready var timer = $Timer
+onready var timer2 = $Timer2
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	audio_player.pause_music()
@@ -68,7 +71,6 @@ func _on_disc_stop(plato):
 	n_discs_playing-=1
 
 func check_sync():
-	
 	for disc in discs:
 		if disc.on:	
 			if !disc.main_rythm:
@@ -83,3 +85,12 @@ func check_sync():
 func _on_TextureButton_pressed() -> void:
 	audio_player.continue_music()
 	get_tree().change_scene("res://Scenes/cafeteria/room.tscn")
+
+
+func _on_Timer_timeout() -> void:
+	timer2.start()
+	Global.emit_signal("start_dialog","Radio", "middle")
+
+
+func _on_Timer2_timeout() -> void:
+	Global.emit_signal("start_dialog","Radio", "end")

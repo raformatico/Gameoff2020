@@ -21,9 +21,162 @@ var text_count := 0
 
 
 
-
-
 var dialog_dictionary = {
+	"Statue" : {
+		"start" : [["Alex","It reminds me of the photo from last Christmas that they took of my brother and me at the mall."],["Tardis","It must remember something very important so that it is in the center of this room."],[NEXT_STATE,"Statue","read1"]],
+		"read1" : [["Tardis", "We must be missing something."],["Alex", "Here's something written ... First brother on the moon ... 1969 ..."],["Tardis","That seems like a date"],[NEXT_STATE,"Statue","read2"]],
+		"read2" : [["Alex", "What was the date it was written here?"],["Tardis", "1984..."]]
+	},
+	"Wax1" : {
+		"start" : [["Alex","I had the same waxes at home. I keep them!"], ["Tardis", "Be careful that they are quite soft and can melt in your pocket."], ["Alex","Ok boomer"], [OBJECT, inventory.wax], [ACTION, "current", "hide"], [NEXT_STATE, "Wax1", "picked"], [NEXT_STATE, "Wax2", "picked1"], [NEXT_STATE, "Wax3", "picked1"], [NEXT_STATE, "Wax4", "picked1"], [NEXT_STATE, "Wax5", "picked1"]],
+		"picked1" : [["Alex","Another wax! To the collection!"], [OBJECT, inventory.wax], [ACTION, "current", "hide"], [NEXT_STATE, "Wax1", "picked"], [NEXT_STATE, "Wax2", "picked2"], [NEXT_STATE, "Wax3", "picked2"], [NEXT_STATE, "Wax4", "picked2"], [NEXT_STATE, "Wax5", "picked2"]],
+		"picked2" : [["Tardis","You are going to leave the floor much cleaner."], ["Alex","I have a collector's soul"],[OBJECT, inventory.wax], [ACTION, "current", "hide"], [NEXT_STATE, "Wax1", "picked"], [NEXT_STATE, "Wax2", "picked1"], [NEXT_STATE, "Wax3", "picked1"], [NEXT_STATE, "Wax4", "picked1"], [NEXT_STATE, "Wax5", "picked1"]],
+		"picked" : []
+	},
+	"Wax2" : {
+		"start" : [["Alex","I had the same waxes at home. I keep them!"], ["Tardis", "Be careful that they are quite soft and can melt in your pocket."],  ["Alex","Ok boomer"], [OBJECT, inventory.wax], [ACTION, "current", "hide"], [NEXT_STATE, "Wax1", "picked1"], [NEXT_STATE, "Wax2", "picked"], [NEXT_STATE, "Wax3", "picked1"], [NEXT_STATE, "Wax4", "picked1"], [NEXT_STATE, "Wax5", "picked1"]],
+		"picked1" : [["Alex","Another wax! To the collection!"], [OBJECT, inventory.wax], [ACTION, "current", "hide"], [NEXT_STATE, "Wax1", "picked2"], [NEXT_STATE, "Wax2", "picked"], [NEXT_STATE, "Wax3", "picked2"], [NEXT_STATE, "Wax4", "picked2"], [NEXT_STATE, "Wax5", "picked2"]],
+		"picked2" : [["Tardis","You are going to leave the floor much cleaner."], ["Alex","I have a collector's soul"],[OBJECT, inventory.wax], [ACTION, "current", "hide"], [NEXT_STATE, "Wax1", "picked1"], [NEXT_STATE, "Wax2", "picked"], [NEXT_STATE, "Wax3", "picked1"], [NEXT_STATE, "Wax4", "picked1"], [NEXT_STATE, "Wax5", "picked1"]],
+		"picked" : []
+	},
+	"Wax3" : {
+		"start" : [["Alex","I had the same waxes at home. I keep them!"], ["Tardis", "Be careful that they are quite soft and can melt in your pocket."],  ["Alex","Ok boomer"], [OBJECT, inventory.wax], [ACTION, "current", "hide"], [NEXT_STATE, "Wax1", "picked1"], [NEXT_STATE, "Wax2", "picked1"], [NEXT_STATE, "Wax3", "picked"], [NEXT_STATE, "Wax4", "picked1"], [NEXT_STATE, "Wax5", "picked1"]],
+		"picked1" : [["Alex","Another wax! To the collection!"], [OBJECT, inventory.wax], [ACTION, "current", "hide"], [NEXT_STATE, "Wax1", "picked2"], [NEXT_STATE, "Wax2", "picked2"], [NEXT_STATE, "Wax3", "picked"], [NEXT_STATE, "Wax4", "picked2"], [NEXT_STATE, "Wax5", "picked2"]],
+		"picked2" : [["Tardis","You are going to leave the floor much cleaner."], ["Alex","I have a collector's soul"],[OBJECT, inventory.wax], [ACTION, "current", "hide"], [NEXT_STATE, "Wax1", "picked1"], [NEXT_STATE, "Wax2", "picked1"], [NEXT_STATE, "Wax3", "picked"], [NEXT_STATE, "Wax4", "picked1"], [NEXT_STATE, "Wax5", "picked1"]],
+		"picked" : []
+	},
+	"Wax4" : {
+		"start" : [["Alex","I had the same waxes at home. I keep them!"], ["Tardis", "Be careful that they are quite soft and can melt in your pocket."],  ["Alex","Ok boomer"], [OBJECT, inventory.wax], [ACTION, "current", "hide"], [NEXT_STATE, "Wax1", "picked1"], [NEXT_STATE, "Wax2", "picked1"], [NEXT_STATE, "Wax3", "picked1"], [NEXT_STATE, "Wax4", "picked"], [NEXT_STATE, "Wax5", "picked1"]],
+		"picked1" : [["Alex","Another wax! To the collection!"], [OBJECT, inventory.wax], [ACTION, "current", "hide"], [NEXT_STATE, "Wax1", "picked2"], [NEXT_STATE, "Wax2", "picked2"], [NEXT_STATE, "Wax3", "picked2"], [NEXT_STATE, "Wax4", "picked"], [NEXT_STATE, "Wax5", "picked2"]],
+		"picked2" : [["Tardis","You are going to leave the floor much cleaner."], ["Alex","I have a collector's soul"],[OBJECT, inventory.wax], [ACTION, "current", "hide"], [NEXT_STATE, "Wax1", "picked1"], [NEXT_STATE, "Wax2", "picked1"], [NEXT_STATE, "Wax3", "picked1"], [NEXT_STATE, "Wax4", "picked"], [NEXT_STATE, "Wax5", "picked1"]],
+		"picked" : []
+	},
+	"Wax5" : {
+		"start" : [["Alex","I had the same waxes at home. I keep them!"], ["Tardis", "Be careful that they are quite soft and can melt in your pocket."],  ["Alex","Ok boomer"], [OBJECT, inventory.wax], [ACTION, "current", "hide"], [NEXT_STATE, "Wax1", "picked1"], [NEXT_STATE, "Wax2", "picked1"], [NEXT_STATE, "Wax3", "picked1"], [NEXT_STATE, "Wax4", "picked1"], [NEXT_STATE, "Wax5", "picked"]],
+		"picked1" : [["Alex","Another wax! To the collection!"], [OBJECT, inventory.wax], [ACTION, "current", "hide"], [NEXT_STATE, "Wax1", "picked2"], [NEXT_STATE, "Wax2", "picked2"], [NEXT_STATE, "Wax3", "picked2"], [NEXT_STATE, "Wax4", "picked2"], [NEXT_STATE, "Wax5", "picked"]],
+		"picked2" : [["Tardis","You are going to leave the floor much cleaner."], ["Alex","I have a collector's soul"],[OBJECT, inventory.wax], [ACTION, "current", "hide"], [NEXT_STATE, "Wax1", "picked1"], [NEXT_STATE, "Wax2", "picked1"], [NEXT_STATE, "Wax3", "picked1"], [NEXT_STATE, "Wax4", "picked1"], [NEXT_STATE, "Wax5", "picked"]],
+		"picked" : []
+	},
+	"Cup" : {
+		"start" : [["Alex", "Look, a cup. I keep this one ..."],["Tardis", "I can't contain the excitement."],["Alex","*&@$#/°s"],[OBJECT, inventory.cup], [ACTION, "current", "hide"],[NEXT_STATE, "Cup", "picked"]],
+		"picked" : []
+	},
+	"McMoon" : {
+		"start" : [["Alex", "My father sat in front of one of these all day."],["Tardis", "Hope yours worked ..."]]
+	},
+	"Vitrina1" : {
+		"start" : [["Alex", "I don't really know what this will be."]]
+	},
+	"Vitrina2" : {
+		"start" : [["Alex", "I don't really know what this will be."]]
+	},
+	"Cube027" : {
+		"start" : [["Alex", "I don't really know what this will be."]]
+	},
+	"Cuadro1" : {
+		"start" : [["Tardis", "Wow, look these pictures! What bad taste."]]
+	},
+	"Cuadro2" : {
+		"start" : [["Tardis", "Wow, look these pictures! What bad taste."]]
+	},
+	"Cuadro3" : {
+		"start" : [["Tardis", "Wow, look these pictures! What bad taste."]]
+	},
+	"Window" : {
+		"start" : [["Tardis", "Window"],["Alex", "Ok, ok, OOOKKKKK"]]
+	},
+	"DownFloor" : {
+		"start" : [["Tardis", "DownFloor"],["Alex", "Ok, ok, OOOKKKKK"]]
+	},
+	"InterruptorBox" : {
+		"start" : [["Alex", "This panel does not work, it gives an error message ..."],["Tardis", "I think some components are missing, if we find them we can surely open this door."],[ACTION,"current","panel"],[NEXT_STATE,"InterruptorBox","start2"]],
+		"start2" : [[ACTION,"current","panel"]],
+		"opendoor" : [["Alex", "We did it, the door is open!"],["Tardis","I would not be very happy knowing what awaits you in that room."]]
+	},
+	"Lever" : {
+		"start" : [["Tardis", "And there was light..."],["Alex", "What a bad roll about the place."],[ACTION, "current", "lighton"],[NEXT_STATE,"Lever", "poweron"]],
+		"poweron" : [["Tardis", "Luces fuera"],["Alex", "Bonitas vistas. Echo de menos la tierra"],[ACTION, "current", "lightoff"],[NEXT_STATE,"Lever", "poweroff"]],
+		"poweroff" : [["Alex", "Dejemos las luces encendidas."],["Tardis", "Sí, más vale que veamos por dónde vamos."],[ACTION, "current", "lighton"],[NEXT_STATE,"Lever", "poweron"]]
+	},
+	"Door" : {
+		"start" : [["Alex","It seems we need a 4 digit code"],["Tardis", "I think I've seen some numbers somewhere ..."],[ACTION, "current", "code"]],
+		"opened" : [["Alex","Open door!"],["Tardis", "I hope you're still safe crossing it ..."]]
+	},
+	"Pump" : {
+		"start" : [["Alex","I'm getting a little thirsty."],["Tardis", "I think you can only pour some liquid, not extract it ..."]],
+		"cupcoffee" : [["Alex","I'm going to try diluting some coffee in the tank."],["Tardis", "As long as you don't drink it ..."],[NEXT_STATE,"Key","coffe"],[ACTION,"cupcoffee","use"]]
+	},
+	"Audrey" : {
+		"start" : [["Alex",""],["Tardis", ""],["Alex",""],["Tardis", ""]]
+	},
+	"Key" : {
+		"start" : [["Alex","Uff it was hard for me to open this key."],["Tardis", "Maybe you should do more weights."],["Alex","Look! we have opened the irrigation flow. Although the plant does not seem to care too much"],["Tardis", "Only with water you will not be able to revive that big one."]],
+		"coffe" : [["Tardis", "That's right, a little coffee in the morning helps anyone get up."],[ACTION,"plant","goingup"]]
+	},
+	"Key2" : {
+		"start" : [["Alex","It turns easily! Oh, I think it doesn't spin anymore."],[ACTION,"Aspiradora","opened"],["Tardis", "You broke it ... In fact there is water in the cafeteria."],["Alex","Ups"],[NEXT_STATE,"Key2","opened"],[NEXT_STATE,"Aspiradora","cafeteria"],[NEXT_STATE,"AspiradoraHall","opened"]],
+		"opened" : [["Tardis", "Do not try that this key no longer returns to its place ..."]]
+	},
+	"Plant" : {
+		"start" : [["Alex","What a curious plant."],["Tardis", "Watch out! I think it's carnivorous ... I'm kidding"],["Alex","It's not funny, maybe I can use it to go up."]],
+		"goingup" : [["Tardis", "Ya puedes subir."],["Alex","¿Un poco obvio no?"]]
+	},
+	"Lamp" : {
+		"start" : [["Alex","I have to try to get up there."],["Tardis", "Maybe you will grow wings ..."]],
+		"plant" : [["Tardis", "Eso es, tira un poco más, ya falta poco."],["Alex","Me caig..."],["Tardis", "¿Estás bien?"], ["Alex","Sí, gracias por tu ayuda."],["Tardis","¡Oye… genero luz y oxígeno, pero no me pidas que sostenga 40 kilos de imberbe terrestre!"]],
+		"down" : [["Alex","Surely here is something that can help us"],["Tardis", "Do you really like to rummage through the garbage or is it me?"],["Alex","It was worth it! I have found a cable!"],["Tardis","Well, if you wanted a cable, you could have asked for it ..."],[OBJECT,inventory.wire]]
+	},
+	"Wire" : {
+		"start" : [["Alex","I think this will help me."],["Tardis", "Be careful, I won't have to save you again."]],
+		"picked" : []
+	},
+	"Gofrera" : {
+		"start" : [["Alex","This is hot, it could cook something."],["Tardis", "Hope you know what you're doing ... that machine hasn't been used for a while."]],
+		"wax_incomplete" : [["Alex","With this number of waxes there is not enough for this mold ..."],["Tardis","Well, look for more! At least you will need 4 in total."], [NEXT_STATE,"Gofrera","start"]],
+		"wax" : [["Tardis", "What dirty are you doing?"],["Alex","Hush, I think it can work."],["Tardis", "I hope you don't think about eating that circular thing."], [ACTION,"wax","use"], [OBJECT,inventory.gear]]
+	},
+	"AspiradoraHall" : {
+		"start" : [["Alex","Look what a beautiful robot cleaner. Cuchi, cuchi ..."],["Tardis", "Back off! They become very territorial when they don't have a job, that area is off limits."]],
+		"opened" : []
+	},
+	"Aspiradora" : {
+		"start" : [["Alex","Look what a beautiful robot cleaner. Cuchi, cuchi ..."],["Tardis", "Back off! They become very territorial when they don't have a job, that area is off limits."]],
+		"cafeteria" : [["Tardis","Now it seems that he doesn't care much about you"],["Alex", "Yes, but it gives good pushes and there is no way to check if it has something that suits us ..."], ["Tardis","Sorry, you're talking about a living being."]],
+		"end" : [["Alex","Go look! It has a chip that is sure to be good for us."],["Tardis","Loot dead! You're horrible ... Well, what can you do? Rest in peace"], [OBJECT,inventory.chip]]
+	},
+	"Cafetera" : {
+		"start" : [["Alex","This still works"],["Tardis", "You are going to burn"],["Alex","You're right"], [NEXT_STATE,"Cafetera","start2"]],
+		"start2" : [["Alex","Maybe if we can find something to serve coffee."]],
+		"cup" : [["Tardis", "I wouldn't drink that even if they paid me."],["Alex","Surely it can be useful to us."],["Tardis", "That is definitely concentrated energy!"],[ACTION,"cup","use"], [OBJECT,inventory.cupcoffee],[NEXT_STATE,"Cafetera","end"]],
+		"end" : [["Tardis","I think that we have done with the coffee machine"]]
+	},
+	"Radio" : {
+		"start" : [["Alex","This radio is not working quite right but I think I can fix it"],["Tardis", "Try it I love music"],[ACTION,"current","minigame"]],
+		"middle" : [["Alex","Look, the cleaner robot likes this melody"],["Tardis", "I'd swear you're trying to dance ... to a lousy beat, by the way! "]],
+		"end" : [["Tardis", "I think she's going crazy."],["Alex", "Watch out, it's going to explode!"],[NEXT_STATE,"Aspiradora","end"],[ACTION,"current","breakMoonba"]]
+	},
+	"chip" : {
+		"start" : [["Alex","I don't know where we are going to get a next-generation chip, which is clearly what is missing from this panel."],["Tardis","You seem to know everything."]],
+		"chip" : [["Alex","It fits!"],["Tardis","It is a last generation chip."],[ACTION,"chip","use"],[NEXT_STATE,"chip","connected"],[ACTION,"chip","is_everything_connected"]],
+		"connected" : [["Tardis", "What else do you want is already in place!"]]
+	},
+	"gear" : {
+		"start" : [["Alex","What a strange shape, it seems that a gear or some circular piece is missing"],["Tardis","Well, keep looking ..."]],
+		"gear" : [["Alex","This is very extrange"],["Tardis","It works so don't ask yourself why"],[ACTION,"gear","use"],[NEXT_STATE,"gear","connected"],[ACTION,"gear","is_everything_connected"]],
+		"connected" : [["Tardis", "What else do you want is already in place!"]]
+	},
+	"wire" : {
+		"start" : [["Alex","A cable would fit here."],["Tardis","Smart boy."]],
+		"wire" : [["Alex","This cable connects perfectly. One less thing."],[ACTION,"wire","use"],[NEXT_STATE,"wire","connected"],[ACTION,"wire","is_everything_connected"]],
+		"connected" : [["Tardis", "What else do you want is already in place!"]]
+	},
+	"Error" : {
+		"start" : [["Alex","I don't think I can use that here"],["Tardis","It was your idea, not mine ..."], [NEXT_STATE, "Error","start2"]],
+		"start2" : [["Tardis","This is testing for testing, right?"],[NEXT_STATE, "Error", "start"]]
+	}
+}
+
+var dialog_dictionary_spa = {
 	"Statue" : {
 		"start" : [["Alex","Me recuerda a la foto de la navidad pasada que nos hicieron a mi hermano y a mi en el centro comercial."],["Tardis","Debe de rememorar algo muy importante para que esté en el centro de esta sala."],[NEXT_STATE,"Statue","read1"]],
 		"read1" : [["Tardis", "Seguro que se nos pasa algo por alto."],["Alex", "Aquí hay algo escrito... Primer hermano en la luna... 1969..."],["Tardis","Eso parece una fecha"],[NEXT_STATE,"Statue","read2"]],
@@ -156,7 +309,7 @@ var dialog_dictionary = {
 	"Radio" : {
 		"start" : [["Alex","Esta radio no funciona del todo bien pero creo que puedo arreglarla"],["Tardis", "Inténtalo que me encanta la música"],[ACTION,"current","minigame"]],
 		"middle" : [["Alex","Mira, le gusta esta melodía"],["Tardis", "Juraría que está intentando bailar... ¡con un ritmo pésimo, por cierto! "]],
-		"end" : [["Tardis", "Creo que se está volviendo loca."],["Alex", "Cuidado ¡va a estallar!"]]
+		"end" : [["Tardis", "Creo que se está volviendo loca."],["Alex", "Cuidado ¡va a estallar!"],[NEXT_STATE,"Aspiradora","end"],[ACTION,"current","breakMoonba"]]
 	},
 	"chip" : {
 		"start" : [["Alex","No sé de donde vamos a sacar un chip de última generación, que claramente es lo que falta en este panel."],["Tardis","Parece que lo sabes todo."]],
