@@ -15,7 +15,6 @@ visible = true
 
 [node name="Alex" parent="." index="3"]
 transform = Transform( 0.55, 0, 0, 0, 0.55, 0, 0, 0, 0.55, 2.86662, 0.831363, 3.47369 )
-threshold = 0.1
 speed = 2
 
 [node name="Dialog" parent="." index="4"]

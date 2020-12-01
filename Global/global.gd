@@ -72,11 +72,13 @@ func _on_start_action(object, action : String) -> void:
 		inventory_res.del_item(object)
 
 var gateways={
-	"hall2cafeteria" : "res://Scenes/cafeteria/room.tscn"
+	"hall2cafeteria" : {"scene": "res://Scenes/cafeteria/room.tscn", "gateway":""},
+	"greenhouse2hall" : {"scene" : "res://Scenes/museum-prefinal/Room.tscn", "gateway":""},
+	"cafeteria2hall" : {"scene" : "res://Scenes/museum-prefinal/Room.tscn", "gateway":""},
+	"hall2greenhouse" : {"scene" : "res://Scenes/invernadero/Room.tscn", "gateway":""}
 }
 
 func gateway_entered(gateway_name):
-	var scene=gateways[gateway_name]
-	if scene==null:
-		scene="res://Scenes/museum-prefinal/Room.tscn"
+	var scene=gateways[gateway_name].scene
+	if scene!=null and scene!="":
 		get_tree().change_scene (scene)

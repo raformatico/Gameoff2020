@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://GameEngine/Gateway.gd" type="Script" id=1]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 1.51788, 1.72093, 1.51005 )
+
+[node name="Gateway" type="Area"]
+script = ExtResource( 1 )
+gateway_name = "hall2cafeteria"
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.13773, -0.0769606, 3.8147e-06 )
+shape = SubResource( 1 )
+
+[node name="indoor" type="Spatial" parent="."]
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0.320568, -1.75972, 5.22272e-08 )
+
+[node name="outdoor" type="Spatial" parent="."]
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -1.37984, -1.76486, -7.94761e-08 )
+[connection signal="body_entered" from="." to="." method="_on_Gateway_body_entered"]

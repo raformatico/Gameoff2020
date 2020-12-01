@@ -2,29 +2,27 @@
 
 [ext_resource path="res://Scenes/invernadero/GLTF/INVERNADERO_025.glb" type="PackedScene" id=1]
 [ext_resource path="res://GameEngine/Clickable.tscn" type="PackedScene" id=2]
+[ext_resource path="res://GameEngine/Gateway.tscn" type="PackedScene" id=3]
 
-[sub_resource type="BoxShape" id=10]
-extents = Vector3( 1.51184, 1.78487, 0.495746 )
-
-[sub_resource type="BoxShape" id=8]
+[sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.564696, 0.762503, 0.38046 )
 
-[sub_resource type="CapsuleShape" id=9]
+[sub_resource type="CapsuleShape" id=2]
 radius = 0.752494
 
-[sub_resource type="CapsuleShape" id=4]
+[sub_resource type="CapsuleShape" id=3]
 height = 6.95225
 
-[sub_resource type="BoxShape" id=5]
+[sub_resource type="BoxShape" id=4]
 extents = Vector3( 0.470499, 0.292326, 1.41797 )
 
-[sub_resource type="BoxShape" id=6]
+[sub_resource type="BoxShape" id=5]
 extents = Vector3( 0.594424, 0.1527, 1.43512 )
 
-[sub_resource type="BoxShape" id=7]
+[sub_resource type="BoxShape" id=6]
 extents = Vector3( 0.52165, 0.347278, 1.14778 )
 
-[sub_resource type="Environment" id=1]
+[sub_resource type="Environment" id=7]
 background_energy = 2.41
 ambient_light_color = Color( 0.207843, 0.215686, 0.270588, 1 )
 ambient_light_energy = 2.23
@@ -32,31 +30,24 @@ ssao_enabled = true
 ssao_radius = 0.1
 ssao_intensity = 27.73
 
-[sub_resource type="NavigationMesh" id=3]
+[sub_resource type="NavigationMesh" id=8]
 vertices = PoolVector3Array( 1, 0, 0.37521, 0.375758, 0, 0.128301, 0.375758, 0, 0.37521, -0.389629, 0, 1, -0.164307, 0, 0.37521, -0.389629, 0, 0.37521, -0.00693554, 0, 1, -0.164307, 0, 0.128301, -0.164307, 0, -0.094452, -0.389629, 0, -0.094452, -0.389629, 0, 0.128301, -1, 0, 0.37521, 0.375758, 0, 1, 1, 0, 0.0944056, 0.375758, 0, -0.094452 )
 polygons = [ PoolIntArray( 0, 2, 1 ), PoolIntArray( 3, 5, 4 ), PoolIntArray( 6, 4, 2 ), PoolIntArray( 2, 4, 7 ), PoolIntArray( 1, 7, 8 ), PoolIntArray( 7, 10, 9 ), PoolIntArray( 4, 5, 10 ), PoolIntArray( 11, 5, 3 ), PoolIntArray( 0, 12, 2 ), PoolIntArray( 0, 1, 13 ), PoolIntArray( 3, 4, 6 ), PoolIntArray( 6, 2, 12 ), PoolIntArray( 2, 7, 1 ), PoolIntArray( 1, 8, 14 ), PoolIntArray( 7, 9, 8 ), PoolIntArray( 4, 10, 7 ) ]
 
-[sub_resource type="ConcavePolygonShape" id=2]
+[sub_resource type="ConcavePolygonShape" id=9]
 data = PoolVector3Array( 1, 0, 1, -1, 0, 1, -1, 0, -1, 1, 0, 1, -1, 0, -1, 1, 0, -1 )
 
 [node name="INVERNADERO_025" instance=ExtResource( 1 )]
 
-[node name="GatewayFlower" parent="puerta" index="0" instance=ExtResource( 2 )]
-transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0, 0, 0 )
-
-[node name="CollisionShape" parent="puerta/GatewayFlower" index="0"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.171211, 0 )
-shape = SubResource( 10 )
-
-[node name="stand-position" parent="puerta/GatewayFlower" index="1"]
-transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, -1.84536, 1.35039 )
+[node name="Gateway" parent="puerta" index="0" instance=ExtResource( 3 )]
+gateway_name = "greenhouse2hall"
 
 [node name="Key" parent="Cube" index="0" instance=ExtResource( 2 )]
 transform = Transform( 0.00740004, 0, 0.999973, 0, 1, 0, -0.999973, 0, 0.00740004, 0, 0, 0 )
 
 [node name="CollisionShape" parent="Cube/Key" index="0"]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0.121867, -0.270449, 0.0426235 )
-shape = SubResource( 8 )
+shape = SubResource( 1 )
 
 [node name="stand-position" parent="Cube/Key" index="1"]
 transform = Transform( -1, 0, 3.25963e-07, 0, 1, 0, -3.25963e-07, 0, -1, 0, -1.07712, 1.99844 )
@@ -65,7 +56,7 @@ transform = Transform( -1, 0, 3.25963e-07, 0, 1, 0, -3.25963e-07, 0, -1, 0, -1.0
 
 [node name="CollisionShape" parent="Cylinder004/Pump" index="0"]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, -0.233558, 0 )
-shape = SubResource( 9 )
+shape = SubResource( 2 )
 
 [node name="stand-position" parent="Cylinder004/Pump" index="1"]
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 3.57628e-07, -1.15866, 2.14842 )
@@ -81,26 +72,26 @@ transform = Transform( -0.876357, 0, 0.481662, 0, 1, 0, -0.481662, 0, -0.876357,
 
 [node name="CollisionShape" parent="Plane002/Audrey" index="0"]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, -0.385844, 0.650065, 0.145678 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="stand-position" parent="Plane002/Audrey" index="1"]
 transform = Transform( -0.999961, 0, -0.00886694, 0, 1, 0, 0.00886694, 0, -0.999961, 0.569247, -1.12087, 2.9558 )
 
 [node name="CollisionShape2" type="CollisionShape" parent="Plane002/Audrey" index="3"]
 transform = Transform( 0.957953, 0.0726548, 0.277575, 0, 0.967409, -0.253218, -0.286926, 0.242571, 0.926732, 0.819769, 2.014, 0.44862 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="CollisionShape3" type="CollisionShape" parent="Plane002/Audrey" index="4"]
 transform = Transform( 0.481907, -0.18297, -0.856906, 0, 0.977955, -0.208816, 0.876223, 0.10063, 0.471283, -0.672671, 0.232543, 0.369956 )
-shape = SubResource( 6 )
+shape = SubResource( 5 )
 
 [node name="CollisionShape4" type="CollisionShape" parent="Plane002/Audrey" index="5"]
 transform = Transform( 1, 1.49012e-08, 0, 0, 0.963654, -0.267154, -2.98023e-08, 0.267154, 0.963654, -2.38419e-07, 0.888272, 0.836025 )
-shape = SubResource( 7 )
+shape = SubResource( 6 )
 
 [node name="Camara003" type="Camera" parent="." index="27"]
 transform = Transform( 0.585223, -0.00207979, -0.0151828, 0, 0.580008, -0.0794512, 0.0153246, 0.079424, 0.579809, -0.54, 1.32, 16.5965 )
-environment = SubResource( 1 )
+environment = SubResource( 7 )
 fov = 30.6181
 near = 0.1
 
@@ -120,15 +111,13 @@ shadow_enabled = true
 
 [node name="suelo" type="NavigationMeshInstance" parent="NavigationManager/Navigation" index="0"]
 transform = Transform( 12.0429, 0, 0, 0, 12.0429, 0, 0, 0, 12.0429, 0.2918, -0.0755419, -0.591715 )
-navmesh = SubResource( 3 )
+navmesh = SubResource( 8 )
 
 [node name="suelo2" type="StaticBody" parent="NavigationManager" index="1"]
 transform = Transform( 12.0429, 0, 0, 0, 12.0429, 0, 0, 0, 12.0429, 0.2918, 0.0152757, -0.591715 )
 
 [node name="shape0" type="CollisionShape" parent="NavigationManager/suelo2" index="0"]
-shape = SubResource( 2 )
-
-[editable path="puerta/GatewayFlower"]
+shape = SubResource( 9 )
 
 [editable path="Cube/Key"]
 
