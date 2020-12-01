@@ -92,15 +92,9 @@ var dialog_dictionary = {
 		"start" : [["Tardis", "DownFloor"],["Alex", "Que sí pesado!"]]
 	},
 	"InterruptorBox" : {
-		"start" : [["Alex", "Este panel no funciona, da un mensaje de error..."],["Tardis", "Creo que faltan algunos componentes, si los encontramos seguro que podemos abrir esta puerta."]],
-		"withoutwire" : [["Alex","Aquí encajaría un cable."],["Tardis","Chico listo."]],
-		"withoutgear" : [["Alex","Qué forma más extraña, parece que falta un engranaje o alguna pieza circular"],["Tardis","Pues a seguir buscando..."]],
-		"withoutchip" : [["Alex","No sé de donde vamos a sacar un chip de última generación, que claramente es lo que falta en este panel."],["Tardis","Parece que lo sabes todo."]],
-		"connectwire" : [["Alex","Este cable conecta perfecto. Una cosa menos."]],
-		"connectgear" : [["Alex","Esto es muy raro"],["Tardis","Funciona, así que no te preguntes por qué"]],
-		"connectchip" : [["Alex","¡Encaja!"],["Tardis","Es que es un chip de última generación."]],
-		"opendoor" : [["Alex", "¡Lo hemos conseguido, la puerta está abierta!"],["Tardis","Yo no estaría muy contento sabiendo lo que te espera en esa habitación."],[ACTION,"door", "open"]]
-		
+		"start" : [["Alex", "Este panel no funciona, da un mensaje de error..."],["Tardis", "Creo que faltan algunos componentes, si los encontramos seguro que podemos abrir esta puerta."],[ACTION,"current","panel"],[NEXT_STATE,"InterruptorBox","start2"]],
+		"start2" : [[ACTION,"current","panel"]],
+		"opendoor" : [["Alex", "¡Lo hemos conseguido, la puerta está abierta!"],["Tardis","Yo no estaría muy contento sabiendo lo que te espera en esa habitación."]]
 	},
 	"Lever" : {
 		"start" : [["Tardis", "Y se hizo la luz..."],["Alex", "Qué mal rollo de sitio."],[ACTION, "current", "lighton"],[NEXT_STATE,"Lever", "poweron"]],
@@ -163,11 +157,25 @@ var dialog_dictionary = {
 		"middle" : [["Alex","Mira, le gusta esta melodía"],["Tardis", "Juraría que está intentando bailar... ¡con un ritmo pésimo, por cierto! "]],
 		"end" : [["Tardis", "Creo que se está volviendo loca."],["Alex", "Cuidado ¡va a estallar!"]]
 	},
+	"chip" : {
+		"start" : [["Alex","No sé de donde vamos a sacar un chip de última generación, que claramente es lo que falta en este panel."],["Tardis","Parece que lo sabes todo."]],
+		"chip" : [["Alex","¡Encaja!"],["Tardis","Es que es un chip de última generación."],[ACTION,"chip","use"],[NEXT_STATE,"chip","connected"],[ACTION,"chip","is_everything_connected"]],
+		"connected" : [["Tardis", "Qué mas quieres ya está en su sitio!"]]
+	},
+	"gear" : {
+		"start" : [["Alex","Qué forma más extraña, parece que falta un engranaje o alguna pieza circular"],["Tardis","Pues a seguir buscando..."]],
+		"gear" : [["Alex","Esto es muy raro"],["Tardis","Funciona, así que no te preguntes por qué"],[ACTION,"gear","use"],[NEXT_STATE,"gear","connected"],[ACTION,"gear","is_everything_connected"]],
+		"connected" : [["Tardis", "Qué mas quieres ya está en su sitio!"]]
+	},
+	"wire" : {
+		"start" : [["Alex","Aquí encajaría un cable."],["Tardis","Chico listo."]],
+		"wire" : [["Alex","Este cable conecta perfecto. Una cosa menos."],[ACTION,"wire","use"],[NEXT_STATE,"wire","connected"],[ACTION,"wire","is_everything_connected"]],
+		"connected" : [["Tardis", "Qué mas quieres ya está en su sitio!"]]
+	},
 	"Error" : {
 		"start" : [["Alex","No creo que pueda usar eso aquí"],["Tardis","Era tu idea, no la mía..."], [NEXT_STATE, "Error","start2"]],
 		"start2" : [["Tardis","Esto es probar por probar, ¿verdad?"],[NEXT_STATE, "Error", "start"]]
 	}
-	
 }
 
 onready var left_portrait: = $text_box/left_portrait
@@ -189,7 +197,12 @@ func _input(event: InputEvent) -> void:
 func start_dialog_item(object, status, item_selected, interact_with) -> void:
 	item_used = item_selected
 	#Show generic misselection of item
-	if object.name != interact_with:
+	var new_object
+	if object is String:
+		new_object = {"name" : object}
+	else:
+		new_object = object
+	if new_object.name != interact_with:
 		current_dialog = dialog_dictionary["Error"][Global.status["Error"]]
 		show_dialog()
 		next_dialog()
@@ -203,18 +216,21 @@ func start_dialog_item(object, status, item_selected, interact_with) -> void:
 					quantity = item.quantity
 					max_stack = item.max_stack
 			if quantity < max_stack:
-				Global.status[object.name] = "wax_incomplete"
+				Global.status[new_object.name] = "wax_incomplete"
 			else:
-				Global.status[object.name] = item_selected
+				Global.status[new_object.name] = item_selected
 		else:
-			Global.status[object.name] = item_selected
-		start_dialog(object, Global.status[object.name])
+			Global.status[new_object.name] = item_selected
+		start_dialog(new_object, Global.status[new_object.name])
 	#Deselect item
 	inventory.emit_signal("deselect_all")
 	
 
 func start_dialog(object, status) -> void:
-	current_dialog = dialog_dictionary[object.name][status]
+	if object is String:
+		current_dialog = dialog_dictionary[object][status]
+	else:
+		current_dialog = dialog_dictionary[object.name][status]
 	current_object = object
 	show_dialog()
 	next_dialog()
@@ -250,7 +266,6 @@ func next_dialog() -> void:
 		change_text(current_text_to_show[1])
 		text_count += 1
 		return
-	
 	if text_count == current_dialog.size():
 		hide_dialog()
 	else:
@@ -315,3 +330,7 @@ func _on_Dialog_gui_input(event: InputEvent) -> void:
 
 
 
+
+
+func _on_back_pressed() -> void:
+	pass # Replace with function body.

@@ -1,7 +1,7 @@
 extends Node
 
 signal start_dialog(object_name, status)
-signal start_dialog_item(object_name, status, item_selected)
+signal start_dialog_item(object_name, status, item_selected, interactions)
 
 var entrance_gateway="Main"
 
@@ -61,6 +61,9 @@ var status = {
 	"AspiradoraHall" : "start",#CHANGE TO opened to enter
 	"Cafetera" : "start",
 	"Radio" : "start",
+	"chip" : "start",
+	"gear" : "start",
+	"wire" : "start",
 	"Error" : "start"
 }
 
@@ -68,9 +71,9 @@ var interactions := {
 	"cup" : "Cafetera",
 	"wax" : "Gofrera",
 	"cupcoffee" : "Pump",
-	"gear" : "InterruptorBox",
-	"wire" : "InterruptorBox",
-	"chip" : "InterruptorBox"
+	"gear" : "gear",
+	"wire" : "wire",
+	"chip" : "chip"
 }
 
 func set_item_selected(item_name) -> void:
@@ -89,6 +92,20 @@ func _on_start_action(object, action : String) -> void:
 	if action == "minigame":
 		#TODO lanzar juego
 		pass
+	elif action == "panel":
+		get_tree().change_scene("res://Scenes/maindoorpanel/maindoorpanel.tscn")
+	elif action == "is_everything_connected":
+		var connected = true
+		if Global.status["chip"] != "connected":
+			connected = false
+		if Global.status["gear"] != "connected":
+			connected = false
+		if Global.status["wire"] != "connected":
+			connected = false
+		if connected:
+			get_tree().change_scene("res://Scenes/museum-prefinal/Room.tscn")
+			status["InterruptorBox"] = "opendoor"
+			emit_signal("start_dialog","InterruptorBox", status["InterruptorBox"])
 	elif action == "code":
 		#TODO lanzar escena introducir código y 
 		#que al final si se hace bien ejecute lo de abajo

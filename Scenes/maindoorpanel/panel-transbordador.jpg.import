@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Tardi-dia2.png-769de99a4ba69e50635dea741f105832.stex"
+path="res://.import/panel-transbordador.jpg-430bf436fd50cab9105337636d1deec0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Dialog/assets/Tardi-dia2.png"
-dest_files=[ "res://.import/Tardi-dia2.png-769de99a4ba69e50635dea741f105832.stex" ]
+source_file="res://Scenes/maindoorpanel/panel-transbordador.jpg"
+dest_files=[ "res://.import/panel-transbordador.jpg-430bf436fd50cab9105337636d1deec0.stex" ]
 
 [params]
 

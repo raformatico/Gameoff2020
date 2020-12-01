@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Player-dia2.png-4cce3fec0a0d11783b81765ee290e92a.stex"
+path="res://.import/ceras4.png-0dd275ae5ea1198c7d92b0f6e70054b7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Dialog/assets/Player-dia2.png"
-dest_files=[ "res://.import/Player-dia2.png-4cce3fec0a0d11783b81765ee290e92a.stex" ]
+source_file="res://Inventory/items/ceras4.png"
+dest_files=[ "res://.import/ceras4.png-0dd275ae5ea1198c7d92b0f6e70054b7.stex" ]
 
 [params]
 
