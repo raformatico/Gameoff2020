@@ -30,7 +30,7 @@ func check_code() -> void:
 		correct.play()
 		Global.status["Door"] = "opened"
 		yield(timer, "timeout")
-		get_tree().change_scene("res://Scenes/museum-prefinal/Room.tscn")
+		get_tree().change_scene("res://Scenes/museum-final/Room.tscn")
 	else:
 		print("Incorrecto")
 		timer.start()
@@ -81,4 +81,4 @@ func _on_0_pressed() -> void:
 
 
 func _on_TextureButton_pressed() -> void:
-	get_tree().change_scene("res://Scenes/museum-prefinal/Room.tscn")
+	get_tree().change_scene("res://Scenes/museum-final/Room.tscn")

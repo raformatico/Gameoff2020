@@ -14,7 +14,7 @@ func _unhandled_input(event):
 	
 	var camera=get_viewport().get_camera()
 	
-	if event is InputEventMouseButton and event.is_pressed():
+	if event is InputEventMouseButton and event.is_pressed() and  event.button_index == BUTTON_LEFT:
 		var from=camera.project_ray_origin(event.position)
 		var to=from+camera.project_ray_normal(event.position)*ray_length
 		var space_state=camera.get_world().direct_space_state
