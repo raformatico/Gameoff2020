@@ -28,6 +28,8 @@ func _unhandled_input(event):
 				var destination=result.position
 				var rotation_=null
 				var target_object=null
+				
+				alex.clean_path()
 			
 				if result.collider.is_in_group("clickable"):
 					var stand_location=get_node(str(result.collider.get_path())+"/stand-position")
