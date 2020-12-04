@@ -25,7 +25,7 @@ var dialog_dictionary = {
 	"Statue" : {
 		"start" : [["Alex","It reminds me of the photo from last Christmas that they took of my brother and me at the mall."],["Tardis","It must remember something very important so that it is in the center of this room."],[NEXT_STATE,"Statue","read1"]],
 		"read1" : [["Tardis", "We must be missing something."],["Alex", "Here's something written ... First brother on the moon ... 1969 ..."],["Tardis","That seems like a date"],[NEXT_STATE,"Statue","read2"]],
-		"read2" : [["Alex", "What was the date it was written here?"],["Tardis", "1984..."]]
+		"read2" : [["Alex", "What was the date it was written here?"],["Tardis", "1969..."]]
 	},
 	"Wax1" : {
 		"start" : [["Alex","I had the same waxes at home. I keep them!"], ["Tardis", "Be careful that they are quite soft and can melt in your pocket."], ["Alex","Ok boomer"], [OBJECT, inventory.wax], [ACTION, "current", "hide"], [NEXT_STATE, "Wax1", "picked"], [NEXT_STATE, "Wax2", "picked1"], [NEXT_STATE, "Wax3", "picked1"], [NEXT_STATE, "Wax4", "picked1"], [NEXT_STATE, "Wax5", "picked1"]],
@@ -83,7 +83,8 @@ var dialog_dictionary = {
 		"start" : [["Tardis", "Wow, look these pictures! What bad taste."]]
 	},
 	"Window" : {
-		"start" : [["Tardis", "Window"],["Alex", "Ok, ok, OOOKKKKK"]]
+		"start" : [["Tardis", "¿Por qué miras así?"],["Alex", "From here you can see the Earth and I miss it a lot ..."],[NEXT_STATE,"Window","start2"]],
+		"start2" : [["Alex", "Enough of the wailing, let's get out of here!"],["Tardis", "That's the attitude, count on me"]]
 	},
 	"DownFloor" : {
 		"start" : [["Tardis", "DownFloor"],["Alex", "Ok, ok, OOOKKKKK"]]
@@ -181,7 +182,7 @@ var dialog_dictionary_spa = {
 		"start" : [["Alex","Me recuerda a la foto de la navidad pasada que nos hicieron a mi hermano y a mi en el centro comercial."],["Tardis","Debe de rememorar algo muy importante para que esté en el centro de esta sala."],[NEXT_STATE,"Statue","read1"]],
 		"read1" : [["Tardis", "Seguro que se nos pasa algo por alto."],["Alex", "Aquí hay algo escrito... Primer hermano en la luna... 1969..."],["Tardis","Eso parece una fecha"],[NEXT_STATE,"Statue","read2"]],
 		"potion" : [["Alex", "He usado la poción con la estatua!"],[NEXT_STATE,"Statue","read2"], [ACTION,"potion","use"]],
-		"read2" : [["Alex", "¿Cuál era la fecha que ponía aquí?"],["Tardis", "1984..."]]
+		"read2" : [["Alex", "¿Cuál era la fecha que ponía aquí?"],["Tardis", "1969..."]]
 	},
 	"Wax1" : {
 		"start" : [["Alex","Tenía unas ceras iguales en casa. ¡Me las quedo!"], ["Tardis", "Ten cuidado que son bastante blandas y se te pueden derretir en el bolsillo."], ["Alex","Ok boomer"], [OBJECT, inventory.wax], [ACTION, "current", "hide"], [NEXT_STATE, "Wax1", "picked"], [NEXT_STATE, "Wax2", "picked1"], [NEXT_STATE, "Wax3", "picked1"], [NEXT_STATE, "Wax4", "picked1"], [NEXT_STATE, "Wax5", "picked1"]],
@@ -239,7 +240,8 @@ var dialog_dictionary_spa = {
 		"start" : [["Tardis", "Vaya cuadros más frikis. Qué mal gusto."]]
 	},
 	"Window" : {
-		"start" : [["Tardis", "Window"],["Alex", "Que sí pesado!"]]
+		"start" : [["Tardis", "¿Por qué miras así?"],["Alex", "Desde aquí se ve La Tierra y la echo mucho de menos..."],[NEXT_STATE,"Window","start2"]],
+		"start2" : [["Alex", "Basta de lamentos, vamos a salir de aquí!"],["Tardis", "Esa es la actitud, cuenta conmigo"]]
 	},
 	"DownFloor" : {
 		"start" : [["Tardis", "DownFloor"],["Alex", "Que sí pesado!"]]
