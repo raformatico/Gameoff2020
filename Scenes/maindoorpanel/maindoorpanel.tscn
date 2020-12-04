@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/maindoorpanel/panel-transbordador.jpg" type="Texture" id=1]
 [ext_resource path="res://Dialog/Dialog.tscn" type="PackedScene" id=2]
@@ -7,9 +7,8 @@
 [ext_resource path="res://Scenes/maindoorpanel/gofre.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/maindoorpanel/cable.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/maindoorpanel/microchip.png" type="Texture" id=7]
-[ext_resource path="res://Scenes/DoorCode/VOLVER.png" type="Texture" id=8]
-[ext_resource path="res://Scenes/DoorCode/VOLVER1.png" type="Texture" id=9]
 [ext_resource path="res://Scenes/maindoorpanel/maindoorpanel.gd" type="Script" id=10]
+[ext_resource path="res://UI/Menu/back.tscn" type="PackedScene" id=11]
 
 [node name="maindoorpanel" type="Control"]
 anchor_right = 1.0
@@ -92,17 +91,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="back" type="TextureButton" parent="."]
-margin_left = 54.6606
-margin_top = 818.344
-margin_right = 253.661
-margin_bottom = 1027.34
-texture_normal = ExtResource( 8 )
-texture_pressed = ExtResource( 9 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="back2" parent="." instance=ExtResource( 11 )]
+previous_scene = "Main"
 
 [node name="Dialog" parent="." instance=ExtResource( 2 )]
 visible = false
@@ -113,4 +103,3 @@ visible = false
 [connection signal="pressed" from="gear" to="." method="_on_gear_pressed"]
 [connection signal="pressed" from="chip" to="." method="_on_chip_pressed"]
 [connection signal="pressed" from="wire" to="." method="_on_wire_pressed"]
-[connection signal="pressed" from="back" to="." method="_on_back_pressed"]

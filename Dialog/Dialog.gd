@@ -91,7 +91,7 @@ var dialog_dictionary = {
 	"InterruptorBox" : {
 		"start" : [["Alex", "This panel does not work, it gives an error message ..."],["Tardis", "I think some components are missing, if we find them we can surely open this door."],[ACTION,"current","panel"],[NEXT_STATE,"InterruptorBox","start2"]],
 		"start2" : [[ACTION,"current","panel"]],
-		"opendoor" : [["Alex", "We did it, the door is open!"],["Tardis","I would not be very happy knowing what awaits you in that room."]]
+		"opendoor" : [["Alex", "We did it, the door is open!"],["Tardis","I would not be very happy knowing what awaits you in that room."],[ACTION,"current","endgame"]]
 	},
 	"Lever" : {
 		"start" : [["Tardis", "And there was light..."],["Alex", "What a bad roll about the place."],[ACTION, "current", "lighton"],[NEXT_STATE,"Lever", "poweron"]],
@@ -124,11 +124,11 @@ var dialog_dictionary = {
 	"Lamp" : {
 		"start" : [["Alex","I have to try to get up there."],["Tardis", "Maybe you will grow wings ..."]],
 		"plant" : [["Tardis", "Eso es, tira un poco más, ya falta poco."],["Alex","Me caig..."],["Tardis", "¿Estás bien?"], ["Alex","Sí, gracias por tu ayuda."],["Tardis","¡Oye… genero luz y oxígeno, pero no me pidas que sostenga 40 kilos de imberbe terrestre!"]],
-		"down" : [["Alex","Surely here is something that can help us"],["Tardis", "Do you really like to rummage through the garbage or is it me?"],["Alex","It was worth it! I have found a cable!"],["Tardis","Well, if you wanted a cable, you could have asked for it ..."],[OBJECT,inventory.wire]]
+		"down" : [["Alex","Surely here is something that can help us"],["Tardis", "Do you really like to rummage through the garbage or is it me?"],["Alex","It was worth it! I have found a cable!"],["Tardis","Well, if you wanted a cable, you could have asked for it ..."], [OBJECT,inventory.wire]]
 	},
 	"Wire" : {
-		"start" : [["Alex","I think this will help me."],["Tardis", "Be careful, I won't have to save you again."]],
-		"picked" : []
+		"start" : [["Alex","Surely here is something that can help us"],["Tardis", "Do you really like to rummage through the garbage or is it me?"],["Alex","It was worth it! I have found a cable!"],["Tardis","Well, if you wanted a cable, you could have asked for it ..."], [OBJECT,inventory.wire], [NEXT_STATE,"wire","picked"]],
+		"picked" : [["Alex","There is nothing to see here"]]
 	},
 	"Gofrera" : {
 		"start" : [["Alex","This is hot, it could cook something."],["Tardis", "Hope you know what you're doing ... that machine hasn't been used for a while."]],
@@ -151,9 +151,9 @@ var dialog_dictionary = {
 		"end" : [["Tardis","I think that we have done with the coffee machine"]]
 	},
 	"Radio" : {
-		"start" : [["Alex","This radio is not working quite right but I think I can fix it"],["Tardis", "Try it I love music"],[ACTION,"current","minigame"]],
-		"middle" : [["Alex","Look, the cleaner robot likes this melody"],["Tardis", "I'd swear you're trying to dance ... to a lousy beat, by the way! "]],
-		"end" : [["Tardis", "I think she's going crazy."],["Alex", "Watch out, it's going to explode!"],[NEXT_STATE,"Aspiradora","end"],[ACTION,"current","breakMoonba"]]
+		"start" : [["Alex","This radio is not working quite right but I think I can fix it"],["Tardis", "Try it I love music"],[ACTION,"current","minigame"],[NEXT_STATE,"Radio","start"]],
+		"middle" : [["Alex","Look, the cleaner robot likes this melody"],["Tardis", "I'd swear you're trying to dance ... to a lousy beat, by the way! "],[NEXT_STATE,"Radio","start"]],
+		"end" : [["Tardis", "I think it's going crazy."],["Alex", "Watch out, it's going to explode!"],[NEXT_STATE,"Aspiradora","end"]]
 	},
 	"chip" : {
 		"start" : [["Alex","I don't know where we are going to get a next-generation chip, which is clearly what is missing from this panel."],["Tardis","You seem to know everything."]],
@@ -403,6 +403,7 @@ func next_dialog() -> void:
 	var current_text_to_show : Array = current_dialog[text_count]
 	var i
 	if current_text_to_show[0] == OBJECT:
+		print("ADD OBJECT")
 		inventory.add_item(current_text_to_show[1])
 		text_count += 1
 	elif current_text_to_show[0] == ACTION:

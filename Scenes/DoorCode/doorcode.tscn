@@ -1,14 +1,13 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/DoorCode/Teclado.jpg" type="Texture" id=1]
 [ext_resource path="res://Scenes/DoorCode/doorcode.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/DoorCode/code.tres" type="Theme" id=3]
 [ext_resource path="res://Audio/one-shots/Access denied.wav" type="AudioStream" id=4]
 [ext_resource path="res://Audio/one-shots/Access Granted.wav" type="AudioStream" id=5]
-[ext_resource path="res://Scenes/DoorCode/VOLVER1.png" type="Texture" id=6]
-[ext_resource path="res://Scenes/DoorCode/VOLVER.png" type="Texture" id=7]
 [ext_resource path="res://UI/Pause/pause.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Audio/one-shots/Keyboard tap.wav" type="AudioStream" id=9]
+[ext_resource path="res://UI/Menu/back.tscn" type="PackedScene" id=10]
 
 [node name="doorcode" type="Control"]
 anchor_right = 1.0
@@ -121,18 +120,8 @@ stream = ExtResource( 9 )
 [node name="wrong" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 
-[node name="TextureButton" type="TextureButton" parent="."]
-margin_left = 61.9086
-margin_top = 825.448
-margin_right = 300.909
-margin_bottom = 1024.45
-texture_normal = ExtResource( 7 )
-texture_pressed = ExtResource( 6 )
-expand = true
-stretch_mode = 4
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="back" parent="." instance=ExtResource( 10 )]
+previous_scene = "greenhouse2hall"
 
 [node name="pause" parent="." instance=ExtResource( 8 )]
 [connection signal="pressed" from="1" to="." method="_on_1_pressed"]
@@ -145,4 +134,3 @@ __meta__ = {
 [connection signal="pressed" from="8" to="." method="_on_8_pressed"]
 [connection signal="pressed" from="9" to="." method="_on_9_pressed"]
 [connection signal="pressed" from="0" to="." method="_on_0_pressed"]
-[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]

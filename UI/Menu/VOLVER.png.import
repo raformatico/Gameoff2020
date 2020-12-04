@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/VOLVER1.png-1e581b802d6c7bdab2f59dd4f509d56e.stex"
+path="res://.import/VOLVER.png-31904130d35cdb26ea3d72e2231b626d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/DoorCode/VOLVER1.png"
-dest_files=[ "res://.import/VOLVER1.png-1e581b802d6c7bdab2f59dd4f509d56e.stex" ]
+source_file="res://UI/Menu/VOLVER.png"
+dest_files=[ "res://.import/VOLVER.png-31904130d35cdb26ea3d72e2231b626d.stex" ]
 
 [params]
 

@@ -1,10 +1,5 @@
 extends StaticBody
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
 var parent=null
 var material=null
 
@@ -20,6 +15,8 @@ func _ready():
 					child.queue_free()
 		elif self.name == "AspiradoraHall":
 			queue_free()
+		elif self.name == "Aspiradora":
+			parent.brokeMoonba()
 		else:
 			print("HIDE" + self.name)
 			take()

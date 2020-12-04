@@ -13,14 +13,22 @@ func _ready() -> void:
 	if Global.status["wire"] == "connected":
 		wire.visible = true
 
+func is_end() -> bool:
+	if chip.visible and gear.visible and wire.visible:
+		Global.status["InterruptorBox"] = "opendoor"
+		Global.emit_signal("start_dialog","InterruptorBox", Global.status["InterruptorBox"])
+		return true
+	return false
+
 func _on_back_pressed() -> void:
 	# get_tree().change_scene("res://Scenes/museum-prefinal/Room.tscn")
 	Global.gateway_entered("Main")
 
 func _on_gear_pressed() -> void:
 	if Global.item_selected == "gear":
-		Global.emit_signal("start_dialog_item","gear", "gear", Global.item_selected, Global.interactions[Global.item_selected])
 		gear.visible = true
+		if not is_end():
+			Global.emit_signal("start_dialog_item","gear", "gear", Global.item_selected, Global.interactions[Global.item_selected])
 	elif Global.item_selected != null:
 		Global.emit_signal("start_dialog","Error", "start")
 	else:
@@ -28,8 +36,9 @@ func _on_gear_pressed() -> void:
 
 func _on_wire_pressed() -> void:
 	if Global.item_selected == "wire":
-		Global.emit_signal("start_dialog_item","wire", "wire", Global.item_selected, Global.interactions[Global.item_selected])
 		wire.visible = true
+		if not is_end():
+			Global.emit_signal("start_dialog_item","wire", "wire", Global.item_selected, Global.interactions[Global.item_selected])
 	elif Global.item_selected != null:
 		Global.emit_signal("start_dialog","Error", "start")
 	else:
@@ -38,8 +47,9 @@ func _on_wire_pressed() -> void:
 
 func _on_chip_pressed() -> void:
 	if Global.item_selected == "chip":
-		Global.emit_signal("start_dialog_item","chip", "chip", Global.item_selected, Global.interactions[Global.item_selected])
 		chip.visible = true
+		if not is_end():
+			Global.emit_signal("start_dialog_item","chip", "chip", Global.item_selected, Global.interactions[Global.item_selected])
 	elif Global.item_selected != null:
 		Global.emit_signal("start_dialog","Error", "start")
 	else:

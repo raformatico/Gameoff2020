@@ -93,10 +93,15 @@ func _on_Alex_arrived(object) -> void:
 	
 
 func _on_start_action(object, action : String) -> void:
+	print("START ACTION")
+	print(object)
+	print(action)
 	if action == "minigame":
 		#TODO lanzar juego
 		print("LANZAR MINIJUEGO")
 		get_tree().change_scene("res://J-dj/DJTest2.tscn")
+	elif action == "endgame":
+		get_tree().change_scene("res://Scenes/end/end.tscn")
 	elif action == "goingup":
 		#TODO animación de la planta y caída del cable
 		print("ANIMACION PLANTA")
@@ -114,8 +119,6 @@ func _on_start_action(object, action : String) -> void:
 			get_tree().change_scene("res://Scenes/museum-prefinal/Room.tscn")
 			#status["InterruptorBox"] = "opendoor"
 			#emit_signal("start_dialog","InterruptorBox", status["InterruptorBox"])
-	elif action == "breakMoonba":
-		emit_signal("breakMoonba")
 	elif action == "code":
 		#TODO lanzar escena introducir código y 
 		#que al final si se hace bien ejecute lo de abajo
@@ -147,9 +150,11 @@ func is_visible(object_name) -> bool:
 	elif object_name == "AspiradoraHall" and status["AspiradoraHall"] == "opened":
 		print("ESCONDETE")
 		is_visible = false
+	elif object_name == "Aspiradora" and status["Aspiradora"] == "end":
+		print("FIN DE LA ASPIRADORA")
+		is_visible = false
 	elif object_name in status:
 		if status[object_name] == "picked":
-			print(object_name)
 			is_visible = false
 	return is_visible
 

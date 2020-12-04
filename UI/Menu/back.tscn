@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://UI/Menu/VOLVER.png" type="Texture" id=1]
+[ext_resource path="res://UI/Menu/VOLVER1.png" type="Texture" id=2]
+[ext_resource path="res://UI/Menu/back.gd" type="Script" id=3]
+
+[node name="back" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="back_button" type="TextureButton" parent="."]
+margin_left = 50.0
+margin_top = 883.593
+margin_right = 200.0
+margin_bottom = 1030.0
+rect_min_size = Vector2( 150, 150 )
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 2 )
+expand = true
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="back_button" to="." method="_on_back_button_pressed"]
