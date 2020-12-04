@@ -28,6 +28,9 @@ func _ready():
 	connect("arrived", Global,"_on_Alex_arrived")
 	$AnimationPlayer.playback_speed = animation_speed
 	
+func clean_path():
+	target_object=null
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	# var direction=-Vector3.UP*speed
@@ -102,11 +105,11 @@ func _physics_process(delta):
 			movement=move_and_slide(direction,Vector3.UP,false)		
 			rotate(Vector3.UP,PI)
 
-			# am I Stuck?
-			if movement.distance_to(direction)> cant_walk_threshold: # try measuring the real distance last walked, instead
-				# print("mov: "+str(movement.distance_to(direction)))
-				#print("I'm stuck") 
-				pass
+#			# am I Stuck?
+#			if movement.distance_to(direction)> cant_walk_threshold: # try measuring the real distance last walked, instead
+#				# print("mov: "+str(movement.distance_to(direction)))
+#				#print("I'm stuck") 
+#				pass
 
 func start_boring():
 	$Timer.start(5)

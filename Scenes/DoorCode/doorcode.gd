@@ -30,7 +30,8 @@ func check_code() -> void:
 		print("Correcto")
 		timer.start()
 		correct.play()
-		Global.status["Door"] = "opened"
+		# Global.status["Door"] = "opened"
+		Global.gateways["hall2greenhouse"].status = "opening"
 		yield(timer, "timeout")
 		# get_tree().change_scene("res://Scenes/museum-final/Room.tscn")
 		Global.gateway_entered("greenhouse2hall")

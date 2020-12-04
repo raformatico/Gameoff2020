@@ -9,10 +9,11 @@ func _ready():
 	material=parent.get_surface_material(0)
 	if not Global.is_visible(self.name):
 		if self.name == "Door":
-			queue_free()
-			for child in get_parent().get_parent().get_children():
-				if child.name == "2CpuertaR" or child.name == "2CpuertaL":
-					child.queue_free()
+#			for child in get_parent().get_children():
+#				if child.name == "2CpuertaR" or child.name == "2CpuertaL":
+#					child.queue_free()
+#			queue_free()
+			pass
 		elif self.name == "AspiradoraHall":
 			queue_free()
 		elif self.name == "Aspiradora":

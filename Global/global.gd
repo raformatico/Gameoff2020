@@ -123,13 +123,13 @@ func _on_start_action(object, action : String) -> void:
 		#TODO lanzar escena introducir código y 
 		#que al final si se hace bien ejecute lo de abajo
 		get_tree().change_scene("res://Scenes/DoorCode/doorcode.tscn")
-		if status["Door"] == "opened":
-			for child in object.get_parent().get_parent().get_children():
-				if child.name == "2CpuertaR" or child.name == "2CpuertaL":
-					child.queue_free()
-		
-			object.queue_free()
-			status["Door"] = "opened"
+#		if status["Door"] == "opened":
+#			for child in object.get_parent().get_children():
+#				if child.name == "2CpuertaR" or child.name == "2CpuertaL":
+#					child.queue_free()
+#
+#			object.queue_free()
+#			status["Door"] = "opened"
 		pass
 	elif action == "opened":
 		audio_player.play_water()
@@ -160,11 +160,11 @@ func is_visible(object_name) -> bool:
 
 
 var gateways={
-	"hall2cafeteria" : {"scene": "res://Scenes/cafeteria/room.tscn", "gateway":"cafeteria2hall"},
-	"greenhouse2hall" : {"scene" : "res://Scenes/museum-final/Room.tscn", "gateway":"hall2greenhouse"},
-	"cafeteria2hall" : {"scene" : "res://Scenes/museum-final/Room.tscn", "gateway":"hall2cafeteria"},
-	"hall2greenhouse" : {"scene" : "res://Scenes/greenhouse-final/Room.tscn", "gateway":"greenhouse2hall"},
-	"Main" : {"scene" : "res://Scenes/museum-final/Room.tscn", "gateway":"Main"}
+	"hall2cafeteria"  : {"scene": "res://Scenes/cafeteria/room.tscn", "gateway":"cafeteria2hall", "status":"closed"},
+	"greenhouse2hall" : {"scene" : "res://Scenes/museum-final/Room.tscn", "gateway":"hall2greenhouse", "status":"open"},
+	"cafeteria2hall"  : {"scene" : "res://Scenes/museum-final/Room.tscn", "gateway":"hall2cafeteria","status":"open"},
+	"hall2greenhouse" : {"scene" : "res://Scenes/greenhouse-final/Room.tscn", "gateway":"greenhouse2hall","status":"closed"},
+	"Main"            : {"scene" : "res://Scenes/museum-final/Room.tscn", "gateway":"Main", "status":"open"}
 }
 
 func gateway_entered(gateway_name):
