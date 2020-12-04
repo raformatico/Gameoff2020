@@ -15,7 +15,7 @@ func _ready():
 #func _process(delta):
 #	pass
 func on_coffee_served():
-	play("Crecer")
-	get_node("../AnimationPlayer3").play("gtlfcaer")
+	play("caer")
+	get_node("../AnimationPlayer").play("Crecer")
 
 

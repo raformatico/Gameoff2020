@@ -102,6 +102,7 @@ func _on_start_action(object, action : String) -> void:
 	if action == "minigame":
 		#TODO lanzar juego
 		print("LANZAR MINIJUEGO")
+		save_position()
 		get_tree().change_scene("res://J-dj/DJTest2.tscn")
 	elif action == "endgame":
 		get_tree().change_scene("res://Scenes/end/end.tscn")

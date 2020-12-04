@@ -11,8 +11,6 @@ var gateways=null
 func _ready():
 	gateways=get_tree().get_nodes_in_group("Gateway")
 	
-	var restore_position=Global.restore_position("")
-	
 	# is it an entrance?
 	if Global.saved_position==null:
 		start_entrance()  #A pity... start_entrance doesn't work...
@@ -23,7 +21,7 @@ func get_position():
 	return $Alex.global_transform.origin
 	
 func restore_position(saved_position):
-	$Alex.global_transform.origin=saved_position
+	$Alex.global_transform.origin=Global.saved_position
 	
 func start_entrance():
 	var gateway_name=Global.get_gateway()
