@@ -104,6 +104,9 @@ func _on_start_action(object, action : String) -> void:
 		print("LANZAR MINIJUEGO")
 		get_tree().change_scene("res://J-dj/DJTest2.tscn")
 	elif action == "endgame":
+		var fade_anim : AnimationPlayer = get_node("/root/maindoorpanel/Fade/fade_anim")
+		fade_anim.play("fadeout")
+		yield(fade_anim,"animation_finished")
 		get_tree().change_scene("res://Scenes/end/end.tscn")
 	elif action == "goingup":
 		#TODO animación de la planta y caída del cable

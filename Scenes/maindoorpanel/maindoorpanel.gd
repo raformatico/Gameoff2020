@@ -3,6 +3,8 @@ extends Control
 onready var chip : TextureRect = $chip2
 onready var gear : TextureRect = $gear2
 onready var wire : TextureRect = $wire2
+onready var crackle : AudioStreamPlayer = $crackle
+onready var bigdoor : AudioStreamPlayer = $bigdoor
 
 func _ready() -> void:
 	print(Global.status["chip"])
@@ -17,6 +19,7 @@ func is_end() -> bool:
 	if chip.visible and gear.visible and wire.visible:
 		Global.status["InterruptorBox"] = "opendoor"
 		Global.emit_signal("start_dialog","InterruptorBox", Global.status["InterruptorBox"])
+		bigdoor.play()
 		return true
 	return false
 
@@ -49,6 +52,7 @@ func _on_wire_pressed() -> void:
 func _on_chip_pressed() -> void:
 	if Global.item_selected == "chip":
 		chip.visible = true
+		crackle.play()
 		if not is_end():
 			Global.emit_signal("start_dialog_item","chip", "chip", Global.item_selected, Global.interactions[Global.item_selected])
 	elif Global.item_selected != null:

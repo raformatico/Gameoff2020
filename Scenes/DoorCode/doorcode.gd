@@ -34,7 +34,7 @@ func check_code() -> void:
 		Global.gateways["hall2greenhouse"].status = "opening"
 		yield(timer, "timeout")
 		# get_tree().change_scene("res://Scenes/museum-final/Room.tscn")
-		Global.restore_point("res://Scenes/museum-final/Room.tscn")
+		Global.restore_position("res://Scenes/museum-final/Room.tscn")
 		# Global.gateway_entered("greenhouse2hall")
 	else:
 		print("Incorrecto")
