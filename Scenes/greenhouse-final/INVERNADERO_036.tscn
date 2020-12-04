@@ -480,7 +480,14 @@ tracks/26/keys = PoolRealArray( 0, 1, 0, 0, 0, 0, -3.72529e-09, 0, 1, 1, 1, 1, 0
 [node name="INVERNADERO_036" instance=ExtResource( 1 )]
 
 [node name="Gateway" parent="puerta" index="0" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.243669, 0, 0 )
 gateway_name = "greenhouse2hall"
+
+[node name="indoor" parent="puerta/Gateway" index="1"]
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -0.841105, -1.04372, -2.38419e-07 )
+
+[node name="outdoor" parent="puerta/Gateway" index="2"]
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -1.56401, -1.84536, 0 )
 
 [node name="Plane002" parent="Armature/Skeleton" index="0"]
 material/0 = ExtResource( 6 )
@@ -661,9 +668,16 @@ anims/Crecer = ExtResource( 15 )
 anims/caer = ExtResource( 4 )
 script = ExtResource( 14 )
 
+[editable path="puerta/Gateway"]
+
 [editable path="Cube/Key"]
+
 [editable path="Cylinder004/Pump"]
+
 [editable path="Cube001/Key2"]
+
 [editable path="Cylinder/Plant"]
+
 [editable path="Armature001/Skeleton 2/Cylinder010/Lamp"]
+
 [editable path="Armature001/Skeleton 2/Cylinder010/Wire"]

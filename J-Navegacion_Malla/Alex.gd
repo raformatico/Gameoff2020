@@ -83,7 +83,7 @@ func _physics_process(delta):
 				target_rotation=null
 				target_object=null
 				
-				$AnimationPlayer.play("Stand")
+				$AnimationPlayer.play("Stand",0.3)
 				start_boring()
 		
 		var grav=Vector3.ZERO
@@ -93,7 +93,7 @@ func _physics_process(delta):
 		if target_point!=null:
 			
 			if $AnimationPlayer.current_animation!="Walk":
-				$AnimationPlayer.play("Walk")
+				$AnimationPlayer.play("Walk",0.5)
 			
 			if !rotating:	
 				look_at(target_point,Vector3.UP)
@@ -127,7 +127,7 @@ func set_path(path_, _rotation=null, _object=null):
 
 
 func _on_Timer_timeout():
-	$AnimationPlayer.play("Idle")
+	$AnimationPlayer.play("Idle",0.1)
 	$AnimationPlayer.queue("Stand")
 
 func scan():

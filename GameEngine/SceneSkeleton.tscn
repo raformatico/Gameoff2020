@@ -8,7 +8,7 @@
 [ext_resource path="res://UI/Pause/pause.tscn" type="PackedScene" id=6]
 [ext_resource path="res://GameEngine/SceneSkeleton.gd" type="Script" id=7]
 
-[node name="Spatial" type="Spatial"]
+[node name="Room" type="Spatial"]
 script = ExtResource( 7 )
 
 [node name="SceneGameLogic" type="Node" parent="."]
@@ -26,7 +26,6 @@ speed = 3
 [node name="UI_Inventory" parent="." instance=ExtResource( 5 )]
 
 [node name="pause" parent="." instance=ExtResource( 6 )]
-
 [connection signal="arrived" from="Alex" to="SceneGameLogic" method="_on_Alex_arrived"]
 [connection signal="hide_dialog" from="Dialog" to="UI_Inventory" method="_on_Dialog_hide_dialog"]
 [connection signal="show_dialog" from="Dialog" to="UI_Inventory" method="_on_Dialog_show_dialog"]

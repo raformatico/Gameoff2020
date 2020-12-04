@@ -2010,7 +2010,7 @@ threshold = 0.1
 speed = 2
 
 [node name="Alex" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.239582, -0.0337069 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.23995, -0.0337069 )
 
 [node name="Skeleton" type="Skeleton" parent="Alex"]
 bones/0/name = "posicion_alex"
@@ -2245,11 +2245,11 @@ anims/Use = SubResource( 7 )
 anims/Walk = SubResource( 8 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, -0.0809158, 0 )
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 1.39861, 0 )
 shape = SubResource( 9 )
 
 [node name="Foot" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.49291, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0133796, 0 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
@@ -2257,7 +2257,7 @@ wait_time = 5.0
 [node name="Tween" type="Tween" parent="."]
 
 [node name="Radar" parent="." instance=ExtResource( 4 )]
-transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.77409, 0.0395077 )
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 2.25362, 0.0395077 )
 max_scale = 20
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]

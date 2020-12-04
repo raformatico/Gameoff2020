@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=2]
+[gd_scene load_steps=51 format=2]
 
 [ext_resource path="res://Scenes/museum-final/GLTF/MUSEO.glb" type="PackedScene" id=1]
 [ext_resource path="res://GameEngine/Clickable.tscn" type="PackedScene" id=2]
@@ -13,10 +13,10 @@
 [ext_resource path="res://Scenes/museum-final/GLTF/puerta 2C_L.material" type="Material" id=11]
 [ext_resource path="res://GameEngine/DoorSlide.gd" type="Script" id=12]
 
-[sub_resource type="BoxShape" id=3]
+[sub_resource type="BoxShape" id=1]
 extents = Vector3( 4.27575, 2.98897, 0.0356833 )
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=2]
 length = 5.0
 loop = true
 tracks/0/type = "bezier"
@@ -30,16 +30,16 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 2.5, 4.9 )
 }
 
-[sub_resource type="BoxShape" id=5]
+[sub_resource type="BoxShape" id=3]
 extents = Vector3( 0.503396, 1, 0.356229 )
 
-[sub_resource type="BoxShape" id=6]
+[sub_resource type="BoxShape" id=4]
 extents = Vector3( 0.359912, 0.552253, 0.457681 )
 
-[sub_resource type="BoxShape" id=28]
+[sub_resource type="BoxShape" id=5]
 extents = Vector3( 0.406074, 0.731697, 0.383222 )
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=6]
 length = 3.0
 loop = true
 tracks/0/type = "bezier"
@@ -103,10 +103,10 @@ tracks/5/keys = {
 "times": PoolRealArray( 0, 1.5, 3 )
 }
 
-[sub_resource type="BoxShape" id=8]
+[sub_resource type="BoxShape" id=7]
 extents = Vector3( 0.509593, 1, 0.352762 )
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=8]
 length = 2.0
 loop = true
 tracks/0/type = "bezier"
@@ -120,24 +120,24 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 2 )
 }
 
-[sub_resource type="BoxShape" id=10]
+[sub_resource type="BoxShape" id=9]
 extents = Vector3( 0.52373, 0.871263, 0.376202 )
 
-[sub_resource type="BoxShape" id=11]
+[sub_resource type="BoxShape" id=10]
 extents = Vector3( 1.4493, 1.64634, 0.354954 )
 
-[sub_resource type="CapsuleShape" id=12]
+[sub_resource type="CapsuleShape" id=11]
 radius = 0.908391
 height = 6.6762
 
-[sub_resource type="BoxShape" id=13]
+[sub_resource type="BoxShape" id=12]
 extents = Vector3( 1.26762, 1, 1.36316 )
 
-[sub_resource type="CapsuleShape" id=32]
+[sub_resource type="CapsuleShape" id=13]
 radius = 0.389994
 height = 0.687302
 
-[sub_resource type="ArrayMesh" id=15]
+[sub_resource type="ArrayMesh" id=14]
 resource_name = "aspiradora"
 surfaces/0 = {
 "aabb": AABB( -0.654388, -0.908409, -0.468499, 0.948862, 1.01396, 0.952386 ),
@@ -152,46 +152,46 @@ surfaces/0 = {
 "vertex_count": 1324
 }
 
-[sub_resource type="BoxShape" id=16]
+[sub_resource type="BoxShape" id=15]
 extents = Vector3( 0.308203, 0.38902, 0.290089 )
 
-[sub_resource type="BoxShape" id=17]
+[sub_resource type="BoxShape" id=16]
 extents = Vector3( 0.148711, 0.17328, 0.160014 )
 
-[sub_resource type="BoxShape" id=18]
+[sub_resource type="BoxShape" id=17]
 extents = Vector3( 1.47609, 1.66693, 0.577932 )
 
-[sub_resource type="BoxShape" id=19]
+[sub_resource type="BoxShape" id=18]
 extents = Vector3( 0.185653, 0.0883908, 0.0660546 )
 
-[sub_resource type="BoxShape" id=20]
+[sub_resource type="BoxShape" id=19]
 extents = Vector3( 0.0538874, 0.122003, 0.172113 )
 
-[sub_resource type="BoxShape" id=21]
+[sub_resource type="BoxShape" id=20]
 extents = Vector3( 0.18149, 0.074609, 0.0488273 )
 
-[sub_resource type="BoxShape" id=22]
+[sub_resource type="BoxShape" id=21]
 extents = Vector3( 0.224596, 0.0804325, 0.0813122 )
 
-[sub_resource type="BoxShape" id=23]
+[sub_resource type="BoxShape" id=22]
 extents = Vector3( 0.850092, 0.668854, 0.11764 )
 
-[sub_resource type="BoxShape" id=24]
+[sub_resource type="BoxShape" id=23]
 extents = Vector3( 0.844186, 1.34727, 0.0743018 )
 
-[sub_resource type="BoxShape" id=25]
+[sub_resource type="BoxShape" id=24]
 extents = Vector3( 0.85513, 0.918192, 0.109552 )
 
-[sub_resource type="BoxShape" id=26]
+[sub_resource type="BoxShape" id=25]
 extents = Vector3( 0.917017, 0.966226, 0.117017 )
 
-[sub_resource type="BoxShape" id=27]
+[sub_resource type="BoxShape" id=26]
 extents = Vector3( 0.670356, 1.13581, 0.105685 )
 
-[sub_resource type="ConcavePolygonShape" id=1]
+[sub_resource type="ConcavePolygonShape" id=27]
 data = PoolVector3Array( 1, 0, -0.1337, -0.5366, 0, -0.1337, -0.5366, 0, -1, 1, 0, 1, -0.5366, 0, 1, -0.5366, 0, 0.1097, -0.5366, 0, -0.1337, -1, 0, -0.1337, -1, 0, -1, 1, 0, 0.1097, -0.5366, 0, 0.1097, -0.5366, 0, -0.1337, -1, 0, -0.1337, -0.5366, 0, -0.1337, -0.5366, 3.4514, 0.1036, -1, 3.4514, 0.1036, -0.5366, 3.4514, 0.1036, -0.5366, 3.4514, 0.2068, -0.5366, 3.4514, 0.2068, -0.5366, 3.4514, 0.1036, 1.021, 3.4514, 0.1036, -1, 3.4514, 0.2068, -0.5366, 3.4514, 0.2068, -0.5366, 3.4514, 0.5491, -1, 3.4514, 0.2068, -1, 3.4514, 0.5491, -2.4123, 3.4514, 0.5491, -1, 3.4514, 0.1036, -1, 3.4514, 0.2068, -2.4123, 3.4514, 0.2068, -1, 3.4514, 0.1036, -2.4123, 3.4514, 0.1036, -2.4123, 3.4514, -0.0096, -2.4123, 3.4514, -0.0096, -2.4123, 3.4514, 0.1036, -3.8187, 3.4514, 0.1036, -2.4123, 3.4514, 0.2068, -2.4123, 3.4514, 0.5491, -3.8187, 3.4514, 0.5491, -2.4123, 3.4514, 0.1036, -2.4123, 3.4514, 0.2068, -3.8187, 3.4514, 0.2068, 1.021, 3.4514, 0.2068, 1.021, 3.4514, 0.1036, 4.6011, 3.4514, 0.1036, 1.021, 3.4514, 0.2068, 4.6011, 3.4514, 0.4635, 4.6011, 3.4514, 0.5479, 1, 0, -0.1337, -0.5366, 0, -1, 1, 0, -1, 1, 0, 1, -0.5366, 0, 0.1097, 1, 0, 0.1097, -0.5366, 0, -0.1337, -1, 0, -1, -0.5366, 0, -1, 1, 0, 0.1097, -0.5366, 0, -0.1337, 1, 0, -0.1337, -1, 0, -0.1337, -0.5366, 3.4514, 0.1036, -1, 3.4514, 0.1036, -1, 3.4514, 0.1036, -0.5366, 3.4514, 0.2068, -1, 3.4514, 0.2068, -0.5366, 3.4514, 0.2068, 1.021, 3.4514, 0.1036, 1.021, 3.4514, 0.2068, -1, 3.4514, 0.2068, -0.5366, 3.4514, 0.5491, -1, 3.4514, 0.5491, -1, 3.4514, 0.2068, -2.4123, 3.4514, 0.5491, -2.4123, 3.4514, 0.2068, -1, 3.4514, 0.1036, -2.4123, 3.4514, 0.2068, -2.4123, 3.4514, 0.1036, -1, 3.4514, 0.1036, -2.4123, 3.4514, -0.0096, -1, 3.4514, -0.0096, -2.4123, 3.4514, -0.0096, -3.8187, 3.4514, 0.1036, -3.8187, 3.4514, -0.0096, -2.4123, 3.4514, 0.2068, -3.8187, 3.4514, 0.5491, -3.8187, 3.4514, 0.2068, -2.4123, 3.4514, 0.1036, -3.8187, 3.4514, 0.2068, -3.8187, 3.4514, 0.1036, 1.021, 3.4514, 0.2068, 4.6011, 3.4514, 0.1036, 4.6011, 3.4514, 0.2068, 1.021, 3.4514, 0.2068, 4.6011, 3.4514, 0.5479, 1.021, 3.4514, 0.5479, 4.6011, 3.4514, 0.4635, 4.6011, 3.4514, 0.3601, 5.4899, 3.4514, 0.3601, 4.6011, 3.4514, 0.4635, 1.021, 3.4514, 0.2068, 4.6011, 3.4514, 0.3601, 4.6011, 3.4514, 0.3601, 1.021, 3.4514, 0.2068, 4.6011, 3.4514, 0.2068, 4.6011, 3.4514, 0.4635, 5.4899, 3.4514, 0.3601, 5.4899, 3.4514, 0.4635 )
 
-[sub_resource type="NavigationMesh" id=2]
+[sub_resource type="NavigationMesh" id=28]
 vertices = PoolVector3Array( -1.02815, 0, -5.77726, 2.93412, 0, -15.0785, -1.8149, 0, -15.0785, -0.0366413, 0, 1.16647, 2.54218, 0, -1.32475, -1.53969, 0, -1.32202, -2.12419, 0, -5.46893, -2.12419, 0, -10.4088, -1.53969, 0, 1.16647, -3.05206, 0, -2.08903, -2.20675, 3.45136, 1.61897, -2.12419, 0, -2.08903, -3.06002, 3.45136, 1.61897, -2.60368, 3.45136, 3.23088, -2.20675, 3.45136, 1.61897, -2.0644, 3.45136, 2.8967, 3.92508, 3.45136, 2.05143, -1.8149, 3.45136, 2.05143, 2.93412, 0, 15.621, -1.53969, 0, 9.40027, -1.53969, 0, 15.621, 2.93412, 0, 9.40027, 0.512545, 0, 8.67885, -7.50385, 3.45136, 1.17078, -8.15907, 3.45136, 2.78269, -7.50385, 3.45136, 2.78269, -3.75973, 3.45136, 0.227218, -7.50385, 3.45136, 0.227218, -8.7948, 3.45136, 1.17078, -12.4444, 3.45136, 0.227218, -12.4444, 3.45136, 1.61897, -8.7948, 3.45136, 8.22387, -12.4444, 3.45136, 3.23088, -12.4444, 3.45136, 8.22387, -8.7948, 3.45136, 2.78269, 11.8076, 3.45136, 2.02908, 15.0197, 3.45136, 5.63151, 15.0197, 3.45136, 2.01998, 3.92508, 3.45136, 5.71127, 7.56106, 3.45136, 8.06268, 7.56106, 3.45136, 5.69452, -3.769, 3.45136, 7.24905, -2.60368, 3.45136, 7.24905, -3.75973, 3.45136, 1.61897, -3.75973, 3.45136, 3.23088, -8.15907, 3.45136, 1.17078, -2.0644, 3.45136, 7.1838, 2.93412, 0, 7.95743, -1.53969, 0, 7.95743, -5.33045, 3.45136, 8.22387, -7.45861, 3.45136, 7.16154, -7.44764, 3.45136, 8.22387, -5.50549, 3.45136, 7.21942, -5.91692, 3.45136, 5.46732, -0.2702, 0, 3.5343, -1.53969, 0, 3.5343, 2.93412, 0, 1.71301, -1.53969, 0, 1.71301, 1.81763, 0, 1.16647, 2.54218, 0, 1.16647, 2.07796, 0, 3.5343, 2.93412, 0, 3.5343, 9.68433, 3.45136, 6.24382, 9.68433, 3.45136, 8.06268, 3.92508, 3.45136, 2.8967, 7.56106, 3.45136, 2.04112, 11.8076, 3.45136, 5.89265, 15.0197, 3.45136, 8.06268, 15.0197, 3.45136, 7.26783, 9.68433, 3.45136, 4.0667, 9.68433, 3.45136, 2.0351, 11.8076, 3.45136, 4.51092, 7.56106, 3.45136, 4.52293, 11.8076, 3.45136, 8.06268, -2.12419, 0, -2.96216, -3.05206, 0, -5.46893, -3.05206, 0, -2.96215, 2.18341, 0, -2.43255, -0.968469, 0, -2.43049, -3.05206, 0, -2.08903, -2.12419, 0, -2.08903, -2.12419, 0, -2.49866, -1.54035, 0, -2.49866, 2.93412, 0, -1.47278, 2.18346, 0, -5.77885, 2.93412, 0, -5.77921, -3.05206, 0, -2.08903, -3.06002, 3.45136, 1.61897, -2.20675, 3.45136, 1.61897, 1.66032, 0, 8.67885, -8.7948, 3.45136, 0.227218, 3.92508, 3.45136, 8.06268, -1.99445, 3.45136, 8.22387, -2.26307, 0, -6.90728, -3.7667, 3.45136, 6.24981, -5.08153, 3.45136, 6.2508, 18.5962, 3.45136, 5.63151, -2.44994, 0, -8.84258, -2.12419, 0, -15.0785, -2.38151, 0, -10.3468, -3.05206, 0, -15.0785, -3.05206, 0, -10.3696, -3.05206, 0, -6.90096, -3.05206, 0, -8.80187, 18.5962, 3.45136, 7.26783 )
 polygons = [ PoolIntArray( 0, 2, 1 ), PoolIntArray( 3, 5, 4 ), PoolIntArray( 6, 7, 2 ), PoolIntArray( 8, 5, 3 ), PoolIntArray( 9, 11, 10 ), PoolIntArray( 12, 14, 13 ), PoolIntArray( 15, 17, 16 ), PoolIntArray( 18, 20, 19 ), PoolIntArray( 21, 19, 22 ), PoolIntArray( 23, 25, 24 ), PoolIntArray( 23, 27, 26 ), PoolIntArray( 28, 30, 29 ), PoolIntArray( 31, 33, 32 ), PoolIntArray( 34, 32, 30 ), PoolIntArray( 35, 37, 36 ), PoolIntArray( 38, 40, 39 ), PoolIntArray( 17, 15, 13 ), PoolIntArray( 13, 42, 41 ), PoolIntArray( 43, 44, 25 ), PoolIntArray( 45, 24, 34 ), PoolIntArray( 13, 15, 46 ), PoolIntArray( 22, 48, 47 ), PoolIntArray( 49, 51, 50 ), PoolIntArray( 52, 50, 53 ), PoolIntArray( 48, 55, 54 ), PoolIntArray( 56, 57, 57 ), PoolIntArray( 4, 59, 58 ), PoolIntArray( 54, 60, 47 ), PoolIntArray( 60, 61, 47 ), PoolIntArray( 62, 63, 39 ), PoolIntArray( 64, 16, 65 ), PoolIntArray( 66, 68, 67 ), PoolIntArray( 69, 70, 35 ), PoolIntArray( 71, 36, 68 ), PoolIntArray( 72, 40, 38 ), PoolIntArray( 65, 70, 69 ), PoolIntArray( 62, 66, 73 ), PoolIntArray( 74, 76, 75 ), PoolIntArray( 74, 6, 0 ), PoolIntArray( 5, 78, 77 ), PoolIntArray( 79, 81, 80 ), PoolIntArray( 82, 81, 74 ), PoolIntArray( 77, 83, 4 ), PoolIntArray( 1, 85, 84 ), PoolIntArray( 84, 85, 83 ), PoolIntArray( 81, 79, 76 ), PoolIntArray( 78, 5, 82 ), PoolIntArray( 0, 1, 84 ), PoolIntArray( 3, 4, 58 ), PoolIntArray( 6, 2, 0 ), PoolIntArray( 86, 88, 87 ), PoolIntArray( 12, 13, 44 ), PoolIntArray( 15, 16, 64 ), PoolIntArray( 18, 19, 21 ), PoolIntArray( 21, 22, 89 ), PoolIntArray( 23, 24, 45 ), PoolIntArray( 23, 26, 43 ), PoolIntArray( 28, 29, 90 ), PoolIntArray( 31, 32, 34 ), PoolIntArray( 34, 30, 28 ), PoolIntArray( 35, 36, 71 ), PoolIntArray( 38, 39, 91 ), PoolIntArray( 46, 92, 42 ), PoolIntArray( 17, 13, 14 ), PoolIntArray( 6, 93, 7 ), PoolIntArray( 13, 94, 44 ), PoolIntArray( 43, 25, 23 ), PoolIntArray( 45, 34, 28 ), PoolIntArray( 13, 46, 42 ), PoolIntArray( 22, 47, 89 ), PoolIntArray( 49, 50, 52 ), PoolIntArray( 95, 52, 53 ), PoolIntArray( 56, 57, 56 ), PoolIntArray( 54, 47, 48 ), PoolIntArray( 62, 39, 40 ), PoolIntArray( 64, 65, 72 ), PoolIntArray( 66, 67, 73 ), PoolIntArray( 69, 35, 71 ), PoolIntArray( 71, 68, 66 ), PoolIntArray( 72, 38, 64 ), PoolIntArray( 65, 69, 72 ), PoolIntArray( 62, 73, 63 ), PoolIntArray( 74, 75, 6 ), PoolIntArray( 74, 0, 78 ), PoolIntArray( 5, 77, 4 ), PoolIntArray( 82, 74, 78 ), PoolIntArray( 84, 83, 77 ), PoolIntArray( 81, 76, 74 ), PoolIntArray( 68, 36, 96 ), PoolIntArray( 93, 97, 7 ), PoolIntArray( 7, 98, 2 ), PoolIntArray( 99, 100, 98 ), PoolIntArray( 101, 100, 99 ), PoolIntArray( 97, 99, 7 ), PoolIntArray( 95, 44, 94 ), PoolIntArray( 102, 103, 97 ), PoolIntArray( 94, 13, 41 ), PoolIntArray( 53, 25, 44 ), PoolIntArray( 95, 53, 44 ), PoolIntArray( 68, 96, 104 ), PoolIntArray( 99, 98, 7 ), PoolIntArray( 102, 97, 93 ) ]
 
@@ -199,15 +199,18 @@ polygons = [ PoolIntArray( 0, 2, 1 ), PoolIntArray( 3, 5, 4 ), PoolIntArray( 6, 
 extents = Vector3( 4.57116, 3.8933, 8.02254 )
 
 [sub_resource type="BoxShape" id=30]
-extents = Vector3( 6.09262, 1.86178, 5.51233 )
+extents = Vector3( 3.43547, 1.86178, 5.51233 )
 
 [sub_resource type="BoxShape" id=31]
+extents = Vector3( 4.45224, 1, 0.757816 )
+
+[sub_resource type="BoxShape" id=32]
 extents = Vector3( 7.86797, 2.03958, 3.60188 )
 
-[sub_resource type="BoxShape" id=75]
+[sub_resource type="BoxShape" id=33]
 extents = Vector3( 0.225475, 1.66513, 0.743968 )
 
-[sub_resource type="ArrayMesh" id=71]
+[sub_resource type="ArrayMesh" id=34]
 resource_name = "2CpuertaL"
 surfaces/0 = {
 "aabb": AABB( -0.119187, -1.52806, -0.872858, 0.216709, 3.22458, 1.90811 ),
@@ -222,7 +225,7 @@ surfaces/0 = {
 "vertex_count": 86
 }
 
-[sub_resource type="Animation" id=76]
+[sub_resource type="Animation" id=35]
 resource_name = "open"
 length = 3.0
 tracks/0/type = "bezier"
@@ -256,10 +259,10 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 3 )
 }
 
-[sub_resource type="BoxShape" id=74]
+[sub_resource type="BoxShape" id=36]
 extents = Vector3( 0.274908, 1.55897, 1 )
 
-[sub_resource type="ArrayMesh" id=73]
+[sub_resource type="ArrayMesh" id=37]
 resource_name = "2CpuertaR"
 surfaces/0 = {
 "aabb": AABB( -0.119062, -1.69651, -1.0353, 0.216582, 3.22457, 1.90812 ),
@@ -274,7 +277,7 @@ surfaces/0 = {
 "vertex_count": 90
 }
 
-[sub_resource type="Animation" id=77]
+[sub_resource type="Animation" id=38]
 resource_name = "open"
 length = 3.0
 tracks/0/type = "bezier"
@@ -317,7 +320,7 @@ visible = false
 transform = Transform( -1.49012e-07, 0, 1, 0, 1, 0, -1, 0, -1.49012e-07, -0.0298162, -1.27882, 1.24026 )
 
 [node name="CollisionShape" parent="Plane003/Window" index="0"]
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="stand-position" parent="Plane003/Window" index="1"]
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0.879243, -4.47285, 1.30899 )
@@ -331,25 +334,26 @@ material/0 = ExtResource( 7 )
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="VITRINA 2/Cubovitrina2" index="0"]
 autoplay = "rotate"
-anims/rotate = SubResource( 4 )
+anims/rotate = SubResource( 2 )
 
 [node name="Vitrina2" parent="VITRINA 2" index="3" instance=ExtResource( 2 )]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -0.0049274, 0.046129, 0.0176048 )
 
 [node name="CollisionShape" parent="VITRINA 2/Vitrina2" index="0"]
-shape = SubResource( 5 )
+shape = SubResource( 3 )
 
 [node name="stand-position" parent="VITRINA 2/Vitrina2" index="1"]
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -9.53674e-07, -0.518646, 0.886782 )
 
 [node name="interruptorbox" parent="." index="20"]
+transform = Transform( 0, 0, 1, 0, 1, 0, -1, 0, 0, -1.17296, 3.21433, 20.9341 )
 material/0 = ExtResource( 8 )
 
 [node name="InterruptorBox" parent="interruptorbox" index="0" instance=ExtResource( 2 )]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0 )
 
 [node name="CollisionShape" parent="interruptorbox/InterruptorBox" index="0"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="stand-position" parent="interruptorbox/InterruptorBox" index="1"]
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, -1.10024, 0.886782 )
@@ -359,7 +363,7 @@ transform = Transform( -7.03329e-07, 0, 1, 0, 1, 0, -1, 0, -7.03329e-07, 0.22208
 
 [node name="CollisionShape" parent="interruptorbox001/Door" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.214382, -0.0717039 )
-shape = SubResource( 28 )
+shape = SubResource( 5 )
 
 [node name="stand-position" parent="interruptorbox001/Door" index="1"]
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -0.0132694, -0.664917, 0.870367 )
@@ -372,14 +376,14 @@ transform = Transform( 0.57327, 0.460046, 0.678026, -0.62588, 0.77992, 4.59074e-
 
 [node name="AnimationPlayer3" type="AnimationPlayer" parent="VITRINA 1/astronauta caido" index="0"]
 autoplay = "moving"
-anims/moving = SubResource( 7 )
+anims/moving = SubResource( 6 )
 
 [node name="Vitrina1" parent="VITRINA 1" index="3" instance=ExtResource( 2 )]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -0.0215337, 0.0488491, -0.0979996 )
 
 [node name="CollisionShape" parent="VITRINA 1/Vitrina1" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0879164, 0, 0 )
-shape = SubResource( 8 )
+shape = SubResource( 7 )
 
 [node name="stand-position" parent="VITRINA 1/Vitrina1" index="1"]
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -0.0976868, -0.521366, 0.886782 )
@@ -392,14 +396,14 @@ material/0 = ExtResource( 7 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="VITRINA 2001/mando juego" index="0"]
 autoplay = "rotating"
-anims/rotating = SubResource( 9 )
+anims/rotating = SubResource( 8 )
 
 [node name="Cube027" parent="VITRINA 2001" index="3" instance=ExtResource( 2 )]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -0.0225949, 0.473213, -0.000177383 )
 
 [node name="CollisionShape" parent="VITRINA 2001/Cube027" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.186948, 0 )
-shape = SubResource( 10 )
+shape = SubResource( 9 )
 
 [node name="stand-position" parent="VITRINA 2001/Cube027" index="1"]
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -5.72205e-06, -0.942963, 0.959515 )
@@ -409,7 +413,7 @@ transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0, 0, 0
 
 [node name="CollisionShape" parent="1marcopuerta/door_scene1" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.138604, 0 )
-shape = SubResource( 11 )
+shape = SubResource( 10 )
 
 [node name="stand-position" parent="1marcopuerta/door_scene1" index="1"]
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 5.96046e-08, -1.6903, 0.886782 )
@@ -422,14 +426,14 @@ transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0
 
 [node name="CollisionShape" parent="estatua_peana/Statue" index="0"]
 transform = Transform( -1, 3.25841e-07, -5.30863e-14, 0, -1.62921e-07, -1, -3.25841e-07, -1, 1.62921e-07, 0, 2.19483, 0 )
-shape = SubResource( 12 )
+shape = SubResource( 11 )
 
 [node name="stand-position" parent="estatua_peana/Statue" index="1"]
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -3.8743e-07, -0.328843, 2.27582 )
 
 [node name="CollisionShape2" type="CollisionShape" parent="estatua_peana/Statue" index="3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.98023e-08, -0.237384, 0.082489 )
-shape = SubResource( 13 )
+shape = SubResource( 12 )
 
 [node name="Gateway" parent="2A_marcopuerta" index="0" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.628702, 0.115439, 3.8147e-06 )
@@ -442,21 +446,21 @@ transform = Transform( -1.6286e-07, 0, -1, 0, 1, 0, 1, 0, -1.6286e-07, 0.312479,
 
 [node name="CollisionShape" parent="2A_marcopuerta/AspiradoraHall" index="0"]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0.12767, -0.378603, 0 )
-shape = SubResource( 32 )
+shape = SubResource( 13 )
 
 [node name="stand-position" parent="2A_marcopuerta/AspiradoraHall" index="1"]
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0.00206947, -0.454211, 1.07647 )
 
 [node name="aspiradora" type="MeshInstance" parent="2A_marcopuerta/AspiradoraHall" index="3"]
 transform = Transform( -0.00500035, 0, 0.499975, 0, 0.5, 0, -0.499975, 0, -0.00500035, 0, 0, 0 )
-mesh = SubResource( 15 )
+mesh = SubResource( 14 )
 material/0 = null
 
 [node name="McMoon" parent="Mac" index="0" instance=ExtResource( 2 )]
 transform = Transform( -0.999578, 0, 0.0290381, 0, 1, 0, -0.0290381, 0, -0.999578, 0, 0, 0 )
 
 [node name="CollisionShape" parent="Mac/McMoon" index="0"]
-shape = SubResource( 16 )
+shape = SubResource( 15 )
 
 [node name="stand-position" parent="Mac/McMoon" index="1"]
 transform = Transform( -1, 0, -2.83122e-07, 0, 1, 0, 2.83122e-07, 0, -1, 1.66893e-06, -1.25035, 0.956806 )
@@ -465,7 +469,7 @@ transform = Transform( -1, 0, -2.83122e-07, 0, 1, 0, 2.83122e-07, 0, -1, 1.66893
 transform = Transform( -0.844169, 0, -0.536077, 0, 1, 0, 0.536077, 0, -0.844169, 0, 0, 0 )
 
 [node name="CollisionShape" parent="TazaOBJETO/Cup" index="0"]
-shape = SubResource( 17 )
+shape = SubResource( 16 )
 
 [node name="stand-position" parent="TazaOBJETO/Cup" index="1"]
 transform = Transform( -1, 0, -3.25963e-07, 0, 1, 0, 3.25963e-07, 0, -1, 0, -1.01839, 0.886782 )
@@ -474,7 +478,7 @@ transform = Transform( -1, 0, -3.25963e-07, 0, 1, 0, 3.25963e-07, 0, -1, 0, -1.0
 transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0, 0, 0 )
 
 [node name="CollisionShape" parent="2B_marcopuerta/DownFloor" index="0"]
-shape = SubResource( 18 )
+shape = SubResource( 17 )
 
 [node name="stand-position" parent="2B_marcopuerta/DownFloor" index="1"]
 transform = Transform( -0.45164, 0, -0.8922, 0, 1, 0, 0.8922, 0, -0.45164, 3.42404, 1.77038, 2.67831 )
@@ -484,7 +488,7 @@ transform = Transform( -0.0666222, 0, -0.997778, 0, 1, 0, 0.997778, 0, -0.066622
 
 [node name="CollisionShape" parent="Ceraroja/Wax3" index="0"]
 transform = Transform( -0.0533295, 0, 0.998577, 0, 1, 0, -0.998577, 0, -0.0533295, 0, 0, 0 )
-shape = SubResource( 19 )
+shape = SubResource( 18 )
 
 [node name="stand-position" parent="Ceraroja/Wax3" index="1"]
 transform = Transform( -1, 0, -3.27826e-07, 0, 1, 0, 3.27826e-07, 0, -1, 9.53674e-07, -0.0271907, 0.886782 )
@@ -494,7 +498,7 @@ transform = Transform( 0.552229, 0, -0.833692, 0, 1, 0, 0.833692, 0, 0.552229, 0
 
 [node name="CollisionShape" parent="Ceraverde/Wax4" index="0"]
 transform = Transform( 0.853923, 0, -0.520399, 0, 1, 0, 0.520399, 0, 0.853923, 0, 0, 0 )
-shape = SubResource( 20 )
+shape = SubResource( 19 )
 
 [node name="stand-position" parent="Ceraverde/Wax4" index="1"]
 transform = Transform( -1, 0, -3.8743e-07, 0, 1, 0, 3.8743e-07, 0, -1, 4.76837e-07, -0.0348845, 0.330536 )
@@ -504,7 +508,7 @@ transform = Transform( -0.133502, 0, 0.991048, 0, 1, 0, -0.991048, 0, -0.133502,
 
 [node name="CollisionShape" parent="Ceraroja001/Wax1" index="0"]
 transform = Transform( -0.11785, 0, -0.993032, 0, 1, 0, 0.993032, 0, -0.11785, 0, 0, 0 )
-shape = SubResource( 21 )
+shape = SubResource( 20 )
 
 [node name="stand-position" parent="Ceraroja001/Wax1" index="1"]
 transform = Transform( -1, 0, -2.98023e-07, 0, 1, 0, 2.98023e-07, 0, -1, -1.90735e-06, 0.0553203, 0.672811 )
@@ -514,7 +518,7 @@ transform = Transform( 0.372561, 0, 0.928008, 0, 1, 0, -0.928008, 0, 0.372561, 0
 
 [node name="CollisionShape" parent="Ceraroja002/Wax2" index="0"]
 transform = Transform( 0.947741, 0, -0.319042, 0, 1, 0, 0.319042, 0, 0.947741, 0, 0, 0 )
-shape = SubResource( 22 )
+shape = SubResource( 21 )
 
 [node name="stand-position" parent="Ceraroja002/Wax2" index="1"]
 transform = Transform( -1, 0, -3.241e-07, 0, 1, 0, 3.241e-07, 0, -1, -9.53674e-07, 0.0553203, 0.550168 )
@@ -526,7 +530,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.22763, 7.84079, 28.0785 )
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
 
 [node name="CollisionShape" parent="Cuadro1/Cuadro1" index="0"]
-shape = SubResource( 23 )
+shape = SubResource( 22 )
 
 [node name="stand-position" parent="Cuadro1/Cuadro1" index="1"]
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 4.76837e-07, -2.2753, 0.886782 )
@@ -535,7 +539,7 @@ transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 4.76837
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
 
 [node name="CollisionShape" parent="Cuadro2/Cuadro2" index="0"]
-shape = SubResource( 24 )
+shape = SubResource( 23 )
 
 [node name="stand-position" parent="Cuadro2/Cuadro2" index="1"]
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, -7.10543e-15, 3.25841e-07, 0, -1, 0.454569, -2.41294, 0.886782 )
@@ -544,7 +548,7 @@ transform = Transform( -1, 0, -3.25841e-07, 0, 1, -7.10543e-15, 3.25841e-07, 0, 
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
 
 [node name="CollisionShape" parent="Cuadro3/Cuadro3" index="0"]
-shape = SubResource( 25 )
+shape = SubResource( 24 )
 
 [node name="stand-position" parent="Cuadro3/Cuadro3" index="1"]
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -9.53674e-07, -2.38309, 0.886782 )
@@ -553,7 +557,7 @@ transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -9.5367
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
 
 [node name="CollisionShape" parent="Cuadro4/Cuadro4" index="0"]
-shape = SubResource( 26 )
+shape = SubResource( 25 )
 
 [node name="stand-position" parent="Cuadro4/Cuadro4" index="1"]
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, -2.47877, 0.886782 )
@@ -563,7 +567,7 @@ transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0
 
 [node name="CollisionShape" parent="Cuadro5/Cuadro5" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0932817, 0 )
-shape = SubResource( 27 )
+shape = SubResource( 26 )
 
 [node name="stand-position" parent="Cuadro5/Cuadro5" index="1"]
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -1.90735e-06, -1.9496, 0.886782 )
@@ -587,11 +591,11 @@ shadow_enabled = true
 transform = Transform( 3.38231, 0, 0, 0, 1, 0, 0, 0, 15.621, -0.203809, 2.11409, 19.4841 )
 
 [node name="shape0" type="CollisionShape" parent="NavigationManager/Navigation/Floor" index="0"]
-shape = SubResource( 1 )
+shape = SubResource( 27 )
 
 [node name="Floor2" type="NavigationMeshInstance" parent="NavigationManager/Navigation" index="1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.203809, 2.11409, 19.4841 )
-navmesh = SubResource( 2 )
+navmesh = SubResource( 28 )
 
 [node name="CameraManager" type="Node" parent="." index="66"]
 
@@ -617,8 +621,12 @@ fov = 47.0
 near = 0.1
 
 [node name="CollisionShape" type="CollisionShape" parent="CameraManager/Camera2A" index="1"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.43371, 10.2711, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.660123, 10.2711, 0 )
 shape = SubResource( 30 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="CameraManager/Camera2A" index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.39854, 10.1592, -1.88008 )
+shape = SubResource( 31 )
 
 [node name="Camera2C" type="Area" parent="CameraManager" index="2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.89757, 11.4103, 24.6768 )
@@ -626,7 +634,7 @@ script = ExtResource( 4 )
 
 [node name="CollisionShape" type="CollisionShape" parent="CameraManager/Camera2C" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.13943, -3.73329, 0 )
-shape = SubResource( 31 )
+shape = SubResource( 32 )
 
 [node name="camera" type="Camera" parent="CameraManager/Camera2C" index="1"]
 transform = Transform( -0.95424, -0.274943, 0.117609, 0, 0.393289, 0.919415, -0.299041, 0.877343, -0.375292, 1.19349, 2.16975, -2.03221 )
@@ -636,6 +644,12 @@ near = 0.1
 [node name="Gateway3" parent="." index="67" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.37632, 3.87307, 5.23823 )
 gateway_name = "Main"
+
+[node name="indoor" parent="Gateway3" index="1"]
+transform = Transform( 0.999827, 0, -0.0186043, 0, 1, 0, 0.0186043, 0, 0.999827, 1.12692, -1.75898, 3.44005 )
+
+[node name="outdoor" parent="Gateway3" index="2"]
+transform = Transform( 0.999885, 0, 0.0151662, 0, 1, 0, -0.0151662, 0, 0.999885, 1.23449, -1.75898, 5.01195 )
 
 [node name="Gateway" parent="2Cmarcopuerta" index="0" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.433897, 0, 0 )
@@ -648,14 +662,20 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35843, -0.493284, -0.758575
 script = ExtResource( 12 )
 
 [node name="CollisionShape" type="CollisionShape" parent="2Cmarcopuerta/Gateway/StaticBody2" index="0"]
-shape = SubResource( 75 )
+shape = SubResource( 33 )
 
 [node name="2CpuertaL" type="MeshInstance" parent="2Cmarcopuerta/Gateway/StaticBody2" index="1"]
-mesh = SubResource( 71 )
+mesh = SubResource( 34 )
 material/0 = null
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="2Cmarcopuerta/Gateway/StaticBody2" index="2"]
-anims/open = SubResource( 76 )
+anims/open = SubResource( 35 )
+
+[node name="indoor" parent="2Cmarcopuerta/Gateway" index="2"]
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -0.64951, -1.74412, 0 )
+
+[node name="outdoor" parent="2Cmarcopuerta/Gateway" index="3"]
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -2.07155, -1.74412, 0 )
 
 [node name="StaticBody" type="StaticBody" parent="2Cmarcopuerta/Gateway" index="4" groups=[
 "Door",
@@ -665,14 +685,14 @@ script = ExtResource( 12 )
 
 [node name="CollisionShape" type="CollisionShape" parent="2Cmarcopuerta/Gateway/StaticBody" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0116215, 0.188979, 0 )
-shape = SubResource( 74 )
+shape = SubResource( 36 )
 
 [node name="2CpuertaR" type="MeshInstance" parent="2Cmarcopuerta/Gateway/StaticBody" index="1"]
-mesh = SubResource( 73 )
+mesh = SubResource( 37 )
 material/0 = null
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="2Cmarcopuerta/Gateway/StaticBody" index="2"]
-anims/open = SubResource( 77 )
+anims/open = SubResource( 38 )
 
 [node name="2CpuertaR" parent="." index="69"]
 visible = false
@@ -720,3 +740,7 @@ visible = false
 [editable path="Cuadro4/Cuadro4"]
 
 [editable path="Cuadro5/Cuadro5"]
+
+[editable path="Gateway3"]
+
+[editable path="2Cmarcopuerta/Gateway"]

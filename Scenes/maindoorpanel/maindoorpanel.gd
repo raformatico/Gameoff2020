@@ -22,7 +22,8 @@ func is_end() -> bool:
 
 func _on_back_pressed() -> void:
 	# get_tree().change_scene("res://Scenes/museum-prefinal/Room.tscn")
-	Global.gateway_entered("Main")
+	# Global.gateway_entered("Main")
+	Global.restore_point("res://Scenes/museum-final/Room.tscn")
 
 func _on_gear_pressed() -> void:
 	if Global.item_selected == "gear":

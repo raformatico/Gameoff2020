@@ -8,9 +8,12 @@ signal coffee_served()
 
 var entrance_gateway="Main"
 
+var changing_scenario = false
 var debug: = false
 var item_selected = null setget set_item_selected
 var inventory_res : Inventory = preload("res://Inventory/inventory.tres")
+
+var saved_position=null
 
 var status_database = {
 	"Statue" : ["start","read1","read2"],
@@ -106,6 +109,7 @@ func _on_start_action(object, action : String) -> void:
 		#TODO animación de la planta y caída del cable
 		print("ANIMACION PLANTA")
 	elif action == "panel":
+		save_position()
 		get_tree().change_scene("res://Scenes/maindoorpanel/maindoorpanel.tscn")
 	elif action == "is_everything_connected":
 		var connected = true
@@ -122,6 +126,7 @@ func _on_start_action(object, action : String) -> void:
 	elif action == "code":
 		#TODO lanzar escena introducir código y 
 		#que al final si se hace bien ejecute lo de abajo
+		save_position()
 		get_tree().change_scene("res://Scenes/DoorCode/doorcode.tscn")
 #		if status["Door"] == "opened":
 #			for child in object.get_parent().get_children():
@@ -170,8 +175,17 @@ var gateways={
 func gateway_entered(gateway_name):
 	var scene=gateways[gateway_name].scene
 	if scene!=null and scene!="":
+		
 		entrance_gateway=gateways[gateway_name].gateway
+		saved_position=null
+		
 		get_tree().change_scene (scene)
 	
 func get_gateway():
 	return entrance_gateway
+	
+func save_position():
+	saved_position=get_node("../Room").get_position()
+	
+func restore_position(scene):
+	return saved_position

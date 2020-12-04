@@ -48,7 +48,10 @@ surfaces/0 = {
 [sub_resource type="SphereShape" id=8]
 radius = 0.702983
 
-[node name="cafeteria17" instance=ExtResource( 1 )]
+[node name="Room" instance=ExtResource( 1 )]
+
+[node name="aspiradora" parent="." index="0"]
+visible = false
 
 [node name="taburete4" parent="." index="1"]
 transform = Transform( 1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, -1.43414, 1.99822, 0.0828425 )
@@ -181,7 +184,18 @@ omni_attenuation = 0.928529
 transform = Transform( -1, 0, -1.38884e-06, 0, 1, 0, 3.89414e-07, 0, -3.56648, -16.805, 3.99575, 2.16368 )
 gateway_name = "cafeteria2hall"
 
+[node name="indoor" parent="Gateway" index="1"]
+transform = Transform( -1.6292e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -2.97374, -2.00615, 0.219368 )
+
+[node name="outdoor" parent="Gateway" index="2"]
+transform = Transform( -0.255648, 0, -0.96677, 0, 1, 0, 0.96677, 0, -0.255648, -5.23414, -2.00615, 0.139422 )
+
 [editable path="jukebox/Radio"]
+
 [editable path="gofrera/Gofrera"]
+
 [editable path="cafetera/Cafetera"]
+
 [editable path="Path/PathFollow/aspiradora/Aspiradora"]
+
+[editable path="Gateway"]
