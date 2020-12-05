@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scenes/cafeteria/gltf/cafeteria17.glb" type="PackedScene" id=1]
 [ext_resource path="res://GameEngine/Clickable.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/cafeteria/gltf/aspiradora.material" type="Material" id=3]
 [ext_resource path="res://Scenes/cafeteria/aspiradora.gd" type="Script" id=4]
 [ext_resource path="res://GameEngine/Gateway.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/museum-final/stars.jpg" type="Texture" id=6]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 1, 1.06216, 0.751459 )
@@ -47,6 +48,10 @@ surfaces/0 = {
 
 [sub_resource type="SphereShape" id=8]
 radius = 0.702983
+
+[sub_resource type="SpatialMaterial" id=9]
+flags_unshaded = true
+albedo_texture = ExtResource( 6 )
 
 [node name="Room" instance=ExtResource( 1 )]
 
@@ -189,6 +194,18 @@ transform = Transform( -1.6292e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -2.97374
 
 [node name="outdoor" parent="Gateway" index="2"]
 transform = Transform( -0.255648, 0, -0.96677, 0, 1, 0, 0.96677, 0, -0.255648, -5.23414, -2.00615, 0.139422 )
+
+[node name="Stars" type="CSGBox" parent="." index="20"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6578, 0.750525, -13.5716 )
+width = 28.1425
+height = 28.675
+material = SubResource( 9 )
+
+[node name="Stars2" type="CSGBox" parent="." index="21"]
+transform = Transform( 0.0592018, 0, -0.998246, 0, 1, 0, 0.998246, 0, 0.0592018, 16.2909, 0.750525, -0.0902004 )
+width = 28.1425
+height = 28.675
+material = SubResource( 9 )
 
 [editable path="jukebox/Radio"]
 
