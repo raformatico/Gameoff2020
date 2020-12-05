@@ -98,9 +98,9 @@ func _on_Alex_arrived(object) -> void:
 
 func _on_start_action(object, action : String) -> void:
 	if action == "minigame":
-		get_node("/root/Room").add_child(load("res://J-dj/DJTest2.tscn").instance())
-		#save_position()
-		#get_tree().change_scene("res://J-dj/DJTest2.tscn")
+		#get_node("/root/Room").add_child(load("res://J-dj/DJTest2.tscn").instance())
+		save_position()
+		get_tree().change_scene("res://J-dj/DJTest2.tscn")
 	elif action == "endgame":
 		var fade_anim : AnimationPlayer = get_node("/root/maindoorpanel/Fade/fade_anim")
 		fade_anim.play("fadeout")
@@ -112,9 +112,9 @@ func _on_start_action(object, action : String) -> void:
 	elif action == "endDjGame":
 		emit_signal("dj_ended")
 	elif action == "panel":
-		get_node("/root/Room").add_child(load("res://Scenes/maindoorpanel/maindoorpanel.tscn").instance())
-		#save_position()
-		#get_tree().change_scene("res://Scenes/maindoorpanel/maindoorpanel.tscn")
+		#get_node("/root/Room").add_child(load("res://Scenes/maindoorpanel/maindoorpanel.tscn").instance())
+		save_position()
+		get_tree().change_scene("res://Scenes/maindoorpanel/maindoorpanel.tscn")
 	elif action == "is_everything_connected":
 		var connected = true
 		if Global.status["chip"] != "connected":
@@ -128,9 +128,8 @@ func _on_start_action(object, action : String) -> void:
 			#status["InterruptorBox"] = "opendoor"
 			#emit_signal("start_dialog","InterruptorBox", status["InterruptorBox"])
 	elif action == "code":
-		#save_position()
-		#get_tree().change_scene("res://Scenes/DoorCode/doorcode.tscn")
-		get_node("/root/Room").add_child(load("res://Scenes/DoorCode/doorcode.tscn").instance())
+		save_position()
+		get_tree().change_scene("res://Scenes/DoorCode/doorcode.tscn")
 		pass
 	elif action == "opened":
 		audio_player.play_water()
