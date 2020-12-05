@@ -12,7 +12,9 @@ var target_rotation=null
 var target_object=null
 
 export var threshold=1.0
-export var speed=10
+var speed=2.0
+export var walking_speed=2.0
+export var running_speed=4.0
 export var animation_speed=1.0
 export var cant_walk_threshold=3.0
 var cant_walk=0
@@ -22,6 +24,9 @@ var rotation_tmp_orig=0
 var rotation_tmp_dest=0
 var rotating=false
 
+enum State {STATE_IDLE, STATE_WALKING, STATE_RUNNING}
+var state=State.STATE_IDLE
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	foot=$Foot
@@ -30,12 +35,16 @@ func _ready():
 	
 func clean_path():
 	target_object=null
+
+func set_running():
+	state=State.STATE_RUNNING
 	
+func set_walking():
+	state=State.STATE_WALKING
+		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	# var direction=-Vector3.UP*speed
-	
-	
+	# var direction=-Vector3.UP*speed	
 		
 	if target_point!=null:
 			
@@ -89,12 +98,19 @@ func _physics_process(delta):
 		
 		var grav=Vector3.ZERO
 		if !is_on_floor():
-			grav.y=-10
+			grav.y=-5  # antes -10
 		
 		if target_point!=null:
 			
-			if $AnimationPlayer.current_animation!="Walk":
-				$AnimationPlayer.play("Walk",0.5)
+			match state:
+				State.STATE_WALKING:
+					speed=walking_speed
+					if $AnimationPlayer.current_animation!="Walk":
+						$AnimationPlayer.play("Walk",0.5)
+				State.STATE_RUNNING:
+					speed=running_speed
+					if $AnimationPlayer.current_animation!="correr":
+						$AnimationPlayer.play("correr",0.2)
 			
 			if !rotating:	
 				look_at(target_point,Vector3.UP)

@@ -2309,7 +2309,7 @@ height = 1.52833
 ]]
 script = ExtResource( 1 )
 threshold = 0.1
-speed = 2
+running_speed = 6.0
 
 [node name="Alex" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2299, -0.0337069 )
@@ -2564,4 +2564,4 @@ wait_time = 5.0
 
 [node name="Radar" parent="." instance=ExtResource( 4 )]
 transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 2.25362, 0.0395077 )
-max_scale = 20
+max_scale = 25

@@ -54,7 +54,12 @@ func _unhandled_input(event):
 				if Global.debug:
 					for node in path:
 						mark(node)
-					
+		
+		if event.doubleclick:
+			alex.set_running()
+		else:
+			alex.set_walking()
+
 func mark(posi):
 	#var marker = Marker.instance()
 	#add_child(marker)

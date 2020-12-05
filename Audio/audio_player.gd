@@ -20,3 +20,11 @@ func pause_music() -> void:
 
 func continue_music() -> void:
 	$music.stream_paused = false
+	
+
+func play_opening_door() -> void:
+	$opening_door.play()
+
+
+func pause_opening_door() -> void:
+	$opening_door.stream_paused = true

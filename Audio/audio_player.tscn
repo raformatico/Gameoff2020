@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Audio/audio_player.gd" type="Script" id=1]
 [ext_resource path="res://Audio/one-shots/Water running (one-shot).wav" type="AudioStream" id=2]
 [ext_resource path="res://Audio/music/Moon suite - Main (minor).wav" type="AudioStream" id=3]
+[ext_resource path="res://Audio/one-shots/Door Open.wav" type="AudioStream" id=4]
 
 [node name="audio_player" type="Node"]
 script = ExtResource( 1 )
@@ -12,3 +13,6 @@ stream = ExtResource( 2 )
 
 [node name="music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+
+[node name="opening_door" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )

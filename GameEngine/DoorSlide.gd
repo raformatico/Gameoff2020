@@ -16,6 +16,7 @@ func _ready():
 #	pass
 func open():
 	animator.play("open")
+	audio_player.play_opening_door()
 	
 func set_open():
 	animator.play("open")

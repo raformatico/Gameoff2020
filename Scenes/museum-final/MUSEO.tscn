@@ -136,7 +136,7 @@ height = 6.6762
 [sub_resource type="BoxShape" id=12]
 extents = Vector3( 1.26762, 1, 1.36316 )
 
-[sub_resource type="ArrayMesh" id=14]
+[sub_resource type="ArrayMesh" id=13]
 resource_name = "aspiradora"
 surfaces/0 = {
 "aabb": AABB( -0.654388, -0.908409, -0.468499, 0.948862, 1.01396, 0.952386 ),
@@ -151,7 +151,7 @@ surfaces/0 = {
 "vertex_count": 1324
 }
 
-[sub_resource type="BoxShape" id=39]
+[sub_resource type="BoxShape" id=14]
 extents = Vector3( 1, 2.64755, 1 )
 
 [sub_resource type="BoxShape" id=15]
@@ -448,7 +448,7 @@ transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -0.7743
 
 [node name="aspiradora" type="MeshInstance" parent="2A_marcopuerta" index="1"]
 transform = Transform( 0.499975, 0, 0.00500027, 0, 0.5, 0, -0.00500027, 0, 0.499975, 0.312479, -1.28992, -0.178076 )
-mesh = SubResource( 14 )
+mesh = SubResource( 13 )
 material/0 = ExtResource( 9 )
 
 [node name="AspiradoraHall" parent="2A_marcopuerta/aspiradora" index="0" instance=ExtResource( 2 )]
@@ -456,7 +456,7 @@ transform = Transform( -0.0200014, 0, -1.9999, 0, 2, 0, 1.9999, 0, -0.0200014, 0
 
 [node name="CollisionShape" parent="2A_marcopuerta/aspiradora/AspiradoraHall" index="0"]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0.12767, -0.378603, -0.526656 )
-shape = SubResource( 39 )
+shape = SubResource( 14 )
 
 [node name="stand-position" parent="2A_marcopuerta/aspiradora/AspiradoraHall" index="1"]
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0.00206947, -0.454205, 1.33892 )
