@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=2]
+[gd_scene load_steps=54 format=2]
 
 [ext_resource path="res://Scenes/museum-final/GLTF/MUSEO.glb" type="PackedScene" id=1]
 [ext_resource path="res://GameEngine/Clickable.tscn" type="PackedScene" id=2]
@@ -12,6 +12,9 @@
 [ext_resource path="res://Scenes/museum-final/GLTF/puerta_2C_R.material" type="Material" id=10]
 [ext_resource path="res://Scenes/museum-final/GLTF/puerta 2C_L.material" type="Material" id=11]
 [ext_resource path="res://GameEngine/DoorSlide.gd" type="Script" id=12]
+[ext_resource path="res://Scenes/museum-final/GLTF/panelmano_p2C.material" type="Material" id=13]
+[ext_resource path="res://Scenes/museum-final/GLTF/cera 2.material" type="Material" id=14]
+[ext_resource path="res://Scenes/museum-final/GLTF/cera 1.material" type="Material" id=15]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 4.27575, 2.98897, 0.0356833 )
@@ -133,10 +136,6 @@ height = 6.6762
 [sub_resource type="BoxShape" id=12]
 extents = Vector3( 1.26762, 1, 1.36316 )
 
-[sub_resource type="CapsuleShape" id=13]
-radius = 0.389994
-height = 0.687302
-
 [sub_resource type="ArrayMesh" id=14]
 resource_name = "aspiradora"
 surfaces/0 = {
@@ -151,6 +150,9 @@ surfaces/0 = {
 "skeleton_aabb": [  ],
 "vertex_count": 1324
 }
+
+[sub_resource type="BoxShape" id=39]
+extents = Vector3( 1, 2.64755, 1 )
 
 [sub_resource type="BoxShape" id=15]
 extents = Vector3( 0.308203, 0.38902, 0.290089 )
@@ -358,6 +360,9 @@ shape = SubResource( 4 )
 [node name="stand-position" parent="interruptorbox/InterruptorBox" index="1"]
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, -1.10024, 0.886782 )
 
+[node name="interruptorbox001" parent="." index="21"]
+material/0 = ExtResource( 13 )
+
 [node name="Door" parent="interruptorbox001" index="0" instance=ExtResource( 2 )]
 transform = Transform( -7.03329e-07, 0, 1, 0, 1, 0, -1, 0, -7.03329e-07, 0.222083, -0.381801, -0.0239544 )
 
@@ -441,20 +446,20 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.628702, 0.115439, 3.8147e-06
 [node name="outdoor" parent="2A_marcopuerta/Gateway" index="2"]
 transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -0.77439, -1.85957, 0 )
 
-[node name="AspiradoraHall" parent="2A_marcopuerta" index="1" instance=ExtResource( 2 )]
-transform = Transform( -1.6286e-07, 0, -1, 0, 1, 0, 1, 0, -1.6286e-07, 0.312479, -1.28992, -0.178076 )
-
-[node name="CollisionShape" parent="2A_marcopuerta/AspiradoraHall" index="0"]
-transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0.12767, -0.378603, 0 )
-shape = SubResource( 13 )
-
-[node name="stand-position" parent="2A_marcopuerta/AspiradoraHall" index="1"]
-transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0.00206947, -0.454211, 1.07647 )
-
-[node name="aspiradora" type="MeshInstance" parent="2A_marcopuerta/AspiradoraHall" index="3"]
-transform = Transform( -0.00500035, 0, 0.499975, 0, 0.5, 0, -0.499975, 0, -0.00500035, 0, 0, 0 )
+[node name="aspiradora" type="MeshInstance" parent="2A_marcopuerta" index="1"]
+transform = Transform( 0.499975, 0, 0.00500027, 0, 0.5, 0, -0.00500027, 0, 0.499975, 0.312479, -1.28992, -0.178076 )
 mesh = SubResource( 14 )
-material/0 = null
+material/0 = ExtResource( 9 )
+
+[node name="AspiradoraHall" parent="2A_marcopuerta/aspiradora" index="0" instance=ExtResource( 2 )]
+transform = Transform( -0.0200014, 0, -1.9999, 0, 2, 0, 1.9999, 0, -0.0200014, 0, 0, 0 )
+
+[node name="CollisionShape" parent="2A_marcopuerta/aspiradora/AspiradoraHall" index="0"]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0.12767, -0.378603, -0.526656 )
+shape = SubResource( 39 )
+
+[node name="stand-position" parent="2A_marcopuerta/aspiradora/AspiradoraHall" index="1"]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0.00206947, -0.454205, 1.33892 )
 
 [node name="McMoon" parent="Mac" index="0" instance=ExtResource( 2 )]
 transform = Transform( -0.999578, 0, 0.0290381, 0, 1, 0, -0.0290381, 0, -0.999578, 0, 0, 0 )
@@ -483,6 +488,9 @@ shape = SubResource( 17 )
 [node name="stand-position" parent="2B_marcopuerta/DownFloor" index="1"]
 transform = Transform( -0.45164, 0, -0.8922, 0, 1, 0, 0.8922, 0, -0.45164, 3.42404, 1.77038, 2.67831 )
 
+[node name="Ceraroja" parent="." index="50"]
+material/0 = ExtResource( 15 )
+
 [node name="Wax3" parent="Ceraroja" index="0" instance=ExtResource( 2 )]
 transform = Transform( -0.0666222, 0, -0.997778, 0, 1, 0, 0.997778, 0, -0.0666222, 0, 0, 0 )
 
@@ -492,6 +500,9 @@ shape = SubResource( 18 )
 
 [node name="stand-position" parent="Ceraroja/Wax3" index="1"]
 transform = Transform( -1, 0, -3.27826e-07, 0, 1, 0, 3.27826e-07, 0, -1, 9.53674e-07, -0.0271907, 0.886782 )
+
+[node name="Ceraverde" parent="." index="51"]
+material/0 = ExtResource( 14 )
 
 [node name="Wax4" parent="Ceraverde" index="0" instance=ExtResource( 2 )]
 transform = Transform( 0.552229, 0, -0.833692, 0, 1, 0, 0.833692, 0, 0.552229, 0, 0, 0 )
@@ -503,6 +514,9 @@ shape = SubResource( 19 )
 [node name="stand-position" parent="Ceraverde/Wax4" index="1"]
 transform = Transform( -1, 0, -3.8743e-07, 0, 1, 0, 3.8743e-07, 0, -1, 4.76837e-07, -0.0348845, 0.330536 )
 
+[node name="Ceraroja001" parent="." index="53"]
+material/0 = ExtResource( 15 )
+
 [node name="Wax1" parent="Ceraroja001" index="0" instance=ExtResource( 2 )]
 transform = Transform( -0.133502, 0, 0.991048, 0, 1, 0, -0.991048, 0, -0.133502, 0, 0, 0 )
 
@@ -512,6 +526,9 @@ shape = SubResource( 20 )
 
 [node name="stand-position" parent="Ceraroja001/Wax1" index="1"]
 transform = Transform( -1, 0, -2.98023e-07, 0, 1, 0, 2.98023e-07, 0, -1, -1.90735e-06, 0.0553203, 0.672811 )
+
+[node name="Ceraroja002" parent="." index="54"]
+material/0 = ExtResource( 15 )
 
 [node name="Wax2" parent="Ceraroja002" index="0" instance=ExtResource( 2 )]
 transform = Transform( 0.372561, 0, 0.928008, 0, 1, 0, -0.928008, 0, 0.372561, 0, 0, 0 )
@@ -715,7 +732,7 @@ visible = false
 
 [editable path="2A_marcopuerta/Gateway"]
 
-[editable path="2A_marcopuerta/AspiradoraHall"]
+[editable path="2A_marcopuerta/aspiradora/AspiradoraHall"]
 
 [editable path="Mac/McMoon"]
 
