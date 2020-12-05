@@ -12,6 +12,7 @@ script = ExtResource( 1 )
 stream = ExtResource( 2 )
 
 [node name="music" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
 stream = ExtResource( 3 )
 
 [node name="opening_door" type="AudioStreamPlayer" parent="."]

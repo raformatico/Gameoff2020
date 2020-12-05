@@ -462,11 +462,15 @@ func show_dialog() -> void:
 	right_portrait.visible = false
 	var label = current_dialog[0][0]
 	if label == "Alex":
+		left_portrait.flip_h = false
 		left_portrait.texture = load(alex_portrait)
+		right_portrait.flip_h = false
 		right_portrait.texture = load(tardis_portrait)
 		current_character = "Alex"
 	elif label == "Tardis":
+		left_portrait.flip_h = true
 		left_portrait.texture = load(tardis_portrait)
+		right_portrait.flip_h = true
 		right_portrait.texture = load(alex_portrait)
 		current_character = "Tardis"
 	character_talking = SIDE.LEFT
@@ -478,14 +482,6 @@ func show_dialog() -> void:
 func _on_Dialog_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		next_dialog()
-		
-		
-		
-		
-		
-	
-
-
 
 
 

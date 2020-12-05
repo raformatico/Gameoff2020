@@ -17,7 +17,7 @@ func _ready():
 #			queue_free()
 			pass
 		elif self.name == "AspiradoraHall":
-			queue_free()
+			parent.queue_free()
 		elif self.name == "Aspiradora":
 			parent.brokeMoonba()
 		else:

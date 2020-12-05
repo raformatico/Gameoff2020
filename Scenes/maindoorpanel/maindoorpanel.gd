@@ -5,6 +5,8 @@ onready var gear : TextureRect = $gear2
 onready var wire : TextureRect = $wire2
 onready var crackle : AudioStreamPlayer = $crackle
 onready var bigdoor : AudioStreamPlayer = $bigdoor
+onready var connect : AudioStreamPlayer = $connect
+onready var wiresound : AudioStreamPlayer = $wiresound
 
 func _ready() -> void:
 	if Global.status["chip"] == "connected":
@@ -30,6 +32,7 @@ func _on_back_pressed() -> void:
 func _on_gear_pressed() -> void:
 	if Global.item_selected == "gear":
 		gear.visible = true
+		connect.play()
 		if not is_end():
 			Global.emit_signal("start_dialog_item","gear", "gear", Global.item_selected, Global.interactions[Global.item_selected])
 	elif Global.item_selected != null:
@@ -40,6 +43,7 @@ func _on_gear_pressed() -> void:
 func _on_wire_pressed() -> void:
 	if Global.item_selected == "wire":
 		wire.visible = true
+		wiresound.play()
 		if not is_end():
 			Global.emit_signal("start_dialog_item","wire", "wire", Global.item_selected, Global.interactions[Global.item_selected])
 	elif Global.item_selected != null:

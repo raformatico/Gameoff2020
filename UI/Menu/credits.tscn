@@ -4,7 +4,7 @@
 [ext_resource path="res://UI/Menu/back.tscn" type="PackedScene" id=2]
 [ext_resource path="res://UI/Menu/credits.gd" type="Script" id=4]
 
-[node name="controls" type="Control"]
+[node name="credits" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 1 )
@@ -16,19 +16,23 @@ __meta__ = {
 [node name="Label" type="Label" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 3.0
-text = "Click to move (doble click to run)
+text = "Developers
+Juanjo Ramos
+Raformatico https://www.youtube.com/c/raformatico
 
-Explore and get items
+Audio
+Ignacio Segura
+Man from Space
+SoundCloud https://soundcloud.com/manfromspace
+Spotify https://open.spotify.com/artist/135uz9UwHtdXZgiFyAc3oz?si=sXIQ0fVyQba66PKhMJqffg
 
-Click on Alex's head to reveal the items you can interact with
-
-Use the items in the scences
-a) Open inventory 
-b) Select one item
-c) Use it by clicking on object in the scene"
+Design
+Fran Arroyo 
+Pablo Ruiz
+http://somoschumbo.com/"
 align = 1
 valign = 1
 
 [node name="back" parent="." instance=ExtResource( 2 )]
+is_scene = true
 previous_scene = "res://UI/Menu/Menu.tscn"

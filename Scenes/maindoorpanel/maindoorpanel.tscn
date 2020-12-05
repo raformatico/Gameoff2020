@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scenes/maindoorpanel/panel-transbordador.jpg" type="Texture" id=1]
 [ext_resource path="res://Dialog/Dialog.tscn" type="PackedScene" id=2]
@@ -12,6 +12,8 @@
 [ext_resource path="res://Scenes/maindoorpanel/maindoorpanel.gd" type="Script" id=10]
 [ext_resource path="res://UI/Menu/back.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Fade/Fade.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Audio/one-shots/Useless lever.wav" type="AudioStream" id=13]
+[ext_resource path="res://Audio/one-shots/Switches Small.wav" type="AudioStream" id=14]
 
 [node name="maindoorpanel" type="Control"]
 anchor_right = 1.0
@@ -99,6 +101,12 @@ __meta__ = {
 
 [node name="crackle" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
+
+[node name="connect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+
+[node name="wiresound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
 
 [node name="bigdoor" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
