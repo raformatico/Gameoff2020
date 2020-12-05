@@ -11,6 +11,7 @@ onready var out_inventory : ColorRect = $out_inventory
 onready var inventory_grid : GridContainer = $inventory_display
 onready var inventory_but : TextureButton = $inventory_but
 onready var dialog = get_node("../Dialog")
+onready var animation_player : AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
 	inventory_res.connect("item_clicked", self, "_on_item_clicked")
@@ -51,7 +52,7 @@ func _on_item_added(item : ItemResource) -> void:
 		for slot in inventory_grid.get_children():
 			if slot.slot_name == item.name:
 				slot.display_item(item)
-
+	animation_player.play("item_added")
 
 
 func _on_item_deleted_old(item : ItemResource, index : int) -> void:

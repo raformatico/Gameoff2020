@@ -1,10 +1,25 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://UI/Inventory/UI_Inventory.gd" type="Script" id=1]
 [ext_resource path="res://UI/Inventory/ICONO MOCHILA PROVISIONAL.png" type="Texture" id=2]
 [ext_resource path="res://UI/Inventory/ICONO MOCHILA PROVISIONAL PULSADA.png" type="Texture" id=3]
 [ext_resource path="res://UI/Inventory/CAJA INVENTARIO.png" type="Texture" id=4]
 [ext_resource path="res://UI/Inventory/item_slot.tscn" type="PackedScene" id=5]
+
+[sub_resource type="Animation" id=1]
+resource_name = "item_added"
+tracks/0/type = "value"
+tracks/0/path = NodePath("inventory_but:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.7, 1 ),
+"transitions": PoolRealArray( 1, 1, 2.73208, 3.36359 ),
+"update": 0,
+"values": [ Vector2( 0.75, 0.75 ), Vector2( 0.75, 0.75 ), Vector2( 1.1, 1.1 ), Vector2( 0.75, 0.75 ) ]
+}
 
 [node name="UI_Inventory" type="Control"]
 anchor_right = 1.0
@@ -90,14 +105,18 @@ anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -163.291
 margin_top = 64.0
-margin_right = -64.0
+margin_right = -63.291
 margin_bottom = 181.0
 rect_min_size = Vector2( 100, 100 )
 rect_scale = Vector2( 0.75, 0.75 )
+rect_pivot_offset = Vector2( 50, 58 )
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/item_added = SubResource( 1 )
 [connection signal="gui_input" from="out_inventory" to="." method="_on_out_inventory_gui_input"]
 [connection signal="pressed" from="inventory_but" to="." method="_on_inventory_but_pressed"]
