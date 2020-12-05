@@ -15,14 +15,19 @@ func _ready():
 	if Global.saved_position==null:
 		start_entrance()  #A pity... start_entrance doesn't work...
 	else:
-		restore_position(Global.saved_position)
+		restore_position(Global.saved_position, Global.saved_rotation)
 
 func get_position():
 	return $Alex.global_transform.origin
+
+func get_rotation():
+	return $Alex.global_transform.basis
 	
-func restore_position(saved_position):
+func restore_position(saved_position, saved_rotation):
 	$Alex.global_transform.origin=Global.saved_position
-	
+	$Alex.global_transform.basis=Global.saved_rotation
+	$Alex.set_rest_position()
+		
 func start_entrance():
 	var gateway_name=Global.get_gateway()
 	# Global.changing_scenario=false

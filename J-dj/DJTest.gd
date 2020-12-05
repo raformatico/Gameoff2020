@@ -71,17 +71,34 @@ func _on_disc_stop(plato):
 	n_discs_playing-=1
 
 func check_sync():
+	var n_syn_discs=0
+	
 	for disc in discs:
 		if disc.on:	
 			if !disc.main_rythm:
-				var diff=abs(disc.get_playback_position()-main_plato.get_playback_position())/disc.get_total_length()
+				var disc_progress=disc.get_playback_position()/disc.get_total_length()
+				var plato_progress=main_plato.get_playback_position()/disc.get_total_length()
+				
+				var diff=1.0
+				
+				if disc_progress>plato_progress:
+					diff=(min(disc_progress-plato_progress,1+plato_progress-disc_progress))
+				else:
+					diff=(min(-disc_progress+plato_progress,1-plato_progress+disc_progress))
+					
 				disc.set_sync(diff)
+				if disc.synced():
+					n_syn_discs+=1
 				print(diff)
+				
 			else:			
 				disc.set_sync(0)
-				print("Main")
 
-
+	if n_syn_discs==2:
+		Global.emit_signal("start_dialog","Radio", "end")
+	elif n_syn_discs==1:
+		Global.emit_signal("start_dialog","Radio", "middle")
+		
 func _on_TextureButton_pressed() -> void:
 	audio_player.continue_music()
 	get_tree().change_scene("res://Scenes/cafeteria/room.tscn")

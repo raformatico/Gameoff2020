@@ -14,6 +14,7 @@ var item_selected = null setget set_item_selected
 var inventory_res : Inventory = preload("res://Inventory/inventory.tres")
 
 var saved_position=null
+var saved_rotation=null
 
 var status_database = {
 	"Statue" : ["start","read1","read2"],
@@ -190,6 +191,7 @@ func get_gateway():
 	
 func save_position():
 	saved_position=get_node("../Room").get_position()
+	saved_rotation=get_node("../Room").get_rotation()
 	
 func restore_position(scene):
 	return saved_position

@@ -134,6 +134,8 @@ func scan():
 	$Radar.lauch()
 		
 
-
 func _on_Tween_tween_completed(object, key):
 	rotating=false
+
+func set_rest_position():
+	$AnimationPlayer.play("Idle")

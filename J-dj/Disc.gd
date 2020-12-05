@@ -15,6 +15,7 @@ var clock_manager=null
 var audio_length=0
 
 var led=null
+var synced_=false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -55,12 +56,17 @@ func get_total_length():
 	return $AudioStreamPlayer2D.stream.get_length()
 
 func set_sync(syncr):
-	if syncr>0.75:
+	synced_=false
+	
+	if syncr>0.75/2:
 		led.set_color(Color.red)	
-	elif syncr>0.5:
+	elif syncr>0.5/2:
 		led.set_color(Color.orange)	
-	elif syncr>0.25:
+	elif syncr>0.25/2:
 		led.set_color(Color.yellow)
 	else:
 		led.set_color(Color.green)		
+		synced_=true
 	
+func synced():
+	return synced_

@@ -67,7 +67,7 @@ stream = ExtResource( 5 )
 material = SubResource( 2 )
 
 [node name="Plato2" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.36914, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.61666, 0, 0 )
 
 [node name="Plato" parent="Plato2" index="0"]
 main_rythm = true
@@ -79,7 +79,7 @@ stream = ExtResource( 4 )
 material = SubResource( 3 )
 
 [node name="Plato3" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.35151, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.63739, 0, 0 )
 
 [node name="Led" parent="Plato3" index="1"]
 material = SubResource( 4 )

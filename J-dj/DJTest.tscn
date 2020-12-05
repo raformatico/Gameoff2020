@@ -4,8 +4,6 @@
 [ext_resource path="res://J-dj/DJTest.gd" type="Script" id=4]
 [ext_resource path="res://Dialog/Fonts/montserrat_regular_40.tres" type="DynamicFont" id=6]
 
-
-
 [sub_resource type="SpatialMaterial" id=1]
 resource_local_to_scene = true
 albedo_color = Color( 0.235294, 0.235294, 0.235294, 1 )

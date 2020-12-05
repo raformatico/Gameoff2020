@@ -1,10 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://J-dj/Disc.gd" type="Script" id=1]
 [ext_resource path="res://Audio/loops/Funky Roomba Funky Low End.wav" type="AudioStream" id=2]
 [ext_resource path="res://J-dj/Led.gd" type="Script" id=3]
-
-
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 1, 0.366302, 1 )
@@ -13,6 +11,12 @@ extents = Vector3( 1, 0.366302, 1 )
 albedo_color = Color( 0.0784314, 0.462745, 0.537255, 1 )
 
 [sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.643137, 0.858824, 0.168627, 1 )
+
+[sub_resource type="CylinderShape" id=4]
+radius = 1.23015
+
+[sub_resource type="SpatialMaterial" id=5]
 resource_local_to_scene = true
 albedo_color = Color( 0.235294, 0.235294, 0.235294, 1 )
 
@@ -28,6 +32,7 @@ script = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="CSGBox2" type="CSGBox" parent="Plato"]
+visible = false
 calculate_tangents = false
 height = 0.641961
 material = SubResource( 2 )
@@ -36,9 +41,18 @@ material = SubResource( 2 )
 stream = ExtResource( 2 )
 volume_db = 6.308
 
+[node name="CSGCylinder" type="CSGCylinder" parent="Plato"]
+radius = 1.7
+height = 0.124536
+sides = 11
+material = SubResource( 3 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Plato/CSGCylinder"]
+shape = SubResource( 4 )
+
 [node name="Led" type="CSGSphere" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.209164, 0.935275 )
 radius = 0.146209
-material = SubResource( 3 )
+material = SubResource( 5 )
 script = ExtResource( 3 )
 [connection signal="input_event" from="Plato" to="Plato" method="_on_StaticBody_input_event"]
