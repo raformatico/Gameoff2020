@@ -36,7 +36,7 @@ func _unhandled_input(event):
 			
 		if result:
 			var path=navigator.get_simple_path(alex.base.global_transform.origin,result.position)
-			print(str(alex.base.global_transform.origin)+" -> "+str(result.position))
+			#print(str(alex.base.global_transform.origin)+" -> "+str(result.position))
 			if Global.debug:
 				$ImmediateGeometry.draw(path)
 #			var path_ind = 0

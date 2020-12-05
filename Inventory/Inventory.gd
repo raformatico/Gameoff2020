@@ -38,7 +38,6 @@ func add_item(item_name) -> void:
 	if not item in inventory:
 		inventory.append(item)
 		emit_signal("item_added", item)
-		print(inventory.size())
 	elif item.type == ItemResource.ItemType.STACKABLE:
 		if item.quantity >= item.max_stack:
 			print("Max stack exceeded!")

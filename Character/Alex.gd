@@ -40,7 +40,8 @@ func _physics_process(delta):
 	if target_point!=null:
 			
 		if Global.debug:		
-			print($Foot.global_transform.origin.distance_to(target_point))
+			#print($Foot.global_transform.origin.distance_to(target_point))
+			pass
 
 		if $Foot.global_transform.origin.distance_to(target_point)<threshold:
 			if path!=null and !path.empty():

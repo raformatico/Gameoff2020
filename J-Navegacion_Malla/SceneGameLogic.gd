@@ -17,4 +17,5 @@ func _ready():
 
 
 func _on_Alex_arrived(object):
-	print("SceneLogic: Oh! This is a "+str(object.name))
+	#print("SceneLogic: Oh! This is a "+str(object.name))
+	pass

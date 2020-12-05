@@ -100,20 +100,9 @@ texture_normal = ExtResource( 7 )
 texture_pressed = ExtResource( 6 )
 expand = true
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
-one_shot = true
-autostart = true
-
-[node name="Timer2" type="Timer" parent="."]
-wait_time = 5.0
-one_shot = true
-
 [node name="Dialog" parent="." instance=ExtResource( 8 )]
 visible = false
 [connection signal="pressed" from="back/TextureButton" to="." method="_on_TextureButton_pressed"]
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
-[connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
 
 [editable path="Plato"]
 

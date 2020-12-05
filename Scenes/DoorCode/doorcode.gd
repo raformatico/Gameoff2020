@@ -10,8 +10,6 @@ onready var wrong : AudioStreamPlayer = $wrong
 onready var tap : AudioStreamPlayer = $tap
 
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	label.text = ""
 
@@ -27,17 +25,12 @@ func add_number(number : int) -> void:
 
 func check_code() -> void:
 	if code == "1969":
-		print("Correcto")
 		timer.start()
 		correct.play()
-		# Global.status["Door"] = "opened"
 		Global.gateways["hall2greenhouse"].status = "opening"
 		yield(timer, "timeout")
 		get_tree().change_scene("res://Scenes/museum-final/Room.tscn")
-		# Global.restore_position("res://Scenes/museum-final/Room.tscn")
-		# Global.gateway_entered("greenhouse2hall")
 	else:
-		print("Incorrecto")
 		timer.start()
 		wrong.play()
 		yield(timer, "timeout")
@@ -83,8 +76,3 @@ func _on_9_pressed() -> void:
 
 func _on_0_pressed() -> void:
 	add_number(0)
-
-
-func _on_TextureButton_pressed() -> void:
-	# get_tree().change_scene("res://Scenes/museum-final/Room.tscn")
-	Global.gateway_entered("greenhouse2hall")

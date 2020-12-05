@@ -26,7 +26,6 @@ func _process(delta):
 
 func _on_Radar_body_entered(body):
 	if body.is_in_group("clickable"):
-		print(body.name)
 		body.highlight()
 
 

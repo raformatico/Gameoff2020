@@ -81,13 +81,13 @@ func _physics_process(delta):
 #
 					path.remove(0)
 
-					print("cambio: "+str(transform.origin)+" -> "+str(base.global_transform.origin)+" -> " +str(target_position))
+					#print("cambio: "+str(transform.origin)+" -> "+str(base.global_transform.origin)+" -> " +str(target_position))
 
 				else:
-					print("Arrived!")
+					#print("Arrived!")
 					animator.play("idle")
 					state=State.idle
-					print(str(transform.origin)+" -> "+str(base.global_transform.origin)+" -> " +str(target_position))
+					#print(str(transform.origin)+" -> "+str(base.global_transform.origin)+" -> " +str(target_position))
 					
 func _on_goto(path_):
 	path=path_	
@@ -105,7 +105,8 @@ func _on_goto(path_):
 	
 	
 	if Global.debug:
-		print(path_)
+		#print(path_)
+		pass
 
 func look_at_path(pos):
 	var vup=global_transform.origin.y	

@@ -8,7 +8,9 @@ func _ready():
 	parent=get_parent()
 	material=parent.get_surface_material(0)
 	if not Global.is_visible(self.name):
-		if self.name == "Door":
+		if self.name == "Plant":
+			parent.get_parent().get_node("AnimationPlayer").play("Stand Erguida")
+			parent.get_parent().get_node("AnimationPlayer2").play("fallen")
 #			for child in get_parent().get_children():
 #				if child.name == "2CpuertaR" or child.name == "2CpuertaL":
 #					child.queue_free()
@@ -19,7 +21,6 @@ func _ready():
 		elif self.name == "Aspiradora":
 			parent.brokeMoonba()
 		else:
-			print("HIDE" + self.name)
 			take()
 	# material=parent.material # for CSG?
 	
@@ -32,9 +33,6 @@ func highlight():
 	
 		$Tween.start()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
 
 func take():	
 	if parent!=null:

@@ -13,6 +13,5 @@ func _ready():
 
 func _entering_the_scene(body):
 #	if Global.changing_scenario:
-		print("Entering... "+body.name)
 		if body.is_in_group("Character"):
 			$camera.make_current()

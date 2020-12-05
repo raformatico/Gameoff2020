@@ -22,6 +22,7 @@ onready var timer2 = $Timer2
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Global.connect("dj_ended",self,"_on_dj_ended")
 	audio_player.pause_music()
 	channel.append($StaticBody/AudioStreamPlayer2D)
 	channel.append($StaticBody2/AudioStreamPlayer2D)
@@ -89,14 +90,13 @@ func check_sync():
 				disc.set_sync(diff)
 				if disc.synced():
 					n_syn_discs+=1
-				print(diff)
 				
 			else:			
 				disc.set_sync(0)
 
-	if n_syn_discs==2:
+	if n_syn_discs==2 and Global.status["Radio"] != "end2":
 		Global.emit_signal("start_dialog","Radio", "end")
-	elif n_syn_discs==1:
+	elif n_syn_discs==1 and Global.status["Radio"] != "end2":
 		Global.emit_signal("start_dialog","Radio", "middle")
 		
 func _on_TextureButton_pressed() -> void:
@@ -104,10 +104,5 @@ func _on_TextureButton_pressed() -> void:
 	get_tree().change_scene("res://Scenes/cafeteria/room.tscn")
 
 
-func _on_Timer_timeout() -> void:
-	timer2.start()
-	Global.emit_signal("start_dialog","Radio", "middle")
-
-
-func _on_Timer2_timeout() -> void:
-	Global.emit_signal("start_dialog","Radio", "end")
+func _on_dj_ended() -> void:
+	_on_TextureButton_pressed()

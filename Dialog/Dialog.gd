@@ -83,7 +83,7 @@ var dialog_dictionary = {
 		"start" : [["Tardis", "Wow, look these pictures! What bad taste."]]
 	},
 	"Window" : {
-		"start" : [["Tardis", "¿Por qué miras así?"],["Alex", "From here you can see the Earth and I miss it a lot ..."],[NEXT_STATE,"Window","start2"]],
+		"start" : [["Tardis", "Why are you looking like this?"],["Alex", "From here you can see the Earth and I miss it a lot ..."],[NEXT_STATE,"Window","start2"]],
 		"start2" : [["Alex", "Enough of the wailing, let's get out of here!"],["Tardis", "That's the attitude, count on me"]]
 	},
 	"DownFloor" : {
@@ -105,7 +105,7 @@ var dialog_dictionary = {
 	},
 	"Pump" : {
 		"start" : [["Alex","I'm getting a little thirsty."],["Tardis", "I think you can only pour some liquid, not extract it ..."]],
-		"cupcoffee" : [["Alex","I'm going to try diluting some coffee in the tank."],["Tardis", "As long as you don't drink it ..."],[NEXT_STATE,"Key","coffe"],[ACTION,"cupcoffee","use"]]
+		"cupcoffee" : [["Alex","I'm going to try diluting some coffee in the tank."],["Tardis", "As long as you don't drink it ..."],[NEXT_STATE,"Key","coffe"],[ACTION,"cupcoffee","use"], [NEXT_STATE,"Plant","grownup"]]
 	},
 	"Audrey" : {
 		"start" : [["Alex",""],["Tardis", ""],["Alex",""],["Tardis", ""]]
@@ -120,7 +120,7 @@ var dialog_dictionary = {
 	},
 	"Plant" : {
 		"start" : [["Alex","What a curious plant."],["Tardis", "Watch out! I think it's carnivorous ... I'm kidding"],["Alex","It's not funny, maybe I can use it to go up."]],
-		"goingup" : [["Tardis", "Ya puedes subir."],["Alex","¿Un poco obvio no?"]]
+		"grownup" : [["Tardis", "It looks way better like this."]]
 	},
 	"Lamp" : {
 		"start" : [["Alex","I have to try to get up there."],["Tardis", "Maybe you will grow wings ..."]],
@@ -154,7 +154,8 @@ var dialog_dictionary = {
 	"Radio" : {
 		"start" : [["Alex","This radio is not working quite right but I think I can fix it"],["Tardis", "Try it I love music"],[ACTION,"current","minigame"],[NEXT_STATE,"Radio","start"]],
 		"middle" : [["Alex","Look, the cleaner robot likes this melody"],["Tardis", "I'd swear you're trying to dance ... to a lousy beat, by the way! "],[NEXT_STATE,"Radio","start"]],
-		"end" : [["Tardis", "I think it's going crazy."],["Alex", "Watch out, it's going to explode!"],[NEXT_STATE,"Aspiradora","end"]]
+		"end" : [["Tardis", "I think it's going crazy."],["Alex", "Watch out, it's going to explode!"],[NEXT_STATE,"Aspiradora","end"],[NEXT_STATE,"Radio","end2"],[ACTION,"current","endDjGame"]],
+		"end2" : [["Tardis", "You have finished here, but there is always time to play!"]]
 	},
 	"chip" : {
 		"start" : [["Alex","I don't know where we are going to get a next-generation chip, which is clearly what is missing from this panel."],["Tardis","You seem to know everything."]],
@@ -386,8 +387,6 @@ func start_dialog(object, status) -> void:
 	if object is String:
 		current_dialog = dialog_dictionary[object][status]
 	else:
-		print(object)
-		print(object.name)
 		current_dialog = dialog_dictionary[object.name][status]
 	current_object = object
 	show_dialog()
@@ -405,7 +404,6 @@ func next_dialog() -> void:
 	var current_text_to_show : Array = current_dialog[text_count]
 	var i
 	if current_text_to_show[0] == OBJECT:
-		print("ADD OBJECT")
 		inventory.add_item(current_text_to_show[1])
 		text_count += 1
 	elif current_text_to_show[0] == ACTION:

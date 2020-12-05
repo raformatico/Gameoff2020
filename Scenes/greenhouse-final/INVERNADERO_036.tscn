@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Scenes/greenhouse-final/gltf/INVERNADERO_036.glb" type="PackedScene" id=1]
 [ext_resource path="res://GameEngine/Gateway.tscn" type="PackedScene" id=2]
@@ -477,6 +477,83 @@ tracks/26/imported = true
 tracks/26/enabled = true
 tracks/26/keys = PoolRealArray( 0, 1, 0, 0, 0, 0, -3.72529e-09, 0, 1, 1, 1, 1, 0.0416667, 1, 0, 0, 0, 0, -3.72529e-09, 0, 1, 1, 1, 1 )
 
+[sub_resource type="Animation" id=13]
+resource_name = "fallen"
+length = 0.05
+tracks/0/type = "transform"
+tracks/0/path = NodePath("Armature001/Skeleton 2:bone_4")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, -6.60075e-07, 1.30385e-07, 2.38419e-07, 0.0337515, 0.460351, -0.0877605, 0.882744, 1, 1, 1 )
+tracks/1/type = "transform"
+tracks/1/path = NodePath("Armature001/Skeleton 2:bone_5")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/keys = PoolRealArray( 0, 1, -7.62928e-07, -4.76819e-08, -1.19209e-07, 0.0338511, -0.465205, 0.0565925, 0.882744, 1, 1, 1 )
+tracks/2/type = "transform"
+tracks/2/path = NodePath("Armature001/Skeleton 2:bone_6")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = true
+tracks/2/enabled = true
+tracks/2/keys = PoolRealArray( 0, 1, -7.45058e-09, -4.17233e-07, 4.76819e-08, 0.0169656, -0.0286796, -0.235669, 0.971262, 1, 1, 1 )
+tracks/3/type = "transform"
+tracks/3/path = NodePath("Armature001/Skeleton 2:bone_3")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = true
+tracks/3/enabled = true
+tracks/3/keys = PoolRealArray( 0, 1, 9.46224e-07, 1.19209e-07, 1.20141e-07, 0.0460506, -0.0377762, -0.0857966, 0.994531, 1, 1, 1 )
+tracks/4/type = "transform"
+tracks/4/path = NodePath("Armature001/Skeleton 2:bone_2")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = true
+tracks/4/enabled = true
+tracks/4/keys = PoolRealArray( 0, 1, 2.98023e-08, 1.19209e-07, 3.72529e-09, 0.0364086, -0.00775936, -0.104011, 0.993879, 1, 1, 1 )
+tracks/5/type = "transform"
+tracks/5/path = NodePath("Armature001/Skeleton 2:bone_1")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = true
+tracks/5/enabled = true
+tracks/5/keys = PoolRealArray( 0, 1, -7.62911e-07, 2.38419e-07, -2.23517e-08, 0.0107139, -0.00235198, -0.0781773, 0.996879, 1, 1, 1 )
+tracks/6/type = "transform"
+tracks/6/path = NodePath("Armature001/Skeleton 2:bone")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = true
+tracks/6/enabled = true
+tracks/6/keys = PoolRealArray( 0, 1, -0.678832, 12.2237, -0.708753, 0.0869458, -0.0319268, -0.633909, 0.767842, 1, 1, 1 )
+tracks/7/type = "value"
+tracks/7/path = NodePath("Armature001/Skeleton 2/Cylinder010/Wire/CollisionShape:disabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Armature001/Skeleton 2/Cylinder010/Wire:translation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 2.96491, 12.1483, 0.82906 ) ]
+}
+
 [node name="INVERNADERO_036" instance=ExtResource( 1 )]
 
 [node name="Gateway" parent="puerta" index="0" instance=ExtResource( 2 )]
@@ -649,7 +726,7 @@ shape = SubResource( 9 )
 transform = Transform( 1, -3.25841e-07, 3.25841e-07, -3.25841e-07, -1, 0, 3.25841e-07, -1.06173e-13, -1, 8.34465e-07, 8.51484, 2.23641 )
 
 [node name="Wire" parent="Armature001/Skeleton 2/Cylinder010" index="2" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, -1, 3.25841e-07, 0, -3.25841e-07, -1, 2.96491, 5.37601, 0.829061 )
+transform = Transform( 1, 0, 0, 0, -1, 3.25841e-07, 0, -3.25841e-07, -1, 2.96491, -13.7097, 0.829064 )
 
 [node name="CollisionShape" parent="Armature001/Skeleton 2/Cylinder010/Wire" index="0"]
 shape = SubResource( 10 )
@@ -663,6 +740,7 @@ anims/Crecer = ExtResource( 15 )
 "anims/Stand Erguida" = SubResource( 11 )
 "anims/Stand Mustia" = SubResource( 12 )
 anims/caer = ExtResource( 4 )
+anims/fallen = SubResource( 13 )
 anims/gltfCrecer = ExtResource( 15 )
 script = ExtResource( 14 )
 

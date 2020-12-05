@@ -7,7 +7,6 @@ onready var crackle : AudioStreamPlayer = $crackle
 onready var bigdoor : AudioStreamPlayer = $bigdoor
 
 func _ready() -> void:
-	print(Global.status["chip"])
 	if Global.status["chip"] == "connected":
 		chip.visible = true
 	if Global.status["gear"] == "connected":

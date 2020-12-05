@@ -2,7 +2,8 @@ extends Node
 
 signal start_dialog(object_name, status)
 signal start_dialog_item(object_name, status, item_selected, interactions)
-signal breakMoonba
+signal breakMoonba()
+signal dj_ended()
 
 signal coffee_served()
 
@@ -86,7 +87,6 @@ var interactions := {
 
 func set_item_selected(item_name) -> void:
 	item_selected = item_name
-	print(item_name)
 	
 
 func _on_Alex_arrived(object) -> void:
@@ -97,12 +97,7 @@ func _on_Alex_arrived(object) -> void:
 	
 
 func _on_start_action(object, action : String) -> void:
-	print("START ACTION")
-	print(object)
-	print(action)
 	if action == "minigame":
-		#TODO lanzar juego
-		print("LANZAR MINIJUEGO")
 		save_position()
 		get_tree().change_scene("res://J-dj/DJTest2.tscn")
 	elif action == "endgame":
@@ -112,7 +107,9 @@ func _on_start_action(object, action : String) -> void:
 		get_tree().change_scene("res://Scenes/end/end.tscn")
 	elif action == "goingup":
 		#TODO animación de la planta y caída del cable
-		print("ANIMACION PLANTA")
+		pass
+	elif action == "endDjGame":
+		emit_signal("dj_ended")
 	elif action == "panel":
 		save_position()
 		get_tree().change_scene("res://Scenes/maindoorpanel/maindoorpanel.tscn")
@@ -129,17 +126,8 @@ func _on_start_action(object, action : String) -> void:
 			#status["InterruptorBox"] = "opendoor"
 			#emit_signal("start_dialog","InterruptorBox", status["InterruptorBox"])
 	elif action == "code":
-		#TODO lanzar escena introducir código y 
-		#que al final si se hace bien ejecute lo de abajo
 		save_position()
 		get_tree().change_scene("res://Scenes/DoorCode/doorcode.tscn")
-#		if status["Door"] == "opened":
-#			for child in object.get_parent().get_children():
-#				if child.name == "2CpuertaR" or child.name == "2CpuertaL":
-#					child.queue_free()
-#
-#			object.queue_free()
-#			status["Door"] = "opened"
 		pass
 	elif action == "opened":
 		audio_player.play_water()
@@ -155,13 +143,12 @@ func _on_start_action(object, action : String) -> void:
 func is_visible(object_name) -> bool:
 	var is_visible = true
 	if object_name == "Door" and status["Door"] == "opened":
-		print("ESCONDETE")
+		is_visible = false
+	elif object_name == "Plant" and status["Plant"] == "grownup":
 		is_visible = false
 	elif object_name == "AspiradoraHall" and status["AspiradoraHall"] == "opened":
-		print("ESCONDETE")
 		is_visible = false
 	elif object_name == "Aspiradora" and status["Aspiradora"] == "end":
-		print("FIN DE LA ASPIRADORA")
 		is_visible = false
 	elif object_name in status:
 		if status[object_name] == "picked":

@@ -121,7 +121,7 @@ stream = ExtResource( 9 )
 stream = ExtResource( 4 )
 
 [node name="back" parent="." instance=ExtResource( 10 )]
-previous_scene = "greenhouse2hall"
+previous_scene = "res://Scenes/museum-final/Room.tscn"
 
 [node name="pause" parent="." instance=ExtResource( 8 )]
 [connection signal="pressed" from="1" to="." method="_on_1_pressed"]

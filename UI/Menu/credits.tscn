@@ -17,9 +17,11 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = 3.0
-text = "Clic to move
+text = "Click to move (doble click to run)
 
 Explore and get items
+
+Click on Alex's head to reveal the items you can interact with
 
 Use the items in the scences
 a) Open inventory 
@@ -29,5 +31,4 @@ align = 1
 valign = 1
 
 [node name="back" parent="." instance=ExtResource( 2 )]
-is_scene = true
 previous_scene = "res://UI/Menu/Menu.tscn"

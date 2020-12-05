@@ -12,3 +12,5 @@ transform = Transform( 0.55, 0, 0, 0, 0.55, 0, 0, 0, 0.55, 2.86662, 0.831363, 3.
 visible = false
 
 [node name="room" parent="." index="6" instance=ExtResource( 2 )]
+
+[editable path="room"]

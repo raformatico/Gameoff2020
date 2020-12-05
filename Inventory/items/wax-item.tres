@@ -1,12 +1,16 @@
-[gd_resource type="Resource" load_steps=3 format=2]
+[gd_resource type="Resource" load_steps=6 format=2]
 
 [ext_resource path="res://Inventory/Item.gd" type="Script" id=1]
 [ext_resource path="res://Inventory/items/cera1.png" type="Texture" id=2]
+[ext_resource path="res://Inventory/items/ceras2.png" type="Texture" id=3]
+[ext_resource path="res://Inventory/items/ceras4.png" type="Texture" id=4]
+[ext_resource path="res://Inventory/items/ceras3.png" type="Texture" id=5]
 
 [resource]
 script = ExtResource( 1 )
 name = "wax"
 type = 1
 texture = ExtResource( 2 )
+texture_array = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 4 ) ]
 max_stack = 4
 quantity = 1

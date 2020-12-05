@@ -6,12 +6,12 @@ onready var itemTexture := $TextureRect
 var inventory_res : Inventory = preload("res://Inventory/inventory.tres")
 
 func display_item(item : ItemResource) -> void:
-	itemTexture.texture = item.texture
 	slot_name = item.name
 	if item.type == ItemResource.ItemType.STACKABLE:
-		$TextureRect/Label.text = str(item.quantity) + "/" + str(item.max_stack)
-		$TextureRect/Label.show()
-
+		itemTexture.texture = item.texture_array[item.quantity-1]
+	else:
+		itemTexture.texture = item.texture
+	
 
 func hide_item() -> void:
 	slot_name = null
