@@ -16,26 +16,26 @@
 [ext_resource path="res://Scenes/greenhouse-final/AnimationPlayer2.gd" type="Script" id=14]
 [ext_resource path="res://Scenes/greenhouse-final/gltfCrecer.tres" type="Animation" id=15]
 
-[sub_resource type="BoxShape" id=1]
+[sub_resource type="BoxShape" id=2]
 extents = Vector3( 0.419448, 0.762503, 0.588083 )
 
-[sub_resource type="CapsuleShape" id=2]
+[sub_resource type="CapsuleShape" id=3]
 radius = 0.752494
 
-[sub_resource type="CapsuleShape" id=3]
+[sub_resource type="CapsuleShape" id=4]
 radius = 1.28569
 height = 6.05843
 
-[sub_resource type="CylinderShape" id=4]
+[sub_resource type="CylinderShape" id=5]
 radius = 1.70571
 height = 1.5599
 
-[sub_resource type="NavigationMesh" id=5]
-vertices = PoolVector3Array( 1, 0, 0.37521, 0.375758, 0, 0.128301, 0.375758, 0, 0.37521, -0.389629, 0, 1, -0.164307, 0, 0.37521, -0.389629, 0, 0.37521, -0.00693554, 0, 1, -0.164307, 0, 0.128301, -0.164307, 0, -0.094452, -0.389629, 0, -0.094452, -0.389629, 0, 0.128301, -1, 0, 0.37521, 0.375758, 0, 1, 1, 0, 0.0944056, 0.375758, 0, -0.094452 )
-polygons = [ PoolIntArray( 0, 2, 1 ), PoolIntArray( 3, 5, 4 ), PoolIntArray( 6, 4, 2 ), PoolIntArray( 2, 4, 7 ), PoolIntArray( 1, 7, 8 ), PoolIntArray( 7, 10, 9 ), PoolIntArray( 4, 5, 10 ), PoolIntArray( 11, 5, 3 ), PoolIntArray( 0, 12, 2 ), PoolIntArray( 0, 1, 13 ), PoolIntArray( 3, 4, 6 ), PoolIntArray( 6, 2, 12 ), PoolIntArray( 2, 7, 1 ), PoolIntArray( 1, 8, 14 ), PoolIntArray( 7, 9, 8 ), PoolIntArray( 4, 10, 7 ) ]
-
 [sub_resource type="ConcavePolygonShape" id=6]
-data = PoolVector3Array( 1, 0, 1, -1, 0, 1, -1, 0, -1, 1, 0, 1, -1, 0, -1, 1, 0, -1 )
+data = PoolVector3Array( 1, 0, -0.1577, -1, 0, -0.1577, -1, 0, -1, 1.1059, 0, 0.8961, 0.6352, 0, 0.5138, 1.617, 0, 0.3738, 0.6352, 0, 0.5138, 0.8691, 0, 1.095, 0.4782, 0, 0.6411, -0.4867, 0, 0.6453, 0.4782, 0, 0.6411, 0.5967, 0, 1.2358, -0.4867, 0, 0.6453, -0.8939, 0, 1.0874, -1.1438, 0, 0.8905, 0.6352, 0, 0.5138, 0.4782, 0, 0.6411, -0.4867, 0, 0.6453, 1, 0, -0.1577, 1.617, 0, -0.1577, 1.617, 0, 0.3738, -1, 0, -0.1577, 1, 0, -0.1577, 0.6352, 0, 0.5138, -0.7836, 0, 0.3865, -1.442, 0, 0.6945, -1.6584, 0, 0.1503, -0.7836, 0, 0.3865, -1.3641, 0.1723, 0.8219, -1.442, 0, 0.6945, -1.1438, 0, 0.8905, -1.3641, 0.1723, 0.8219, -0.7836, 0, 0.3865, -0.4867, 0, 0.6453, -0.8123, 0.0866, 1.2576, -0.8939, 0, 1.0874, -0.6158, 0, 1.2431, -0.8123, 0.0866, 1.2576, -0.4867, 0, 0.6453, 0.4782, 0, 0.6411, 0.7791, 0.0849, 1.2251, 0.5967, 0, 1.2358, 0.8691, 0, 1.095, 0.7791, 0.0849, 1.2251, 0.4782, 0, 0.6411, 0.6352, 0, 0.5138, 1.0281, 0.0414, 1.027, 0.8691, 0, 1.095, 1.1059, 0, 0.8961, 1.0281, 0.0414, 1.027, 0.6352, 0, 0.5138, 1, 0, -0.1577, -1, 0, -1, 1, 0, -1, -0.4867, 0, 0.6453, 0.5967, 0, 1.2358, -0.6158, 0, 1.2431, -0.4867, 0, 0.6453, -1.1438, 0, 0.8905, -0.7836, 0, 0.3865, 0.6352, 0, 0.5138, -0.4867, 0, 0.6453, -0.7836, 0, 0.3865, 1, 0, -0.1577, 1.617, 0, 0.3738, 0.6352, 0, 0.5138, -1, 0, -0.1577, 0.6352, 0, 0.5138, -0.7836, 0, 0.3865, -0.7836, 0, 0.3865, -1.6584, 0, 0.1503, -1, 0, -0.1577 )
+
+[sub_resource type="NavigationMesh" id=1]
+vertices = PoolVector3Array( 0.56236, 0, -0.188282, 1.07578, 0, 0.125301, 1.07578, 0, -0.143143, -1.29471, 0, 0.470529, -0.377657, 0, -0.119204, 1, 0, 2.21251, -1, 0, 2.21251, -2.20409, 0, 1.64836, 0.583302, 0, -0.583815, 0.399804, 0, -0.990423, -0.176522, 0, -0.671137, 0.99158, 0, -0.985163, 2.51564, 0, 0.226343, 2.51564, 0, -0.252606, -0.438582, 0, -0.641859, -0.534838, 0, -1.04094, -0.751947, 0, -0.168874, -1.24419, 0, -0.0673615, -2.7514, 0, 0.462109 )
+polygons = [ PoolIntArray( 0, 2, 1 ), PoolIntArray( 3, 4, 0 ), PoolIntArray( 5, 6, 3 ), PoolIntArray( 3, 6, 7 ), PoolIntArray( 0, 8, 2 ), PoolIntArray( 8, 10, 9 ), PoolIntArray( 8, 9, 11 ), PoolIntArray( 2, 13, 12 ), PoolIntArray( 14, 10, 4 ), PoolIntArray( 10, 14, 15 ), PoolIntArray( 4, 3, 16 ), PoolIntArray( 3, 17, 16 ), PoolIntArray( 0, 1, 3 ), PoolIntArray( 5, 3, 1 ), PoolIntArray( 3, 7, 18 ), PoolIntArray( 8, 11, 2 ), PoolIntArray( 2, 12, 1 ), PoolIntArray( 14, 4, 16 ), PoolIntArray( 10, 15, 9 ) ]
 
 [sub_resource type="ArrayMesh" id=7]
 surfaces/0 = {
@@ -577,7 +577,7 @@ transform = Transform( 0.756345, 0, 0.654174, 0, 1, 0, -0.654174, 0, 0.756345, 0
 
 [node name="CollisionShape" type="CollisionShape" parent="Cube/Key" index="0"]
 transform = Transform( -1.78814e-07, 0, 1, 0, 1, 0, -1, 0, -1.78814e-07, -0.0779433, -0.270449, 0.0103595 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="stand-position" type="Spatial" parent="Cube/Key" index="1"]
 transform = Transform( -1, 0, 3.27826e-07, 0, 1, 0, -3.27826e-07, 0, -1, 2.38419e-06, -0.79231, 0.954689 )
@@ -589,7 +589,7 @@ material/0 = ExtResource( 5 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Cylinder004/Pump" index="0"]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, -0.00579166, -0.258035, 0.0149326 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="stand-position" type="Spatial" parent="Cylinder004/Pump" index="1"]
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 3.57628e-07, -1.15866, 2.14842 )
@@ -618,7 +618,7 @@ transform = Transform( 0.701856, 0, -0.71232, 0, 1, 0, 0.71232, 0, 0.701856, 0, 
 
 [node name="CollisionShape" type="CollisionShape" parent="Cube001/Key2" index="0"]
 transform = Transform( -1.78814e-07, 0, 1, 0, 1, 0, -1, 0, -1.78814e-07, -0.0777087, -0.270449, -0.0720062 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="stand-position" type="Spatial" parent="Cube001/Key2" index="1"]
 transform = Transform( -1, 0, 3.27826e-07, 0, 1, 0, -3.27826e-07, 0, -1, -7.15256e-07, -0.79231, 1.0688 )
@@ -637,27 +637,28 @@ transform = Transform( 0.756071, 0, 0.65449, 0, 1, 0, -0.65449, 0, 0.756071, -0.
 
 [node name="CollisionShape" parent="Cylinder/Plant" index="0"]
 transform = Transform( 1, 0, -7.10543e-15, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0.171451, 1.15131, 2.38419e-07 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="stand-position" parent="Cylinder/Plant" index="1"]
 transform = Transform( -1, 0, -3.8743e-07, 0, 1, 0, 3.8743e-07, 0, -1, 2.38419e-07, -0.116029, 3.06758 )
 
 [node name="CollisionShape2" type="CollisionShape" parent="Cylinder/Plant" index="3"]
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="NavigationManager" type="Node" parent="." index="28"]
 
 [node name="Navigation" type="Navigation" parent="NavigationManager" index="0"]
 
-[node name="suelo" type="NavigationMeshInstance" parent="NavigationManager/Navigation" index="0"]
-transform = Transform( 12.0429, 0, 0, 0, 12.0429, 0, 0, 0, 12.0429, 0.2918, -0.0755419, -0.591715 )
-navmesh = SubResource( 5 )
+[node name="floor2" type="StaticBody" parent="NavigationManager/Navigation" index="0"]
+transform = Transform( 7.17259, 0, 0, 0, 7.17259, 0, 0, 0, 7.17259, 0.276342, -0.0184858, 1.6911 )
 
-[node name="suelo2" type="StaticBody" parent="NavigationManager" index="1"]
-transform = Transform( 12.0429, 0, 0, 0, 12.0429, 0, 0, 0, 12.0429, 0.2918, 0.0152757, -0.591715 )
-
-[node name="shape0" type="CollisionShape" parent="NavigationManager/suelo2" index="0"]
+[node name="shape0" type="CollisionShape" parent="NavigationManager/Navigation/floor2" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00377288, 0 )
 shape = SubResource( 6 )
+
+[node name="floor" type="NavigationMeshInstance" parent="NavigationManager/Navigation" index="1"]
+transform = Transform( 3.61365, 0, 0, 0, 3.61365, 0, 0, 0, 3.61365, 0.795348, 0.0443519, 2.32942 )
+navmesh = SubResource( 1 )
 
 [node name="Armature001" type="Spatial" parent="." index="29"]
 transform = Transform( 0.529508, 1.10662e-08, 0.0725344, -1.10662e-08, -0.534453, 1.62323e-07, 0.0725344, -1.62323e-07, -0.529508, 0.0942869, 6.70749, 0.834185 )
@@ -726,7 +727,7 @@ shape = SubResource( 9 )
 transform = Transform( 1, -3.25841e-07, 3.25841e-07, -3.25841e-07, -1, 0, 3.25841e-07, -1.06173e-13, -1, 8.34465e-07, 8.51484, 2.23641 )
 
 [node name="Wire" parent="Armature001/Skeleton 2/Cylinder010" index="2" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, -1, 3.25841e-07, 0, -3.25841e-07, -1, 2.96491, -13.7097, 0.829064 )
+transform = Transform( 1, 0, 0, 0, -1, 3.25841e-07, 0, -3.25841e-07, -1, 2.96491, -6.93734, 0.829063 )
 
 [node name="CollisionShape" parent="Armature001/Skeleton 2/Cylinder010/Wire" index="0"]
 shape = SubResource( 10 )

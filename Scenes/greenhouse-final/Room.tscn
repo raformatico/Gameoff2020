@@ -6,11 +6,13 @@
 [node name="Room" instance=ExtResource( 1 )]
 
 [node name="Alex" parent="." index="2"]
-transform = Transform( 0.55, 0, 0, 0, 0.55, 0, 0, 0, 0.55, 2.86662, 0.831363, 3.47369 )
+transform = Transform( 0.55, 0, 0, 0, 0.55, 0, 0, 0, 0.55, 2.86662, 0.0703684, 3.47369 )
 
 [node name="Dialog" parent="." index="3"]
 visible = false
 
 [node name="room" parent="." index="6" instance=ExtResource( 2 )]
+
+[editable path="Alex"]
 
 [editable path="room"]
