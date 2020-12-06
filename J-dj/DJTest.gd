@@ -14,7 +14,7 @@ export var slot_time=250
 export var segment_duration=2
 
 var n_discs_playing=0
-
+var not_said = true
 var main_plato=null
 
 onready var timer = $Timer
@@ -96,8 +96,9 @@ func check_sync():
 
 	if n_syn_discs==2 and Global.status["Radio"] != "end2":
 		Global.emit_signal("start_dialog","Radio", "end")
-	elif n_syn_discs==1 and Global.status["Radio"] != "end2":
+	elif n_syn_discs==1 and Global.status["Radio"] != "end2" and not_said:
 		Global.emit_signal("start_dialog","Radio", "middle")
+		not_said = false
 		
 func _on_TextureButton_pressed() -> void:
 	audio_player.continue_music()

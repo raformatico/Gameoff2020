@@ -2,6 +2,7 @@ extends MeshInstance
 
 
 onready var tween : Tween = get_node("Tween")
+onready var smoke = get_node("smoke")
 var broken := false
 
 func _ready():

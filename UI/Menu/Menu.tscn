@@ -97,7 +97,6 @@ margin_right = 600.0
 margin_bottom = 1000.0
 button_text_en = "EXIT"
 button_text_spa = "SALIR"
-
 [connection signal="toggled" from="VBoxContainer/spanish" to="." method="_on_spanish_toggled"]
 [connection signal="toggled" from="VBoxContainer/english" to="." method="_on_english_toggled"]
 [connection signal="pressed" from="VBoxContainer/start/button" to="." method="_on_start_pressed"]
@@ -106,6 +105,9 @@ button_text_spa = "SALIR"
 [connection signal="pressed" from="VBoxContainer/exit/button" to="." method="_on_exit_pressed"]
 
 [editable path="VBoxContainer/start"]
+
 [editable path="VBoxContainer/credits"]
+
 [editable path="VBoxContainer/controls"]
+
 [editable path="VBoxContainer/exit"]

@@ -19,3 +19,5 @@ transform = Transform( 1, 0, -1.42109e-14, 0, 1, 0, 1.42109e-14, 0, 1, 0, -3.788
 [editable path="room"]
 
 [editable path="room/aspiradora/InvisibleRobotObstacle"]
+
+[editable path="room/Path/PathFollow/aspiradora/smoke"]

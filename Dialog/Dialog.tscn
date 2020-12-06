@@ -58,10 +58,10 @@ __meta__ = {
 }
 
 [node name="text" type="RichTextLabel" parent="text_box"]
-margin_left = 407.0
+margin_left = 409.0
 margin_top = 900.0
-margin_right = 1520.0
-margin_bottom = 1001.0
+margin_right = 1522.0
+margin_bottom = 1014.0
 theme = ExtResource( 4 )
 custom_colors/default_color = Color( 0.207843, 0.239216, 0.333333, 1 )
 text = "Prueba de texto"

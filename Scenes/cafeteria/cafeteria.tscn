@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scenes/cafeteria/gltf/cafeteria17.glb" type="PackedScene" id=1]
 [ext_resource path="res://GameEngine/Clickable.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Scenes/cafeteria/aspiradora.gd" type="Script" id=4]
 [ext_resource path="res://GameEngine/Gateway.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/museum-final/stars.jpg" type="Texture" id=6]
+[ext_resource path="res://Scenes/greenhouse-final/smoke.tscn" type="PackedScene" id=7]
 
 [sub_resource type="SpatialMaterial" id=1]
 
@@ -188,6 +189,9 @@ transform = Transform( -1, 0, -3.25963e-07, 0, 1, 0, 3.25963e-07, 0, -1, 2.38419
 repeat = true
 playback/repeat = true
 
+[node name="smoke" parent="Path/PathFollow/aspiradora" index="2" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 1.67186e-14, 0, 1, 0, -1.67186e-14, 0, 1, 0, 0, 0 )
+
 [node name="Sun" parent="." index="18"]
 transform = Transform( 0.995221, 0, 0, 0, 0.987154, 0.126457, 0, -0.126457, 0.987154, -3.60918, 29.7424, 7.56871 )
 
@@ -222,8 +226,13 @@ height = 28.675
 material = SubResource( 11 )
 
 [editable path="aspiradora/InvisibleRobotObstacle"]
+
 [editable path="jukebox/Radio"]
+
 [editable path="gofrera/Gofrera"]
+
 [editable path="cafetera/Cafetera"]
+
 [editable path="Path/PathFollow/aspiradora/Aspiradora"]
+
 [editable path="Gateway"]

@@ -282,7 +282,7 @@ var dialog_dictionary_spa = {
 	},
 	"Plant" : {
 		"start" : [["Alex","Qué planta más curiosa."],["Tardis", "¡Cuidado! creo que es carnívora...Estoy bromeando"],["Alex","No es gracioso, quizá pueda usarla para subir."]],
-		"grownup" : [["Tardis", "Ya puedes subir."],["Alex","¿Un poco obvio no?"]]
+		"grownup" : [["Tardis", "Ahora tiene mucho mejor pinta. ¡Qué vida!"]]
 	},
 	"Lamp" : {
 		"start" : [["Alex","Tengo que intentar llegar allí arriba."],["Tardis", "Quizá te salgan alas..."]],
@@ -290,7 +290,7 @@ var dialog_dictionary_spa = {
 		"down" : [["Alex","Seguro que aquí hay algo que nos puede ayudar"],["Tardis", "Te gusta mucho rebuscar en la basura o soy yo?"],["Alex","Mereció la pena! He encontrado un cable!"],["Tardis","Pues si querías un cable podrías haberlo pedido..."],[OBJECT,inventory.wire]]
 	},
 	"Wire" : {
-		"start" : [["Alex","Creo que esto me va a servir."],["Tardis", "Ten cuidado, no vaya a tener que salvarte de nuevo."]],
+		"start" : [["Alex","Seguro que aquí hay algo que nos puede ayudar"],["Tardis", "Te gusta mucho rebuscar en la basura o soy yo?"],["Alex","Mereció la pena! He encontrado un cable!"],["Tardis","Pues si querías un cable podrías haberlo pedido..."], [OBJECT,inventory.wire], [NEXT_STATE,"wire","picked"]],
 		"picked" : [["Alex","Aquí ya no hay nada más que ver"]]
 	},
 	"Gofrera" : {
