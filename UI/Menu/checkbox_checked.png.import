@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/CAJA start pulsada.png-2409b59ba528e49f313c38a52687e4c4.stex"
+path="res://.import/checkbox_checked.png-066133929c505cd648c493afc2476c7f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/CAJA start pulsada.png"
-dest_files=[ "res://.import/CAJA start pulsada.png-2409b59ba528e49f313c38a52687e4c4.stex" ]
+source_file="res://UI/Menu/checkbox_checked.png"
+dest_files=[ "res://.import/checkbox_checked.png-066133929c505cd648c493afc2476c7f.stex" ]
 
 [params]
 

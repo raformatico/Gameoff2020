@@ -4,8 +4,11 @@ signal start_dialog(object_name, status)
 signal start_dialog_item(object_name, status, item_selected, interactions)
 signal breakMoonba()
 signal dj_ended()
+signal change_language(new_language)
 
 signal coffee_served()
+
+enum LANGUAGE {ENGLISH, SPANISH}
 
 var entrance_gateway="Main"
 
@@ -66,13 +69,14 @@ var status = {
 	"Wire" : "start",
 	"Gofrera" : "start",
 	"Aspiradora" : "cafeteria",
-	"AspiradoraHall" : "start",#CHANGE TO opened to enter
+	"AspiradoraHall" : "opened",#CHANGE TO opened to enter
 	"Cafetera" : "start",
 	"Radio" : "start",
 	"chip" : "start",
 	"gear" : "start",
 	"wire" : "start",
-	"Error" : "start"
+	"Error" : "start",
+	"InvisibleRobotObstacle" : "start"
 }
 
 var interactions := {
@@ -84,10 +88,18 @@ var interactions := {
 	"chip" : "chip"
 }
 
+var current_language = LANGUAGE.ENGLISH
+
+func _ready() -> void:
+	connect("change_language",self,"_on_change_language")
+
 
 func set_item_selected(item_name) -> void:
 	item_selected = item_name
-	
+
+
+func _on_change_language(new_language : int) -> void:
+	Global.current_language = new_language
 
 func _on_Alex_arrived(object) -> void:
 	if item_selected != null:

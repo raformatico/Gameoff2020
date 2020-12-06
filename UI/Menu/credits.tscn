@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://UI/ui_text.tres" type="Theme" id=1]
+[ext_resource path="res://UI/Menu/credits.tres" type="Theme" id=1]
 [ext_resource path="res://UI/Menu/back.tscn" type="PackedScene" id=2]
 [ext_resource path="res://UI/Menu/credits.gd" type="Script" id=4]
 
@@ -16,6 +16,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_bottom = 3.0
 text = "Developers
 Juanjo Ramos
 Raformatico https://www.youtube.com/c/raformatico
@@ -24,7 +25,6 @@ Audio
 Ignacio Segura
 Man from Space
 SoundCloud https://soundcloud.com/manfromspace
-Spotify https://open.spotify.com/artist/135uz9UwHtdXZgiFyAc3oz?si=sXIQ0fVyQba66PKhMJqffg
 
 Design
 Fran Arroyo 
@@ -32,6 +32,9 @@ Pablo Ruiz
 http://somoschumbo.com/"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="back" parent="." instance=ExtResource( 2 )]
 previous_scene = "res://UI/Menu/Menu.tscn"

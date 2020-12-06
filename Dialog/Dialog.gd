@@ -19,9 +19,9 @@ var current_dialog : Array
 var current_object
 var text_count := 0
 
+var dialog_dictionary := {}
 
-
-var dialog_dictionary = {
+var dialog_dictionary_en = {
 	"Statue" : {
 		"start" : [["Alex","It reminds me of the photo from last Christmas that they took of my brother and me at the mall."],["Tardis","It must remember something very important so that it is in the center of this room."],[NEXT_STATE,"Statue","read1"]],
 		"read1" : [["Tardis", "We must be missing something."],["Alex", "Here's something written ... First brother on the moon ... 1969 ..."],["Tardis","That seems like a date"],[NEXT_STATE,"Statue","read2"]],
@@ -143,7 +143,8 @@ var dialog_dictionary = {
 	"Aspiradora" : {
 		"start" : [["Alex","Look what a beautiful robot cleaner. Cuchi, cuchi ..."],["Tardis", "Back off! They become very territorial when they don't have a job, that area is off limits."]],
 		"cafeteria" : [["Tardis","Now it seems that he doesn't care much about you"],["Alex", "Yes, but it gives good pushes and there is no way to check if it has something that suits us ..."], ["Tardis","Sorry, you're talking about a living being."]],
-		"end" : [["Alex","Go look! It has a chip that is sure to be good for us."],["Tardis","Loot dead! You're horrible ... Well, what can you do? Rest in peace"], [OBJECT,inventory.chip]]
+		"end" : [["Alex","Go look! It has a chip that is sure to be good for us."],["Tardis","Loot dead! You're horrible ... Well, what can you do? Rest in peace"], [OBJECT,inventory.chip],[NEXT_STATE,"Aspiradora","end2"]],
+		"end2" : [["Tardis","You've done enough here!"]] 
 	},
 	"Cafetera" : {
 		"start" : [["Alex","This still works"],["Tardis", "You are going to burn"],["Alex","You're right"], [NEXT_STATE,"Cafetera","start2"]],
@@ -155,7 +156,7 @@ var dialog_dictionary = {
 		"start" : [["Alex","This radio is not working quite right but I think I can fix it"],["Tardis", "Try it I love music"],[ACTION,"current","minigame"],[NEXT_STATE,"Radio","start"]],
 		"middle" : [["Alex","Look, the cleaner robot likes this melody"],["Tardis", "I'd swear you're trying to dance ... to a lousy beat, by the way! "],[NEXT_STATE,"Radio","start"]],
 		"end" : [["Tardis", "I think it's going crazy."],["Alex", "Watch out, it's going to explode!"],[NEXT_STATE,"Aspiradora","end"],[NEXT_STATE,"Radio","end2"],[ACTION,"current","endDjGame"]],
-		"end2" : [["Tardis", "You have finished here, but there is always time to play!"]]
+		"end2" : [["Tardis", "You have finished here, but there is always time to play!"],[ACTION,"current","minigame"]]
 	},
 	"chip" : {
 		"start" : [["Alex","I don't know where we are going to get a next-generation chip, which is clearly what is missing from this panel."],["Tardis","You seem to know everything."]],
@@ -175,6 +176,10 @@ var dialog_dictionary = {
 	"Error" : {
 		"start" : [["Alex","I don't think I can use that here"],["Tardis","It was your idea, not mine ..."], [NEXT_STATE, "Error","start2"]],
 		"start2" : [["Tardis","This is testing for testing, right?"],[NEXT_STATE, "Error", "start"]]
+	},
+	"InvisibleRobotObstacle" : {
+		"start" : [["Tardis", "DON'T TAKE ANOTHER STEP!"],["Alex","What is this? Another one of your jokes?"],["Tardis", "I've already told you that these robots take territory very seriously. You'll have to find a way to get him to get some sleep."],[NEXT_STATE,"InvisibleRobotObstacle","start2"]],
+		"start2" : [["Alex", "I already know that I can't get through here until I deactivate it ..."]]
 	}
 }
 
@@ -182,7 +187,6 @@ var dialog_dictionary_spa = {
 	"Statue" : {
 		"start" : [["Alex","Me recuerda a la foto de la navidad pasada que nos hicieron a mi hermano y a mi en el centro comercial."],["Tardis","Debe de rememorar algo muy importante para que esté en el centro de esta sala."],[NEXT_STATE,"Statue","read1"]],
 		"read1" : [["Tardis", "Seguro que se nos pasa algo por alto."],["Alex", "Aquí hay algo escrito... Primer hermano en la luna... 1969..."],["Tardis","Eso parece una fecha"],[NEXT_STATE,"Statue","read2"]],
-		"potion" : [["Alex", "He usado la poción con la estatua!"],[NEXT_STATE,"Statue","read2"], [ACTION,"potion","use"]],
 		"read2" : [["Alex", "¿Cuál era la fecha que ponía aquí?"],["Tardis", "1969..."]]
 	},
 	"Wax1" : {
@@ -250,7 +254,7 @@ var dialog_dictionary_spa = {
 	"InterruptorBox" : {
 		"start" : [["Alex", "Este panel no funciona, da un mensaje de error..."],["Tardis", "Creo que faltan algunos componentes, si los encontramos seguro que podemos abrir esta puerta."],[ACTION,"current","panel"],[NEXT_STATE,"InterruptorBox","start2"]],
 		"start2" : [[ACTION,"current","panel"]],
-		"opendoor" : [["Alex", "¡Lo hemos conseguido, la puerta está abierta!"],["Tardis","Yo no estaría muy contento sabiendo lo que te espera en esa habitación."]]
+		"opendoor" : [["Alex", "¡Lo hemos conseguido, la puerta está abierta!"],["Tardis","Yo no estaría muy contento sabiendo lo que te espera en esa habitación."],[ACTION,"current","endgame"]]
 	},
 	"Lever" : {
 		"start" : [["Tardis", "Y se hizo la luz..."],["Alex", "Qué mal rollo de sitio."],[ACTION, "current", "lighton"],[NEXT_STATE,"Lever", "poweron"]],
@@ -263,7 +267,7 @@ var dialog_dictionary_spa = {
 	},
 	"Pump" : {
 		"start" : [["Alex","Me está entrando algo de sed."],["Tardis", "Creo que sólo puedes verter algún líquido, no extraerlo..."]],
-		"cupcoffee" : [["Alex","Voy a probar a diluir  un poco de café en el depósito."],["Tardis", "Mientras no te lo bebas tú..."],[NEXT_STATE,"Key","coffe"],[ACTION,"cupcoffee","use"]]
+		"cupcoffee" : [["Alex","Voy a probar a diluir  un poco de café en el depósito."],["Tardis", "Mientras no te lo bebas tú..."],[NEXT_STATE,"Key","coffe"],[ACTION,"cupcoffee","use"], [NEXT_STATE,"Plant","grownup"]]
 	},
 	"Audrey" : {
 		"start" : [["Alex",""],["Tardis", ""],["Alex",""],["Tardis", ""]]
@@ -273,12 +277,12 @@ var dialog_dictionary_spa = {
 		"coffe" : [["Tardis", "Eso es, un poco de café por la mañana ayuda a cualquiera a levantarse."],[ACTION,"plant","goingup"]]
 	},
 	"Key2" : {
-		"start" : [["Alex","Gira fácil! Uy yo creo que ya no gira más."],[ACTION,"Aspiradora","opened"],["Tardis", "La has roto... De hecho suena agua en la cafetería."],["Alex","Ups"],[NEXT_STATE,"Key2","opened"],[NEXT_STATE,"Aspiradora","cafeteria"],[NEXT_STATE,"AspiradoraHall","opened"]],
+		"start" : [["Alex","Gira fácil! Uy yo creo que ya no gira más."],[ACTION,"Aspiradora","opened"],["Tardis", "La has roto ... De hecho se escucha salir agua de la cafetería."],["Alex","Ups"],[NEXT_STATE,"Key2","opened"],[NEXT_STATE,"Aspiradora","cafeteria"],[NEXT_STATE,"AspiradoraHall","opened"]],
 		"opened" : [["Tardis", "No lo intentes que esta llave ya no vuelve a su sitio..."]]
 	},
 	"Plant" : {
 		"start" : [["Alex","Qué planta más curiosa."],["Tardis", "¡Cuidado! creo que es carnívora...Estoy bromeando"],["Alex","No es gracioso, quizá pueda usarla para subir."]],
-		"goingup" : [["Tardis", "Ya puedes subir."],["Alex","¿Un poco obvio no?"]]
+		"grownup" : [["Tardis", "Ya puedes subir."],["Alex","¿Un poco obvio no?"]]
 	},
 	"Lamp" : {
 		"start" : [["Alex","Tengo que intentar llegar allí arriba."],["Tardis", "Quizá te salgan alas..."]],
@@ -287,7 +291,7 @@ var dialog_dictionary_spa = {
 	},
 	"Wire" : {
 		"start" : [["Alex","Creo que esto me va a servir."],["Tardis", "Ten cuidado, no vaya a tener que salvarte de nuevo."]],
-		"picked" : []
+		"picked" : [["Alex","Aquí ya no hay nada más que ver"]]
 	},
 	"Gofrera" : {
 		"start" : [["Alex","Esto está caliente, podría cocinar algo."],["Tardis", "Espero que sepas lo que estás haciendo...esa máquina lleva tiempo sin usarse."]],
@@ -301,7 +305,8 @@ var dialog_dictionary_spa = {
 	"Aspiradora" : {
 		"start" : [["Alex","Mira qué robot limpiador más bonito. Cuchi, cuchi..."],["Tardis", "¡Retrocede! Se vuelven muy territoriales cuando no tienen trabajo, esa zona está vedada."]],
 		"cafeteria" : [["Tardis","Ahora parece que no se preocupa mucho de ti"],["Alex", "Sí, pero da buenos empujones y no hay manera de revisar si tiene algo que nos venga bien..."], ["Tardis","Perdona, estás hablando de un ser vivo."]],
-		"end" : [["Alex","Anda mira! Tiene un chip que seguro que nos viene bien."],["Tardis","Saquea muertos! Eres horrible... Bueno qué se le va a hacer. Descanse en paz"], [OBJECT,inventory.chip]]
+		"end" : [["Alex","Anda mira! Tiene un chip que seguro que nos viene bien."],["Tardis","Saquea muertos! Eres horrible... Bueno qué se le va a hacer. Descanse en paz"], [OBJECT,inventory.chip],[NEXT_STATE,"Aspiradora","end2"]],
+		"end2" : [["Tardis","Ya le has hecho suficiente daño, ¿no crees?"]]
 	},
 	"Cafetera" : {
 		"start" : [["Alex","Esto aún funciona"],["Tardis", "Te vas a quemar"],["Alex","Tienes razón"], [NEXT_STATE,"Cafetera","start2"]],
@@ -311,8 +316,9 @@ var dialog_dictionary_spa = {
 	},
 	"Radio" : {
 		"start" : [["Alex","Esta radio no funciona del todo bien pero creo que puedo arreglarla"],["Tardis", "Inténtalo que me encanta la música"],[ACTION,"current","minigame"]],
-		"middle" : [["Alex","Mira, le gusta esta melodía"],["Tardis", "Juraría que está intentando bailar... ¡con un ritmo pésimo, por cierto! "]],
-		"end" : [["Tardis", "Creo que se está volviendo loca."],["Alex", "Cuidado ¡va a estallar!"],[NEXT_STATE,"Aspiradora","end"],[ACTION,"current","breakMoonba"]]
+		"middle" : [["Alex","Mira, le gusta esta melodía"],["Tardis", "Juraría que está intentando bailar... ¡con un ritmo pésimo, por cierto! "],[NEXT_STATE,"Radio","start"]],
+		"end" : [["Tardis", "Creo que se está volviendo loca."],["Alex", "Cuidado ¡va a estallar!"],[NEXT_STATE,"Aspiradora","end"],[NEXT_STATE,"Radio","end2"],[ACTION,"current","endDjGame"]],
+		"end2" : [["Tardis", "Aquí hemos terminado, pero siempre hay tiempo para jugar!"]]
 	},
 	"chip" : {
 		"start" : [["Alex","No sé de donde vamos a sacar un chip de última generación, que claramente es lo que falta en este panel."],["Tardis","Parece que lo sabes todo."]],
@@ -332,6 +338,10 @@ var dialog_dictionary_spa = {
 	"Error" : {
 		"start" : [["Alex","No creo que pueda usar eso aquí"],["Tardis","Era tu idea, no la mía..."], [NEXT_STATE, "Error","start2"]],
 		"start2" : [["Tardis","Esto es probar por probar, ¿verdad?"],[NEXT_STATE, "Error", "start"]]
+	},
+	"InvisibleRobotObstacle" : {
+		"start" : [["Tardis", "NO DES NI UN PASO MÁS!"],["Alex","¿Qué es esta? ¿Otra de tus bromas?"],["Tardis", "Ya te he dicho que estos robots se toman muy en serio el territorio. Tendrás que encontrar una manera de hacer que duerma un poco."],[NEXT_STATE,"InvisibleRobotObstacle","start2"]],
+		"start2" : [["Alex", "Ya lo sé que de aquí no puedo pasar hasta que no la desactive..."]]
 	}
 }
 
@@ -345,6 +355,10 @@ func _ready() -> void:
 	Global.connect("start_dialog",self,"start_dialog")
 	Global.connect("start_dialog_item",self,"start_dialog_item")
 	connect("start_action",Global,"_on_start_action")
+	if Global.current_language == Global.LANGUAGE.ENGLISH:
+		dialog_dictionary = dialog_dictionary_en
+	elif Global.current_language == Global.LANGUAGE.SPANISH:
+		dialog_dictionary = dialog_dictionary_spa
 
 
 func _input(event: InputEvent) -> void:
@@ -429,6 +443,8 @@ func next_dialog() -> void:
 		next_dialog()
 
 func set_status(object : String, new_status : String) -> void:
+	print(object)
+	print(Global.status[object])
 	if Global.status[object] != "picked":
 		Global.status[object] = new_status
 

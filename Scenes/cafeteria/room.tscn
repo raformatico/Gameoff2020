@@ -16,9 +16,6 @@ visible = false
 [node name="CollisionShape" parent="room/aspiradora/InvisibleRobotObstacle" index="0"]
 transform = Transform( 1, 0, -1.42109e-14, 0, 1, 0, 1.42109e-14, 0, 1, 0, -3.78855, 0 )
 
-[node name="stand-position" parent="room/aspiradora/InvisibleRobotObstacle" index="1"]
-transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 1.77117, -3.53096, 8.34831 )
-
 [editable path="room"]
 
 [editable path="room/aspiradora/InvisibleRobotObstacle"]

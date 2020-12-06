@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/CAJA start.png-f9071f0450744e50e3ab0b4681cd01d2.stex"
+path="res://.import/CAJA start pulsada.png-a662a9e6cb60e151be3d2286703fd052.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/CAJA start.png"
-dest_files=[ "res://.import/CAJA start.png-f9071f0450744e50e3ab0b4681cd01d2.stex" ]
+source_file="res://UI/Menu/CAJA start pulsada.png"
+dest_files=[ "res://.import/CAJA start pulsada.png-a662a9e6cb60e151be3d2286703fd052.stex" ]
 
 [params]
 

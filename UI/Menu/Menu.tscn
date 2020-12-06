@@ -1,16 +1,11 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://UI/ui_text.tres" type="Theme" id=1]
 [ext_resource path="res://UI/Menu/menu_back.jpg" type="Texture" id=2]
 [ext_resource path="res://UI/Menu/Menu.gd" type="Script" id=3]
-[ext_resource path="res://UI/Menu/START.png" type="Texture" id=4]
-[ext_resource path="res://UI/Menu/CONTROL1.png" type="Texture" id=5]
-[ext_resource path="res://UI/Menu/EXIT.png" type="Texture" id=6]
-[ext_resource path="res://UI/Menu/CONTROL.png" type="Texture" id=7]
-[ext_resource path="res://UI/Menu/START1.png" type="Texture" id=8]
-[ext_resource path="res://UI/Menu/CREDITS1.png" type="Texture" id=9]
-[ext_resource path="res://UI/Menu/Credits.png" type="Texture" id=10]
-[ext_resource path="res://UI/Menu/EXIT1.png" type="Texture" id=11]
+[ext_resource path="res://UI/Menu/checkbox_checked.png" type="Texture" id=4]
+[ext_resource path="res://UI/Menu/checkbox.png" type="Texture" id=5]
+[ext_resource path="res://UI/Menu/button.tscn" type="PackedScene" id=12]
 
 [node name="Menu" type="Control"]
 anchor_right = 1.0
@@ -34,42 +29,85 @@ __meta__ = {
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 1312.45
-margin_top = 354.821
-margin_right = -82.5481
-margin_bottom = -91.1791
-custom_constants/separation = 50
+margin_left = 1302.56
+margin_top = 29.796
+margin_right = -17.4387
+margin_bottom = -50.204
+custom_constants/separation = 20
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="start" type="TextureButton" parent="VBoxContainer"]
-margin_right = 525.0
-margin_bottom = 121.0
-texture_normal = ExtResource( 4 )
-texture_pressed = ExtResource( 8 )
+[node name="spanish" type="CheckBox" parent="VBoxContainer"]
+margin_right = 600.0
+margin_bottom = 102.0
+custom_icons/checked = ExtResource( 4 )
+custom_icons/unchecked = ExtResource( 5 )
+text = "spanish"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="credits" type="TextureButton" parent="VBoxContainer"]
-margin_top = 171.0
-margin_right = 525.0
-margin_bottom = 292.0
-texture_normal = ExtResource( 10 )
-texture_pressed = ExtResource( 9 )
+[node name="english" type="CheckBox" parent="VBoxContainer"]
+margin_top = 122.0
+margin_right = 600.0
+margin_bottom = 224.0
+custom_icons/checked = ExtResource( 4 )
+custom_icons/unchecked = ExtResource( 5 )
+pressed = true
+text = "english"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="controls" type="TextureButton" parent="VBoxContainer"]
-margin_top = 342.0
-margin_right = 525.0
-margin_bottom = 463.0
-texture_normal = ExtResource( 7 )
-texture_pressed = ExtResource( 5 )
+[node name="start" parent="VBoxContainer" instance=ExtResource( 12 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 244.0
+margin_right = 600.0
+margin_bottom = 418.0
+button_text_en = "START"
+button_text_spa = "JUGAR"
 
-[node name="exit" type="TextureButton" parent="VBoxContainer"]
-margin_top = 513.0
-margin_right = 525.0
-margin_bottom = 634.0
-texture_normal = ExtResource( 6 )
-texture_pressed = ExtResource( 11 )
-[connection signal="pressed" from="VBoxContainer/start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="VBoxContainer/credits" to="." method="_on_credits_pressed"]
-[connection signal="pressed" from="VBoxContainer/controls" to="." method="_on_controls_pressed"]
-[connection signal="pressed" from="VBoxContainer/exit" to="." method="_on_exit_pressed"]
+[node name="credits" parent="VBoxContainer" instance=ExtResource( 12 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 438.0
+margin_right = 600.0
+margin_bottom = 612.0
+button_text_en = "CREDITS"
+button_text_spa = "CREDITOS"
+
+[node name="controls" parent="VBoxContainer" instance=ExtResource( 12 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 632.0
+margin_right = 600.0
+margin_bottom = 806.0
+button_text_en = "CONTROLS"
+button_text_spa = "CONTROLES"
+
+[node name="exit" parent="VBoxContainer" instance=ExtResource( 12 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 826.0
+margin_right = 600.0
+margin_bottom = 1000.0
+button_text_en = "EXIT"
+button_text_spa = "SALIR"
+[connection signal="toggled" from="VBoxContainer/spanish" to="." method="_on_spanish_toggled"]
+[connection signal="toggled" from="VBoxContainer/english" to="." method="_on_english_toggled"]
+[connection signal="pressed" from="VBoxContainer/start/button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/credits/button" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="VBoxContainer/controls/button" to="." method="_on_controls_pressed"]
+[connection signal="pressed" from="VBoxContainer/exit/button" to="." method="_on_exit_pressed"]
+
+[editable path="VBoxContainer/start"]
+
+[editable path="VBoxContainer/credits"]
+
+[editable path="VBoxContainer/controls"]
+
+[editable path="VBoxContainer/exit"]

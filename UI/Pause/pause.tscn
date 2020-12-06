@@ -1,13 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://UI/Pause/pause.gd" type="Script" id=1]
 [ext_resource path="res://UI/Pause/ICONO INVENTARIO.png" type="Texture" id=2]
 [ext_resource path="res://UI/Pause/ICONO INVENTARIO PULSADO.png" type="Texture" id=3]
 [ext_resource path="res://UI/ui_text.tres" type="Theme" id=4]
-[ext_resource path="res://UI/Pause/CONTINUE1.png" type="Texture" id=5]
-[ext_resource path="res://UI/Pause/Continue.png" type="Texture" id=6]
-[ext_resource path="res://UI/Menu/EXIT.png" type="Texture" id=7]
-[ext_resource path="res://UI/Menu/EXIT1.png" type="Texture" id=8]
+[ext_resource path="res://UI/Menu/button.tscn" type="PackedScene" id=9]
 
 [node name="pause" type="Control"]
 pause_mode = 2
@@ -42,7 +39,6 @@ __meta__ = {
 }
 
 [node name="pause_menu" type="Control" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 1.7818
@@ -56,33 +52,42 @@ __meta__ = {
 [node name="MarginContainer" type="MarginContainer" parent="pause_menu"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 700.0
+margin_left = 660.0
 margin_top = 300.0
-margin_right = -700.0
+margin_right = -660.0
 margin_bottom = -300.0
+rect_pivot_offset = Vector2( 300, 240 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="pause_menu/MarginContainer"]
-margin_top = 93.0
-margin_right = 525.0
-margin_bottom = 385.0
+margin_top = 40.0
+margin_right = 600.0
+margin_bottom = 438.0
 size_flags_vertical = 4
 custom_constants/separation = 50
 
-[node name="continue" type="TextureButton" parent="pause_menu/MarginContainer/VBoxContainer"]
-margin_right = 525.0
-margin_bottom = 121.0
-texture_normal = ExtResource( 6 )
-texture_pressed = ExtResource( 5 )
+[node name="continue" parent="pause_menu/MarginContainer/VBoxContainer" instance=ExtResource( 9 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 600.0
+margin_bottom = 174.0
+button_text_en = "CONTINUE"
+button_text_spa = "CONTINUAR"
 
-[node name="exit" type="TextureButton" parent="pause_menu/MarginContainer/VBoxContainer"]
-margin_top = 171.0
-margin_right = 525.0
-margin_bottom = 292.0
-texture_normal = ExtResource( 7 )
-texture_pressed = ExtResource( 8 )
+[node name="exit" parent="pause_menu/MarginContainer/VBoxContainer" instance=ExtResource( 9 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 224.0
+margin_right = 600.0
+margin_bottom = 398.0
+button_text_en = "EXIT"
+button_text_spa = "SALIR"
 [connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
-[connection signal="pressed" from="pause_menu/MarginContainer/VBoxContainer/continue" to="." method="_on_continue_pressed"]
-[connection signal="pressed" from="pause_menu/MarginContainer/VBoxContainer/exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="pause_menu/MarginContainer/VBoxContainer/continue/button" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="pause_menu/MarginContainer/VBoxContainer/exit/button" to="." method="_on_exit_pressed"]
+
+[editable path="pause_menu/MarginContainer/VBoxContainer/continue"]
+
+[editable path="pause_menu/MarginContainer/VBoxContainer/exit"]
