@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scenes/cafeteria/gltf/cafeteria17.glb" type="PackedScene" id=1]
 [ext_resource path="res://GameEngine/Clickable.tscn" type="PackedScene" id=2]
@@ -6,6 +6,11 @@
 [ext_resource path="res://Scenes/cafeteria/aspiradora.gd" type="Script" id=4]
 [ext_resource path="res://GameEngine/Gateway.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/museum-final/stars.jpg" type="Texture" id=6]
+
+[sub_resource type="SpatialMaterial" id=10]
+
+[sub_resource type="BoxShape" id=11]
+extents = Vector3( 7.37725, 2.96068, 7.11032 )
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 1, 1.06216, 0.751459 )
@@ -56,7 +61,17 @@ albedo_texture = ExtResource( 6 )
 [node name="Room" instance=ExtResource( 1 )]
 
 [node name="aspiradora" parent="." index="0"]
-visible = false
+material/0 = SubResource( 10 )
+
+[node name="InvisibleRobotObstacle" parent="aspiradora" index="0" instance=ExtResource( 2 )]
+transform = Transform( -9.58357e-08, 0, -0.588235, 0, 0.588235, 0, 0.588235, 0, -9.58357e-08, -1.498, 2.26992, -1.10349 )
+
+[node name="CollisionShape" parent="aspiradora/InvisibleRobotObstacle" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.78855, 0 )
+shape = SubResource( 11 )
+
+[node name="stand-position" parent="aspiradora/InvisibleRobotObstacle" index="1"]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 1.77117, -3.53096, 8.34831 )
 
 [node name="taburete4" parent="." index="1"]
 transform = Transform( 1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, -1.43414, 1.99822, 0.0828425 )
@@ -206,6 +221,8 @@ transform = Transform( 0.0592018, 0, -0.998246, 0, 1, 0, 0.998246, 0, 0.0592018,
 width = 28.1425
 height = 28.675
 material = SubResource( 9 )
+
+[editable path="aspiradora/InvisibleRobotObstacle"]
 
 [editable path="jukebox/Radio"]
 

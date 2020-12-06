@@ -168,6 +168,7 @@ bind/42/pose = Transform( 0.99945, 0.0234386, 0, -3.25822e-09, -2.98869e-08, 1, 
 [sub_resource type="Animation" id=3]
 resource_name = "Idle"
 length = 11.1
+loop = true
 tracks/0/type = "transform"
 tracks/0/path = NodePath("Alex/Skeleton:i_ktarget_l")
 tracks/0/interp = 1
@@ -2309,6 +2310,7 @@ height = 1.52833
 ]]
 script = ExtResource( 1 )
 threshold = 0.1
+walking_speed = 1.8
 running_speed = 6.0
 
 [node name="Alex" type="Spatial" parent="."]
@@ -2542,6 +2544,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.50034, 31.8507, 17.9636 )
 visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Idle"
 anims/Idle = SubResource( 3 )
 anims/Pick = SubResource( 4 )
 "anims/Poses Alex Libreria" = SubResource( 5 )

@@ -20,6 +20,8 @@ func _ready():
 			parent.queue_free()
 		elif self.name == "Aspiradora":
 			parent.brokeMoonba()
+		elif self.name == "InvisibleRobotObstacle":
+			self.queue_free()
 		else:
 			take()
 	# material=parent.material # for CSG?

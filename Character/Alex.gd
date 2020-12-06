@@ -93,7 +93,7 @@ func _physics_process(delta):
 				target_rotation=null
 				target_object=null
 				
-				$AnimationPlayer.play("Stand",0.3)
+				$AnimationPlayer.play("Stand",0.1)
 				start_boring()
 		
 		var grav=Vector3.ZERO

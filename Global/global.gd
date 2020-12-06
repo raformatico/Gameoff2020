@@ -152,6 +152,8 @@ func is_visible(object_name) -> bool:
 		is_visible = false
 	elif object_name == "Aspiradora" and status["Aspiradora"] == "end":
 		is_visible = false
+	elif object_name == "InvisibleRobotObstacle" and status["Aspiradora"] == "end":
+		is_visible = false	
 	elif object_name in status:
 		if status[object_name] == "picked":
 			is_visible = false
