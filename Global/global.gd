@@ -12,6 +12,9 @@ enum LANGUAGE {ENGLISH, SPANISH}
 
 var entrance_gateway="Main"
 
+# Ufff.... Bad solution . jjramos 06/12/2020
+var broken_aspiradora=false
+
 var changing_scenario = false
 var debug: = false
 var item_selected = null setget set_item_selected
@@ -69,7 +72,7 @@ var status = {
 	"Wire" : "start",
 	"Gofrera" : "start",
 	"Aspiradora" : "cafeteria",
-	"AspiradoraHall" : "opened",#CHANGE TO opened to enter
+	"AspiradoraHall" : "start",#CHANGE TO opened to enter
 	"Cafetera" : "start",
 	"Radio" : "start",
 	"chip" : "start",

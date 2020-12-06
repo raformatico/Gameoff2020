@@ -222,13 +222,8 @@ height = 28.675
 material = SubResource( 11 )
 
 [editable path="aspiradora/InvisibleRobotObstacle"]
-
 [editable path="jukebox/Radio"]
-
 [editable path="gofrera/Gofrera"]
-
 [editable path="cafetera/Cafetera"]
-
 [editable path="Path/PathFollow/aspiradora/Aspiradora"]
-
 [editable path="Gateway"]

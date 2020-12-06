@@ -69,15 +69,17 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -2.0
-margin_right = -2.0
+margin_right = 6.0
 text = "This was a demo intended to participate in the Gameoff 2020 Game Jam
 but we couldn't make it.
 
-The whole team hopes you have enjoyed this journey.
+The whole team hopes you enjoyed this journey.
 
-If you want to know something else about us check out the credits"
+If you want to know something else about us check out the credits."
 align = 1
 valign = 1
+autowrap = true
+clip_text = true
 percent_visible = 0.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -87,10 +89,15 @@ __meta__ = {
 modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 196.0
+margin_top = 108.0
+margin_right = -127.0
+margin_bottom = -72.0
 rect_scale = Vector2( 1.2, 1.2 )
 rect_pivot_offset = Vector2( 960, 540 )
 theme = ExtResource( 2 )
-text = "THE END"
+text = "THE END
+?"
 align = 1
 valign = 1
 autowrap = true
@@ -101,4 +108,5 @@ __meta__ = {
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "end"
 anims/end = SubResource( 1 )
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

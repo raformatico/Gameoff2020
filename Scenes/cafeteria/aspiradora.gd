@@ -5,6 +5,7 @@ onready var tween : Tween = get_node("Tween")
 var broken := false
 
 func _ready():
+	broken=Global.broken_aspiradora
 	if not broken:
 		tween.interpolate_property(get_node(".."), "unit_offset",
 			0, 1, 10,
@@ -15,4 +16,4 @@ func _ready():
 
 func brokeMoonba() -> void:
 	broken = true
-
+	Global.broken_aspiradora=true

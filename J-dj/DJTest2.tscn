@@ -102,10 +102,9 @@ expand = true
 
 [node name="Dialog" parent="." instance=ExtResource( 8 )]
 visible = false
+
 [connection signal="pressed" from="back/TextureButton" to="." method="_on_TextureButton_pressed"]
 
 [editable path="Plato"]
-
 [editable path="Plato2"]
-
 [editable path="Plato3"]
