@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scenes/cafeteria/gltf/cafeteria17.glb" type="PackedScene" id=1]
 [ext_resource path="res://GameEngine/Clickable.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://GameEngine/Gateway.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/museum-final/stars.jpg" type="Texture" id=6]
 [ext_resource path="res://Scenes/greenhouse-final/smoke.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/cafeteria/aspiradora_rota_ok/aspiradora_rota_ok.tscn" type="PackedScene" id=8]
 
 [sub_resource type="SpatialMaterial" id=1]
 
@@ -224,6 +225,9 @@ transform = Transform( 0.0592018, 0, -0.998246, 0, 1, 0, 0.998246, 0, 0.0592018,
 width = 28.1425
 height = 28.675
 material = SubResource( 11 )
+
+[node name="aspiradora_rota_ok" parent="." index="22" instance=ExtResource( 8 )]
+transform = Transform( 1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 0.259533, -0.500713, -0.187264 )
 
 [editable path="aspiradora/InvisibleRobotObstacle"]
 

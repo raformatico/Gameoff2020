@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/cafeteria/aspiradora_rota_ok/aspiradora_rota_ok.dae" type="PackedScene" id=1]
+
+[node name="aspiradora_rota_ok" instance=ExtResource( 1 )]
