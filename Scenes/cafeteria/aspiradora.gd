@@ -18,3 +18,4 @@ func _ready():
 func brokeMoonba() -> void:
 	broken = true
 	Global.broken_aspiradora=true
+	visible=false

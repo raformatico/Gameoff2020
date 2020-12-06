@@ -453,12 +453,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.628702, 0.115439, 3.8147e-06
 transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -0.77439, -1.85957, 0 )
 
 [node name="aspiradora" type="MeshInstance" parent="2A_marcopuerta" index="1"]
-transform = Transform( 0.499975, 0, 0.00500027, 0, 0.5, 0, -0.00500027, 0, 0.499975, 0.312479, -1.28992, -0.178076 )
+transform = Transform( 0.699965, 0, 0.00700038, 0, 0.7, 0, -0.00700038, 0, 0.699965, 0.312479, -1.06193, -0.178076 )
 mesh = SubResource( 13 )
 material/0 = ExtResource( 9 )
 
 [node name="AspiradoraHall" parent="2A_marcopuerta/aspiradora" index="0" instance=ExtResource( 2 )]
-transform = Transform( -0.0200014, 0, -1.9999, 0, 2, 0, 1.9999, 0, -0.0200014, 0, 0, 0 )
+transform = Transform( -0.0200014, 0, -1.9999, 0, 2, 0, 1.9999, 0, -0.0200014, 0.711252, 0, 0.00711441 )
 
 [node name="CollisionShape" parent="2A_marcopuerta/aspiradora/AspiradoraHall" index="0"]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0.12767, -0.378603, -0.526656 )
