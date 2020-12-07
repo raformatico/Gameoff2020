@@ -14,6 +14,7 @@ func _ready():
 		tween.start()
 	else:
 		get_node("..").unit_offset = 0
+		visible=false
 
 func brokeMoonba() -> void:
 	broken = true
