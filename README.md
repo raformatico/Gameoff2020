@@ -1,7 +1,7 @@
 # Gameoff2020
 A game made for the 2020 Github GameOff Jam based on the theme "MOONSHOT" using Godot 3.2.3. But finally we couldn't make it and we published it a little bit later.
 
-![](\assets\Images\Header.png)
+![](assets/Images/Header.png)
 
 Check out the game at  [https://raformatico.itch.io/ticket-to-the-moon](https://raformatico.itch.io/ticket-to-the-moon)
 
