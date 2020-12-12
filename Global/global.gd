@@ -62,7 +62,7 @@ var status = {
 	"DownFloor" : "start",
 	"InterruptorBox" : "start",
 	"Lever" : "start",
-	"Door" : "start",#CHANGE TO opened to enter
+	"Door" : "opened",#CHANGE TO opened to enter
 	"Pump" : "start",
 	"Audrey" : "start",
 	"Key" : "start",
@@ -72,7 +72,7 @@ var status = {
 	"Wire" : "start",
 	"Gofrera" : "start",
 	"Aspiradora" : "cafeteria",
-	"AspiradoraHall" : "start",#CHANGE TO opened to enter
+	"AspiradoraHall" : "opened",#CHANGE TO opened to enter
 	"Cafetera" : "start",
 	"Radio" : "start",
 	"chip" : "start",
@@ -167,7 +167,7 @@ func is_visible(object_name) -> bool:
 		is_visible = false
 	elif object_name == "Aspiradora" and status["Aspiradora"] == "end":
 		is_visible = false
-	elif object_name == "InvisibleRobotObstacle" and status["Aspiradora"] == "end":
+	elif object_name == "InvisibleRobotObstacle" and (status["Aspiradora"] == "end" or status["Aspiradora"] == "end2"):
 		is_visible = false	
 	elif object_name in status:
 		if status[object_name] == "picked":
