@@ -62,7 +62,7 @@ var status = {
 	"DownFloor" : "start",
 	"InterruptorBox" : "start",
 	"Lever" : "start",
-	"Door" : "opened",#CHANGE TO opened to enter
+	"Door" : "start",#CHANGE TO opened to enter
 	"Pump" : "start",
 	"Audrey" : "start",
 	"Key" : "start",
@@ -72,7 +72,7 @@ var status = {
 	"Wire" : "start",
 	"Gofrera" : "start",
 	"Aspiradora" : "cafeteria",
-	"AspiradoraHall" : "opened",#CHANGE TO opened to enter
+	"AspiradoraHall" : "start",#CHANGE TO opened to enter
 	"Cafetera" : "start",
 	"Radio" : "start",
 	"chip" : "start",
