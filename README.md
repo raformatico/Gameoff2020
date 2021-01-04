@@ -1,5 +1,5 @@
 # Gameoff2020
-A game made for the 2020 Github GameOff Jam based on the theme "MOONSHOT" using Godot 3.2.3. But finally we couldn't make it and we published it a little bit later.
+A game made for the 2020 Github GameOff Jam based on the theme "MOONSHOT" using Godot 3.2.3. But finally we couldn't make it and we published it a little bit later. See a sample gameplay [here](https://www.youtube.com/watch?v=39_0xB2Q4vc)
 
 ![](assets/Images/Header.png)
 
